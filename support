@@ -1,0 +1,692 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SFPF Global – Support</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Poppins:wght@200;300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/logo.png" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <style>
+    body{background:#fff600;font-family:Poppins,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,sans-serif}
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-bottom-1{bottom:-0.25rem}.bottom-1\/4{bottom:25%}.left-0{left:0px}.left-1\/4{left:25%}.right-1\/4{right:25%}.top-0{top:0px}.top-1\/4{top:25%}.z-50{z-index:50}.z-\[60\]{z-index:60}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.mb-16{margin-bottom:4rem}.mb-6{margin-bottom:1.5rem}.mt-8{margin-top:2rem}.mr-2{margin-right:0.5rem}.mb-12{margin-bottom:3rem}.mb-8{margin-bottom:2rem}.mt-2{margin-top:0.5rem}.mb-4{margin-bottom:1rem}.mt-20{margin-top:5rem}.mb-20{margin-bottom:5rem}.mb-2{margin-bottom:0.5rem}.mt-4{margin-top:1rem}.mt-10{margin-top:2.5rem}.ml-2{margin-left:0.5rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-0\.5{height:0.125rem}.h-12{height:3rem}.h-64{height:16rem}.h-\[20px\]{height:20px}.h-full{height:100%}.h-1{height:0.25rem}.h-2{height:0.5rem}.h-\[203px\]{height:203px}.h-4{height:1rem}.max-h-\[calc\(100dvh-140px\)\]{max-height:calc(100dvh - 140px)}.w-0{width:0px}.w-12{width:3rem}.w-64{width:16rem}.w-auto{width:auto}.w-full{width:100%}.w-20{width:5rem}.w-24{width:6rem}.w-2{width:0.5rem}.w-\[203px\]{width:203px}.w-4{width:1rem}.max-w-md{max-width:28rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-2xl{max-width:42rem}.max-w-5xl{max-width:64rem}.shrink-0{flex-shrink:0}.scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.cursor-default{cursor:default}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-8{gap:2rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-3{gap:0.75rem}.gap-2{gap:0.5rem}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-3xl{border-radius:1.5rem}.rounded-2xl{border-radius:1rem}.rounded-\[16px\]{border-radius:16px}.border{border-width:1px}.border-2{border-width:2px}.border-t{border-top-width:1px}.border-\[\#FEFD0C\]\/20{border-color:rgb(254 253 12 / 0.2)}.border-\[\#FEFD0C\]\/30{border-color:rgb(254 253 12 / 0.3)}.border-\[\#FEFD0C\]\/10{border-color:rgb(254 253 12 / 0.1)}.border-black\/20{border-color:rgb(0 0 0 / 0.2)}.border-transparent{border-color:transparent}.border-\[\#FEFD0C\]{--tw-border-opacity:1;border-color:rgb(254 253 12 / var(--tw-border-opacity, 1))}.bg-\[\#FEFD0C\]\/10{background-color:rgb(254 253 12 / 0.1)}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-black\/80{background-color:rgb(0 0 0 / 0.8)}.bg-\[\#fff600\]{--tw-bg-opacity:1;background-color:rgb(255 246 0 / var(--tw-bg-opacity, 1))}.bg-black\/60{background-color:rgb(0 0 0 / 0.6)}.bg-\[\#FEFD0C\]{--tw-bg-opacity:1;background-color:rgb(254 253 12 / var(--tw-bg-opacity, 1))}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-transparent{background-color:transparent}.bg-black\/20{background-color:rgb(0 0 0 / 0.2)}.bg-\[\#1d1d1d\]{--tw-bg-opacity:1;background-color:rgb(29 29 29 / var(--tw-bg-opacity, 1))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-\[\#FEFD0C\]{--tw-gradient-from:#FEFD0C var(--tw-gradient-from-position);--tw-gradient-to:rgb(254 253 12 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\[\#FEFD0C\]\/10{--tw-gradient-from:rgb(254 253 12 / 0.1) var(--tw-gradient-from-position);--tw-gradient-to:rgb(254 253 12 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-black\/60{--tw-gradient-from:rgb(0 0 0 / 0.6) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-transparent{--tw-gradient-from:transparent var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-\[\#FEFD0C\]{--tw-gradient-to:rgb(254 253 12 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #FEFD0C var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-\[\#FEFD0C\]\/10{--tw-gradient-to:rgb(254 253 12 / 0.1) var(--tw-gradient-to-position)}.to-\[\#FEFD0C\]\/50{--tw-gradient-to:rgb(254 253 12 / 0.5) var(--tw-gradient-to-position)}.to-\[\#FEFD0C\]\/90{--tw-gradient-to:rgb(254 253 12 / 0.9) var(--tw-gradient-to-position)}.to-black\/40{--tw-gradient-to:rgb(0 0 0 / 0.4) var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-contain{object-fit:contain}.p-8{padding:2rem}.p-1\.5{padding:0.375rem}.p-4{padding:1rem}.p-3{padding:0.75rem}.p-\[17px\]{padding:17px}.p-6{padding:1.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-8{padding-left:2rem;padding-right:2rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.px-\[16px\]{padding-left:16px;padding-right:16px}.px-5{padding-left:1.25rem;padding-right:1.25rem}.pt-6{padding-top:1.5rem}.pb-\[40px\]{padding-bottom:40px}.pt-\[100px\]{padding-top:100px}.pt-4{padding-top:1rem}.text-center{text-align:center}.align-\[-2px\]{vertical-align:-2px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-bold{font-weight:700}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.text-\[\#FEFD0C\]{--tw-text-opacity:1;color:rgb(254 253 12 / var(--tw-text-opacity, 1))}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/80{color:rgb(255 255 255 / 0.8)}.text-white\/70{color:rgb(255 255 255 / 0.7)}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-black\/50{--tw-shadow-color:rgb(0 0 0 / 0.5);--tw-shadow:var(--tw-shadow-colored)}.shadow-\[\#FEFD0C\]\/20{--tw-shadow-color:rgb(254 253 12 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.blur-xl{--tw-blur:blur(24px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-sm{--tw-drop-shadow:drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-\[\#FEFD0C\]\/40:hover{border-color:rgb(254 253 12 / 0.4)}.hover\:border-\[\#FEFD0C\]\/50:hover{border-color:rgb(254 253 12 / 0.5)}.hover\:border-\[\#FEFD0C\]\/10:hover{border-color:rgb(254 253 12 / 0.1)}.hover\:border-\[\#FEFD0C\]\/30:hover{border-color:rgb(254 253 12 / 0.3)}.hover\:bg-\[\#FEFD0C\]\/20:hover{background-color:rgb(254 253 12 / 0.2)}.hover\:bg-\[\#FEFD0C\]\/5:hover{background-color:rgb(254 253 12 / 0.05)}.hover\:bg-black\/20:hover{background-color:rgb(0 0 0 / 0.2)}.hover\:bg-white\/5:hover{background-color:rgb(255 255 255 / 0.05)}.hover\:bg-yellow-300:hover{--tw-bg-opacity:1;background-color:rgb(253 224 71 / var(--tw-bg-opacity, 1))}.hover\:bg-\[\#FEFD0C\]:hover{--tw-bg-opacity:1;background-color:rgb(254 253 12 / var(--tw-bg-opacity, 1))}.hover\:bg-black\/60:hover{background-color:rgb(0 0 0 / 0.6)}.hover\:text-\[\#FEFD0C\]:hover{--tw-text-opacity:1;color:rgb(254 253 12 / var(--tw-text-opacity, 1))}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.hover\:opacity-90:hover{opacity:0.9}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-2xl:hover{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-\[\#FEFD0C\]\/20:hover{--tw-shadow-color:rgb(254 253 12 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.hover\:shadow-\[\#FEFD0C\]\/10:hover{--tw-shadow-color:rgb(254 253 12 / 0.1);--tw-shadow:var(--tw-shadow-colored)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.group:hover .group-hover\:w-full{width:100%}.group:hover .group-hover\:translate-x-2{--tw-translate-x:0.5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:rotate-12{--tw-rotate:12deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:bg-\[\#FEFD0C\]\/20{background-color:rgb(254 253 12 / 0.2)}.group:hover .group-hover\:text-\[\#FEFD0C\]{--tw-text-opacity:1;color:rgb(254 253 12 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 640px){.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:p-12{padding:3rem}.md\:py-6{padding-top:1.5rem;padding-bottom:1.5rem}.md\:px-6{padding-left:1.5rem;padding-right:1.5rem}.md\:py-24{padding-top:6rem;padding-bottom:6rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}}@media (min-width: 1024px){.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:py-32{padding-top:8rem;padding-bottom:8rem}.lg\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1280px){.xl\:col-span-2{grid-column:span 2 / span 2}.xl\:flex{display:flex}.xl\:hidden{display:none}.xl\:px-24{padding-left:6rem;padding-right:6rem}.xl\:px-\[96px\]{padding-left:96px;padding-right:96px}.xl\:pt-\[120px\]{padding-top:120px}.xl\:text-6xl{font-size:3.75rem;line-height:1}.xl\:text-xl{font-size:1.25rem;line-height:1.75rem}}</style><link rel="stylesheet" href="https://code.jivosite.com/css/3736fc9/widget.css" class="jv-css"></head>
+<body>
+
+  <!-- Header -->
+  <header id="site-header" class="fixed top-0 w-full z-50 transition-all duration-500 bg-black">
+    <!-- pattern only visible when scrolled -->
+    <div id="header-pattern" class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-500" style="opacity: 0;">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#FEFD0C]/10 via-transparent to-[#FEFD0C]/10"></div>
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-[#FEFD0C]/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#FEFD0C]/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative flex items-center justify-between xl:px-24 px-4 mx-auto w-full md:py-6 py-4">
+      <a href="index.html#top" class="flex items-center group" aria-label="Home">
+        <div class="relative">
+          <img src="assets/logo-white.png" class="h-[20px] w-auto object-contain transition-all duration-300 group-hover:scale-105" alt="Logo">
+          <div class="absolute inset-0 bg-[#FEFD0C]/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="xl:flex hidden items-center gap-8">
+        <a href="#top" class="group relative">
+          <h3 class="text-lg font-medium text-white group-hover:text-[#FEFD0C] transition-colors">Home</h3>
+          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 w-0 group-hover:w-full transition-all"></span>
+        </a>
+        <a href="https://tradewithbnairaacademy.com" class="group relative">
+          <h3 class="text-lg font-medium text-white group-hover:text-[#FEFD0C] transition-colors">EBook</h3>
+          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 w-0 group-hover:w-full transition-all"></span>
+        </a>
+        <a href="/rates" class="group relative">
+          <h3 class="text-lg font-medium text-white group-hover:text-[#FEFD0C] transition-colors">Rates</h3>
+          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 w-0 group-hover:w-full transition-all"></span>
+        </a>
+        <a href="/about" class="group relative">
+          <h3 class="text-lg font-medium text-white group-hover:text-[#FEFD0C] transition-colors">About Us</h3>
+          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 w-0 group-hover:w-full transition-all"></span>
+        </a>
+        <!-- Support active -->
+        <a href="/support" class="group relative" aria-current="page">
+          <h3 class="text-lg font-medium text-[#FEFD0C] drop-shadow-sm">Support</h3>
+          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 w-full"></span>
+        </a>
+
+        <a href="/signin" class="group">
+          <div class="bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/90 px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-[#FEFD0C]/20 hover:scale-105 border border-[#FEFD0C]/20">
+            <span class="text-black text-base font-semibold">Let’s trade</span>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-toggle" class="xl:hidden h-12 w-12 flex items-center justify-center rounded-xl cursor-pointer transition-all duration-300 backdrop-blur-md border border-[#FEFD0C]/20 bg-[#FEFD0C]/10 text-[#FEFD0C] hover:bg-[#FEFD0C]/20 hover:border-[#FEFD0C]/40 hover:scale-105" aria-label="Open menu" aria-expanded="false">
+        <iconify-icon icon="heroicons-outline:menu-alt-3" class="text-2xl"></iconify-icon>
+      </button>
+    </div>
+  </header>
+
+  <!-- Spacer to offset fixed header height -->
+  <div id="header-spacer" style="height: 80px;"></div>
+
+  <!-- Mobile Nav Overlay -->
+    <div id="mobile-nav" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
+      <!-- Backdrop -->
+      <div class="absolute inset-0 bg-black/80 backdrop-blur-xl"></div>
+    
+      <!-- Close button (fixed: never hides under browser UI) -->
+      <button id="mobile-menu-close" class="fixed z-[60] h-12 w-12 flex items-center justify-center rounded-xl border border-[#FEFD0C]/30 bg-[#FEFD0C]/10 text-[#FEFD0C] hover:bg-[#FEFD0C]/20 hover:border-[#FEFD0C]/50 transition focus:outline-none" style="
+                top: calc(env(safe-area-inset-top, 0px) + 16px);
+                right: calc(env(safe-area-inset-right, 0px) + 16px);
+                touch-action: manipulation;
+              " aria-label="Close menu">
+        <iconify-icon icon="ri:close-fill" class="text-2xl"></iconify-icon>
+      </button>
+    
+      <!-- Content wrapper (centers card, respects safe areas) -->
+      <div class="relative z-50 h-full w-full flex items-center justify-center px-4" style="
+             padding-top: calc(env(safe-area-inset-top, 0px) + 16px);
+             padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+           ">
+        <!-- Card: capped height, scrolls if content is tall -->
+        <div class="w-full max-w-md bg-black/60 backdrop-blur-xl border border-[#FEFD0C]/10 rounded-3xl p-8 shadow-2xl shadow-black/50
+                    max-h-[calc(100dvh-140px)] overflow-y-auto">
+          <div class="space-y-6 text-center">
+            <a href="#top" class="block group nav-mobile-link">
+              <div class="py-3 px-4 rounded-xl hover:bg-[#FEFD0C]/5 border border-transparent hover:border-[#FEFD0C]/10 transition-all">
+                <h3 class="text-xl font-medium text-white group-hover:text-[#FEFD0C]">Home</h3>
+              </div>
+            </a>
+            <a href="https://tradewithbnairaacademy.com" class="block group nav-mobile-link">
+              <div class="py-3 px-4 rounded-xl hover:bg-[#FEFD0C]/5 border border-transparent hover:border-[#FEFD0C]/10 transition-all">
+                <h3 class="text-xl font-medium text-white group-hover:text-[#FEFD0C]">EBook</h3>
+              </div>
+            </a>
+            <a href="/rates" class="block group nav-mobile-link">
+              <div class="py-3 px-4 rounded-xl hover:bg-[#FEFD0C]/5 border border-transparent hover:border-[#FEFD0C]/10 transition-all">
+                <h3 class="text-xl font-medium text-white group-hover:text-[#FEFD0C]">Rates</h3>
+              </div>
+            </a>
+            <a href="/about" class="block group nav-mobile-link">
+              <div class="py-3 px-4 rounded-xl hover:bg-[#FEFD0C]/5 border border-transparent hover:border-[#FEFD0C]/10 transition-all">
+                <h3 class="text-xl font-medium text-white group-hover:text-[#FEFD0C]">About Us</h3>
+              </div>
+            </a>
+            <a href="/support" class="block group nav-mobile-link">
+              <div class="py-3 px-4 rounded-xl hover:bg-[#FEFD0C]/5 border border-transparent hover:border-[#FEFD0C]/10 transition-all">
+                <h3 class="text-xl font-medium text-white group-hover:text-[#FEFD0C]">Support</h3>
+              </div>
+            </a>
+          </div>
+    
+          <div class="mt-8 pt-6 border-t border-[#FEFD0C]/10">
+            <a href="/signin" class="block group nav-mobile-link">
+              <div class="bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/90 px-8 py-4 rounded-xl hover:shadow-lg hover:shadow-[#FEFD0C]/20 transition-all duration-300 text-center group-hover:scale-105">
+                <span class="text-black text-lg font-semibold">Let’s trade</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- MAIN -->
+  <main id="top">
+    <section class="w-full py-16 md:py-24 lg:py-32 bg-[#fff600] relative overflow-hidden" style="font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif">
+      <div class="container mx-auto px-4 md:px-6 relative z-10">
+
+        <!-- Header / Hero -->
+        <div class="text-center mb-16">
+          <div class="inline-block border border-black/20 backdrop-blur-md text-black font-medium px-3 py-3 rounded-full text-sm mb-6 hover:bg-black/20 hover:scale-105 transition-all duration-300 cursor-default animate-fade-scale initial-hidden-scale">
+            <iconify-icon icon="mdi:clock-outline" class="align-[-2px] mr-2"></iconify-icon>
+            24/7 Support
+          </div>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-tight mb-6">
+            We're Here to
+            <span class="text-black block mt-2">Help You</span>
+          </h2>
+          <div class="w-20 h-1 bg-[#FEFD0C] rounded-full mx-auto shadow-lg shadow-[#FEFD0C]/20 mb-8"></div>
+          <p class="text-base md:text-lg text-black-300 leading-relaxed max-w-3xl mx-auto mb-12">
+            Our dedicated team is always available to help you navigate the crypto world with confidence and security.
+          </p>
+
+          <!-- Support Stats -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <div class="bg-black/40 backdrop-blur-md border border-[#FEFD0C]/10 rounded-lg p-4 hover:border-[#FEFD0C]/30 transition-all duration-300 group">
+              <p class="text-2xl font-bold text-black group-hover:scale-110 transition-transform duration-300">24/7</p>
+              <p class="text-sm text-black-400">Support Available</p>
+            </div>
+            <div class="bg-black/40 backdrop-blur-md border border-[#FEFD0C]/10 rounded-lg p-4 hover:border-[#FEFD0C]/30 transition-all duration-300 group">
+              <p class="text-2xl font-bold text-black group-hover:scale-110 transition-transform duration-300">&lt;2min</p>
+              <p class="text-sm text-black-400">Average Response</p>
+            </div>
+            <div class="bg-black/40 backdrop-blur-md border border-[#FEFD0C]/10 rounded-lg p-4 hover:border-[#FEFD0C]/30 transition-all duration-300 group">
+              <p class="text-2xl font-bold text-black group-hover:scale-110 transition-transform duration-300">99.9%</p>
+              <p class="text-sm text-black-400">Satisfaction Rate</p>
+            </div>
+            <div class="bg-black/40 backdrop-blur-md border border-[#FEFD0C]/10 rounded-lg p-4 hover:border-[#FEFD0C]/30 transition-all duration-300 group">
+              <p class="text-2xl font-bold text-black group-hover:scale-110 transition-transform duration-300">50K+</p>
+              <p class="text-sm text-black-400">Users Helped</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex justify-center mb-12">
+          <div id="support-tabs" class="inline-flex rounded-xl bg-black/40 backdrop-blur-xl border border-[#FEFD0C]/10 p-1.5 shadow-2xl shadow-black/50">
+            <button data-tab="channels" class="tab-btn flex items-center px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 bg-[#FEFD0C] text-black shadow-lg transform scale-105">
+              <iconify-icon icon="ri:customer-service-2-line" class="mr-2"></iconify-icon> Support Channels
+            </button>
+            <button data-tab="social" class="tab-btn flex items-center px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 text-gray hover:text-[#FEFD0C] hover:bg-white/5 text-Black">
+              <iconify-icon icon="mdi:chat-outline" class="mr-2"></iconify-icon> Connect With Us
+            </button>
+            <button data-tab="faq" class="tab-btn flex items-center px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 text-gray hover:text-[#FEFD0C] hover:bg-white/5 text-Black">
+              <iconify-icon icon="ri:question-answer-line" class="mr-2"></iconify-icon> FAQ
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic content -->
+        <div id="support-content">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+            <a href="/login" class="bg-black/40 backdrop-blur-xl border border-[#FEFD0C]/10 rounded-2xl p-6 shadow-2xl shadow-black/50 hover:shadow-[#FEFD0C]/10 hover:border-[#FEFD0C]/30 transition-all duration-500 group hover:scale-105">
+              <div class="w-12 h-12 flex items-center justify-center bg-[#FEFD0C]/10 text-[#FEFD0C] rounded-lg mb-4 group-hover:bg-[#FEFD0C]/20 transition-all duration-300">
+                <iconify-icon icon="ri:customer-service-2-line" class="text-xl"></iconify-icon>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-2 group-hover:text-[#FEFD0C] transition-colors duration-300">24/7 Live Chat</h3>
+              <p class="text-black group-hover:text-gray-300 transition-colors duration-300 mb-4">Get instant help from our support team</p>
+              <div class="space-y-2 mb-4">
+                <div class="flex items-center text-sm text-black"><div class="w-2 h-2 bg-[#FEFD0C] rounded-full mr-2"></div>Available 24/7</div>
+                <div class="flex items-center text-sm text-black"><iconify-icon icon="mdi:clock-outline" class="w-4 h-4 mr-2"></iconify-icon>Response: &lt; 2 minutes</div>
+              </div>
+              <div class="pt-4 border-t border-[#FEFD0C]/10 flex items-center text-[#FEFD0C] group-hover:text-white transition-colors duration-300">
+                <span class="text-sm font-semibold">Get Help Now</span>
+                <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </div>
+            </a>
+          
+            <a href="/login" class="bg-black/40 backdrop-blur-xl border border-[#FEFD0C]/10 rounded-2xl p-6 shadow-2xl shadow-black/50 hover:shadow-[#FEFD0C]/10 hover:border-[#FEFD0C]/30 transition-all duration-500 group hover:scale-105">
+              <div class="w-12 h-12 flex items-center justify-center bg-[#FEFD0C]/10 text-[#FEFD0C] rounded-lg mb-4 group-hover:bg-[#FEFD0C]/20 transition-all duration-300">
+                <iconify-icon icon="mdi:help-circle-outline" class="text-xl"></iconify-icon>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-2 group-hover:text-[#FEFD0C] transition-colors duration-300">Help Center</h3>
+              <p class="text-black group-hover:text-gray-300 transition-colors duration-300 mb-4">Browse FAQs and comprehensive tutorials</p>
+              <div class="space-y-2 mb-4">
+                <div class="flex items-center text-sm text-black"><div class="w-2 h-2 bg-[#FEFD0C] rounded-full mr-2"></div>Always available</div>
+                <div class="flex items-center text-sm text-black"><iconify-icon icon="mdi:clock-outline" class="w-4 h-4 mr-2"></iconify-icon>Response: Instant</div>
+              </div>
+              <div class="pt-4 border-t border-[#FEFD0C]/10 flex items-center text-[#FEFD0C] group-hover:text-white transition-colors duration-300">
+                <span class="text-sm font-semibold">Get Help Now</span>
+                <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </div>
+            </a>
+          
+            <a href="/login" class="bg-black/40 backdrop-blur-xl border border-[#FEFD0C]/10 rounded-2xl p-6 shadow-2xl shadow-black/50 hover:shadow-[#FEFD0C]/10 hover:border-[#FEFD0C]/30 transition-all duration-500 group hover:scale-105">
+              <div class="w-12 h-12 flex items-center justify-center bg-[#FEFD0C]/10 text-[#FEFD0C] rounded-lg mb-4 group-hover:bg-[#FEFD0C]/20 transition-all duration-300">
+                <iconify-icon icon="mdi:headset" class="text-xl"></iconify-icon>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-2 group-hover:text-[#FEFD0C] transition-colors duration-300">Submit Ticket</h3>
+              <p class="text-black group-hover:text-gray-300 transition-colors duration-300 mb-4">Create a detailed support request</p>
+              <div class="space-y-2 mb-4">
+                <div class="flex items-center text-sm text-black"><div class="w-2 h-2 bg-[#FEFD0C] rounded-full mr-2"></div>24/7 Processing</div>
+                <div class="flex items-center text-sm text-black"><iconify-icon icon="mdi:clock-outline" class="w-4 h-4 mr-2"></iconify-icon>Response: &lt; 4 hours</div>
+              </div>
+              <div class="pt-4 border-t border-[#FEFD0C]/10 flex items-center text-[#FEFD0C] group-hover:text-white transition-colors duration-300">
+                <span class="text-sm font-semibold">Get Help Now</span>
+                <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </div>
+            </a>
+          
+            <a href="/login" class="bg-black/40 backdrop-blur-xl border border-[#FEFD0C]/10 rounded-2xl p-6 shadow-2xl shadow-black/50 hover:shadow-[#FEFD0C]/10 hover:border-[#FEFD0C]/30 transition-all duration-500 group hover:scale-105">
+              <div class="w-12 h-12 flex items-center justify-center bg-[#FEFD0C]/10 text-[#FEFD0C] rounded-lg mb-4 group-hover:bg-[#FEFD0C]/20 transition-all duration-300">
+                <iconify-icon icon="mdi:forum-outline" class="text-xl"></iconify-icon>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-2 group-hover:text-[#FEFD0C] transition-colors duration-300">Community Forum</h3>
+              <p class="text-black group-hover:text-gray-300 transition-colors duration-300 mb-4">Connect with other users and experts</p>
+              <div class="space-y-2 mb-4">
+                <div class="flex items-center text-sm text-black"><div class="w-2 h-2 bg-[#FEFD0C] rounded-full mr-2"></div>Community driven</div>
+                <div class="flex items-center text-sm text-black"><iconify-icon icon="mdi:clock-outline" class="w-4 h-4 mr-2"></iconify-icon>Response: Varies</div>
+              </div>
+              <div class="pt-4 border-t border-[#FEFD0C]/10 flex items-center text-[#FEFD0C] group-hover:text-white transition-colors duration-300">
+                <span class="text-sm font-semibold">Get Help Now</span>
+                <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </div>
+            </a>
+          
+        </div>
+      </div>
+
+        <!-- Contact CTA -->
+        <div class="mt-20 bg-black/40 backdrop-blur-xl border border-[#FEFD0C]/10 rounded-3xl p-8 md:p-12 text-center shadow-2xl shadow-black/50">
+          <div class="max-w-3xl mx-auto">
+            <div class="inline-block bg-[#FEFD0C]/10 text-[#FEFD0C] font-medium px-4 py-2 rounded-full text-sm mb-4 border border-[#FEFD0C]/20 backdrop-blur-sm">
+              Personal Assistance
+            </div>
+            <h3 class="text-3xl md:text-4xl font-bold tracking-tight text-black leading-tight mb-6">
+              Still Need
+              <span class="text-[#FEFD0C] block mt-2">Personal Help?</span>
+            </h3>
+            <div class="w-20 h-1 bg-[#FEFD0C] rounded-full mx-auto shadow-lg shadow-[#FEFD0C]/20 mb-8"></div>
+            <p class="mb-8 text-black-300 text-base md:text-lg leading-relaxed">
+              Our expert support team is available around the clock to provide personalized help with your crypto trading journey. Don't hesitate to reach out!
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+              <a href="mailto:contact@sellfastpayfast.com" class="group inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#FEFD0C] text-black font-bold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#FEFD0C]/20">
+                <iconify-icon icon="ri:customer-service-2-line" class="mr-2 text-xl group-hover:rotate-12 transition-transform duration-300"></iconify-icon>
+                Contact Support Team
+              </a>
+              <a href="#" id="liveChatBtn" class="group inline-flex items-center justify-center px-8 py-4 rounded-xl bg-transparent border-2 border-[#FEFD0C] text-[#FEFD0C] font-bold hover:bg-[#FEFD0C] hover:text-black transition-all duration-300 transform hover:scale-105">
+                <iconify-icon icon="mdi:chat-outline" class="mr-2 text-xl group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                Start Live Chat
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="w-full bg-black relative overflow-hidden" role="contentinfo" aria-label="Site Footer">
+    <div class="w-full xl:px-[96px] px-[16px] mx-auto xl:pt-[120px] pb-[40px] pt-[100px] relative z-10">
+
+      <!-- Hero / call-to-action -->
+      <div class="text-center mb-20">
+        <div class="inline-block bg-black/20 text-[#FEFD0C] font-medium px-6 py-3 rounded-full text-sm mb-6 border border-[#FEFD0C]/20 backdrop-blur-sm">
+          <iconify-icon icon="mdi:security" class="align-[-2px] mr-2"></iconify-icon>
+          Trusted Platform
+        </div>
+        <h2 class="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
+          Join the Future of <span class="text-[#FEFD0C] block mt-2">Crypto Trading</span>
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-transparent via-[#FEFD0C] to-transparent rounded-full mx-auto shadow-lg mb-8"></div>
+        <p class="text-lg xl:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          The most trustworthy cryptocurrency exchange platform available. Quick access to your money, whenever you desire.
+        </p>
+      </div>
+
+      <!-- Trust Metrics -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-20">
+        <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-8 hover:scale-105 hover:border-[#FEFD0C]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FEFD0C]/10">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-[#FEFD0C]/10 p-4 rounded-full mb-4">
+              <iconify-icon icon="mdi:security" class="text-[#FEFD0C] text-3xl"></iconify-icon>
+            </div>
+            <p class="text-3xl font-bold text-white mb-2">100%</p>
+            <p class="text-sm text-white/70 font-medium">Secure</p>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-8 hover:scale-105 hover:border-[#FEFD0C]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FEFD0C]/10">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-[#FEFD0C]/10 p-4 rounded-full mb-4">
+              <iconify-icon icon="ri:customer-service-2-line" class="text-[#FEFD0C] text-3xl"></iconify-icon>
+            </div>
+            <p class="text-3xl font-bold text-white mb-2">24/7</p>
+            <p class="text-sm text-white/70 font-medium">Support</p>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-8 hover:scale-105 hover:border-[#FEFD0C]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FEFD0C]/10">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-[#FEFD0C]/10 p-4 rounded-full mb-4">
+              <iconify-icon icon="mdi:trending-up" class="text-[#FEFD0C] text-3xl"></iconify-icon>
+            </div>
+            <p class="text-3xl font-bold text-white mb-2">50K+</p>
+            <p class="text-sm text-white/70 font-medium">Users</p>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-8 hover:scale-105 hover:border-[#FEFD0C]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FEFD0C]/10">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-[#FEFD0C]/10 p-4 rounded-full mb-4">
+              <iconify-icon icon="mdi:clock-fast" class="text-[#FEFD0C] text-3xl"></iconify-icon>
+            </div>
+            <p class="text-3xl font-bold text-white mb-2">&lt;2min</p>
+            <p class="text-sm text-white/70 font-medium">Response</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social + QR -->
+    <div class="xl:col-span-2 grid md:grid-cols-2 gap-8">
+    <!-- Social -->
+    <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-8">
+        <h3 class="text-[#FEFD0C] font-bold text-xl mb-6 flex items-center gap-3">
+        <div class="w-2 h-2 bg-[#FEFD0C] rounded-full"></div>
+        Connect With Us
+        </h3>
+
+        <div class="space-y-4">
+        <a href="https://www.instagram.com/sfpfglobal?igsh=cDI0eWd6dHZucnZt" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-black/20 border border-[#FEFD0C]/10 rounded-xl px-5 py-4 hover:border-[#FEFD0C]/30 hover:bg-black/60 transition-all">
+            <div class="bg-[#FEFD0C]/10 p-3 rounded-full">
+            <iconify-icon icon="ri:instagram-line" class="text-[#FEFD0C] text-xl"></iconify-icon>
+            </div>
+            <div>
+            <p class="text-white font-semibold text-sm">Instagram</p>
+            <p class="text-[#FEFD0C] text-sm">@sfpfglobal</p>
+            </div>
+        </a>
+
+        <a href="https://x.com/sfpfglobal01?t=hPKIBjIZeZwD2kZLZ8zjZA&amp;s=09" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-black/20 border border-[#FEFD0C]/10 rounded-xl px-5 py-4 hover:border-[#FEFD0C]/30 hover:bg-black/60 transition-all">
+            <div class="bg-[#FEFD0C]/10 p-3 rounded-full">
+            <iconify-icon icon="ri:twitter-line" class="text-[#FEFD0C] text-xl"></iconify-icon>
+            </div>
+            <div>
+            <p class="text-white font-semibold text-sm">Twitter/X</p>
+            <p class="text-[#FEFD0C] text-sm">@sfpfglobal01</p>
+            </div>
+        </a>
+        </div>
+    </div>
+
+    <!-- QR Code (Tabbed) -->
+    <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-8 flex flex-col sm:flex-row items-center gap-6">
+    <div class="shrink-0">
+        <div id="qr-widget" class="w-[203px]">
+
+        <!-- QR box (inline SVG placeholder; swap to real QR <img> if you have platform-specific codes) -->
+        <div id="qr-box" class="w-[203px] h-[203px] rounded-[16px] bg-[#1d1d1d] p-[17px] shadow-md flex items-center justify-center">
+            <img src="assets/channel.png" alt="QR code" width="169" height="150">
+
+        </div>
+        </div>
+    </div>
+
+    <div>
+        <h3 class="text-[#FEFD0C] font-bold text-xl mb-2">Scan &amp; Get Started</h3>
+        <p class="text-white/80 text-sm leading-relaxed">
+        Scan the QR to reach our official channel and get updates, support, and announcements in real time.
+        </p>
+        <a href="https://t.me/+zhBKysnocXEzMjhk" class="inline-flex items-center gap-2 mt-4 text-black bg-[#FEFD0C] px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition">
+        <span>Open Channel</span>
+        <iconify-icon icon="ri:arrow-right-up-line"></iconify-icon>
+        </a>
+    </div>
+    </div>
+
+
+    <!-- Footer Nav Columns -->
+    <div class="grid md:grid-cols-3 gap-8 mt-10">
+    <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-6">
+        <h4 class="text-[#FEFD0C] font-semibold mb-4">Company</h4>
+        <ul class="space-y-3 text-sm">
+        <li><a href="/about" class="text-white/80 hover:text-[#FEFD0C] transition">About</a></li>
+        <li><a href="/rates" class="text-white/80 hover:text-[#FEFD0C] transition">Rates</a></li>
+        </ul>
+    </div>
+
+    <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-6">
+        <h4 class="text-[#FEFD0C] font-semibold mb-4">Support</h4>
+        <ul class="space-y-3 text-sm">
+        <li><a href="/support" class="text-white/80 hover:text-[#FEFD0C] transition">Help Center</a></li>
+        </ul>
+    </div>
+
+    <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-6">
+        <h4 class="text-[#FEFD0C] font-semibold mb-4">Legal</h4>
+        <ul class="space-y-3 text-sm">
+        <li><a href="/terms" class="text-white/80 hover:text-[#FEFD0C] transition">Terms</a></li>
+        <li><a href="/privacy" class="text-white/80 hover:text-[#FEFD0C] transition">Privacy</a></li>
+        </ul>
+    </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-10 pt-6 border-t border-[#FEFD0C]/20 flex flex-col md:flex-row items-center justify-center gap-4">
+    <p class="text-xs text-white/70">
+        © 2025 SFPF Global. All rights reserved.
+    </p>
+
+  </div>
+  </div></footer>
+
+  <!-- Header + Mobile menu JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const header = document.getElementById("site-header");
+      const spacer = document.getElementById("header-spacer");
+      const pattern = document.getElementById("header-pattern");
+      const btnOpen = document.getElementById("mobile-menu-toggle");
+      const btnClose = document.getElementById("mobile-menu-close");
+      const mobileNav = document.getElementById("mobile-nav");
+
+      const openMenu = () => { mobileNav.classList.remove("hidden"); document.body.classList.add("overflow-hidden"); btnOpen?.setAttribute("aria-expanded","true"); };
+      const closeMenu = () => { mobileNav.classList.add("hidden"); document.body.classList.remove("overflow-hidden"); btnOpen?.setAttribute("aria-expanded","false"); };
+
+      btnOpen?.addEventListener("click", openMenu);
+      btnClose?.addEventListener("click", closeMenu);
+      mobileNav?.addEventListener("click", (e)=>{ if(e.target===mobileNav) closeMenu(); });
+      document.querySelectorAll(".nav-mobile-link").forEach(el=>el.addEventListener("click", closeMenu));
+
+      const syncSpacer = () => { if (spacer && header) spacer.style.height = header.offsetHeight + "px"; };
+      syncSpacer(); window.addEventListener("resize", syncSpacer);
+
+      const onScroll = () => {
+        const y = window.scrollY || document.documentElement.scrollTop;
+        if (header) {
+          header.classList.toggle("backdrop-blur-md", y > 4);
+          header.classList.toggle("bg-black/80", y > 4);
+        }
+        if (pattern) pattern.style.opacity = y > 10 ? "1" : "0";
+      };
+      onScroll(); window.addEventListener("scroll", onScroll);
+    });
+  </script>
+
+  <!-- Support Page Logic -->
+  <script>
+    // ----- Data (adapted from your React) -----
+    const supportChannels = [
+      {id:1,title:"24/7 Live Chat",description:"Get instant help from our support team",icon:"ri:customer-service-2-line",url:"/login",primary:true,availability:"Available 24/7",responseTime:"< 2 minutes"},
+      {id:2,title:"Help Center",description:"Browse FAQs and comprehensive tutorials",icon:"mdi:help-circle-outline",url:"/login",primary:true,availability:"Always available",responseTime:"Instant"},
+      {id:3,title:"Submit Ticket",description:"Create a detailed support request",icon:"mdi:headset",url:"/login",primary:true,availability:"24/7 Processing",responseTime:"< 4 hours"},
+      {id:4,title:"Community Forum",description:"Connect with other users and experts",icon:"mdi:forum-outline",url:"/login",primary:true,availability:"Community driven",responseTime:"Varies"},
+    ];
+
+    const socialContacts = [
+      {id:1,title:"Email Support",description:"Direct email communication",email:"contact@sellfastpayfast.com",icon:"material-symbols:alternate-email",url:"mailto:tradewithbnaira01@gmail.com",category:"Direct Contact"},
+      {id:2,title:"Instagram",description:"Follow our visual updates and trading tips",handle:"@sfpfglobal",icon:"ri:instagram-line",url:"https://www.instagram.com/sfpfglobal?igsh=cDI0eWd6dHZucnZt",category:"Social Media"},
+      {id:3,title:"Twitter/X",description:"Latest news and market announcements",handle:"@sfpfglobal01",icon:"ri:twitter-line",url:"https://x.com/sfpfglobal01?t=hPKIBjIZeZwD2kZLZ8zjZA&s=09",category:"Social Media"},
+      {id:4,title:"Telegram Community",description:"Join our active trading community",handle:"@tradewithbnaira01",icon:"fa6-brands:telegram",url:"https://t.me/+zhBKysnocXEzMjhk",category:"Community"},
+    ];
+
+    const faqItems = [
+      {question:"How do I reset my password?",category:"Account",answer:"Go to the login page and click on 'Forgot Password'. Follow the instructions sent to your email to reset your password. If you don't receive the email within 5 minutes, check your spam folder or contact support."},
+      {question:"How long do withdrawals take?",category:"Transactions",answer:"Most withdrawals are processed within 30 minutes, but can take up to 24 hours depending on the network congestion and verification requirements. Premium users enjoy priority processing with faster withdrawal times."},
+      {question:"Is my crypto safe on your platform?",category:"Security",answer:"We implement industry-leading security measures including cold storage for 95% of assets, multi-signature wallets, 2FA authentication, and regular third-party security audits to ensure the safety of your funds."},
+      {question:"How do I verify my account?",category:"Account",answer:"Navigate to the 'Account' section and select 'Verification'. Follow the step-by-step process to upload your identification documents. Verification typically takes 2-24 hours to complete."},
+      {question:"What trading fees do you charge?",category:"Trading",answer:"Our trading fees are competitive and transparent. Maker fees start at 0.1% and taker fees at 0.15%. Volume-based discounts are available for high-frequency traders. Check our fee schedule for detailed information."},
+      {question:"How can I enable two-factor authentication?",category:"Security",answer:"Go to Security Settings in your account dashboard. Download an authenticator app like Google Authenticator, scan the QR code, and enter the verification code. We strongly recommend enabling 2FA for enhanced security."},
+    ];
+
+    // ----- Tabs & Rendering -----
+    let activeTab = "channels";
+    let selectedCategory = "All";
+    let expandedFaq = null;
+
+    const contentEl = document.getElementById("support-content");
+    const tabsEl = document.getElementById("support-tabs");
+
+    function renderChannels(){
+      contentEl.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          ${supportChannels.map(item=>`
+            <a href="${item.url}" class="bg-black/40 backdrop-blur-xl border border-[#FEFD0C]/10 rounded-2xl p-6 shadow-2xl shadow-black/50 hover:shadow-[#FEFD0C]/10 hover:border-[#FEFD0C]/30 transition-all duration-500 group hover:scale-105">
+              <div class="w-12 h-12 flex items-center justify-center bg-[#FEFD0C]/10 text-[#FEFD0C] rounded-lg mb-4 group-hover:bg-[#FEFD0C]/20 transition-all duration-300">
+                <iconify-icon icon="${item.icon}" class="text-xl"></iconify-icon>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-2 group-hover:text-[#FEFD0C] transition-colors duration-300">${item.title}</h3>
+              <p class="text-black group-hover:text-gray-300 transition-colors duration-300 mb-4">${item.description}</p>
+              <div class="space-y-2 mb-4">
+                <div class="flex items-center text-sm text-black"><div class="w-2 h-2 bg-[#FEFD0C] rounded-full mr-2"></div>${item.availability}</div>
+                <div class="flex items-center text-sm text-black"><iconify-icon icon="mdi:clock-outline" class="w-4 h-4 mr-2"></iconify-icon>Response: ${item.responseTime}</div>
+              </div>
+              <div class="pt-4 border-t border-[#FEFD0C]/10 flex items-center text-[#FEFD0C] group-hover:text-white transition-colors duration-300">
+                <span class="text-sm font-semibold">Get Help Now</span>
+                <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </div>
+            </a>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderSocial(){
+      contentEl.innerHTML = `
+        <div class="max-w-4xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            ${socialContacts.map(item=>`
+              <a href="${item.url}" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center bg-black/40 backdrop-blur-xl border border-[#FEFD0C]/10 rounded-2xl p-6 shadow-2xl shadow-black/50 hover:shadow-[#FEFD0C]/10 hover:border-[#FEFD0C]/30 transition-all duration-500 group hover:scale-105">
+                <div class="w-16 h-16 rounded-2xl bg-[#FEFD0C]/10 flex items-center justify-center mr-4 group-hover:bg-[#FEFD0C]/20 group-hover:scale-110 transition-all duration-300">
+                  <iconify-icon icon="${item.icon}" class="text-[#FEFD0C] text-2xl"></iconify-icon>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center mb-1">
+                    <h3 class="text-lg font-bold text-black group-hover:text-[#FEFD0C] transition-colors duration-300 mr-2">${item.title}</h3>
+                    <span class="text-xs bg-[#FEFD0C]/10 text-[#FEFD0C] px-2 py-1 rounded-full border border-[#FEFD0C]/20">${item.category}</span>
+                  </div>
+                  <p class="text-black-400 group-hover:text-black-300 transition-colors duration-300 text-sm mb-2">${item.description}</p>
+                  <div class="text-[#FEFD0C] font-medium text-sm">${item.handle || item.email}</div>
+                </div>
+                <svg class="w-5 h-5 text-black-500 group-hover:text-[#FEFD0C] transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            `).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderFaq(){
+      const categories = ["All", ...Array.from(new Set(faqItems.map(i=>i.category)))];
+      // filter
+      const list = selectedCategory==="All" ? faqItems : faqItems.filter(i=>i.category===selectedCategory);
+
+      contentEl.innerHTML = `
+        <div class="max-w-4xl mx-auto">
+          <div class="flex flex-wrap justify-center gap-2 mb-8">
+            ${categories.map(cat=>`
+              <button data-cat="${cat}" class="cat-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory===cat ? 'bg-[#FEFD0C] text-black shadow-lg' : 'bg-black/40 backdrop-blur-md border border-[#FEFD0C]/10 text-[#FEFD0C] hover:border-[#FEFD0C]/30'}">
+                ${cat}
+              </button>
+            `).join("")}
+          </div>
+          <div class="space-y-4">
+            ${list.map((faq,idx)=>`
+              <div class="faq-item bg-black/40 backdrop-blur-xl border border-[#FEFD0C]/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden hover:border-[#FEFD0C]/30 transition-all duration-500" data-index="${idx}">
+                <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none hover:bg-[#FEFD0C]/5 transition-colors duration-300">
+                  <div class="flex items-center">
+                    <span class="text-lg font-semibold text-black mr-3">${faq.question}</span>
+                    <span class="text-xs bg-[#FEFD0C]/10 text-[#FEFD0C] px-2 py-1 rounded-full border border-[#FEFD0C]/20">${faq.category}</span>
+                  </div>
+                  <svg class="chev w-6 h-6 text-[#FEFD0C] transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="answer px-6 transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0">
+                  <div class="border-t border-[#FEFD0C]/10 pt-4 pb-6">
+                    <p class="text-gray-300 leading-relaxed">${faq.answer}</p>
+                  </div>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `;
+
+      // category buttons
+      document.querySelectorAll(".cat-btn").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          selectedCategory = btn.getAttribute("data-cat");
+          renderFaq();
+        });
+      });
+      // faq toggles
+      document.querySelectorAll(".faq-item").forEach((wrap)=>{
+        const btn = wrap.querySelector("button");
+        const ans = wrap.querySelector(".answer");
+        const chev = wrap.querySelector(".chev");
+        btn.addEventListener("click", ()=>{
+          const open = ans.style.maxHeight && ans.style.maxHeight !== "0px";
+          document.querySelectorAll(".answer").forEach(a=>{ a.style.maxHeight="0px"; a.style.opacity="0"; });
+          document.querySelectorAll(".chev").forEach(c=>c.classList.remove("rotate-180"));
+          if (!open) {
+            ans.style.maxHeight = ans.scrollHeight + "px";
+            ans.style.opacity = "1";
+            chev.classList.add("rotate-180");
+          }
+        });
+      });
+    }
+
+    function renderActive(){
+      tabsEl.querySelectorAll(".tab-btn").forEach(btn=>{
+        const isActive = btn.getAttribute("data-tab")===activeTab;
+        btn.classList.toggle("bg-[#FEFD0C]", isActive);
+        btn.classList.toggle("text-black", isActive);
+        btn.classList.toggle("shadow-lg", isActive);
+        btn.classList.toggle("transform", isActive);
+        btn.classList.toggle("scale-105", isActive);
+        if (!isActive){
+          btn.classList.add("text-Black");
+          btn.classList.remove("text-black");
+        }
+      });
+    }
+
+    function render(){
+      renderActive();
+      if (activeTab==="channels") renderChannels();
+      if (activeTab==="social") renderSocial();
+      if (activeTab==="faq") renderFaq();
+    }
+
+    // Tab handlers
+    tabsEl.querySelectorAll(".tab-btn").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        activeTab = btn.getAttribute("data-tab");
+        render();
+      });
+    });
+
+    // Init
+    render();
+  </script>
+  <script src="//code.jivosite.com/widget/PrCZ5RCx2Y" async=""></script>
+  <script>
+  document.getElementById("liveChatBtn").addEventListener("click", function(e) {
+    e.preventDefault();
+    if (typeof jivo_api !== "undefined") {
+      jivo_api.open();
+    }
+  });
+</script>
+
+
+
+<div id="jivo-iframe-container" style="opacity: 0; visibility: hidden; width: 0px; height: 0px; overflow: hidden;"><iframe src="" role="presentation" allow="autoplay" title="Jivochat" name="jivo_container" id="jivo_container" frameborder="no"></iframe></div><jdiv><jdiv class="globalClass__LFxG3 global__UuiFB __light__zruC0 __green__asusd jv-copyright jv-windows jv-chrome jv-desktop" style="--jv-font-family: 'Arial', system-ui, -apple-system, 'Arial', sans-serif;"><jdiv translate="no" class="notranslate" style="animation-duration: 300ms; animation-timing-function: cubic-bezier(0.39, 0.24, 0.21, 0.99); animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: Label_CLOSE_WIDGET___u1K3; display: block; z-index: 2147483646; position: fixed;"><jdiv id="jvLabelWrap" translate="no" class="container__EO253 __bottom__AmFdT __isShow__lKmyR notranslate" style="--jv-label-font-size: 15px; --jv-label-font-style: normal; --jv-label-color: #fff; --jv-label-background: linear-gradient(95deg, #2f324a 20%, #424867 80%); --jv-label-background-corner: #424867; max-width: calc(-80px + 100vw); bottom: 0px; right: 40px;"><jdiv class="icon__UuOAa" style="background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M0%200h20v20H0z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23fff%22%20stroke-width%3D%221.5%22%20d%3D%22M3%203h14a2%202%200%200%201%202%202v10a2%202%200%200%201-2%202H3a2%202%200%200%201-2-2V5a2%202%200%200%201%202-2z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23fff%22%20stroke-width%3D%221.5%22%20d%3D%22M16.074%207.064l-6.01%204.01-6.01-4.01%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);"></jdiv><jdiv class="hoverArea__IXyw1"><jdiv class="menu__wPyow __bottom__X_b38"></jdiv></jdiv><jdiv class="text__eyZ2g contentTransitionWrap__kq0dj __bottom__XM1Ji __isOffline___mi9N">Send us a message</jdiv><jdiv class="container__kn9PS"><jdiv class="logo__x3B5x"><jdiv class="icon__s5zgP" style="background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22108%22%20height%3D%2236%22%20viewBox%3D%220%200%20108%2036%22%3E%0A%20%20%20%20%3Cg%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%20d%3D%22M6.342%2011.967H.957c-.2%200-.4%200-.6.2%200%20.2-.198.2-.198.4v1.993c0%20.2%200%20.4.198.6.2.198.4.198.6.198h2.79v14.36c0%201.397-1.196%202.594-2.392%202.594h-.4c-.2%200-.398%200-.598.2-.2.2-.2.398-.2.598v1.994c0%20.2%200%20.4.2.6.2.198.4.198.6.198h.198c3.192%200%205.785-2.792%205.785-5.984V12.566c0-.2%200-.4-.2-.6h-.398m6.98%200H11.33c-.2%200-.2%200-.4.2s-.2.2-.2.4v14.76c0%20.2%200%20.398.2.598.2.2.4.2.598.2h1.795c.2%200%20.4%200%20.598-.2.2-.2.2-.4.2-.598v-14.76c0-.2%200-.4-.198-.6h-.6m17.154%200H28.88c-.598%200-.997.2-.997.4l-4.388%209.973-4.188-9.974c0-.4-.4-.4-.6-.4h-1.993c-.4%200-.598%200-.598.2-.2.2-.2.4%200%20.6l6.78%2015.357c.2.2.4.4.6.4h.2c.198%200%20.597-.2.597-.4l6.782-15.358c.2-.2.2-.4%200-.598-.2-.2-.4-.2-.6-.2m9.176-.4c-2.193.002-3.988.8-5.584%202.594-1.595%201.597-2.393%203.592-2.393%205.985%200%202.393.798%204.388%202.393%205.984%201.596%201.794%203.39%202.592%205.585%202.592s3.99-.798%205.586-2.593c1.596-1.796%202.394-3.79%202.394-5.985%200-2.393-.798-4.388-2.394-5.984-1.596-1.794-3.59-2.591-5.585-2.591m3.193%2012.165c-.798.998-1.995%201.596-3.192%201.596-1.395%200-2.392-.398-3.39-1.395-.797-.998-1.396-2.194-1.396-3.79%200-1.396.4-2.792%201.397-3.59.798-.997%201.995-1.396%203.39-1.396%201.398%200%202.395.398%203.193%201.395.797.997%201.396%202.194%201.396%203.59s-.6%202.593-1.397%203.59m19.147-.598c-.398-.4-.797-.2-.997%200l-.4.4-.597.597c-.2.2-.4.2-.6.4-.198.2-.597.398-.796.398-.4%200-.6.2-.998.2-1.396%200-2.393-.6-3.19-1.596-.8-.998-1.397-2.194-1.397-3.79%200-1.396.4-2.792%201.396-3.79.998-.997%201.996-1.396%203.392-1.396%201.197%200%202.194.6%203.19%201.596.4.4.8.4.998.2l1.197-1.197s0-.4-.4-.8c-1.395-1.794-3.39-2.79-5.584-2.79-2.194-.002-3.99.796-5.584%202.59-1.597%201.597-2.395%203.592-2.395%205.985%200%202.393.798%204.388%202.394%206.183%201.594%201.596%203.39%202.394%205.583%202.394%202.593%200%204.588-1.197%205.984-3.39.2-.4.2-.8-.2-1.198l-.997-.997m11.57-11.569c-1.597%200-2.993.6-4.59%201.796V4.986c0-.2%200-.4-.198-.598-.2-.2-.4-.2-.6-.2H66.38c-.2%200-.398%200-.598.2-.2.2-.2.4-.2.598v22.54c0%20.198%200%20.398.2.597.2.2.4.2.598.2h1.796c.598%200%20.797-.2.797-.798V17.353c.2-.6.8-.998%201.398-1.596.797-.598%201.795-.798%202.792-.798.997%200%201.795.398%202.393%201.196.6.798.798%201.795.798%203.19v8.378c0%20.2%200%20.4.2.6.2.198.4.198.6.198h1.794c.2%200%20.4%200%20.6-.2.198-.2.198-.398.198-.598v-8.177c-.2-5.386-2.194-7.979-6.183-7.979m20.144%201.995c-.4-.798-.997-1.197-1.596-1.596-.798-.4-1.795-.598-2.992-.598-1.994%200-3.79.398-5.385.996-.398.2-.597.4-.597.998l.4%201.396c.198.598.398.798.796.598a12.823%2012.823%200%200%201%204.388-.798c.997%200%201.595.2%201.994.798.4.598.598%201.596.4%202.793l-.4-.2c-.2%200-.598-.198-1.197-.198-.4.2-.797.2-1.396.2-1.995%200-3.392.398-4.588%201.395-1.197.997-1.596%202.194-1.596%203.79s.4%202.992%201.396%203.99c.998.996%202.194%201.395%203.59%201.395%201.796%200%203.39-.598%204.787-1.994l.398%201.196c.2.4.4.6.6.6h1.195c.2%200%20.4%200%20.6-.2.198-.2.198-.4.198-.6V18.75c0-1.198%200-2.195-.198-2.993-.2-.598-.4-1.396-.798-2.194M91.31%2023.735c-.2.4-.797.998-1.396%201.396-.798.4-1.396.6-2.194.6s-1.396-.2-1.795-.798c-.4-.4-.598-1.197-.598-1.795%200-.798.2-1.396.798-1.995.598-.4%201.396-.797%202.393-.797.598%200%201.197%200%201.795.2.6.198.997.198.997.398v2.792m16.555%202.793l-.598-1.596c-.2-.4-.4-.598-.997-.4a3.834%203.834%200%200%201-2.394.8c-.4%200-.798-.2-.997-.4-.2-.2-.4-.598-.4-1.396V14.96h4.19c.198%200%20.397%200%20.597-.2.2-.2.2-.4.2-.6v-1.594c0-.2%200-.4-.2-.6h-4.788V7.38c0-.2%200-.4-.2-.598-.2-.2-.398-.2-.598-.2h-1.994c-.2%200-.4%200-.6.2-.198.2-.198.398-.198.598v4.587h-1.795c-.4%200-.798.2-.798.798v1.396c0%20.2%200%20.4.2.6.2.2.398.2.598.2h1.795v8.975c0%201.595.2%202.792.798%203.59.598.798%201.595%201.197%202.99%201.197.8%200%201.597-.2%202.395-.4s1.396-.598%201.795-.797c.997-.2%201.197-.598.997-.997z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%2362666c%22%20fill-rule%3D%22evenodd%22%20d%3D%22M6.94%2010.77C6.543.4.16%200%20.16%200c-.4%209.374%206.78%2010.77%206.78%2010.77z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);"></jdiv></jdiv><jdiv class="tooltipWrapper__aQeNa"><jdiv class="tooltip__LhOxJ"><a href="https://www.jivochat.com/i_sa/?utm_source=sellfastpayfast.com&amp;utm_medium=link&amp;utm_content=label_tooltip&amp;utm_campaign=from_widget" rel="nofollow noopener noreferrer" target="_blank" class="link__JWOmb">Business Messenger by <jdiv class="icon__s5zgP" style="background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22108%22%20height%3D%2236%22%20viewBox%3D%220%200%20108%2036%22%3E%0A%20%20%20%20%3Cg%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%20d%3D%22M6.342%2011.967H.957c-.2%200-.4%200-.6.2%200%20.2-.198.2-.198.4v1.993c0%20.2%200%20.4.198.6.2.198.4.198.6.198h2.79v14.36c0%201.397-1.196%202.594-2.392%202.594h-.4c-.2%200-.398%200-.598.2-.2.2-.2.398-.2.598v1.994c0%20.2%200%20.4.2.6.2.198.4.198.6.198h.198c3.192%200%205.785-2.792%205.785-5.984V12.566c0-.2%200-.4-.2-.6h-.398m6.98%200H11.33c-.2%200-.2%200-.4.2s-.2.2-.2.4v14.76c0%20.2%200%20.398.2.598.2.2.4.2.598.2h1.795c.2%200%20.4%200%20.598-.2.2-.2.2-.4.2-.598v-14.76c0-.2%200-.4-.198-.6h-.6m17.154%200H28.88c-.598%200-.997.2-.997.4l-4.388%209.973-4.188-9.974c0-.4-.4-.4-.6-.4h-1.993c-.4%200-.598%200-.598.2-.2.2-.2.4%200%20.6l6.78%2015.357c.2.2.4.4.6.4h.2c.198%200%20.597-.2.597-.4l6.782-15.358c.2-.2.2-.4%200-.598-.2-.2-.4-.2-.6-.2m9.176-.4c-2.193.002-3.988.8-5.584%202.594-1.595%201.597-2.393%203.592-2.393%205.985%200%202.393.798%204.388%202.393%205.984%201.596%201.794%203.39%202.592%205.585%202.592s3.99-.798%205.586-2.593c1.596-1.796%202.394-3.79%202.394-5.985%200-2.393-.798-4.388-2.394-5.984-1.596-1.794-3.59-2.591-5.585-2.591m3.193%2012.165c-.798.998-1.995%201.596-3.192%201.596-1.395%200-2.392-.398-3.39-1.395-.797-.998-1.396-2.194-1.396-3.79%200-1.396.4-2.792%201.397-3.59.798-.997%201.995-1.396%203.39-1.396%201.398%200%202.395.398%203.193%201.395.797.997%201.396%202.194%201.396%203.59s-.6%202.593-1.397%203.59m19.147-.598c-.398-.4-.797-.2-.997%200l-.4.4-.597.597c-.2.2-.4.2-.6.4-.198.2-.597.398-.796.398-.4%200-.6.2-.998.2-1.396%200-2.393-.6-3.19-1.596-.8-.998-1.397-2.194-1.397-3.79%200-1.396.4-2.792%201.396-3.79.998-.997%201.996-1.396%203.392-1.396%201.197%200%202.194.6%203.19%201.596.4.4.8.4.998.2l1.197-1.197s0-.4-.4-.8c-1.395-1.794-3.39-2.79-5.584-2.79-2.194-.002-3.99.796-5.584%202.59-1.597%201.597-2.395%203.592-2.395%205.985%200%202.393.798%204.388%202.394%206.183%201.594%201.596%203.39%202.394%205.583%202.394%202.593%200%204.588-1.197%205.984-3.39.2-.4.2-.8-.2-1.198l-.997-.997m11.57-11.569c-1.597%200-2.993.6-4.59%201.796V4.986c0-.2%200-.4-.198-.598-.2-.2-.4-.2-.6-.2H66.38c-.2%200-.398%200-.598.2-.2.2-.2.4-.2.598v22.54c0%20.198%200%20.398.2.597.2.2.4.2.598.2h1.796c.598%200%20.797-.2.797-.798V17.353c.2-.6.8-.998%201.398-1.596.797-.598%201.795-.798%202.792-.798.997%200%201.795.398%202.393%201.196.6.798.798%201.795.798%203.19v8.378c0%20.2%200%20.4.2.6.2.198.4.198.6.198h1.794c.2%200%20.4%200%20.6-.2.198-.2.198-.398.198-.598v-8.177c-.2-5.386-2.194-7.979-6.183-7.979m20.144%201.995c-.4-.798-.997-1.197-1.596-1.596-.798-.4-1.795-.598-2.992-.598-1.994%200-3.79.398-5.385.996-.398.2-.597.4-.597.998l.4%201.396c.198.598.398.798.796.598a12.823%2012.823%200%200%201%204.388-.798c.997%200%201.595.2%201.994.798.4.598.598%201.596.4%202.793l-.4-.2c-.2%200-.598-.198-1.197-.198-.4.2-.797.2-1.396.2-1.995%200-3.392.398-4.588%201.395-1.197.997-1.596%202.194-1.596%203.79s.4%202.992%201.396%203.99c.998.996%202.194%201.395%203.59%201.395%201.796%200%203.39-.598%204.787-1.994l.398%201.196c.2.4.4.6.6.6h1.195c.2%200%20.4%200%20.6-.2.198-.2.198-.4.198-.6V18.75c0-1.198%200-2.195-.198-2.993-.2-.598-.4-1.396-.798-2.194M91.31%2023.735c-.2.4-.797.998-1.396%201.396-.798.4-1.396.6-2.194.6s-1.396-.2-1.795-.798c-.4-.4-.598-1.197-.598-1.795%200-.798.2-1.396.798-1.995.598-.4%201.396-.797%202.393-.797.598%200%201.197%200%201.795.2.6.198.997.198.997.398v2.792m16.555%202.793l-.598-1.596c-.2-.4-.4-.598-.997-.4a3.834%203.834%200%200%201-2.394.8c-.4%200-.798-.2-.997-.4-.2-.2-.4-.598-.4-1.396V14.96h4.19c.198%200%20.397%200%20.597-.2.2-.2.2-.4.2-.6v-1.594c0-.2%200-.4-.2-.6h-4.788V7.38c0-.2%200-.4-.2-.598-.2-.2-.398-.2-.598-.2h-1.994c-.2%200-.4%200-.6.2-.198.2-.198.398-.198.598v4.587h-1.795c-.4%200-.798.2-.798.798v1.396c0%20.2%200%20.4.2.6.2.2.398.2.598.2h1.795v8.975c0%201.595.2%202.792.798%203.59.598.798%201.595%201.197%202.99%201.197.8%200%201.597-.2%202.395-.4s1.396-.598%201.795-.797c.997-.2%201.197-.598.997-.997z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%2362666c%22%20fill-rule%3D%22evenodd%22%20d%3D%22M6.94%2010.77C6.543.4.16%200%20.16%200c-.4%209.374%206.78%2010.77%206.78%2010.77z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);"></jdiv></a></jdiv></jdiv></jdiv><jdiv class="leaf__aBWTw"><jdiv class="leaf__QeXqI _bottom__Kxz7X"><jdiv class="cssLeaf__fYDAd" style="background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2240%22%20viewBox%3D%220%200%2032%2040%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23424867%22%20d%3D%22M0%200h9.02L32%2033.196V40H0z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23424867%22%20d%3D%22M9%200c3.581.05%2023%205.426%2023%2033.08v.03C18.922%2030.751%209%2019.311%209%205.554V0z%22%20fill-opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%235e5f61%22%20d%3D%22M9%200c3.581.05%2023%205.426%2023%2033.08v.03C18.922%2030.751%209%2019.311%209%205.554V0z%22%20fill-opacity%3D%220.7%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);"></jdiv></jdiv></jdiv></jdiv></jdiv><jdiv id="jivo-player" class="player__BFq4l"><audio preload="auto" id="jivo-sound-agent_message"><source src="https://code.jivosite.com/sounds/agent_message.mp3" type="audio/mpeg"><source src="https://code.jivosite.com/sounds/agent_message.ogg" type="audio/ogg; codecs=vorbis"><source src="https://code.jivosite.com/sounds/agent_message.wav" type="audio/wav"></audio><audio preload="auto" id="jivo-sound-notification"><source src="https://code.jivosite.com/sounds/notification.mp3" type="audio/mpeg"><source src="https://code.jivosite.com/sounds/notification.ogg" type="audio/ogg; codecs=vorbis"><source src="https://code.jivosite.com/sounds/notification.wav" type="audio/wav"></audio><audio preload="auto" id="jivo-sound-outgoing_message"><source src="https://code.jivosite.com/sounds/outgoing_message.mp3" type="audio/mpeg"><source src="https://code.jivosite.com/sounds/outgoing_message.ogg" type="audio/ogg; codecs=vorbis"><source src="https://code.jivosite.com/sounds/outgoing_message.wav" type="audio/wav"></audio></jdiv><jdiv id="jcont" translate="no" class="notranslate" style="animation-duration: 300ms; animation-timing-function: cubic-bezier(0.39, 0.24, 0.21, 0.99); animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: WidgetContainer_CLOSE_WIDGET__GiiPk; --jright: 30px; --jheight: 496px; display: block; position: fixed; --jlabelwidth: 300px; --jlabelright: 40px;"><jdiv dir="ltr" id="jivo_action" class="wrap__hBYUa"><jdiv id="jivo_close_button" class="closeButton__ZSHnw"><jdiv class="closeIcon___7PZq" style="background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate(2%202)%22%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212%22%20fill%3D%22%23FFF%22%20opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212.75%22%20stroke%3D%22%23222D38%22%20stroke-width%3D%221.5%22%20opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cg%20fill%3D%22%23222D38%22%20opacity%3D%221%22%20transform%3D%22translate(6%206)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20width%3D%221.611%22%20height%3D%2213.9%22%20x%3D%225.435%22%20y%3D%22-.941%22%20rx%3D%22.806%22%20transform%3D%22rotate(45%206.24%206.01)%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20width%3D%221.611%22%20height%3D%2213.9%22%20x%3D%225.435%22%20y%3D%22-.941%22%20rx%3D%22.806%22%20transform%3D%22scale(-1%201)%20rotate(45%200%20-9.058)%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);"></jdiv></jdiv></jdiv></jdiv><jdiv class="jv-pseudo-height"></jdiv><jdiv class="jv-mouse-track"></jdiv></jdiv></jdiv></body></html>

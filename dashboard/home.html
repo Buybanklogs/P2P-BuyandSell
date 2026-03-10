@@ -36,6 +36,7 @@
     .glow { box-shadow: 0 8px 24px rgba(254,253,12,0.20); }
   </style>
   -->
+  <!--
   <style>
 :root{
   --brand:#FFFFFF;        /* main accent now white */
@@ -90,6 +91,62 @@ body{
   box-shadow: 0 8px 24px rgba(255,255,255,0.10);
 }
 </style>
+-->
+<style>
+:root{
+  --brand:#D4AF37; /* gold */
+  --bg:#0A0A0A;
+}
+
+body{
+  background:var(--bg);
+  color:#ffffff;
+  font-family:Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Glass cards */
+.surface{
+  background: rgba(10,10,10,0.65);
+  backdrop-filter: blur(16px);
+  border:1px solid rgba(212,175,55,0.15);
+}
+
+.surface-hover{
+  background: rgba(0,0,0,0.75);
+}
+
+/* Gold gradient buttons */
+.brand-grad{
+  background-image: linear-gradient(to right, #D4AF37, #F2D272);
+  color:#000;
+}
+
+.brand-grad-hover{
+  background-image: linear-gradient(to right, #C9A227, #D4AF37);
+  color:#000;
+}
+
+/* Borders */
+.brand-border{
+  border-color: rgba(212,175,55,0.25);
+}
+
+.brand-border-weak{
+  border-color: rgba(212,175,55,0.12);
+}
+
+/* Focus ring */
+.brand-ring:focus{
+  box-shadow: 0 0 0 2px rgba(212,175,55,0.45);
+  outline:none;
+}
+
+/* Gold glow */
+.glow{
+  box-shadow: 0 8px 24px rgba(212,175,55,0.25);
+}
+</style>
+
 </head>
 <body>
 

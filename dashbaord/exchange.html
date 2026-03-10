@@ -1,0 +1,744 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SFPF Global – Exchange</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/logo.png" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <style>
+    :root{
+      --brand:#FEFD0C;
+      --bg:#000;
+      --surface: rgba(0,0,0,.60);
+      --surfaceHover: rgba(0,0,0,.80);
+      --border: rgba(254,253,12,.10);
+    }
+    body{ background:var(--bg); color:#fff; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    .surface { background: var(--surface); backdrop-filter: blur(16px); border: 1px solid var(--border); }
+    .ring-brand:focus { outline: none; box-shadow: 0 0 0 3px rgba(254,253,12,.35); }
+    .brand-grad { background-image: linear-gradient(90deg, #FEFD0C, #F5F500); }
+    .btn-green { background-image: linear-gradient(90deg, #22c55e, #16a34a); }
+    .btn-green:hover { background-image: linear-gradient(90deg, #16a34a, #15803d); }
+    .muted { color:#B7BAC0; }
+    .shadow-brand { box-shadow: 0 12px 30px rgba(254,253,12,.15); }
+    select {
+      appearance: auto; /* keep native look */
+      -webkit-appearance: menulist;
+      -moz-appearance: menulist;
+      background-color: rgba(0,0,0,.40);
+      color: #fff;
+      border: 1px solid rgba(254,253,12,.20);
+      border-radius: 0.75rem; /* rounded-xl */
+      padding: 0.85rem 0.9rem;
+      width: 100%;
+    }
+    select:focus { outline: none; box-shadow: 0 0 0 3px rgba(254,253,12,.25); }
+    option { color:#000; } /* native menus use system colors */
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-1\/4{bottom:25%}.left-1\/4{left:25%}.right-1\/4{right:25%}.top-1\/4{top:25%}.left-4{left:1rem}.top-1\/2{top:50%}.right-4{right:1rem}.z-10{z-index:10}.order-1{order:1}.order-2{order:2}.order-3{order:3}.my-2{margin-top:0.5rem;margin-bottom:0.5rem}.mb-2{margin-bottom:0.5rem}.mb-6{margin-bottom:1.5rem}.mt-2{margin-top:0.5rem}.mb-3{margin-bottom:0.75rem}.mt-0\.5{margin-top:0.125rem}.mb-1{margin-bottom:0.25rem}.mt-4{margin-top:1rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-96{height:24rem}.h-10{height:2.5rem}.h-px{height:1px}.min-h-screen{min-height:100vh}.w-96{width:24rem}.w-10{width:2.5rem}.w-full{width:100%}.flex-1{flex:1 1 0%}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-3{gap:0.75rem}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-green-500\/20{border-color:rgb(34 197 94 / 0.2)}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-black\/60{background-color:rgb(0 0 0 / 0.6)}.bg-transparent{background-color:transparent}.bg-green-500\/10{background-color:rgb(34 197 94 / 0.1)}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to)}.p-1{padding:0.25rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-5{padding:1.25rem}.px-4{padding-left:1rem;padding-right:1rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-8{padding-top:2rem;padding-bottom:2rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.pl-12{padding-left:3rem}.pr-16{padding-right:4rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-base{font-size:1rem;line-height:1.5rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.tracking-tight{letter-spacing:-0.025em}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-\[color\:var\(--brand\)\]{color:var(--brand)}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.placeholder-gray-500::placeholder{--tw-placeholder-opacity:1;color:rgb(107 114 128 / var(--tw-placeholder-opacity, 1))}.opacity-5{opacity:0.05}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-black\/40{--tw-shadow-color:rgb(0 0 0 / 0.4);--tw-shadow:var(--tw-shadow-colored)}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.disabled\:cursor-not-allowed:disabled{cursor:not-allowed}.disabled\:opacity-50:disabled{opacity:0.5}</style></head>
+<body>
+  <!-- faint bg -->
+  <div class="fixed inset-0 opacity-5 pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-r from-[color:var(--brand)]/10 via-transparent to-[color:var(--brand)]/10"></div>
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[color:var(--brand)]/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[color:var(--brand)]/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="min-h-screen relative z-10 py-8 px-4">
+    <div class="space-y-6">
+      <!-- Header -->
+      <div class="flex items-center gap-4">
+        <div>
+          <h1 class="text-2xl font-extrabold tracking-tight">Exchange</h1>
+          <p class="text-sm muted">Trade cryptocurrencies</p>
+        </div>
+      </div>
+
+      <!-- Buy / Sell toggle -->
+      <div class="surface rounded-2xl p-4 border border-white/10 shadow-2xl shadow-black/40">
+        <div class="flex bg-black/40 rounded-xl p-1 border border-[color:var(--brand)]/10">
+          <button id="tab-buy" class="flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-all text-black shadow-lg brand-grad"> 
+            <div class="flex items-center justify-center gap-2">
+              <iconify-icon icon="lucide:trending-up"></iconify-icon><span>Buy</span>
+            </div>
+          </button>
+          <button id="tab-sell" class="flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-all text-gray-300 hover:text-white hover:bg-[color:var(--brand)]/10">
+            <div class="flex items-center justify-center gap-2">
+              <iconify-icon icon="lucide:trending-down"></iconify-icon><span>Sell</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Country & crypto selectors -->
+      <div class="surface rounded-2xl p-6 border border-white/10 shadow-2xl shadow-black/40">
+        <!-- Country -->
+        <div class="mb-6">
+          <label class="block text-sm font-medium text-gray-300 mb-2">Country &amp; Currency</label>
+          <select id="country-select" class="w-full bg-transparent text-gray-200 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-1 focus:ring-[#FEFD0C]-500 focus:border-[#FEFD0C]-500 transition"><option value="Ghana">Ghana — GHS</option><option value="Kenya">Kenya — KES</option><option value="Nigeria">Nigeria — NGN</option><option value="South Africa">South Africa — ZAR</option><option value="Turkey">Turkey — TRY</option><option value="United Arab Emirates">United Arab Emirates — AED</option><option value="United Kingdom">United Kingdom — GBP</option></select>
+        </div>
+        
+        <!-- Crypto -->
+        <div class="mb-6">
+          <label class="block text-sm font-medium text-gray-300 mb-2">Select Cryptocurrency</label>
+          <select id="crypto-select" class="w-full bg-transparent text-gray-200 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-1 focus:ring-[#FEFD0C]-500 focus:border-[#FEFD0C]-500 transition"><option value="bitcoin">BTC — Bitcoin</option><option value="ethereum">ETH — Ethereum</option><option value="bnb">BNB — Binance Coin</option><option value="xrp">XRP — XRP</option><option value="solana">SOL — Solana</option><option value="dogecoin">DOGE — Dogecoin</option><option value="tron">TRX — TRON</option><option value="tether">USDT — Tether</option><option value="usd-coin">USDC — USD Coin</option></select>
+        </div>
+        <div class="mt-2 text-xs muted">
+            Today's price:&nbsp;<span id="sel-price">₦96,926,784</span>
+            &nbsp;•&nbsp;<span id="sel-ch" class="text-xs text-green-400">+4.21%</span>
+          </div>
+      </div>
+
+      <!-- Trade card -->
+      <div class="surface rounded-2xl p-6 border border-white/10 shadow-2xl shadow-black/40">
+        <div id="rows" class="flex flex-col gap-4 mb-6">
+          <!-- Row: FIAT (order toggled by JS) -->
+          <div id="row-fiat" class="order-1" style="order: 1;">
+            <label id="lbl-fiat" class="block text-sm font-medium text-gray-300 mb-2">Amount to Buy</label>
+            <div class="relative">
+              <input id="inp-fiat" type="text" inputmode="decimal" autocomplete="off" placeholder="0.00" class="w-full p-4 pl-12 rounded-xl bg-black/40 border border-[color:var(--brand)]/20 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/20 transition">
+              <div class="absolute left-4 top-1/2 -translate-y-1/2">
+                <span id="fiat-symbol" class="text-[color:var(--brand)] text-base">₦</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <p class="text-xs muted">Minimum trade: <span id="min-trade-cur">₦350,250</span></p>
+              <p id="below-min" class="text-xs text-red-400 hidden">Below minimum</p>
+            </div>
+          </div>
+
+          <!-- Conversion icon -->
+          <div class="flex justify-center order-2">
+            <div class="w-10 h-10 rounded-full bg-black/60 flex items-center justify-center text-gray-400 border border-[color:var(--brand)]/20">
+              <iconify-icon icon="lucide:arrow-up-down" class="text-base"></iconify-icon>
+            </div>
+          </div>
+
+          <!-- Row: CRYPTO (order toggled by JS) -->
+          <div id="row-crypto" class="order-3" style="order: 3;">
+            <label id="lbl-crypto" class="block text-sm font-medium text-gray-300 mb-2">You will receive</label>
+            <div class="relative">
+              <input id="inp-crypto" type="text" inputmode="decimal" autocomplete="off" placeholder="0.00000000" class="w-full p-4 pr-16 rounded-xl bg-black/40 border border-[color:var(--brand)]/20 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/20 transition">
+              <div class="absolute right-4 top-1/2 -translate-y-1/2">
+                <span id="crypto-suffix" class="text-sm font-semibold text-[color:var(--brand)]">BTC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div id="summary" class="hidden bg-[color:var(--brand)]/10 rounded-xl p-4 mb-6 border border-[color:var(--brand)]/20">
+          <div class="flex items-center gap-2 mb-3">
+            <iconify-icon icon="lucide:zap" class="text-[color:var(--brand)] text-base"></iconify-icon>
+            <h4 class="text-sm font-semibold">Order Summary</h4>
+          </div>
+          <div class="space-y-2">
+            <div class="flex justify-between">
+              <span class="text-sm muted">Rate:</span>
+              <span id="sum-rate" class="text-sm font-medium">$0.00</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-sm muted">Amount:</span>
+              <span id="sum-amt" class="text-sm font-medium">0.00000000 BTC</span>
+            </div>
+            <div class="h-px bg-[color:var(--brand)]/20 my-2"></div>
+            <div class="flex justify-between">
+              <span class="text-sm font-semibold">Total:</span>
+              <span id="sum-total" class="text-sm font-extrabold text-[color:var(--brand)]">$0.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatsApp info -->
+        <div class="rounded-xl p-4 mb-6 border border-green-500/20 bg-green-500/10">
+          <div class="flex items-start gap-3">
+            <iconify-icon icon="lucide:message-circle" class="text-green-400 text-lg mt-0.5"></iconify-icon>
+            <div class="flex-1">
+              <h4 class="text-sm font-semibold text-green-400 mb-1">Trade via WhatsApp</h4>
+              <p class="text-xs muted">
+                All trades are processed through WhatsApp for security and personalized service. Click
+                <span class="text-green-400 font-semibold">Continue to WhatsApp</span>
+                to finalize your order with our trading team.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action -->
+        <button id="btn-trade" class="w-full py-4 rounded-xl font-semibold text-base transition shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed btn-green text-white" disabled=""><span class="inline-flex items-center gap-2"><iconify-icon icon="lucide:message-circle" class="text-xl"></iconify-icon>Continue to WhatsApp<iconify-icon icon="lucide:external-link" class="text-lg"></iconify-icon></span></button>
+
+        <!-- Quick amounts (local currency) -->
+        <div id="quick-wrap" class="grid grid-cols-3 gap-2 mt-4"><button class="py-2 px-3 rounded-lg text-sm font-medium transition text-gray-300 hover:text-white bg-black/40 hover:bg-[color:var(--brand)]/10 border border-[color:var(--brand)]/20 hover:border-[color:var(--brand)]/40" data-quick="350250">
+                  ₦350,250
+                </button><button class="py-2 px-3 rounded-lg text-sm font-medium transition text-gray-300 hover:text-white bg-black/40 hover:bg-[color:var(--brand)]/10 border border-[color:var(--brand)]/20 hover:border-[color:var(--brand)]/40" data-quick="700500">
+                  ₦700,500
+                </button><button class="py-2 px-3 rounded-lg text-sm font-medium transition text-gray-300 hover:text-white bg-black/40 hover:bg-[color:var(--brand)]/10 border border-[color:var(--brand)]/20 hover:border-[color:var(--brand)]/40" data-quick="1401000">
+                  ₦1,401,000
+                </button></div>
+      </div>
+
+      <!-- Status card -->
+      <div id="status-card" class="hidden surface rounded-2xl p-5 border mt-2"></div>
+    </div>
+  </div>
+
+  <script>
+    /* ------------------ Country/Currency & Rates ------------------ */
+        const countryCodeMap = {
+          "United Kingdom": { code: "gb", currency: "gbp" },
+          "Nigeria":        { code: "ng", currency: "ngn" },
+          "South Africa":   { code: "za", currency: "zar" },
+          "Ghana":          { code: "gh", currency: "ghs" },
+          "United Arab Emirates": { code: "ae", currency: "aed" }, // Dubai (UAE)
+          "Turkey":         { code: "tr", currency: "try" },
+          "Kenya":          { code: "ke", currency: "kes" }
+        };
+
+        // FX fallback (currency per USD). We'll override via exchangerate.host and NGN backend.
+      const fxRates = {
+          usd:  { buy:1, sell:1 },
+          gbp:  { buy:0.83, sell:0.79 },
+        
+          ngn:  { buy:1401, sell:1355 },
+        
+          zar:  { buy:19.1, sell:15.1 },
+          ghs:  { buy:13, sell:11.5 },
+          aed:  { buy:3.75, sell:3.60 },
+          try:  { buy:30, sell:27 },
+          kes:  { buy:160, sell:145 }
+        };
+
+    
+      const currencySymbols = { 
+          usd:"$", gbp:"£", ngn:"₦", zar:"R", ghs:"₵", aed:"د.إ", try:"₺", kes:"KSh"
+        };
+      const symbol = (c) => currencySymbols[(c||"").toLowerCase()] || (c||"").toUpperCase();
+      const lowFracCurrencies = new Set(['ghs','aed','ngn']); // keep as before
+    
+      function fmtMoney(v, cur){
+        const low = lowFracCurrencies.has((cur||'').toLowerCase());
+        const n = Number(v)||0;
+        return `${symbol(cur)}${n.toLocaleString(navigator.language||'en-US',{minimumFractionDigits: low?0:2, maximumFractionDigits: low?0:2})}`;
+      }
+      function getFx(cur){
+          const key = (cur || '').toLowerCase();
+          const rate = fxRates[key];
+          if (!rate) return 1;
+        
+          return state.tradeType === 'buy'
+            ? rate.buy
+            : rate.sell;
+        }
+
+      // Hook for NGN (Bybit P2P via backend)
+      let ngnFetchedAt = 0;
+      async function maybeOverrideNGN(force=false) {
+        try{
+          // Only refetch at most every 5 minutes unless forced
+          if (!force && Date.now() - ngnFetchedAt < 5 * 60 * 1000) return;
+          const res = await fetch('/dashboard/api/rates/bybit-ngn.php', { credentials:'same-origin', cache:'no-store' });
+          if (!res.ok) return;
+          const data = await res.json();
+          if (data && data.success && Number(data.usd_to_ngn) > 0){
+            fxRates.ngn = Number(data.usd_to_ngn);
+            ngnFetchedAt = Date.now();
+    
+            // If user is on NGN, refresh the UI immediately
+            if (state.currency.toLowerCase() === 'ngn'){
+              updateMinTrade();
+              buildQuickButtons();
+              paintSelection();
+              if (state.lastEdited==='crypto') recalcFromCrypto(); else recalcFromFiat();
+              paintSummary(); paintBelowMin(); paintButton();
+            }
+          }
+        }catch(e){
+          console.warn('NGN override failed', e);
+        }
+      }
+
+      // ------------------ Config & Data ------------------ */
+    const MIN_TRADE_USD = 250;
+    const QUICK_USD = [250, 500, 1000];
+    const WHATSAPP_NUMBER = '+447498349775';
+
+    const availableCryptos = [
+      { id:'bitcoin',    symbol:'BTC', name:'Bitcoin',       price:111000, change24h:-0.5, icon:'₿' },
+      { id:'ethereum',   symbol:'ETH', name:'Ethereum',      price:3698,   change24h:-0.2, icon:'Ξ' },
+      { id:'bnb',        symbol:'BNB', name:'Binance Coin',  price:700,    change24h:-1.2, icon:'Ⓑ' },
+      { id:'xrp',        symbol:'XRP', name:'XRP',           price:3.08,   change24h:-6.3, icon:'X' },
+      { id:'solana',     symbol:'SOL', name:'Solana',        price:160.58, change24h:-4.6, icon:'◎' },
+      { id:'dogecoin',   symbol:'DOGE',name:'Dogecoin',      price:0.322,  change24h:-7.4, icon:'Ð' },
+      { id:'tron',       symbol:'TRX', name:'TRON',          price:0.223,  change24h: 0.9, icon:'⚡' },
+      { id:'tether',     symbol:'USDT',name:'Tether',        price:1.0,    change24h: 0.0, icon:'₮' },
+      { id:'usd-coin',   symbol:'USDC',name:'USD Coin',      price:1.0,    change24h: 0.0, icon:'$' },
+    ];
+
+    /* ------------------ State ------------------ */
+    const state = {
+      tradeType: 'buy',         // 'buy' | 'sell'
+      cryptoList: availableCryptos.slice(),
+      selCryptoId: availableCryptos[0].id,
+      country: 'Nigeria',
+      currency: 'ngn',
+
+      amountCrypto: '',
+      amountFiat: '',
+
+      loading: false,
+      lastEdited: 'fiat'        // 'crypto' | 'fiat'
+    };
+
+    /* ------------------ DOM ------------------ */
+    const $  = (s)=>document.querySelector(s);
+    const $$ = (s)=>Array.from(document.querySelectorAll(s));
+
+    const tabBuy   = $('#tab-buy');
+    const tabSell  = $('#tab-sell');
+
+    const countrySelect = $('#country-select');
+    const cryptoSelect  = $('#crypto-select');
+
+    const rowFiat   = $('#row-fiat');
+    const rowCrypto = $('#row-crypto');
+    const lblCrypto = $('#lbl-crypto');
+    const lblFiat   = $('#lbl-fiat');
+    const inpCrypto = $('#inp-crypto');
+    const inpFiat   = $('#inp-fiat');
+    const cryptoSuffix = $('#crypto-suffix');
+    const fiatSymbol   = $('#fiat-symbol');
+    const belowMin     = $('#below-min');
+    const minTradeCur  = $('#min-trade-cur');
+
+    const summary   = $('#summary');
+    const sumRate   = $('#sum-rate');
+    const sumAmt    = $('#sum-amt');
+    const sumTotal  = $('#sum-total');
+
+    const quickWrap = $('#quick-wrap');
+
+    const btnTrade  = $('#btn-trade');
+    const tradeLabel= $('#trade-label');
+    const statusCard= $('#status-card');
+
+    const selPrice  = $('#sel-price');
+    const selCh     = $('#sel-ch');
+
+    /* ------------------ Helpers ------------------ */
+    const getSelCrypto = ()=> state.cryptoList.find(c=>c.id===state.selCryptoId) || state.cryptoList[0];
+
+    function setTabStylesAndFieldOrder(){
+      if (state.tradeType==='buy'){
+        tabBuy.className  = 'flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-all text-black shadow-lg brand-grad';
+        tabSell.className = 'flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-all text-gray-300 hover:text-white hover:bg-[color:var(--brand)]/10';
+        lblFiat.textContent   = 'Amount to Buy';
+        lblCrypto.textContent = 'You will receive';
+        rowFiat.style.order   = 1;
+        rowCrypto.style.order = 3;
+      } else {
+        tabSell.className = 'flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-all text-black shadow-lg brand-grad';
+        tabBuy.className  = 'flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-all text-gray-300 hover:text-white hover:bg-[color:var(--brand)]/10';
+        lblCrypto.textContent = 'Amount to sell';
+        lblFiat.textContent   = 'You will receive';
+        rowCrypto.style.order = 1;
+        rowFiat.style.order   = 3;
+      }
+    }
+
+    function localMidPriceUSD(usdPrice){
+      return (Number(usdPrice)||0) * getFx(state.currency);
+    }
+    function tradeRatePerCoin(){
+      return localMidPriceUSD(getSelCrypto().price);
+    }
+
+    function fmtRateForSummary(){
+      const c = getSelCrypto();
+      const rate = tradeRatePerCoin();
+      const type = state.tradeType === 'buy' ? 'Buy' : 'Sell';
+      return `${type} 1 ${c.symbol} = ${fmtMoney(rate, state.currency)}`;
+    }
+
+
+    function updateMinTrade(){
+      const v = MIN_TRADE_USD * getFx(state.currency);
+      minTradeCur.textContent = fmtMoney(v, state.currency);
+    }
+
+    function buildQuickButtons(){
+      quickWrap.innerHTML = QUICK_USD.map(u=>{
+        const v = u * getFx(state.currency);
+        const low = lowFracCurrencies.has(state.currency);
+        const shown = low ? Math.round(v) : Math.round(v*100)/100;
+        return `<button class="py-2 px-3 rounded-lg text-sm font-medium transition text-gray-300 hover:text-white bg-black/40 hover:bg-[color:var(--brand)]/10 border border-[color:var(--brand)]/20 hover:border-[color:var(--brand)]/40" data-quick="${shown}">
+                  ${fmtMoney(shown, state.currency)}
+                </button>`;
+      }).join('');
+      $$('#quick-wrap [data-quick]').forEach(b=>{
+        b.addEventListener('click', ()=>{
+          state.amountFiat = String(b.getAttribute('data-quick'));
+          state.lastEdited = 'fiat';
+          inpFiat.value = state.amountFiat;
+          recalcFromFiat();
+          paintSummary();
+          paintBelowMin();
+          paintButton();
+        });
+      });
+    }
+
+    function populateCountrySelect(){
+      const names = Object.keys(countryCodeMap);
+      names.sort((a,b)=> a.localeCompare(b));
+      countrySelect.innerHTML = names.map(n=>{
+        const cur = countryCodeMap[n].currency.toUpperCase();
+        return `<option value="${n}">${n} — ${cur}</option>`;
+      }).join('');
+      countrySelect.value = state.country;
+    }
+
+    function populateCryptoSelect(){
+      cryptoSelect.innerHTML = state.cryptoList.map(c=>{
+        return `<option value="${c.id}">${c.symbol} — ${c.name}</option>`;
+      }).join('');
+      cryptoSelect.value = state.selCryptoId;
+    }
+
+    function paintCountry(){
+      const info = countryCodeMap[state.country];
+      state.currency = info.currency;
+      fiatSymbol.textContent = symbol(info.currency);
+      updateMinTrade();
+      buildQuickButtons();
+      paintSelection();
+      if (state.lastEdited==='crypto') recalcFromCrypto(); else recalcFromFiat();
+      paintSummary(); paintBelowMin(); paintButton();
+      // also keep selects synced
+      countrySelect.value = state.country;
+    }
+
+    function paintSelection(){
+      const c = getSelCrypto();
+      cryptoSuffix.textContent = c.symbol;
+    
+      // Use margin-adjusted local rate (changes with Buy/Sell)
+      const dealLocal = tradeRatePerCoin();
+      selPrice.textContent = fmtMoney(dealLocal, state.currency);
+    
+      const ch = Number(c.change24h)||0;
+      selCh.textContent = `${ch>=0?'+':''}${ch.toFixed(2)}%`;
+      selCh.className = 'text-xs ' + (ch>=0?'text-green-400':'text-red-400');
+    }
+
+    function paintSummary(){
+      const has = state.amountCrypto && state.amountFiat && Number(state.amountFiat) >= (MIN_TRADE_USD*getFx(state.currency));
+      summary.classList.toggle('hidden', !has);
+      if(!has) return;
+      sumRate.textContent = fmtRateForSummary();
+      sumAmt.textContent  = `${Number(state.amountCrypto).toFixed(8)} ${getSelCrypto().symbol}`;
+      sumTotal.textContent= fmtMoney(Number(state.amountFiat), state.currency);
+    }
+
+    function paintBelowMin(){
+      const below = !!state.amountFiat && Number(state.amountFiat) > 0 && Number(state.amountFiat) < (MIN_TRADE_USD*getFx(state.currency));
+      belowMin.classList.toggle('hidden', !below);
+    }
+
+    function paintButton(){
+      const disabled = !state.amountCrypto || !state.amountFiat || Number(state.amountFiat) < (MIN_TRADE_USD*getFx(state.currency)) || state.loading;
+      btnTrade.disabled = disabled;
+      btnTrade.innerHTML = state.loading
+        ? `<span class="inline-flex items-center gap-2"><iconify-icon icon="lucide:refresh-cw" class="text-xl animate-spin"></iconify-icon>Preparing Order...</span>`
+        : `<span class="inline-flex items-center gap-2"><iconify-icon icon="lucide:message-circle" class="text-xl"></iconify-icon>Continue to WhatsApp<iconify-icon icon="lucide:external-link" class="text-lg"></iconify-icon></span>`;
+    }
+
+    function showStatus(type, message){
+      statusCard.className = 'surface rounded-2xl p-5 border mt-2 ' + (type==='success' ? 'border-green-500/30 bg-green-500/5' : 'border-red-500/30 bg-red-500/5');
+      statusCard.innerHTML = `
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center ${type==='success'?'bg-green-500/20':'bg-red-500/20'}">
+            <iconify-icon icon="${type==='success'?'lucide:check-circle':'lucide:alert-circle'}" class="${type==='success'?'text-green-400':'text-red-400'} text-xl"></iconify-icon>
+          </div>
+          <div class="flex-1">
+            <p class="font-semibold ${type==='success'?'text-green-400':'text-red-400'}">${type==='success'?'Redirected to WhatsApp!':'Order Failed'}</p>
+            <p class="text-sm muted mt-1">${message}</p>
+          </div>
+        </div>`;
+      statusCard.classList.remove('hidden');
+    }
+
+    function cleanDecimalInput(v){
+      v = String(v||'').replace(/[^\d.]/g,'');
+      const parts = v.split('.');
+      if (parts.length > 2) v = parts[0] + '.' + parts.slice(1).join('');
+      return v;
+    }
+
+    /* ------------------ Conversion ------------------ */
+    function recalcFromCrypto(){
+      const rate = tradeRatePerCoin();
+      const amt  = parseFloat(state.amountCrypto);
+      if (isFinite(amt)){
+        const fiat = amt * rate;
+        const low = lowFracCurrencies.has(state.currency);
+        state.amountFiat = low ? String(Math.round(fiat)) : String((Math.round(fiat*100)/100).toFixed(2));
+        inpFiat.value = state.amountFiat;
+      } else {
+        state.amountFiat = '';
+        inpFiat.value = '';
+      }
+    }
+    function recalcFromFiat(){
+      const rate = tradeRatePerCoin();
+      const fiat = parseFloat(state.amountFiat);
+      if (isFinite(fiat) && rate>0){
+        const amt = fiat / rate;
+        state.amountCrypto = (Math.floor(amt * 1e8) / 1e8).toFixed(8);
+        inpCrypto.value = state.amountCrypto;
+      } else {
+        state.amountCrypto = '';
+        inpCrypto.value = '';
+      }
+    }
+
+    /* ------------------ Live Prices ------------------ */
+    async function fetchLive(){
+      try{
+        const ids = availableCryptos.map(c=>c.id).join(',');
+        const res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${ids}&price_change_percentage=24h`);
+        if(!res.ok) throw new Error('price fetch fail');
+        const data = await res.json();
+        state.cryptoList = availableCryptos.map(c=>{
+          const m = data.find(d=>d.id===c.id);
+          return m ? {...c, price:m.current_price, change24h:(m.price_change_percentage_24h ?? 0)} : c;
+        });
+        populateCryptoSelect(); // keep list in sync
+        paintSelection(); paintSummary();
+      }catch(e){
+        console.warn('Live price fetch error:', e);
+      }
+    }
+
+    /* ------------------ FX Fetch (runtime) ------------------ */
+    // We fetch FX rates against USD via exchangerate.host and update fxRates map.
+    async function fetchFxRates(){
+      try{
+        // build symbol list from countryCodeMap currencies (unique)
+        const syms = Array.from(new Set(Object.values(countryCodeMap).map(x=>x.currency.toUpperCase())));
+        // ensure USD included
+        if (!syms.includes('USD')) syms.push('USD');
+        const symbolsParam = syms.join(',');
+        // example: https://api.exchangerate.host/latest?base=USD&symbols=NGN,ZAR,GHS,AED,TRY,GBP,KES,USD
+        const url = `https://api.exchangerate.host/latest?base=USD&symbols=${symbolsParam}`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('fx fetch failed');
+        const data = await res.json();
+        if (data && data.rates){
+          // update fxRates (lowercase keys)
+          Object.keys(data.rates).forEach(k=>{
+            fxRates[k.toLowerCase()] = Number(data.rates[k]);
+          });
+          // Also ensure USD = 1
+          fxRates.usd = 1;
+          // If there's a NGN backend override prefer that but keep fetched value too
+          await maybeOverrideNGN();
+          // Repaint dependent UI
+          updateMinTrade();
+          buildQuickButtons();
+          paintSelection();
+          if (state.lastEdited==='crypto') recalcFromCrypto(); else recalcFromFiat();
+          paintSummary(); paintBelowMin(); paintButton();
+        }
+      }catch(e){
+        console.warn('FX fetch error:', e);
+      }
+    }
+
+    /* ------------------ Events ------------------ */
+    tabBuy.addEventListener('click', ()=>{
+      state.tradeType='buy';
+      setTabStylesAndFieldOrder();
+      if(state.lastEdited==='crypto') recalcFromCrypto(); else recalcFromFiat();
+      paintSelection();
+      paintSummary(); paintBelowMin(); paintButton();
+    });
+    tabSell.addEventListener('click', ()=>{
+      state.tradeType='sell';
+      setTabStylesAndFieldOrder();
+      if(state.lastEdited==='crypto') recalcFromCrypto(); else recalcFromFiat();
+      paintSelection();
+      paintSummary(); paintBelowMin(); paintButton();
+    });
+
+    countrySelect.addEventListener('change', async ()=>{
+      state.country = countrySelect.value;
+      // refetch FX (keeps rates fresh) and apply NGN override if available
+      await fetchFxRates();
+      paintCountry();
+    });
+
+    cryptoSelect.addEventListener('change', ()=>{
+      state.selCryptoId = cryptoSelect.value;
+      cryptoSuffix.textContent = getSelCrypto().symbol;
+      if (state.lastEdited==='crypto') recalcFromCrypto(); else recalcFromFiat();
+      paintSelection(); paintSummary(); paintBelowMin(); paintButton();
+    });
+
+    inpCrypto.addEventListener('input', ()=>{
+      state.amountCrypto = cleanDecimalInput(inpCrypto.value);
+      state.lastEdited = 'crypto';
+      recalcFromCrypto(); paintSummary(); paintBelowMin(); paintButton();
+    });
+    inpFiat.addEventListener('input', ()=>{
+      state.amountFiat = cleanDecimalInput(inpFiat.value);
+      state.lastEdited = 'fiat';
+      recalcFromFiat(); paintSummary(); paintBelowMin(); paintButton();
+    });
+    
+
+    // ---- Trade endpoint (absolute path under /dashboard) ----
+    const TRADE_ENDPOINT = '/dashboard/api/trades/create.php';
+    
+    // Trade action + server create (fire-and-forget) + WhatsApp
+    function genClientOrderId(){
+      const ts = Date.now();
+      const rand = Math.floor(Math.random()*9000)+1000;
+      return `SFPF-${ts}-${rand}`;
+    }
+    
+    async function createOrder(payload, { debug=false } = {}) {
+      try {
+        const body = JSON.stringify(payload);
+        const url  = `${TRADE_ENDPOINT}${debug ? '?debug=1' : ''}&v=${Date.now()}`;
+    
+        // In normal mode: try Beacon first (non-blocking)
+        if (!debug && navigator.sendBeacon) {
+          const ok = navigator.sendBeacon(url, new Blob([body], { type: 'application/json' }));
+          if (ok) return { queued:true };
+        }
+    
+        // In debug mode: we AWAIT the response and log it
+        const resp = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type':'application/json', 'X-Requested-With':'XMLHttpRequest' },
+          body,
+          credentials:'same-origin',
+          keepalive: !debug,
+          cache: 'no-store'
+        });
+    
+        let json = null;
+        try { json = await resp.json(); } catch{}
+        if (debug) console.log('trade/create resp', resp.status, json);
+        return { queued:false, status:resp.status, json };
+      } catch (e) {
+        if (debug) console.error('trade/create error', e);
+        return { queued:false, error:true };
+      }
+    }
+    
+    btnTrade.addEventListener('click', async ()=>{
+      if (!state.amountCrypto || !state.amountFiat || Number(state.amountFiat) < (MIN_TRADE_USD * getFx(state.currency)) || state.loading) return;
+    
+      statusCard.classList.add('hidden');
+      state.loading = true; 
+      paintButton();
+    
+      const c = getSelCrypto();
+      const action  = state.tradeType === 'buy' ? 'Buy' : 'Sell';
+      const orderId = genClientOrderId();
+    
+      // Map local currency -> USD for backend (DB stores USD)
+      const fx = getFx(state.currency); // currency per 1 USD
+      const amountUsd      = Number((Number(state.amountFiat) / fx).toFixed(2));      // USD total
+      const rateUsdPerCoin = Number((tradeRatePerCoin() / fx).toFixed(2));            // USD per coin
+    
+      // Send to backend immediately (backend persists + emails)
+      const payload = {
+        // required for persistence
+        type: state.tradeType,
+        cryptoId: c.id,
+        symbol: c.symbol,
+        name: c.name,
+        amountCrypto: Number(state.amountCrypto),
+        amountUsd: amountUsd,                 // USD total
+        rate: rateUsdPerCoin,                 // USD per coin
+    
+        // context we also store
+        orderId,                              // client-facing ID -> client_order_id
+        currency: state.currency.toUpperCase(),
+        amountFiat: Number(state.amountFiat), // local currency total
+        rateLocalPerCoin: Number(tradeRatePerCoin()),
+        country: state.country,
+        fx,                                   // currency per USD (for reference)
+        clientTz: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        marginApplied: getActiveMargin()
+      };
+      createOrder(payload, { debug: true });
+    
+      // WhatsApp message carries the same orderId
+      const msg = `🚀 *Crypto Exchange Order Request* (ID: ${orderId})\n\n`+
+                  `📋 *Order Details:*\n`+
+                  `• Action: ${action} ${c.name} (${c.symbol})\n`+
+                  `• Amount: ${Number(state.amountCrypto).toFixed(8)} ${c.symbol}\n`+
+                  `• Total: ${fmtMoney(Number(state.amountFiat), state.currency)}\n`+
+                  `• Rate: ${fmtMoney(tradeRatePerCoin(), state.currency)} per ${c.symbol}\n`+
+                  `• Country/Currency: ${state.country} (${state.currency.toUpperCase()})\n\n`+
+                  `Please confirm this order and provide payment instructions. Thank you!`;
+    
+      const url = `https://wa.me/447498349775?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+    
+      state.loading = false; 
+      paintButton();
+      showStatus('success', `Order *${orderId}* created. Your ${state.tradeType} request for ${Number(state.amountCrypto).toFixed(8)} ${c.symbol} was sent to WhatsApp. Continue there to complete.`);
+    
+      setTimeout(()=>{
+        state.amountCrypto=''; 
+        state.amountFiat=''; 
+        inpCrypto.value=''; 
+        inpFiat.value=''; 
+        paintSummary(); 
+        paintBelowMin(); 
+        paintButton(); 
+      }, 4000);
+    });
+
+
+    /* ------------------ Init ------------------ */
+    (async function init(){
+      const def = 'Nigeria';
+      state.country = def;
+      state.currency = countryCodeMap[def].currency;
+
+      // initial UI
+      populateCountrySelect();
+      populateCryptoSelect();
+      setTabStylesAndFieldOrder();
+      // Fetch FX and NGN override, then paint UI
+      await fetchFxRates();
+      await maybeOverrideNGN();
+      paintCountry();
+      paintSelection();
+      paintSummary();
+      fetchLive();
+      // refresh every minute for crypto and every 5 minutes for FX
+      setInterval(fetchLive, 60000);
+      setInterval(fetchFxRates, 5 * 60 * 1000);
+      window.addEventListener('pageshow', (e)=>{ if(e.persisted){ fetchLive(); fetchFxRates(); } });
+    })();
+  </script>
+
+
+</body></html>

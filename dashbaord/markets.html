@@ -1,0 +1,790 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SFPF Global – Cryptocurrency Market</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/logo.png" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- OPTIONAL: CoinGecko demo key (leave empty if you don’t have one) -->
+  <meta name="cg-api-key" content="">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify (Lucide icons) -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <style>
+    :root{
+      --brand:#FEFD0C;
+      --bg:#000;
+      --surface: rgba(0,0,0,.70);
+      --surface2: rgba(255,255,255,.05);
+      --border: rgba(255,255,255,.10);
+      --border2: rgba(254,253,12,.30);
+    }
+    body{ background:var(--bg); color:#fff; font-family:Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    .surface { background: var(--surface); backdrop-filter: blur(18px); border:1px solid var(--border); }
+    .surface-light{ background: var(--surface2); backdrop-filter: blur(12px); border:1px solid var(--border); }
+    .surface-hover:hover{ background: rgba(0,0,0,.80); border-color: var(--border2); }
+    .ring-brand:focus{ outline:none; box-shadow:0 0 0 3px rgba(254,253,12,.45); }
+    .glow{ box-shadow:0 0 18px rgba(254,253,12,.28); }
+    .brand-grad{ background-image: linear-gradient(90deg, #FEFD0C, #F5F500); }
+    .badge { background: rgba(254,253,12,.12); color: var(--brand); }
+    .muted{ color:#AEB0B5; }
+    .muted-2{ color:#9CA3AF; }
+    .success{ color:#34d399; }
+    .error{ color:#f87171; }
+    th, td { white-space: nowrap; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .spin { animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.left-3{left:0.75rem}.top-2\.5{top:0.625rem}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.mb-8{margin-bottom:2rem}.mb-4{margin-bottom:1rem}.mb-2{margin-bottom:0.5rem}.mb-6{margin-bottom:1.5rem}.mb-1{margin-bottom:0.25rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-6{margin-top:1.5rem}.ml-1{margin-left:0.25rem}.inline-block{display:inline-block}.inline{display:inline}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-2{height:0.5rem}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-12{width:3rem}.w-16{width:4rem}.w-24{width:6rem}.max-w-7xl{max-width:80rem}.flex-1{flex:1 1 0%}.table-auto{table-layout:auto}.border-collapse{border-collapse:collapse}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-3{gap:0.75rem}.gap-1{gap:0.25rem}.gap-4{gap:1rem}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-white\/15{border-color:rgb(255 255 255 / 0.15)}.border-white\/5{border-color:rgb(255 255 255 / 0.05)}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.p-2{padding:0.5rem}.p-8{padding:2rem}.p-6{padding:1.5rem}.p-4{padding:1rem}.px-4{padding-left:1rem;padding-right:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pl-10{padding-left:2.5rem}.pr-4{padding-right:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-base{font-size:1rem;line-height:1.5rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-extrabold{font-weight:800}.font-semibold{font-weight:600}.font-bold{font-weight:700}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-\[color\:var\(--brand\)\]{color:var(--brand)}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-white\/30{color:rgb(255 255 255 / 0.3)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-white\/10:hover{background-color:rgb(255 255 255 / 0.1)}.hover\:text-\[color\:var\(--brand\)\]:hover{color:var(--brand)}.hover\:opacity-90:hover{opacity:0.9}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-yellow-400:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(250 204 21 / var(--tw-ring-opacity, 1))}@media (min-width: 768px){.md\:w-1\/3{width:33.333333%}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}.md\:justify-between{justify-content:space-between}.md\:px-8{padding-left:2rem;padding-right:2rem}.md\:text-left{text-align:left}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}</style></head>
+<body>
+  <div class="min-h-screen px-4 py-8 md:px-8">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Header -->
+      <header class="flex items-center justify-between mb-8">
+
+        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-center md:text-left flex-1">
+          Cryptocurrency Market
+        </h1>
+
+        <button id="btn-refresh" class="p-2 rounded-full hover:bg-white/10 transition ring-brand" aria-label="Refresh data">
+          <iconify-icon id="ico-refresh" icon="lucide:refresh-cw" class="text-white text-xl"></iconify-icon>
+        </button>
+      </header>
+
+      <!-- Loading -->
+      <section id="loading" class="surface rounded-xl border p-8 text-center hidden">
+        <iconify-icon icon="lucide:loader-2" class="text-[color:var(--brand)] text-5xl spin inline-block mb-4"></iconify-icon>
+        <h3 class="text-lg font-semibold mb-2">Loading Market Data</h3>
+        <p class="muted">Fetching latest cryptocurrency prices...</p>
+      </section>
+
+      <!-- Error -->
+      <section id="error" class="surface rounded-xl border p-8 text-center hidden">
+        <iconify-icon icon="lucide:alert-circle" class="text-red-400 text-5xl inline-block mb-4"></iconify-icon>
+        <h3 class="text-lg font-semibold mb-2">Failed to Load Data</h3>
+        <p id="error-msg" class="muted mb-4">Live data unavailable. Showing cached/seed data.</p>
+        <button id="btn-retry" class="px-4 py-2 rounded-lg font-semibold text-black brand-grad hover:opacity-90 transition">
+          Try Again
+        </button>
+      </section>
+
+      <!-- Content -->
+      <div id="content" class="">
+
+        <!-- Market Overview -->
+        <section class="surface rounded-xl border p-6 relative overflow-hidden mb-6">
+          <div class="absolute inset-0 bg-gradient-to-br from-[color:var(--brand)]/6 via-transparent to-transparent pointer-events-none"></div>
+          <div class="relative z-10">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2 rounded-lg brand-grad glow">
+                <iconify-icon icon="lucide:activity" class="text-black text-xl"></iconify-icon>
+              </div>
+              <div>
+                <h2 class="text-lg font-bold">Market Overview</h2>
+                <p class="text-sm muted">Global cryptocurrency statistics</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div class="surface-light rounded-lg p-4">
+                <p class="text-sm muted mb-1">Total Market Cap</p>
+                <p id="stat-mcap" class="text-xl font-bold">$2.10T</p>
+                <div class="flex items-center gap-1 mt-1" id="stat-mcap-ch-wrap">
+                  <iconify-icon id="stat-mcap-ico" icon="lucide:trending-up" class="success text-base"></iconify-icon>
+                  <span id="stat-mcap-ch" class="text-sm font-medium success">+0.3%</span>
+                </div>
+              </div>
+
+              <div class="surface-light rounded-lg p-4">
+                <p class="text-sm muted mb-1">24h Volume</p>
+                <p id="stat-vol" class="text-xl font-bold">$107.1B</p>
+                <p class="text-sm muted mt-1">Across exchanges</p>
+              </div>
+
+              <div class="surface-light rounded-lg p-4">
+                <p class="text-sm muted mb-1">BTC Dominance</p>
+                <p id="stat-btc" class="text-xl font-bold">63.7%</p>
+                <div class="w-full bg-black/40 rounded-full h-2 mt-2 border border-[color:var(--brand)]/20 overflow-hidden">
+                  <div id="stat-btc-bar" class="brand-grad h-2 rounded-full glow" style="width: 63.7%;"></div>
+                </div>
+              </div>
+
+              <div class="surface-light rounded-lg p-4">
+                <p class="text-sm muted mb-1">Active Coins</p>
+                <p id="stat-active" class="text-xl font-bold">9,000</p>
+                <p id="stat-eth" class="text-sm muted mt-1">ETH: 20.0%</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Search + Sort -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
+          <div class="relative w-full md:w-1/3">
+            <input id="search" type="search" placeholder="Search by name or symbol" class="surface w-full rounded-lg py-2 pl-10 pr-4 border focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            <iconify-icon icon="lucide:search" class="text-[color:var(--brand)] text-xl absolute left-3 top-2.5"></iconify-icon>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <select id="sort-by" class="surface px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-yellow-400">
+              <option value="rank">Sort by Rank</option>
+              <option value="price">Sort by Price</option>
+              <option value="change">Sort by 24h Change</option>
+              <option value="volume">Sort by Volume</option>
+              <option value="marketCap">Sort by Market Cap</option>
+            </select>
+            <button id="btn-clear" class="surface px-4 py-2 rounded-lg border hover:border-[color:var(--brand)]/30 transition">
+              Clear Search
+            </button>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <section class="surface rounded-xl border p-6 overflow-x-auto">
+          <table class="w-full table-auto border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-white/15">
+                <th class="text-left py-2 px-3 w-12 cursor-pointer" data-sort="rank">#</th>
+                <th class="text-left py-2 px-3 w-12"></th>
+                <th class="text-left py-2 px-3">Name</th>
+                <th class="text-right py-2 px-3 cursor-pointer" data-sort="price">Price</th>
+                <th class="text-right py-2 px-3 cursor-pointer" data-sort="change">24h %</th>
+                <th class="text-right py-2 px-3 cursor-pointer" data-sort="volume">Volume 24h</th>
+                <th class="text-right py-2 px-3 cursor-pointer" data-sort="marketCap">Market Cap</th>
+                <th class="text-center py-2 px-3 w-24">7d Chart</th>
+                <th class="text-center py-2 px-3 w-16">Watch</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+          <tr class="border-b border-white/5 surface-hover transition">
+            <td class="py-3 px-3 text-[color:var(--brand)] font-semibold">1</td>
+            <td class="py-3 px-3 text-lg">₿</td>
+            <td class="py-3 px-3">
+              <div class="font-semibold">Bitcoin</div>
+              <div class="uppercase text-xs tracking-wide muted">BTC</div>
+            </td>
+            <td class="py-3 px-3 text-right mono">$68,000</td>
+            <td class="py-3 px-3 text-right font-semibold success">
+              <iconify-icon icon="lucide:trending-up" class="inline text-base"></iconify-icon>
+              <span class="ml-1">0.80%</span>
+            </td>
+            <td class="py-3 px-3 text-right mono">$32.0B</td>
+            <td class="py-3 px-3 text-right mono">$1.34T</td>
+            <td class="py-3 px-3 text-center"><svg width="60" height="20" viewBox="0 0 60 20" aria-hidden="true">
+                <polyline points="0,20 10,16.666666666666668 20,13.333333333333334 30,6.666666666666668 40,10 50,3.333333333333332 60,0" fill="none" stroke="#34d399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg></td>
+            <td class="py-3 px-3 text-center">
+              <button class="watch-btn" data-id="bitcoin" aria-label="Add to watchlist">
+                <iconify-icon icon="lucide:star" class="text-white/30 hover:text-[color:var(--brand)] text-xl transition"></iconify-icon>
+              </button>
+            </td>
+          </tr>
+          <tr class="border-b border-white/5 surface-hover transition">
+            <td class="py-3 px-3 text-[color:var(--brand)] font-semibold">2</td>
+            <td class="py-3 px-3 text-lg">Ξ</td>
+            <td class="py-3 px-3">
+              <div class="font-semibold">Ethereum</div>
+              <div class="uppercase text-xs tracking-wide muted">ETH</div>
+            </td>
+            <td class="py-3 px-3 text-right mono">$3,500</td>
+            <td class="py-3 px-3 text-right font-semibold success">
+              <iconify-icon icon="lucide:trending-up" class="inline text-base"></iconify-icon>
+              <span class="ml-1">1.20%</span>
+            </td>
+            <td class="py-3 px-3 text-right mono">$15.0B</td>
+            <td class="py-3 px-3 text-right mono">$420.0B</td>
+            <td class="py-3 px-3 text-center"><svg width="60" height="20" viewBox="0 0 60 20" aria-hidden="true">
+                <polyline points="0,20 10,15 20,10 30,8 40,5 50,2 60,0" fill="none" stroke="#34d399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg></td>
+            <td class="py-3 px-3 text-center">
+              <button class="watch-btn" data-id="ethereum" aria-label="Add to watchlist">
+                <iconify-icon icon="lucide:star" class="text-white/30 hover:text-[color:var(--brand)] text-xl transition"></iconify-icon>
+              </button>
+            </td>
+          </tr>
+          <tr class="border-b border-white/5 surface-hover transition">
+            <td class="py-3 px-3 text-[color:var(--brand)] font-semibold">3</td>
+            <td class="py-3 px-3 text-lg">₮</td>
+            <td class="py-3 px-3">
+              <div class="font-semibold">Tether</div>
+              <div class="uppercase text-xs tracking-wide muted">USDT</div>
+            </td>
+            <td class="py-3 px-3 text-right mono">$1.00</td>
+            <td class="py-3 px-3 text-right font-semibold success">
+              <iconify-icon icon="lucide:trending-up" class="inline text-base"></iconify-icon>
+              <span class="ml-1">0.00%</span>
+            </td>
+            <td class="py-3 px-3 text-right mono">$50.0B</td>
+            <td class="py-3 px-3 text-right mono">$110.0B</td>
+            <td class="py-3 px-3 text-center"></td>
+            <td class="py-3 px-3 text-center">
+              <button class="watch-btn" data-id="tether" aria-label="Add to watchlist">
+                <iconify-icon icon="lucide:star" class="text-white/30 hover:text-[color:var(--brand)] text-xl transition"></iconify-icon>
+              </button>
+            </td>
+          </tr>
+          <tr class="border-b border-white/5 surface-hover transition">
+            <td class="py-3 px-3 text-[color:var(--brand)] font-semibold">4</td>
+            <td class="py-3 px-3 text-lg">Ⓑ</td>
+            <td class="py-3 px-3">
+              <div class="font-semibold">BNB</div>
+              <div class="uppercase text-xs tracking-wide muted">BNB</div>
+            </td>
+            <td class="py-3 px-3 text-right mono">$600.00</td>
+            <td class="py-3 px-3 text-right font-semibold error">
+              <iconify-icon icon="lucide:trending-down" class="inline text-base"></iconify-icon>
+              <span class="ml-1">-0.40%</span>
+            </td>
+            <td class="py-3 px-3 text-right mono">$2.5B</td>
+            <td class="py-3 px-3 text-right mono">$90.0B</td>
+            <td class="py-3 px-3 text-center"><svg width="60" height="20" viewBox="0 0 60 20" aria-hidden="true">
+                <polyline points="0,0 10,10 20,4 30,6 40,8 50,16 60,20" fill="none" stroke="#f87171" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg></td>
+            <td class="py-3 px-3 text-center">
+              <button class="watch-btn" data-id="binancecoin" aria-label="Add to watchlist">
+                <iconify-icon icon="lucide:star" class="text-white/30 hover:text-[color:var(--brand)] text-xl transition"></iconify-icon>
+              </button>
+            </td>
+          </tr>
+          <tr class="border-b border-white/5 surface-hover transition">
+            <td class="py-3 px-3 text-[color:var(--brand)] font-semibold">5</td>
+            <td class="py-3 px-3 text-lg">◎</td>
+            <td class="py-3 px-3">
+              <div class="font-semibold">Solana</div>
+              <div class="uppercase text-xs tracking-wide muted">SOL</div>
+            </td>
+            <td class="py-3 px-3 text-right mono">$160.00</td>
+            <td class="py-3 px-3 text-right font-semibold error">
+              <iconify-icon icon="lucide:trending-down" class="inline text-base"></iconify-icon>
+              <span class="ml-1">-2.10%</span>
+            </td>
+            <td class="py-3 px-3 text-right mono">$3.8B</td>
+            <td class="py-3 px-3 text-right mono">$72.0B</td>
+            <td class="py-3 px-3 text-center"><svg width="60" height="20" viewBox="0 0 60 20" aria-hidden="true">
+                <polyline points="0,0 10,4 20,10 30,16 40,18 50,20 60,20" fill="none" stroke="#f87171" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg></td>
+            <td class="py-3 px-3 text-center">
+              <button class="watch-btn" data-id="solana" aria-label="Add to watchlist">
+                <iconify-icon icon="lucide:star" class="text-white/30 hover:text-[color:var(--brand)] text-xl transition"></iconify-icon>
+              </button>
+            </td>
+          </tr>
+          <tr class="border-b border-white/5 surface-hover transition">
+            <td class="py-3 px-3 text-[color:var(--brand)] font-semibold">6</td>
+            <td class="py-3 px-3 text-lg">Ⓧ</td>
+            <td class="py-3 px-3">
+              <div class="font-semibold">XRP</div>
+              <div class="uppercase text-xs tracking-wide muted">XRP</div>
+            </td>
+            <td class="py-3 px-3 text-right mono">$0.6200</td>
+            <td class="py-3 px-3 text-right font-semibold success">
+              <iconify-icon icon="lucide:trending-up" class="inline text-base"></iconify-icon>
+              <span class="ml-1">0.70%</span>
+            </td>
+            <td class="py-3 px-3 text-right mono">$1.8B</td>
+            <td class="py-3 px-3 text-right mono">$34.0B</td>
+            <td class="py-3 px-3 text-center"><svg width="60" height="20" viewBox="0 0 60 20" aria-hidden="true">
+                <polyline points="0,20 10,15 20,10 30,5 40,2 50,0 60,0" fill="none" stroke="#34d399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg></td>
+            <td class="py-3 px-3 text-center">
+              <button class="watch-btn" data-id="ripple" aria-label="Add to watchlist">
+                <iconify-icon icon="lucide:star" class="text-white/30 hover:text-[color:var(--brand)] text-xl transition"></iconify-icon>
+              </button>
+            </td>
+          </tr>
+          <tr class="border-b border-white/5 surface-hover transition">
+            <td class="py-3 px-3 text-[color:var(--brand)] font-semibold">7</td>
+            <td class="py-3 px-3 text-lg">Ð</td>
+            <td class="py-3 px-3">
+              <div class="font-semibold">Dogecoin</div>
+              <div class="uppercase text-xs tracking-wide muted">DOGE</div>
+            </td>
+            <td class="py-3 px-3 text-right mono">$0.1500</td>
+            <td class="py-3 px-3 text-right font-semibold error">
+              <iconify-icon icon="lucide:trending-down" class="inline text-base"></iconify-icon>
+              <span class="ml-1">-1.00%</span>
+            </td>
+            <td class="py-3 px-3 text-right mono">$1.2B</td>
+            <td class="py-3 px-3 text-right mono">$21.0B</td>
+            <td class="py-3 px-3 text-center"><svg width="60" height="20" viewBox="0 0 60 20" aria-hidden="true">
+                <polyline points="0,0 10,4 20,6 30,8 40,10 50,16 60,20" fill="none" stroke="#f87171" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg></td>
+            <td class="py-3 px-3 text-center">
+              <button class="watch-btn" data-id="dogecoin" aria-label="Add to watchlist">
+                <iconify-icon icon="lucide:star" class="text-white/30 hover:text-[color:var(--brand)] text-xl transition"></iconify-icon>
+              </button>
+            </td>
+          </tr>
+          <tr class="border-b border-white/5 surface-hover transition">
+            <td class="py-3 px-3 text-[color:var(--brand)] font-semibold">8</td>
+            <td class="py-3 px-3 text-lg">₳</td>
+            <td class="py-3 px-3">
+              <div class="font-semibold">Cardano</div>
+              <div class="uppercase text-xs tracking-wide muted">ADA</div>
+            </td>
+            <td class="py-3 px-3 text-right mono">$0.4800</td>
+            <td class="py-3 px-3 text-right font-semibold success">
+              <iconify-icon icon="lucide:trending-up" class="inline text-base"></iconify-icon>
+              <span class="ml-1">0.30%</span>
+            </td>
+            <td class="py-3 px-3 text-right mono">$800.0M</td>
+            <td class="py-3 px-3 text-right mono">$17.0B</td>
+            <td class="py-3 px-3 text-center"><svg width="60" height="20" viewBox="0 0 60 20" aria-hidden="true">
+                <polyline points="0,20 10,14.999999999999986 20,10.000000000000028 30,5.000000000000014 40,0 50,0 60,0" fill="none" stroke="#34d399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg></td>
+            <td class="py-3 px-3 text-center">
+              <button class="watch-btn" data-id="cardano" aria-label="Add to watchlist">
+                <iconify-icon icon="lucide:star" class="text-white/30 hover:text-[color:var(--brand)] text-xl transition"></iconify-icon>
+              </button>
+            </td>
+          </tr></tbody>
+          </table>
+
+          <div class="mt-6 text-center">
+            <p class="text-sm muted">Data source: CoinGecko / CoinCap • Last updated:
+              <span id="last-updated">5:49:34 PM</span>
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---------- Config / State ----------
+    const CG_API = 'https://api.coingecko.com/api/v3';
+    const CC_API = 'https://api.coincap.io/v2';
+    const CG_KEY = (document.querySelector('meta[name="cg-api-key"]')?.content || '').trim();
+
+    const state = {
+      coins: [],
+      stats: null,
+      search: '',
+      sortBy: 'rank',
+      sortOrder: 'asc',
+      watchlist: new Set(),
+      refreshing: false
+    };
+
+    // ---------- Utils ----------
+    const dom = (s)=>document.querySelector(s);
+    const fmtPrice = (p)=>{
+      if (p >= 1000) return '$' + p.toLocaleString(undefined,{minimumFractionDigits:0, maximumFractionDigits:0});
+      if (p >= 1) return '$' + p.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2});
+      if (p >= 0.01) return '$' + p.toFixed(4);
+      return '$' + p.toFixed(6);
+    };
+    const fmtMC = (v)=>{
+      if (v >= 1e12) return '$' + (v/1e12).toFixed(2) + 'T';
+      if (v >= 1e9)  return '$' + (v/1e9).toFixed(1) + 'B';
+      if (v >= 1e6)  return '$' + (v/1e6).toFixed(1) + 'M';
+      return '$' + Number(v||0).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).replace('$','');
+    };
+    const fmtVol = (v)=>{
+      if (v >= 1e9) return '$' + (v/1e9).toFixed(1) + 'B';
+      if (v >= 1e6) return '$' + (v/1e6).toFixed(1) + 'M';
+      if (v >= 1e3) return '$' + (v/1e3).toFixed(1) + 'K';
+      return '$' + (v||0).toLocaleString();
+    };
+    const coinGlyph = (sym)=>{
+      const map = {BTC:'₿', ETH:'Ξ', USDT:'₮', BNB:'Ⓑ', SOL:'◎', XRP:'Ⓧ', USDC:'$', DOGE:'Ð', ADA:'₳',
+                   TRX:'⚡', LINK:'🔗', AVAX:'🔺', LTC:'Ł', SUI:'🌊', DOT:'●', MATIC:'🔷', UNI:'🦄',
+                   ATOM:'⚛️', ALGO:'🔷', VET:'💎', ICP:'∞', FIL:'📁', APT:'🅰️', NEAR:'🔴', AAVE:'👻',
+                   GRT:'📊', SAND:'🏝️', MANA:'🏛️', CRO:'🔺', LDO:'🔷'};
+      return map[String(sym||'').toUpperCase()] || '🪙';
+    };
+    const lsGet = (k, d)=>{ try{ const v = localStorage.getItem(k); return v? JSON.parse(v): d; }catch{ return d; } };
+    const lsSet = (k, v)=>{ try{ localStorage.setItem(k, JSON.stringify(v)); }catch{} };
+
+    // small helper with timeout
+    async function fetchJSON(url, {headers={}, timeout=9000}={}){
+      const ctrl = new AbortController();
+      const t = setTimeout(()=>ctrl.abort(), timeout);
+      try{
+        const res = await fetch(url, { headers: { 'Accept':'application/json', ...headers }, signal: ctrl.signal, cache:'no-store' });
+        if(!res.ok) throw new Error(`HTTP ${res.status}`);
+        return await res.json();
+      } finally { clearTimeout(t); }
+    }
+
+    // ---------- Fallback seeds ----------
+    const SEED = {
+      coins: [
+        {id:'bitcoin', symbol:'BTC', name:'Bitcoin', price:68000, change24h:0.8, volume24h:32000000000, marketCap:1340000000000, rank:1, icon:coinGlyph('BTC'), sparklineData:[65000,65500,66000,67000,66500,67500,68000]},
+        {id:'ethereum', symbol:'ETH', name:'Ethereum', price:3500, change24h:1.2, volume24h:15000000000, marketCap:420000000000, rank:2, icon:coinGlyph('ETH'), sparklineData:[3300,3350,3400,3420,3450,3480,3500]},
+        {id:'tether', symbol:'USDT', name:'Tether', price:1.00, change24h:0.0, volume24h:50000000000, marketCap:110000000000, rank:3, icon:coinGlyph('USDT'), sparklineData:[]},
+        {id:'binancecoin', symbol:'BNB', name:'BNB', price:600, change24h:-0.4, volume24h:2500000000, marketCap:90000000000, rank:4, icon:coinGlyph('BNB'), sparklineData:[610,605,608,607,606,602,600]},
+        {id:'solana', symbol:'SOL', name:'Solana', price:160, change24h:-2.1, volume24h:3800000000, marketCap:72000000000, rank:5, icon:coinGlyph('SOL'), sparklineData:[170,168,165,162,161,160,160]},
+        {id:'ripple', symbol:'XRP', name:'XRP', price:0.62, change24h:0.7, volume24h:1800000000, marketCap:34000000000, rank:6, icon:coinGlyph('XRP'), sparklineData:[0.6,0.605,0.61,0.615,0.618,0.62,0.62]},
+        {id:'dogecoin', symbol:'DOGE', name:'Dogecoin', price:0.15, change24h:-1.0, volume24h:1200000000, marketCap:21000000000, rank:7, icon:coinGlyph('DOGE'), sparklineData:[0.16,0.158,0.157,0.156,0.155,0.152,0.15]},
+        {id:'cardano', symbol:'ADA', name:'Cardano', price:0.48, change24h:0.3, volume24h:800000000, marketCap:17000000000, rank:8, icon:coinGlyph('ADA'), sparklineData:[0.46,0.465,0.47,0.475,0.48,0.48,0.48]}
+      ]
+    };
+    SEED.stats = (()=> {
+      const mcap = SEED.coins.reduce((s,c)=>s+(c.marketCap||0),0);
+      const vol  = SEED.coins.reduce((s,c)=>s+(c.volume24h||0),0);
+      const btc  = (SEED.coins.find(c=>c.symbol==='BTC')?.marketCap||0) / mcap * 100;
+      const eth  = (SEED.coins.find(c=>c.symbol==='ETH')?.marketCap||0) / mcap * 100;
+      return {
+        totalMarketCap: mcap,
+        totalVolume24h: vol,
+        btcDominance: isFinite(btc)? btc : 0,
+        ethDominance: isFinite(eth)? eth : 0,
+        marketCapChange24h: 0.3,
+        activeCryptocurrencies: 9000
+      };
+    })();
+
+    // ---------- DOM refs ----------
+    const elLoading = dom('#loading');
+    const elError = dom('#error');
+    const elErrorMsg = dom('#error-msg');
+    const elContent = dom('#content');
+    const elMC = dom('#stat-mcap');
+    const elMCCh = dom('#stat-mcap-ch');
+    const elMCIcon = dom('#stat-mcap-ico');
+    const elVol = dom('#stat-vol');
+    const elBTC = dom('#stat-btc');
+    const elBTCBar = dom('#stat-btc-bar');
+    const elActive = dom('#stat-active');
+    const elEth = dom('#stat-eth');
+    const elTbody = dom('#tbody');
+    const elSearch = dom('#search');
+    const elSortBy = dom('#sort-by');
+    const elLast = dom('#last-updated');
+    const elRefresh = dom('#btn-refresh');
+    const elRefreshIcon = dom('#ico-refresh');
+
+    // ---------- Data fetchers ----------
+    async function fetchFromCoinGecko(){
+      const headers = CG_KEY ? { 'x-cg-demo-api-key': CG_KEY } : {};
+      const global = await fetchJSON(`${CG_API}/global`, { headers, timeout: 9000 });
+      const coins  = await fetchJSON(`${CG_API}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=24h`, { headers, timeout: 9000 });
+
+      const stats = {
+        totalMarketCap: global?.data?.total_market_cap?.usd || 0,
+        totalVolume24h: global?.data?.total_volume?.usd || 0,
+        btcDominance: global?.data?.market_cap_percentage?.btc || 0,
+        ethDominance: global?.data?.market_cap_percentage?.eth || 0,
+        marketCapChange24h: global?.data?.market_cap_change_percentage_24h_usd || 0,
+        activeCryptocurrencies: global?.data?.active_cryptocurrencies || 0
+      };
+
+      const mapped = coins.map(c=>({
+        id: c.id,
+        symbol: String(c.symbol||'').toUpperCase(),
+        name: c.name,
+        price: c.current_price,
+        change24h: c.price_change_percentage_24h ?? 0,
+        volume24h: c.total_volume,
+        marketCap: c.market_cap,
+        rank: c.market_cap_rank,
+        icon: coinGlyph(c.symbol),
+        sparklineData: (c.sparkline_in_7d?.price || []).slice(-30)
+      }));
+
+      return { stats, coins: mapped, source: 'coingecko' };
+    }
+
+    async function fetchFromCoinCap(){
+      const assets = await fetchJSON(`${CC_API}/assets?limit=50`, { timeout: 9000 });
+      const list = (assets?.data || []).map((a, i)=>({
+        id: a.id,
+        symbol: String(a.symbol||'').toUpperCase(),
+        name: a.name,
+        price: Number(a.priceUsd || 0),
+        change24h: Number(a.changePercent24Hr || 0),
+        volume24h: Number(a.volumeUsd24Hr || 0),
+        marketCap: Number(a.marketCapUsd || 0),
+        rank: Number(a.rank || i+1),
+        icon: coinGlyph(a.symbol),
+        sparklineData: [] // keeping light; could fetch history if needed
+      }));
+
+      // compute “global” approx from top 50
+      const totalMC = list.reduce((s,c)=>s+(c.marketCap||0),0);
+      const totalVol = list.reduce((s,c)=>s+(c.volume24h||0),0);
+      const btcMC = list.find(c=>c.symbol==='BTC')?.marketCap || 0;
+      const ethMC = list.find(c=>c.symbol==='ETH')?.marketCap || 0;
+
+      const stats = {
+        totalMarketCap: totalMC,
+        totalVolume24h: totalVol,
+        btcDominance: totalMC ? (btcMC/totalMC*100) : 0,
+        ethDominance: totalMC ? (ethMC/totalMC*100) : 0,
+        marketCapChange24h: 0,
+        activeCryptocurrencies: 0
+      };
+
+      return { stats, coins: list, source: 'coincap' };
+    }
+
+    async function fetchMarket(){
+      // 1) Try CoinGecko
+      try {
+        const payload = await fetchFromCoinGecko();
+        lsSet('market.cache', { t: Date.now(), payload });
+        return payload;
+      } catch (e1) {
+        console.warn('CoinGecko failed:', e1?.message || e1);
+      }
+
+      // 2) Try CoinCap
+      try {
+        const payload = await fetchFromCoinCap();
+        lsSet('market.cache', { t: Date.now(), payload });
+        return payload;
+      } catch (e2) {
+        console.warn('CoinCap failed:', e2?.message || e2);
+      }
+
+      // 3) Fallback to cache, then seeds
+      const cached = lsGet('market.cache', null);
+      if (cached?.payload) {
+        return { ...cached.payload, source: (cached.payload.source || 'cache') };
+      }
+      return { stats: SEED.stats, coins: SEED.coins, source: 'seed' };
+    }
+
+    // ---------- Render ----------
+    function paintStats(){
+      const s = state.stats;
+      if(!s) return;
+      elMC.textContent = fmtMC(s.totalMarketCap);
+      elVol.textContent = fmtVol(s.totalVolume24h);
+      elBTC.textContent = (s.btcDominance).toFixed(1) + '%';
+      elBTCBar.style.width = (s.btcDominance).toFixed(1) + '%';
+      elActive.textContent = (s.activeCryptocurrencies||0).toLocaleString();
+      elEth.textContent = 'ETH: ' + (s.ethDominance||0).toFixed(1) + '%';
+
+      const ch = s.marketCapChange24h || 0;
+      elMCCh.textContent = (ch>=0?'+':'') + Math.abs(ch).toFixed(1) + '%';
+      elMCCh.classList.toggle('success', ch>=0);
+      elMCCh.classList.toggle('error', ch<0);
+      elMCIcon.setAttribute('icon', ch>=0 ? 'lucide:trending-up' : 'lucide:trending-down');
+      elMCIcon.classList.toggle('success', ch>=0);
+      elMCIcon.classList.toggle('error', ch<0);
+    }
+
+    function sparklineSVG(data){
+      if(!data || !data.length) return '';
+      const max = Math.max(...data);
+      const min = Math.min(...data);
+      const range = (max - min) || 1;
+      const w = 60, h = 20;
+      const pts = data.map((v,i)=>{
+        const x = (i/(data.length-1))*w;
+        const y = h - ((v - min)/range)*h;
+        return `${x},${y}`;
+      }).join(' ');
+      const isPos = data[data.length-1] - data[0] >= 0;
+      const stroke = isPos ? '#34d399' : '#f87171';
+      return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true">
+                <polyline points="${pts}" fill="none" stroke="${stroke}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>`;
+    }
+
+    function sortData(list){
+      const arr = list.slice();
+      const field = state.sortBy;
+      const ord = state.sortOrder;
+
+      const key = {
+        rank: 'rank',
+        price: 'price',
+        change: 'change24h',
+        volume: 'volume24h',
+        marketCap: 'marketCap'
+      }[field];
+
+      arr.sort((a,b)=>{
+        const A = a[key] ?? 0;
+        const B = b[key] ?? 0;
+        return ord === 'asc' ? (A - B) : (B - A);
+      });
+      return arr;
+    }
+
+    function applyFilter(){
+      const q = state.search.trim().toLowerCase();
+      const src = sortData(state.coins);
+      return q ? src.filter(c => (c.name||'').toLowerCase().includes(q) || (c.symbol||'').toLowerCase().includes(q)) : src;
+    }
+
+    function paintTable(){
+      const rows = applyFilter().map(c=>{
+        const isPos = (c.change24h ?? 0) >= 0;
+        const w = state.watchlist.has(c.id);
+        return `
+          <tr class="border-b border-white/5 surface-hover transition">
+            <td class="py-3 px-3 text-[color:var(--brand)] font-semibold">${c.rank || '-'}</td>
+            <td class="py-3 px-3 text-lg">${c.icon}</td>
+            <td class="py-3 px-3">
+              <div class="font-semibold">${c.name}</div>
+              <div class="uppercase text-xs tracking-wide muted">${c.symbol}</div>
+            </td>
+            <td class="py-3 px-3 text-right mono">${fmtPrice(c.price)}</td>
+            <td class="py-3 px-3 text-right font-semibold ${isPos?'success':'error'}">
+              <iconify-icon icon="${isPos?'lucide:trending-up':'lucide:trending-down'}" class="inline text-base"></iconify-icon>
+              <span class="ml-1">${(c.change24h ?? 0).toFixed(2)}%</span>
+            </td>
+            <td class="py-3 px-3 text-right mono">${fmtVol(c.volume24h)}</td>
+            <td class="py-3 px-3 text-right mono">${fmtMC(c.marketCap)}</td>
+            <td class="py-3 px-3 text-center">${sparklineSVG(c.sparklineData)}</td>
+            <td class="py-3 px-3 text-center">
+              <button class="watch-btn" data-id="${c.id}" aria-label="${w?'Remove from':'Add to'} watchlist">
+                <iconify-icon icon="lucide:star" class="${w?'text-[color:var(--brand)]':'text-white/30 hover:text-[color:var(--brand)]'} text-xl transition"></iconify-icon>
+              </button>
+            </td>
+          </tr>`;
+      }).join('');
+      elTbody.innerHTML = rows || `
+        <tr><td colspan="9" class="py-8 text-center muted">No cryptocurrencies found.</td></tr>
+      `;
+
+      elTbody.querySelectorAll('.watch-btn').forEach(btn=>{
+        btn.addEventListener('click', (e)=>{
+          e.stopPropagation();
+          const id = btn.getAttribute('data-id');
+          if(!id) return;
+          if(state.watchlist.has(id)) state.watchlist.delete(id); else state.watchlist.add(id);
+          lsSet('market.watchlist', Array.from(state.watchlist));
+          paintTable();
+        });
+      });
+
+      dom('#last-updated').textContent = new Date().toLocaleTimeString();
+    }
+
+    // ---------- Flow ----------
+    async function loadAll(){
+      try{
+        elLoading.classList.remove('hidden');
+        elError.classList.add('hidden');
+        elContent.classList.add('hidden');
+
+        const { stats, coins, source } = await fetchMarket();
+        state.stats = stats;
+        state.coins = coins;
+
+        paintStats();
+        paintTable();
+
+        elLoading.classList.add('hidden');
+        elContent.classList.remove('hidden');
+
+        if (source !== 'coingecko' && source !== 'coincap') {
+          // show a soft warning once if we used cache/seed
+          elError.classList.remove('hidden');
+          elErrorMsg.textContent = 'Live data unavailable. Showing cached/seed data.';
+          setTimeout(()=> elError.classList.add('hidden'), 4000);
+        }
+      }catch(err){
+        console.error(err);
+        elLoading.classList.add('hidden');
+        elError.classList.remove('hidden');
+        elContent.classList.add('hidden');
+        elErrorMsg.textContent = (err && err.message) ? err.message : 'Could not fetch market data.';
+      }finally{
+        setRefreshing(false);
+      }
+    }
+
+    function setRefreshing(v){
+      state.refreshing = !!v;
+      elRefresh.disabled = !!v;
+      elRefreshIcon.classList.toggle('spin', !!v);
+    }
+
+    async function refresh(){
+      setRefreshing(true);
+      try{
+        const { stats, coins } = await fetchMarket();
+        state.stats = stats;
+        state.coins = coins;
+        paintStats();
+        paintTable();
+      }catch(err){
+        console.error(err);
+        elError.classList.remove('hidden');
+        elErrorMsg.textContent = 'Refresh failed. Showing last data.';
+        setTimeout(()=> elError.classList.add('hidden'), 3000);
+      }finally{
+        setRefreshing(false);
+      }
+    }
+
+    // ---------- Events ----------
+    dom('#btn-back')?.addEventListener('click', ()=>{
+      if (history.length > 1) history.back(); else window.location.href = '/dashboard.html';
+    });
+    dom('#btn-retry')?.addEventListener('click', loadAll);
+    elRefresh?.addEventListener('click', refresh);
+
+    dom('#search').addEventListener('input', ()=>{
+      state.search = elSearch.value || '';
+      paintTable();
+    });
+    dom('#btn-clear').addEventListener('click', ()=>{
+      elSearch.value = '';
+      state.search = '';
+      paintTable();
+    });
+
+    elSortBy.addEventListener('change', ()=>{
+      state.sortBy = elSortBy.value;
+      state.sortOrder = 'asc';
+      paintTable();
+    });
+
+    document.querySelectorAll('th[data-sort]').forEach(th=>{
+      th.addEventListener('click', ()=>{
+        const field = th.getAttribute('data-sort');
+        if(!field) return;
+        if(state.sortBy === field){
+          state.sortOrder = (state.sortOrder === 'asc') ? 'desc' : 'asc';
+        }else{
+          state.sortBy = field;
+          state.sortOrder = 'asc';
+          elSortBy.value = field;
+        }
+        paintTable();
+      });
+    });
+
+    // ---------- Init ----------
+    (function init(){
+      // hydrate watchlist
+      const saved = lsGet('market.watchlist', []);
+      state.watchlist = new Set(Array.isArray(saved) ? saved : []);
+
+      // render cached immediately if present (snappy UX)
+      const cached = lsGet('market.cache', null);
+      if (cached?.payload) {
+        state.stats = cached.payload.stats;
+        state.coins = cached.payload.coins;
+        paintStats();
+        paintTable();
+        elLoading.classList.add('hidden');
+        elContent.classList.remove('hidden');
+      }
+
+      loadAll();              // then fetch fresh
+      setInterval(refresh, 60000); // auto refresh every 60s
+      window.addEventListener('pageshow', (e)=>{ if(e.persisted){ refresh(); } });
+    })();
+  </script>
+
+
+</body></html>

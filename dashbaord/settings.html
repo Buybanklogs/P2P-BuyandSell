@@ -1,0 +1,848 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>SFPF Global – Settings</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/logo.png" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify (Lucide icons) -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <style>
+    :root{
+      --brand:#FEFD0C;
+      --bg:#000000;
+      --surface:rgba(255,255,255,0.06);
+      --surfaceBorder:rgba(255,255,255,0.10);
+
+      /* Switch palette (YELLOW) */
+      --switch-off:#374151;
+      --switch-on-1:#FEFD0C;
+      --switch-on-2:#F5F500;
+      --switch-knob:#ffffff;
+      --switch-shadow:0 6px 16px rgba(0,0,0,.35);
+    }
+
+    body{ background:var(--bg); color:#fff; font-family:Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+    .card { background:var(--surface); backdrop-filter: blur(18px); border:1px solid var(--surfaceBorder); border-radius: 14px; }
+    .row-hover { transition:background-color .2s; }
+    .row-hover:hover { background: rgba(255,255,255,.06); }
+    .brand-grad { background-image: linear-gradient(90deg, #FEFD0C, #F5F500); }
+    .brand-pill { background: rgba(254,253,12,.10); color: #FEFD0C; }
+    .ring-brand:focus { outline: none; box-shadow: 0 0 0 3px rgba(254,253,12,.45); }
+
+    /* Switch */
+    .tgl { width:60px; height:34px; border-radius:999px; position:relative;
+      transition:background-color .18s, box-shadow .18s; -webkit-tap-highlight-color: transparent;
+      background:var(--switch-off); box-shadow: inset 0 2px 6px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .tgl .tgl-knob{ width:26px; height:26px; top:3px; left:3px; border-radius:999px; position:absolute;
+      background:var(--switch-knob); box-shadow: var(--switch-shadow); display:flex; align-items:center; justify-content:center;
+      transition: transform .18s, background-color .18s, box-shadow .18s; will-change: transform;
+    }
+    .tgl .tgl-icon{ font-size:14px; color:#9ca3af; transition: color .18s, transform .18s; }
+    .tgl.on{ background:linear-gradient(90deg, var(--switch-on-1), var(--switch-on-2)); box-shadow: 0 0 0 1px rgba(254,253,12,.35), 0 6px 18px rgba(254,253,12,.25); }
+    .tgl.on .tgl-knob{ transform: translateX(26px); }
+    .tgl.on .tgl-icon{ color:var(--brand); }
+    .tgl.off .tgl-icon{ color:#9ca3af; }
+
+    @media (max-width: 420px){
+      .tgl { width:56px; height:32px; }
+      .tgl .tgl-knob { width:24px; height:24px; top:4px; left:4px; }
+      .tgl.on .tgl-knob { transform: translateX(24px); }
+    }
+
+    .tgl:active .tgl-knob{ transform: translateX(2px); }
+    .tgl.on:active .tgl-knob{ transform: translateX(24px); }
+
+    /* Toasts */
+    #toast-root { position: fixed; right: 1rem; top: 1rem; z-index: 9999; display: flex; flex-direction: column; gap: .5rem; }
+    .toast { background: rgba(17,17,17,.96); border: 1px solid rgba(254,253,12,.25); color: #fff; padding: .75rem 1rem; border-radius: .75rem; box-shadow: 0 8px 24px rgba(0,0,0,.4); display:flex; align-items:center; gap:.6rem; }
+    .toast[data-type="success"] { border-color: rgba(16,185,129,.45); }
+    .toast[data-type="error"] { border-color: rgba(239,68,68,.45); }
+    .toast[data-type="info"] { border-color: rgba(59,130,246,.45); }
+
+    /* Modals */
+    .modal-bg { position: fixed; inset: 0; display:none; place-items: center;
+      background: rgba(0,0,0,.6); z-index: 60; opacity:0; transition: opacity .18s; padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+    }
+    .modal-bg.show { display:grid; opacity:1; }
+    .modal-card {
+      width:min(640px, 92vw); background: rgba(10,10,10,.92);
+      border: 1px solid rgba(255,255,255,.12); border-radius: 16px; backdrop-filter: blur(16px);
+      max-height: 86vh; overflow: hidden; display:flex; flex-direction:column;
+      transform: translateY(8px) scale(.98); transition: transform .22s, opacity .22s; opacity:.98;
+    }
+    .modal-bg.show .modal-card { transform:none; opacity:1; }
+    .modal-body { overflow-y:auto; -webkit-overflow-scrolling:touch; }
+    @media (max-width: 480px){
+      .modal-card{ width: 100vw; max-height: 90vh; border-radius: 16px 16px 0 0; margin-top: auto; }
+    }
+    body.modal-open{ overflow:hidden; touch-action:none; }
+
+    .btn { border-radius:12px; padding:.6rem 1rem; font-weight:600; }
+    .btn-ghost { background:#4b5563; }
+    .btn-ghost:hover { background:#6b7280; }
+    .btn-danger { background:#ef4444; }
+    .btn-danger:hover { background:#dc2626; }
+
+    .title-underline { position:relative; }
+    .title-underline::after{
+      content:""; position:absolute; left:0; bottom:-8px; width:48px; height:2px;
+      background: linear-gradient(90deg, #FEFD0C, rgba(254,253,12,0)); border-radius:999px;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .modal-bg, .modal-card, .tgl, .tgl .tgl-knob { transition:none !important; }
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mx-auto{margin-left:auto;margin-right:auto}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-4{margin-top:1rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-14{height:3.5rem}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-10{width:2.5rem}.w-14{width:3.5rem}.min-w-0{min-width:0px}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.gap-3{gap:0.75rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.rounded-lg{border-radius:0.5rem}.rounded-2xl{border-radius:1rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-red-500\/20{border-color:rgb(239 68 68 / 0.2)}.bg-white\/5{background-color:rgb(255 255 255 / 0.05)}.bg-red-500\/10{background-color:rgb(239 68 68 / 0.1)}.p-2{padding:0.5rem}.p-6{padding:1.5rem}.p-3{padding:0.75rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-8{padding-top:2rem;padding-bottom:2rem}.text-left{text-align:left}.text-center{text-align:center}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-base{font-size:1rem;line-height:1.5rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-extrabold{font-weight:800}.font-semibold{font-weight:600}.tracking-tight{letter-spacing:-0.025em}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.hover\:bg-white\/10:hover{background-color:rgb(255 255 255 / 0.1)}@media (min-width: 640px){.sm\:ml-3{margin-left:0.75rem}.sm\:w-auto{width:auto}.sm\:flex-1{flex:1 1 0%}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:justify-end{justify-content:flex-end}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}}@media (min-width: 768px){.md\:px-8{padding-left:2rem;padding-right:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style></head>
+<body class="">
+  <div id="toast-root"></div>
+
+  <!-- Privacy Modal (autosave; no footer) -->
+  <div id="modal-privacy" class="modal-bg" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+    <div class="modal-card">
+      <div class="p-6 flex items-start justify-between border-b border-white/10">
+        <div>
+          <h3 id="privacy-title" class="text-xl font-bold">Privacy</h3>
+          <p class="text-sm text-gray-400">Control profile visibility &amp; personalization.</p>
+        </div>
+        <button class="p-2 rounded-lg hover:bg-white/10" data-close-privacy="" aria-label="Close">
+          <iconify-icon icon="lucide:x" class="text-2xl"></iconify-icon>
+        </button>
+      </div>
+
+      <div id="privacy-form" class="modal-body p-6 space-y-4">
+        <!-- Appear in search -->
+        <label class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10">
+          <div>
+            <p class="font-medium">Appear in search</p>
+            <p class="text-xs text-gray-400">Let others find you by name or email.</p>
+          </div>
+          <button type="button" id="prv-search" class="tgl off" role="switch" aria-checked="false" aria-label="Appear in search">
+            <span class="tgl-knob"><iconify-icon class="tgl-icon" icon="lucide:x"></iconify-icon></span>
+          </button>
+        </label>
+
+        <!-- Show online / last seen -->
+        <label class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10">
+          <div>
+            <p class="font-medium">Show online status</p>
+            <p class="text-xs text-gray-400">Display your “online” and “last seen”.</p>
+          </div>
+          <button type="button" id="prv-status" class="tgl off" role="switch" aria-checked="false" aria-label="Show online status">
+            <span class="tgl-knob"><iconify-icon class="tgl-icon" icon="lucide:x"></iconify-icon></span>
+          </button>
+        </label>
+
+        <!-- Personalized recommendations -->
+        <label class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10">
+          <div>
+            <p class="font-medium">Personalized recommendations</p>
+            <p class="text-xs text-gray-400">Use your activity to improve suggestions.</p>
+          </div>
+          <button type="button" id="prv-personalized" class="tgl off" role="switch" aria-checked="false" aria-label="Personalized recommendations">
+            <span class="tgl-knob"><iconify-icon class="tgl-icon" icon="lucide:x"></iconify-icon></span>
+          </button>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sessions Modal -->
+  <div id="modal-sessions" class="modal-bg" role="dialog" aria-modal="true" aria-labelledby="sessions-title">
+    <div class="modal-card">
+      <div class="p-6 flex items-start justify-between border-b border-white/10">
+        <div>
+          <h3 id="sessions-title" class="text-xl font-bold">Active Sessions</h3>
+          <p class="text-sm text-gray-400">Manage devices logged in to your account.</p>
+        </div>
+        <button class="p-2 rounded-lg hover:bg-white/10" data-close-sessions="" aria-label="Close">
+          <iconify-icon icon="lucide:x" class="text-2xl"></iconify-icon>
+        </button>
+      </div>
+
+      <div id="sessions-list" class="modal-body p-6 space-y-3">
+          <div class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10">
+            <div>
+              <div class="font-medium">Windows </div>
+              <div class="text-xs text-gray-400">IP: 197.210.53.170 • Last active: 2026-03-09 20:44:24</div>
+            </div>
+            <button class="btn btn-ghost text-sm flex items-center gap-2" data-revoke="521">
+              <iconify-icon icon="lucide:trash-2"></iconify-icon> Revoke
+            </button>
+          </div>
+        
+          <div class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10">
+            <div>
+              <div class="font-medium">Windows </div>
+              <div class="text-xs text-gray-400">IP: 102.91.5.174 • Last active: 2026-03-09 13:39:52</div>
+            </div>
+            <button class="btn btn-ghost text-sm flex items-center gap-2" data-revoke="520">
+              <iconify-icon icon="lucide:trash-2"></iconify-icon> Revoke
+            </button>
+          </div>
+        
+          <div class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10">
+            <div>
+              <div class="font-medium">Windows </div>
+              <div class="text-xs text-gray-400">IP: 102.91.5.174 • Last active: 2026-03-09 11:34:11</div>
+            </div>
+            <button class="btn btn-ghost text-sm flex items-center gap-2" data-revoke="519">
+              <iconify-icon icon="lucide:trash-2"></iconify-icon> Revoke
+            </button>
+          </div>
+        
+          <div class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10">
+            <div>
+              <div class="font-medium">Windows </div>
+              <div class="text-xs text-gray-400">IP: 102.91.5.174 • Last active: 2026-03-09 10:08:31</div>
+            </div>
+            <button class="btn btn-ghost text-sm flex items-center gap-2" data-revoke="518">
+              <iconify-icon icon="lucide:trash-2"></iconify-icon> Revoke
+            </button>
+          </div>
+        
+          <div class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10">
+            <div>
+              <div class="font-medium">Windows </div>
+              <div class="text-xs text-gray-400">IP: 102.91.5.174 • Last active: 2026-03-09 09:54:45</div>
+            </div>
+            <button class="btn btn-ghost text-sm flex items-center gap-2" data-revoke="517">
+              <iconify-icon icon="lucide:trash-2"></iconify-icon> Revoke
+            </button>
+          </div>
+        </div>
+
+      <!-- Footer: mobile-first -->
+      <div class="p-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <button id="btn-revoke-others" class="btn btn-danger inline-flex items-center justify-center gap-2 w-full sm:w-auto">
+          <iconify-icon icon="lucide:log-out" class="text-white"></iconify-icon>
+          <span>Sign out of other sessions</span>
+        </button>
+        <div class="text-xs text-gray-400 text-center sm:text-left sm:ml-3">
+          Revokes all sessions except current
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="min-h-screen px-4 py-8 md:px-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Header -->
+      <header class="flex items-center justify-between mb-8">
+        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">Settings</h1>
+        <div class="w-10 h-10"></div>
+      </header>
+
+      <!-- Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- Left Column -->
+        <div class="space-y-2">
+          <!-- General -->
+          <section class="card">
+            <div class="p-2">
+              <h2 class="text-2xl font-semibold mb-8 title-underline">General</h2>
+
+              <!-- Push Notifications -->
+              <div class="row-hover flex items-center justify-between px-4 py-5 rounded-2xl">
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-2xl brand-pill flex items-center justify-center">
+                    <iconify-icon icon="lucide:bell" class="text-xl"></iconify-icon>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-medium">Push Notifications</h3>
+                    <p class="text-sm text-gray-400 mt-1">Get alerts on this device</p>
+                  </div>
+                </div>
+                <button id="tgl-notif" class="tgl ring-brand on" role="switch" aria-checked="true" aria-label="Toggle push notifications">
+                  <span class="tgl-knob"><iconify-icon class="tgl-icon" icon="lucide:check" style="color: var(--brand);"></iconify-icon></span>
+                </button>
+              </div>
+
+              <!-- Email Notifications -->
+              <div class="row-hover flex items-center justify-between px-4 py-5 rounded-2xl">
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-2xl brand-pill flex items-center justify-center">
+                    <iconify-icon icon="lucide:mail" class="text-xl"></iconify-icon>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-medium">Email Notifications</h3>
+                    <p class="text-sm text-gray-400 mt-1">Get updates via email</p>
+                  </div>
+                </div>
+                <button id="tgl-email" class="tgl off ring-brand" role="switch" aria-checked="false" aria-label="Toggle email notifications">
+                  <span class="tgl-knob"><iconify-icon class="tgl-icon" icon="lucide:x" style="color: rgb(156, 163, 175);"></iconify-icon></span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Privacy -->
+          <section class="card">
+            <div class="p-8">
+              <h2 class="text-2xl font-semibold mb-8 title-underline">Privacy</h2>
+
+              <!-- Open Privacy Modal -->
+              <button id="btn-privacy" class="w-full text-left row-hover flex items-center justify-between px-4 py-5 rounded-2xl">
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-2xl brand-pill flex items-center justify-center">
+                    <iconify-icon icon="lucide:eye" class="text-xl"></iconify-icon>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-medium">Privacy Settings</h3>
+                    <p class="text-sm text-gray-400 mt-1">Visibility &amp; personalization</p>
+                  </div>
+                </div>
+                <iconify-icon icon="lucide:chevron-right" class="text-gray-400 text-xl"></iconify-icon>
+              </button>
+
+              <!-- Download Data -->
+              <button id="btn-download" class="w-full text-left row-hover flex items-center justify-between px-4 py-5 rounded-2xl">
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-2xl brand-pill flex items-center justify-center">
+                    <iconify-icon icon="lucide:download" class="text-xl"></iconify-icon>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-medium">Download Data</h3>
+                    <p class="text-sm text-gray-400 mt-1">Export your account data</p>
+                  </div>
+                </div>
+                <iconify-icon icon="lucide:chevron-right" class="text-gray-400 text-xl"></iconify-icon>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-8">
+          <!-- Security -->
+          <section class="card">
+            <div class="p-8">
+              <h2 class="text-2xl font-semibold mb-8 title-underline">Security</h2>
+
+              <!-- 2FA -->
+              <div class="row-hover flex items-center justify-between px-4 py-5 rounded-2xl">
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-2xl brand-pill flex items-center justify-center">
+                    <iconify-icon icon="lucide:shield" class="text-xl"></iconify-icon>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-medium">2FA</h3>
+                    <p id="twofa-desc" class="text-sm text-gray-400 mt-1">Enhanced security enabled</p>
+                  </div>
+                </div>
+                <button id="tgl-2fa" class="tgl ring-brand on" role="switch" aria-checked="true" aria-label="Toggle two-factor authentication">
+                  <span class="tgl-knob"><iconify-icon class="tgl-icon" icon="lucide:check" style="color: var(--brand);"></iconify-icon></span>
+                </button>
+              </div>
+
+              <!-- Active Sessions -->
+              <button id="btn-sessions" class="w-full text-left row-hover flex items-center justify-between px-4 py-5 rounded-2xl">
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-2xl brand-pill flex items-center justify-center">
+                    <iconify-icon icon="lucide:key" class="text-xl"></iconify-icon>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-medium">Active Sessions</h3>
+                    <p class="text-sm text-gray-400 mt-1">Manage logged-in devices</p>
+                  </div>
+                </div>
+                <iconify-icon icon="lucide:chevron-right" class="text-gray-400 text-xl"></iconify-icon>
+              </button>
+            </div>
+          </section>
+
+          <!-- Account -->
+          <section class="card">
+            <div class="p-8">
+              <h2 class="text-2xl font-semibold mb-8 title-underline">Account</h2>
+
+              <!-- Help -->
+              <button id="btn-help" class="w-full text-left row-hover flex items-center justify-between px-4 py-5 rounded-2xl">
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-2xl brand-pill flex items-center justify-center">
+                    <iconify-icon icon="lucide:help-circle" class="text-xl"></iconify-icon>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-medium">Help &amp; Support</h3>
+                    <p class="text-sm text-gray-400 mt-1">Get assistance and documentation</p>
+                  </div>
+                </div>
+                <iconify-icon icon="lucide:chevron-right" class="text-gray-400 text-xl"></iconify-icon>
+              </button>
+
+              <!-- Sign Out -->
+              <button id="btn-logout" class="w-full text-left row-hover flex items-center justify-between px-4 py-5 rounded-2xl">
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center">
+                    <iconify-icon icon="lucide:log-out" class="text-xl"></iconify-icon>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-medium text-red-400">Sign Out</h3>
+                    <p class="text-sm text-gray-400 mt-1">Sign out of your account</p>
+                  </div>
+                </div>
+                <iconify-icon icon="lucide:chevron-right" class="text-gray-400 text-xl"></iconify-icon>
+              </button>
+            </div>
+          </section>
+
+          <!-- Danger Zone -->
+          <section class="card border-red-500/20" style="background: rgba(239,68,68,.06);">
+            <div class="p-8">
+              <h2 class="text-2xl font-semibold mb-8 title-underline">Danger Zone</h2>
+
+              <div id="row-delete" class="row-hover px-4 py-5 rounded-2xl">
+                <!-- Top row: icon + texts (left), chevron (right) -->
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex items-start gap-4 min-w-0 sm:flex-1">
+                    <div class="w-14 h-14 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center shrink-0">
+                      <iconify-icon icon="lucide:trash-2" class="text-xl"></iconify-icon>
+                    </div>
+                    <div class="min-w-0">
+                      <h3 id="del-title" class="text-lg font-medium text-red-400">Delete Account</h3>
+                      <p id="del-desc" class="text-sm text-gray-400 mt-1">Permanently remove your account</p>
+                    </div>
+                  </div>
+                  <div id="del-chevron" class="flex items-center">
+                    <iconify-icon icon="lucide:chevron-right" class="text-gray-400 text-xl"></iconify-icon>
+                  </div>
+                </div>
+
+                <!-- Actions -->
+                <div id="del-actions" class="hidden mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-end gap-3">
+                  <button id="btn-del-cancel" class="btn btn-ghost w-full sm:w-auto flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:x" class="text-white text-base"></iconify-icon>
+                    <span>Cancel</span>
+                  </button>
+                  <button id="btn-del-confirm" class="btn btn-danger w-full sm:w-auto flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:check" class="text-white text-base"></iconify-icon>
+                    <span>Delete</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // -------- helpers / toast --------
+    const dom = (s)=>document.querySelector(s);
+    function setBodyModal(open){ document.body.classList.toggle('modal-open', !!open); }
+
+    // Build URLs RELATIVE to current page (no leading slash) to avoid 404s if app is in a subdir
+    const urlFor = (relativePath)=> new URL(relativePath, window.location.href).toString();
+    const ENDPOINTS = {
+      notifications: 'api/settings/notifications.php',
+      privacySave:   'api/settings/privacy-save.php',
+      privacyGet:    'api/settings/privacy-get.php',
+      sessionsList:  'api/sessions/list.php',
+      sessionRevoke: 'api/sessions/revoke.php',
+      revokeOthers:  'api/sessions/revoke-others.php',
+      exportData:    'api/account/export-data.php',
+      twofaToggle:   'auth/twofa-toggle.php',
+      deleteAccount: 'auth/delete-account.php',
+      logout:        'auth/logout.php'
+    };
+
+    function toggleBtn(el, on){
+      el.classList.toggle('on', !!on);
+      el.classList.toggle('off', !on);
+      el.setAttribute('aria-checked', !!on);
+      const icon = el.querySelector('.tgl-icon');
+      if(icon){
+        icon.setAttribute('icon', on ? 'lucide:check' : 'lucide:x');
+        icon.style.color = on ? 'var(--brand)' : '#9ca3af';
+      }
+    }
+
+    function lsGet(key, fallback){ try{ const v=localStorage.getItem(key); return v===null?fallback:JSON.parse(v); }catch{ return fallback; } }
+    function lsSet(key, val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch{} }
+
+    const toastRoot = document.getElementById('toast-root');
+    const toast = {
+      show(type, msg){
+        const el = document.createElement('div');
+        el.className = 'toast'; el.dataset.type = type;
+        el.innerHTML = `
+          <iconify-icon icon="lucide:${type==='success'?'check-circle-2':type==='error'?'alert-triangle':'info'}" class="text-xl" style="color: var(--brand)"></iconify-icon>
+          <span class="text-sm">${msg}</span>`;
+        toastRoot.appendChild(el);
+        const t = setTimeout(()=>{ el.style.opacity = '0'; el.style.transform='translateY(-4px)'; setTimeout(()=> el.remove(), 200); }, 2200);
+        return { close:()=>{ clearTimeout(t); el.remove(); } };
+      },
+      success(m){ this.show('success', m); }, error(m){ this.show('error', m); }, info(m){ this.show('info', m); }
+    };
+
+    const api = async (url, options={})=>{
+      const res = await fetch(url, {
+        credentials: 'same-origin',
+        headers: { 'X-Requested-With': 'XMLHttpRequest', ...options.headers },
+        ...options
+      });
+      let data=null;
+      try{ data = await res.json(); }catch(_){}
+      if(!res.ok || (data && data.success===false)){
+        const msg = (data && data.message) || `Request failed (${res.status})`;
+        throw new Error(msg);
+      }
+      return data || { success:true };
+    };
+
+    // -------- toggles (persisted + backend save) --------
+    const tNotif = dom('#tgl-notif');
+    const tEmail = dom('#tgl-email');
+    const t2FA   = dom('#tgl-2fa');
+    const twofaDesc = dom('#twofa-desc');
+
+    const state = {
+      notif: lsGet('settings.notif', true),
+      email: lsGet('settings.email', false),
+      twofa: lsGet('settings.twofa', true),
+
+      privacy: {
+        searchVisible: lsGet('settings.privacy.searchVisible', false),
+        showStatus:    lsGet('settings.privacy.showStatus', false),
+        personalized:  lsGet('settings.privacy.personalized', true),
+      }
+    };
+
+    // Hydrate privacy from backend
+    (async ()=>{
+      try{
+        const d = await api(urlFor(ENDPOINTS.privacyGet));
+        if (d && d.success && d.settings){
+          state.privacy.searchVisible = !!d.settings.search_visible;
+          state.privacy.showStatus    = !!d.settings.show_status;
+          state.privacy.personalized  = !!d.settings.personalized;
+          lsSet('settings.privacy.searchVisible', state.privacy.searchVisible);
+          lsSet('settings.privacy.showStatus',    state.privacy.showStatus);
+          lsSet('settings.privacy.personalized',  state.privacy.personalized);
+          syncPrivacyToggles();
+        }
+      }catch(_){}
+    })();
+
+    // paint initial toggles
+    toggleBtn(tNotif, state.notif);
+    toggleBtn(tEmail, state.email);
+    toggleBtn(t2FA,   state.twofa);
+    twofaDesc.textContent = state.twofa ? "Enhanced security" : "Strengthen your account";
+
+    // Notification toggle
+    tNotif.addEventListener('click', async ()=>{
+      const prev = state.notif;
+      const next = !prev;
+      toggleBtn(tNotif, next);
+      state.notif = next;
+      lsSet('settings.notif', next);
+
+      try{
+        if(next && 'Notification' in window){
+          const perm = await Notification.requestPermission();
+          if(perm !== 'granted'){ throw new Error('Notifications blocked by the browser'); }
+        }
+        await api(urlFor(ENDPOINTS.notifications), {
+          method:'POST',
+          headers:{ 'Content-Type':'application/json' },
+          body: JSON.stringify({ push: next, email: state.email })
+        });
+        toast.success('Notification preferences saved');
+      }catch(err){
+        state.notif = prev; toggleBtn(tNotif, prev); lsSet('settings.notif', prev);
+        toast.error(err.message || 'Failed to save notification settings');
+      }
+    });
+
+    // Email notifications toggle
+    tEmail.addEventListener('click', async ()=>{
+      const prev = state.email;
+      const next = !prev;
+      toggleBtn(tEmail, next);
+      state.email = next;
+      lsSet('settings.email', next);
+
+      try{
+        await api(urlFor(ENDPOINTS.notifications), {
+          method:'POST',
+          headers:{ 'Content-Type':'application/json' },
+          body: JSON.stringify({ push: state.notif, email: next })
+        });
+        toast.success('Email preference saved');
+      }catch(err){
+        state.email = prev; toggleBtn(tEmail, prev); lsSet('settings.email', prev);
+        toast.error(err.message || 'Failed to save email preference');
+      }
+    });
+
+    // 2FA toggle
+    t2FA.addEventListener('click', async ()=>{
+      const prev = state.twofa;
+      const next = !prev;
+      toggleBtn(t2FA, next);
+      twofaDesc.textContent = next ? "Enhanced security enabled" : "Strengthen your account";
+      state.twofa = next; lsSet('settings.twofa', next);
+      try{
+        await api(urlFor(ENDPOINTS.twofaToggle), {
+          method:'POST',
+          headers:{ 'Content-Type':'application/json' },
+          body: JSON.stringify({ enabled: next })
+        });
+        toast.success(next ? 'Two-factor enabled' : 'Two-factor disabled');
+      }catch(err){
+        state.twofa = prev; toggleBtn(t2FA, prev); lsSet('settings.twofa', prev);
+        twofaDesc.textContent = prev ? "Enhanced security" : "Strengthen your account";
+        toast.error(err.message || 'Failed to update 2FA');
+      }
+    });
+
+    // -------- Privacy modal (autosave) --------
+    const prvModal   = dom('#modal-privacy');
+    const prvSearch  = dom('#prv-search');
+    const prvStatus  = dom('#prv-status');
+    const prvPers    = dom('#prv-personalized');
+
+    function setPrvToggle(btn, on){ toggleBtn(btn, on); }
+    function syncPrivacyToggles(){
+      setPrvToggle(prvSearch, state.privacy.searchVisible);
+      setPrvToggle(prvStatus, state.privacy.showStatus);
+      setPrvToggle(prvPers,   state.privacy.personalized);
+    }
+    syncPrivacyToggles();
+
+    // open/close
+    dom('#btn-privacy')?.addEventListener('click', ()=>{
+      syncPrivacyToggles();
+      prvModal.classList.add('show'); setBodyModal(true);
+    });
+    document.querySelectorAll('[data-close-privacy]').forEach(b=> b.addEventListener('click', ()=>{
+      prvModal.classList.remove('show'); setBodyModal(false);
+    }));
+    prvModal.addEventListener('click', (e)=>{
+      if(e.target===prvModal){ prvModal.classList.remove('show'); setBodyModal(false); }
+    });
+
+    async function savePrivacy() {
+      const payload = {
+        search_visible: !!state.privacy.searchVisible,
+        show_status:    !!state.privacy.showStatus,
+        personalized:   !!state.privacy.personalized
+      };
+      return api(urlFor(ENDPOINTS.privacySave), {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json' },
+        body: JSON.stringify(payload)
+      });
+    }
+
+    // Appear in search
+    prvSearch.addEventListener('click', async ()=>{
+      const prev = state.privacy.searchVisible, next = !prev;
+      toggleBtn(prvSearch, next);
+      state.privacy.searchVisible = next; lsSet('settings.privacy.searchVisible', next);
+      try{ await savePrivacy(); toast.success(next ? 'You will appear in search' : 'Hidden from search'); }
+      catch(err){ state.privacy.searchVisible=prev; lsSet('settings.privacy.searchVisible', prev); toggleBtn(prvSearch, prev); toast.error(err.message||'Failed to update privacy'); }
+    });
+
+    // Show online status
+    prvStatus.addEventListener('click', async ()=>{
+      const prev = state.privacy.showStatus, next = !prev;
+      toggleBtn(prvStatus, next);
+      state.privacy.showStatus = next; lsSet('settings.privacy.showStatus', next);
+      try{ await savePrivacy(); toast.success(next ? 'Online status is visible' : 'Online status hidden'); }
+      catch(err){ state.privacy.showStatus=prev; lsSet('settings.privacy.showStatus', prev); toggleBtn(prvStatus, prev); toast.error(err.message||'Failed to update privacy'); }
+    });
+
+    // Personalized recommendations
+    prvPers.addEventListener('click', async ()=>{
+      const prev = state.privacy.personalized, next = !prev;
+      toggleBtn(prvPers, next);
+      state.privacy.personalized = next; lsSet('settings.privacy.personalized', next);
+      try{ await savePrivacy(); toast.success(next ? 'Personalization enabled' : 'Personalization disabled'); }
+      catch(err){ state.privacy.personalized=prev; lsSet('settings.privacy.personalized', prev); toggleBtn(prvPers, prev); toast.error(err.message||'Failed to update privacy'); }
+    });
+
+    // -------- Download Data --------
+    dom('#btn-download')?.addEventListener('click', async ()=>{
+      const t = toast.show('info','Preparing your data export...');
+      try{
+        const res = await fetch(urlFor(ENDPOINTS.exportData), {
+          method:'POST', credentials:'same-origin',
+          headers:{ 'X-Requested-With':'XMLHttpRequest' }
+        });
+
+        const ct = res.headers.get('Content-Type') || '';
+        if (res.ok && !ct.includes('application/json')) {
+          const blob = await res.blob();
+          const url  = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url; a.download = 'sfpfg-data-export.zip';
+          document.body.appendChild(a); a.click(); a.remove();
+          URL.revokeObjectURL(url);
+          t.close(); toast.success('Download started'); return;
+        }
+
+        const data = await res.json().catch(()=> ({}));
+        if(!res.ok || data.success===false){ throw new Error(data.message || `Export failed (${res.status})`); }
+
+        if (data.url){
+          window.location.href = data.url;
+          t.close(); toast.success('Download started');
+        } else {
+          t.close(); toast.success('Export requested — we’ll email you a link shortly.');
+        }
+      }catch(err){
+        t.close(); toast.error(err.message || 'Could not export your data');
+      }
+    });
+
+    // -------- Sessions modal --------
+    const sesModal = dom('#modal-sessions');
+    const sesList  = dom('#sessions-list');
+    const revokeOthersBtn = dom('#btn-revoke-others');
+
+    dom('#btn-sessions')?.addEventListener('click', async ()=>{
+      sesModal.classList.add('show'); setBodyModal(true);
+      await loadSessions();
+    });
+
+    document.querySelectorAll('[data-close-sessions]').forEach(b=> b.addEventListener('click', ()=>{
+      sesModal.classList.remove('show'); setBodyModal(false);
+    }));
+    sesModal.addEventListener('click', (e)=>{
+      if(e.target===sesModal){ sesModal.classList.remove('show'); setBodyModal(false); }
+    });
+
+    async function loadSessions(){
+      sesList.innerHTML = `<div class="text-sm text-gray-400">Loading sessions...</div>`;
+      try{
+        const data = await api(urlFor(ENDPOINTS.sessionsList));
+        const rows = (data.sessions||[]).map(s=>`
+          <div class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10">
+            <div>
+              <div class="font-medium">${s.device || s.user_agent || 'Unknown device'} ${s.is_current ? '<span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Current</span>' : ''}</div>
+              <div class="text-xs text-gray-400">IP: ${s.ip || '—'} • Last active: ${s.last_seen || '—'}</div>
+            </div>
+            <button class="btn btn-ghost text-sm flex items-center gap-2" ${s.is_current?'disabled':''} data-revoke="${s.id}">
+              <iconify-icon icon="lucide:trash-2"></iconify-icon> Revoke
+            </button>
+          </div>
+        `).join('');
+        sesList.innerHTML = rows || `<div class="text-sm text-gray-400">No active sessions found.</div>`;
+
+        sesList.querySelectorAll('[data-revoke]').forEach(btn=>{
+          btn.addEventListener('click', async ()=>{
+            const sid = btn.getAttribute('data-revoke');
+            btn.disabled = true;
+            try{
+              await api(urlFor(ENDPOINTS.sessionRevoke), {
+                method:'POST',
+                headers:{ 'Content-Type':'application/json' },
+                body: JSON.stringify({ session_id: sid })
+              });
+              toast.success('Session revoked');
+              await loadSessions();
+            }catch(err){
+              btn.disabled = false;
+              toast.error(err.message || 'Failed to revoke session');
+            }
+          });
+        });
+
+      }catch(err){
+        sesList.innerHTML = `<div class="text-sm text-red-400">Failed to load sessions: ${err.message || 'Unknown error'}</div>`;
+      }
+    }
+
+    revokeOthersBtn.addEventListener('click', async ()=>{
+      revokeOthersBtn.classList.add('opacity-70', 'cursor-wait');
+      revokeOthersBtn.disabled = true;
+      try{
+        await api(urlFor(ENDPOINTS.revokeOthers), { method:'POST' });
+        toast.success('Signed out of other sessions');
+        await loadSessions();
+      }catch(err){
+        toast.error(err.message || 'Failed to sign out other sessions');
+      }finally{
+        revokeOthersBtn.disabled = false;
+        revokeOthersBtn.classList.remove('opacity-70', 'cursor-wait');
+      }
+    });
+
+    // -------- delete account confirm flow --------
+    const delRow = document.querySelector('#row-delete');
+    const delChevron = document.querySelector('#del-chevron');
+    const delActions = document.querySelector('#del-actions');
+    const delTitle = document.querySelector('#del-title');
+    const delDesc  = document.querySelector('#del-desc');
+
+    let confirmingDelete = false;
+
+    delRow.addEventListener('click', (e)=>{
+      if (e.target.closest('#btn-del-cancel') || e.target.closest('#btn-del-confirm')) return;
+      confirmingDelete = !confirmingDelete;
+      delActions.classList.toggle('hidden', !confirmingDelete);
+      delChevron.classList.toggle('hidden', confirmingDelete);
+      delTitle.textContent = confirmingDelete ? 'Confirm Account Deletion' : 'Delete Account';
+      delDesc.textContent  = confirmingDelete ? 'This action cannot be undone' : 'Permanently remove your account';
+    });
+
+    document.querySelector('#btn-del-cancel')?.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      confirmingDelete = false;
+      delActions.classList.add('hidden');
+      delChevron.classList.remove('hidden');
+      delTitle.textContent = 'Delete Account';
+      delDesc.textContent  = 'Permanently remove your account';
+    });
+
+    document.querySelector('#btn-del-confirm')?.addEventListener('click', async (e)=>{
+      e.stopPropagation();
+      try{
+        const data = await api(urlFor(ENDPOINTS.deleteAccount), { method:'POST' });
+        if (data.success){
+          toast.success('Account deleted');
+          setTimeout(()=> doLogout(), 600);
+        }
+      }catch(err){
+        toast.error(err.message || 'Failed to delete account');
+      }
+    });
+
+    // Help
+    dom('#btn-help')?.addEventListener('click', ()=> window.open('https://wa.me/447721863850', '_blank'));
+
+    // Logout
+    async function doLogout(){
+      try{
+        await fetch(urlFor(ENDPOINTS.logout), {
+          method:'POST', headers:{ 'X-Requested-With':'XMLHttpRequest' }, credentials:'same-origin'
+        });
+      }catch(_){}
+      try{ localStorage.clear(); sessionStorage.clear(); }catch(_){}
+      window.location.replace('signin');
+    }
+    document.querySelector('#btn-logout')?.addEventListener('click', (e)=>{ e.preventDefault(); doLogout(); });
+
+    // privacy helpers
+    function syncPrivacyToggles(){ /* redefined above; kept here for first paint */ }
+  </script>
+
+
+</body></html>

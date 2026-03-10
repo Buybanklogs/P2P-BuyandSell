@@ -1,0 +1,614 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SFPF Global – User Dashboard (eBook Store)</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/logo.png" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify (Lucide icons) -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <!-- React 18 UMD + Babel standalone for JSX-in-browser -->
+  <script crossorigin="" src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin="" src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin="" src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    :root { --brand:#FEFD0C; }
+    body { background:#000; font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
+    /* Simple toast styles */
+    #toast-root { position: fixed; inset: 0 auto auto 0; right: 1rem; top: 1rem; z-index: 9999; display: flex; flex-direction: column; gap: .5rem; }
+    .toast { background: rgba(17,17,17,.95); border: 1px solid rgba(254,253,12,.25); color: #fff; padding: .75rem 1rem; border-radius: .75rem; box-shadow: 0 8px 24px rgba(0,0,0,.4); display:flex; align-items:center; gap:.5rem; }
+    .toast[data-type="success"] { border-color: rgba(16,185,129,.4); }
+    .toast[data-type="error"] { border-color: rgba(239,68,68,.4); }
+    .toast[data-type="loading"] { border-color: rgba(59,130,246,.4); }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.right-0{right:0px}.top-0{top:0px}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-4{margin-left:1rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.ml-2{margin-left:0.5rem}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.h-0\.5{height:0.125rem}.h-64{height:16rem}.h-8{height:2rem}.min-h-screen{min-height:100vh}.w-12{width:3rem}.w-48{width:12rem}.w-8{width:2rem}.w-full{width:100%}.max-w-7xl{max-width:80rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.-translate-y-4{--tw-translate-y:-1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-4{--tw-translate-x:1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.rotate-45{--tw-rotate:45deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-l-2{border-left-width:2px}.border-\[\#FEFD0C\]{--tw-border-opacity:1;border-color:rgb(254 253 12 / var(--tw-border-opacity, 1))}.border-neutral-700{--tw-border-opacity:1;border-color:rgb(64 64 64 / var(--tw-border-opacity, 1))}.bg-\[\#FEFD0C\]{--tw-bg-opacity:1;background-color:rgb(254 253 12 / var(--tw-bg-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-green-500{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-neutral-800{--tw-bg-opacity:1;background-color:rgb(38 38 38 / var(--tw-bg-opacity, 1))}.bg-neutral-800\/50{background-color:rgb(38 38 38 / 0.5)}.bg-neutral-900{--tw-bg-opacity:1;background-color:rgb(23 23 23 / var(--tw-bg-opacity, 1))}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pl-4{padding-left:1rem}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-wide{letter-spacing:0.025em}.text-\[\#FEFD0C\]{--tw-text-opacity:1;color:rgb(254 253 12 / var(--tw-text-opacity, 1))}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-neutral-300{--tw-text-opacity:1;color:rgb(212 212 212 / var(--tw-text-opacity, 1))}.text-neutral-400{--tw-text-opacity:1;color:rgb(163 163 163 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.line-through{-webkit-text-decoration-line:line-through;text-decoration-line:line-through}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.last\:mb-0:last-child{margin-bottom:0px}.hover\:bg-\[\#FEFD0C\]\/90:hover{background-color:rgb(254 253 12 / 0.9)}.hover\:bg-neutral-700:hover{--tw-bg-opacity:1;background-color:rgb(64 64 64 / var(--tw-bg-opacity, 1))}.hover\:bg-neutral-800:hover{--tw-bg-opacity:1;background-color:rgb(38 38 38 / var(--tw-bg-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-\[\#FEFD0C\]\/20:hover{--tw-shadow-color:rgb(254 253 12 / 0.2);--tw-shadow:var(--tw-shadow-colored)}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:col-span-1{grid-column:span 1 / span 1}.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style><script>"use strict";
+
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+var _React = React,
+  useState = _React.useState;
+var theme = {
+  primary: '#FEFD0C',
+  primaryBg: 'bg-[#FEFD0C]',
+  primaryHover: 'hover:bg-[#FEFD0C]/90',
+  background: 'bg-black',
+  surface: 'bg-neutral-900',
+  surfaceHover: 'hover:bg-neutral-800',
+  card: 'bg-neutral-900',
+  cardHover: 'hover:bg-neutral-800',
+  text: 'text-white',
+  textSecondary: 'text-neutral-300',
+  textMuted: 'text-neutral-400',
+  border: 'border-neutral-700'
+};
+
+// Minimal toast util (UI)
+var toastRoot = document.getElementById('toast-root');
+var toast = {
+  make: function make(type, msg) {
+    var el = document.createElement('div');
+    el.className = 'toast';
+    el.dataset.type = type;
+    el.innerHTML = "<iconify-icon icon=\"lucide:".concat(type === 'success' ? 'check-circle-2' : type === 'error' ? 'alert-triangle' : 'loader-2', "\" class=\"w-4 h-4 ").concat(type === 'loading' ? 'animate-spin' : '', "\" style=\"color: var(--brand)\"></iconify-icon><span class=\"text-sm\">").concat(msg, "</span>");
+    toastRoot.appendChild(el);
+    var t = setTimeout(function () {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(-4px)';
+      setTimeout(function () {
+        return toastRoot.removeChild(el);
+      }, 200);
+    }, type === 'loading' ? 2000 : 1600);
+    return {
+      close: function close() {
+        clearTimeout(t);
+        if (el.parentNode) toastRoot.removeChild(el);
+      }
+    };
+  },
+  loading: function loading(msg) {
+    return this.make('loading', msg);
+  },
+  success: function success(msg) {
+    return this.make('success', msg);
+  },
+  error: function error(msg) {
+    return this.make('error', msg);
+  }
+};
+var StatCard = function StatCard(_ref) {
+  var icon = _ref.icon,
+    value = _ref.value,
+    label = _ref.label;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "".concat(theme.card, " rounded-xl p-4 ").concat(theme.border, " border text-center ").concat(theme.cardHover, " transition-all duration-200")
+  }, /*#__PURE__*/React.createElement("iconify-icon", {
+    icon: icon,
+    className: "w-6 h-6",
+    style: {
+      color: theme.primary
+    }
+  }), /*#__PURE__*/React.createElement("p", {
+    className: "".concat(theme.text, " text-lg font-bold mb-1")
+  }, value), /*#__PURE__*/React.createElement("p", {
+    className: "".concat(theme.textMuted, " text-xs font-medium uppercase tracking-wide")
+  }, label));
+};
+var Feature = function Feature(_ref2) {
+  var icon = _ref2.icon,
+    title = _ref2.title,
+    description = _ref2.description;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "flex items-start gap-3 p-4 rounded-lg bg-neutral-800/50 border border-neutral-700"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "w-8 h-8 rounded-lg bg-[#FEFD0C] flex items-center justify-center text-black flex-shrink-0"
+  }, /*#__PURE__*/React.createElement("iconify-icon", {
+    icon: icon,
+    className: "w-4 h-4"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "flex-1"
+  }, /*#__PURE__*/React.createElement("h4", {
+    className: "".concat(theme.text, " font-semibold mb-1 text-sm")
+  }, title), /*#__PURE__*/React.createElement("p", {
+    className: "".concat(theme.textMuted, " text-xs leading-relaxed")
+  }, description)));
+};
+function EBookStore() {
+  var _useState = useState('digital'),
+    _useState2 = _slicedToArray(_useState, 2),
+    selectedOption = _useState2[0],
+    setSelectedOption = _useState2[1];
+  var handleGoBack = function handleGoBack() {
+    if (history.length > 1) history.back();else location.href = '/';
+  };
+  var stats = [{
+    icon: 'lucide:book-open',
+    value: '324',
+    label: 'Pages'
+  }, {
+    icon: 'lucide:clock',
+    value: '6-8h',
+    label: 'Read Time'
+  }, {
+    icon: 'lucide:award',
+    value: '#1',
+    label: 'Bestseller'
+  }];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "".concat(theme.background, " min-h-screen"),
+    style: {
+      fontFamily: 'Inter, sans-serif'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-7xl mx-auto px-6 py-8"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "mb-8 flex items-center"
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: "ml-4 text-2xl font-extrabold text-white"
+  }, "Purchase E-book")), /*#__PURE__*/React.createElement("div", {
+    className: "grid lg:grid-cols-3 gap-8 items-start"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lg:col-span-1 space-y-6"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "".concat(theme.card, " rounded-2xl p-8 ").concat(theme.border, " border")
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex justify-center mb-6"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "w-48 h-64 bg-black rounded-xl border-2 border-[#FEFD0C] p-5 flex flex-col justify-between relative overflow-hidden"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute top-0 right-0 w-8 h-8 bg-[#FEFD0C] rotate-45 translate-x-4 -translate-y-4"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "relative z-10 text-center"
+  }, /*#__PURE__*/React.createElement("h3", {
+    className: "text-lg font-black text-[#FEFD0C] mb-2"
+  }, "MAKE MONEY"), /*#__PURE__*/React.createElement("h4", {
+    className: "text-sm font-bold text-white mb-4"
+  }, "WHILE YOU SLEEP"), /*#__PURE__*/React.createElement("div", {
+    className: "mx-auto w-12 h-0.5 bg-[#FEFD0C]"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "relative z-10 text-center"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "text-[#FEFD0C] font-black text-lg"
+  }, "BNAIRA"), /*#__PURE__*/React.createElement("p", {
+    className: "text-neutral-300 text-xs mt-1"
+  }, "Financial Freedom Guide")))), /*#__PURE__*/React.createElement("button", {
+    "aria-label": "Preview sample pages",
+    className: "w-full flex items-center justify-center gap-2 py-3 px-6 ".concat(theme.surface, " ").concat(theme.surfaceHover, " rounded-xl ").concat(theme.border, " border transition-colors duration-200")
+  }, /*#__PURE__*/React.createElement("iconify-icon", {
+    icon: "lucide:eye",
+    className: "w-4 h-4",
+    style: {
+      color: theme.primary
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "".concat(theme.text, " font-medium text-sm")
+  }, "Preview Sample Pages"))), /*#__PURE__*/React.createElement("div", {
+    className: "grid grid-cols-3 gap-3"
+  }, stats.map(function (s, i) {
+    return /*#__PURE__*/React.createElement(StatCard, _extends({
+      key: i
+    }, s));
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "".concat(theme.card, " rounded-2xl p-6 ").concat(theme.border, " border")
+  }, /*#__PURE__*/React.createElement("h4", {
+    className: "flex items-center gap-2 mb-4 text-sm font-semibold text-white"
+  }, /*#__PURE__*/React.createElement("iconify-icon", {
+    icon: "lucide:users",
+    className: "w-4 h-4",
+    style: {
+      color: theme.primary
+    }
+  }), "What Readers Are Saying"), [{
+    quote: 'Changed my entire approach to passive income. Already making $2k/month!',
+    author: '— Sarah M., Entrepreneur'
+  }, {
+    quote: 'The strategies in this book are pure gold. Worth every penny and more.',
+    author: '— Michael R., Investor'
+  }].map(function (review, idx) {
+    return /*#__PURE__*/React.createElement("div", {
+      key: idx,
+      className: "border-l-2 border-[#FEFD0C] pl-4 py-1 mb-3 last:mb-0"
+    }, /*#__PURE__*/React.createElement("p", {
+      className: "".concat(theme.textSecondary, " text-sm leading-relaxed mb-2")
+    }, review.quote), /*#__PURE__*/React.createElement("p", {
+      className: "".concat(theme.textMuted, " text-xs font-medium")
+    }, review.author));
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center justify-center gap-4"
+  }, /*#__PURE__*/React.createElement("button", {
+    "aria-label": "Favorite",
+    className: "p-3 rounded-xl ".concat(theme.card, " ").concat(theme.cardHover, " ").concat(theme.border, " border transition-colors duration-200")
+  }, /*#__PURE__*/React.createElement("iconify-icon", {
+    icon: "lucide:heart",
+    className: "w-5 h-5",
+    style: {
+      color: theme.primary
+    }
+  })), /*#__PURE__*/React.createElement("button", {
+    "aria-label": "Share",
+    className: "p-3 rounded-xl ".concat(theme.card, " ").concat(theme.cardHover, " ").concat(theme.border, " border transition-colors duration-200")
+  }, /*#__PURE__*/React.createElement("iconify-icon", {
+    icon: "lucide:share-2",
+    className: "w-5 h-5",
+    style: {
+      color: theme.primary
+    }
+  })))), /*#__PURE__*/React.createElement("div", {
+    className: "lg:col-span-2 space-y-6"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "".concat(theme.card, " rounded-2xl p-4 ").concat(theme.border, " border")
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "grid grid-cols-2 gap-3"
+  }, ['digital', 'physical'].map(function (type) {
+    return /*#__PURE__*/React.createElement("button", {
+      key: type,
+      type: "button",
+      onClick: function onClick() {
+        return setSelectedOption(type);
+      },
+      "aria-pressed": selectedOption === type,
+      className: "py-3 px-4 rounded-xl font-semibold text-sm flex flex-col items-center gap-2 transition-colors duration-200 ".concat(selectedOption === type ? "".concat(theme.primaryBg, " text-black") : "".concat(theme.text, " bg-neutral-800 hover:bg-neutral-700"))
+    }, /*#__PURE__*/React.createElement("iconify-icon", {
+      icon: type === 'digital' ? 'lucide:download' : 'lucide:package',
+      className: "w-5 h-5"
+    }), /*#__PURE__*/React.createElement("span", null, type === 'digital' ? 'Digital Copy' : 'Physical Copy'));
+  }))), selectedOption === 'digital' && /*#__PURE__*/React.createElement("div", {
+    className: "".concat(theme.card, " rounded-2xl p-6 ").concat(theme.border, " border space-y-6")
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-start justify-between"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", {
+    className: "text-2xl font-bold ".concat(theme.text, " mb-2")
+  }, "Digital eBook"), /*#__PURE__*/React.createElement("p", {
+    className: "".concat(theme.textSecondary, " text-sm")
+  }, "Instant access \u2014 external checkout")), /*#__PURE__*/React.createElement("div", {
+    className: "text-right"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-baseline gap-2"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-3xl font-black ".concat(theme.text)
+  }, "$49.99"), /*#__PURE__*/React.createElement("span", {
+    className: "".concat(theme.textMuted, " text-lg line-through")
+  }, "$99")), /*#__PURE__*/React.createElement("span", {
+    className: "mt-2 inline-block bg-green-500 text-xs text-white font-bold px-3 py-1 rounded-full"
+  }, "50% OFF"))), /*#__PURE__*/React.createElement("div", {
+    className: "grid md:grid-cols-2 gap-4"
+  }, /*#__PURE__*/React.createElement(Feature, {
+    icon: "lucide:download",
+    title: "Instant Download",
+    description: "Get immediate access to PDF, EPUB, and MOBI formats"
+  }), /*#__PURE__*/React.createElement(Feature, {
+    icon: "lucide:globe",
+    title: "Read Anywhere",
+    description: "Compatible with all devices and e-readers"
+  }), /*#__PURE__*/React.createElement(Feature, {
+    icon: "lucide:shield",
+    title: "Lifetime Access",
+    description: "Download and keep forever with free updates"
+  }), /*#__PURE__*/React.createElement(Feature, {
+    icon: "lucide:lock",
+    title: "Secure Checkout",
+    description: "Handled on tradewithbnairaacademy.com"
+  })), /*#__PURE__*/React.createElement("a", {
+    href: "https://tradewithbnairaacademy.com",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    className: "w-full flex items-center justify-center gap-3 py-4 px-6 text-lg font-bold rounded-2xl transition-all duration-200 ".concat(theme.primaryBg, " ").concat(theme.primaryHover, " text-black border-2 border-[#FEFD0C] hover:shadow-lg hover:shadow-[#FEFD0C]/20")
+  }, /*#__PURE__*/React.createElement("iconify-icon", {
+    icon: "lucide:credit-card",
+    className: "w-5 h-5"
+  }), /*#__PURE__*/React.createElement("span", null, "Buy Digital Copy \u2013 $49.99"), /*#__PURE__*/React.createElement("iconify-icon", {
+    icon: "lucide:arrow-right",
+    className: "w-5 h-5"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center justify-center gap-2 text-sm"
+  }, /*#__PURE__*/React.createElement("iconify-icon", {
+    icon: "lucide:shield",
+    className: "w-4 h-4 text-green-400"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "".concat(theme.textMuted)
+  }, "Secure checkout via BNAIRA Academy"))), selectedOption === 'physical' && /*#__PURE__*/React.createElement("div", {
+    className: "".concat(theme.card, " rounded-2xl p-6 ").concat(theme.border, " border space-y-6")
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-start justify-between"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", {
+    className: "text-2xl font-bold ".concat(theme.text, " mb-2")
+  }, "Signed Physical Copy"), /*#__PURE__*/React.createElement("p", {
+    className: "".concat(theme.textSecondary, " text-sm")
+  }, "Premium hardcover with author signature")), /*#__PURE__*/React.createElement("div", {
+    className: "text-right"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-3xl font-black ".concat(theme.text)
+  }, "$99.99"), /*#__PURE__*/React.createElement("span", {
+    className: "mt-2 ml-2 inline-block bg-[#FEFD0C] text-xs text-black font-bold px-3 py-1 rounded-full"
+  }, "FREE SHIPPING"))), /*#__PURE__*/React.createElement("div", {
+    className: "grid md:grid-cols-2 gap-4"
+  }, /*#__PURE__*/React.createElement(Feature, {
+    icon: "lucide:award",
+    title: "Author Signed",
+    description: "Signed by Bnaira + certificate of authenticity"
+  }), /*#__PURE__*/React.createElement(Feature, {
+    icon: "lucide:book-open",
+    title: "Premium Hardcover",
+    description: "High-quality binding with dust jacket"
+  }), /*#__PURE__*/React.createElement(Feature, {
+    icon: "lucide:truck",
+    title: "Free Worldwide Shipping",
+    description: "Arrives in 5\u201310 business days"
+  }), /*#__PURE__*/React.createElement(Feature, {
+    icon: "lucide:download",
+    title: "Digital Copy Included",
+    description: "Immediate digital access while shipping"
+  })), /*#__PURE__*/React.createElement("a", {
+    href: "https://tradewithbnairaacademy.com",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    className: "w-full flex items-center justify-center gap-3 py-4 px-6 text-lg font-bold rounded-2xl transition-all duration-200 ".concat(theme.primaryBg, " ").concat(theme.primaryHover, " text-black border-2 border-[#FEFD0C] hover:shadow-lg hover:shadow-[#FEFD0C]/20")
+  }, /*#__PURE__*/React.createElement("iconify-icon", {
+    icon: "lucide:external-link",
+    className: "w-5 h-5"
+  }), /*#__PURE__*/React.createElement("span", null, "Buy Physical Copy \u2013 $99.99"), /*#__PURE__*/React.createElement("iconify-icon", {
+    icon: "lucide:arrow-right",
+    className: "w-5 h-5"
+  })))))));
+}
+var root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(/*#__PURE__*/React.createElement(EBookStore, null));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfUmVhY3QiLCJSZWFjdCIsInVzZVN0YXRlIiwidGhlbWUiLCJwcmltYXJ5IiwicHJpbWFyeUJnIiwicHJpbWFyeUhvdmVyIiwiYmFja2dyb3VuZCIsInN1cmZhY2UiLCJzdXJmYWNlSG92ZXIiLCJjYXJkIiwiY2FyZEhvdmVyIiwidGV4dCIsInRleHRTZWNvbmRhcnkiLCJ0ZXh0TXV0ZWQiLCJib3JkZXIiLCJ0b2FzdFJvb3QiLCJkb2N1bWVudCIsImdldEVsZW1lbnRCeUlkIiwidG9hc3QiLCJtYWtlIiwidHlwZSIsIm1zZyIsImVsIiwiY3JlYXRlRWxlbWVudCIsImNsYXNzTmFtZSIsImRhdGFzZXQiLCJpbm5lckhUTUwiLCJjb25jYXQiLCJhcHBlbmRDaGlsZCIsInQiLCJzZXRUaW1lb3V0Iiwic3R5bGUiLCJvcGFjaXR5IiwidHJhbnNmb3JtIiwicmVtb3ZlQ2hpbGQiLCJjbG9zZSIsImNsZWFyVGltZW91dCIsInBhcmVudE5vZGUiLCJsb2FkaW5nIiwic3VjY2VzcyIsImVycm9yIiwiU3RhdENhcmQiLCJfcmVmIiwiaWNvbiIsInZhbHVlIiwibGFiZWwiLCJjb2xvciIsIkZlYXR1cmUiLCJfcmVmMiIsInRpdGxlIiwiZGVzY3JpcHRpb24iLCJFQm9va1N0b3JlIiwiX3VzZVN0YXRlIiwiX3VzZVN0YXRlMiIsIl9zbGljZWRUb0FycmF5Iiwic2VsZWN0ZWRPcHRpb24iLCJzZXRTZWxlY3RlZE9wdGlvbiIsImhhbmRsZUdvQmFjayIsImhpc3RvcnkiLCJsZW5ndGgiLCJiYWNrIiwibG9jYXRpb24iLCJocmVmIiwic3RhdHMiLCJmb250RmFtaWx5IiwibWFwIiwicyIsImkiLCJfZXh0ZW5kcyIsImtleSIsInF1b3RlIiwiYXV0aG9yIiwicmV2aWV3IiwiaWR4Iiwib25DbGljayIsInRhcmdldCIsInJlbCIsInJvb3QiLCJSZWFjdERPTSIsImNyZWF0ZVJvb3QiLCJyZW5kZXIiXSwic291cmNlcyI6WyJJbmxpbmUgQmFiZWwgc2NyaXB0Il0sInNvdXJjZXNDb250ZW50IjpbIlxuICAgIGNvbnN0IHsgdXNlU3RhdGUgfSA9IFJlYWN0O1xuXG4gICAgY29uc3QgdGhlbWUgPSB7XG4gICAgICBwcmltYXJ5OiAnI0ZFRkQwQycsXG4gICAgICBwcmltYXJ5Qmc6ICdiZy1bI0ZFRkQwQ10nLFxuICAgICAgcHJpbWFyeUhvdmVyOiAnaG92ZXI6YmctWyNGRUZEMENdLzkwJyxcbiAgICAgIGJhY2tncm91bmQ6ICdiZy1ibGFjaycsXG4gICAgICBzdXJmYWNlOiAnYmctbmV1dHJhbC05MDAnLFxuICAgICAgc3VyZmFjZUhvdmVyOiAnaG92ZXI6YmctbmV1dHJhbC04MDAnLFxuICAgICAgY2FyZDogJ2JnLW5ldXRyYWwtOTAwJyxcbiAgICAgIGNhcmRIb3ZlcjogJ2hvdmVyOmJnLW5ldXRyYWwtODAwJyxcbiAgICAgIHRleHQ6ICd0ZXh0LXdoaXRlJyxcbiAgICAgIHRleHRTZWNvbmRhcnk6ICd0ZXh0LW5ldXRyYWwtMzAwJyxcbiAgICAgIHRleHRNdXRlZDogJ3RleHQtbmV1dHJhbC00MDAnLFxuICAgICAgYm9yZGVyOiAnYm9yZGVyLW5ldXRyYWwtNzAwJyxcbiAgICB9O1xuXG4gICAgLy8gTWluaW1hbCB0b2FzdCB1dGlsIChVSSlcbiAgICBjb25zdCB0b2FzdFJvb3QgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndG9hc3Qtcm9vdCcpO1xuICAgIGNvbnN0IHRvYXN0ID0ge1xuICAgICAgbWFrZSh0eXBlLCBtc2cpIHtcbiAgICAgICAgY29uc3QgZWwgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcbiAgICAgICAgZWwuY2xhc3NOYW1lID0gJ3RvYXN0JztcbiAgICAgICAgZWwuZGF0YXNldC50eXBlID0gdHlwZTtcbiAgICAgICAgZWwuaW5uZXJIVE1MID0gYDxpY29uaWZ5LWljb24gaWNvbj1cImx1Y2lkZToke3R5cGU9PT0nc3VjY2Vzcyc/J2NoZWNrLWNpcmNsZS0yJzp0eXBlPT09J2Vycm9yJz8nYWxlcnQtdHJpYW5nbGUnOidsb2FkZXItMid9XCIgY2xhc3M9XCJ3LTQgaC00ICR7dHlwZT09PSdsb2FkaW5nJz8nYW5pbWF0ZS1zcGluJzonJ31cIiBzdHlsZT1cImNvbG9yOiB2YXIoLS1icmFuZClcIj48L2ljb25pZnktaWNvbj48c3BhbiBjbGFzcz1cInRleHQtc21cIj4ke21zZ308L3NwYW4+YDtcbiAgICAgICAgdG9hc3RSb290LmFwcGVuZENoaWxkKGVsKTtcbiAgICAgICAgY29uc3QgdCA9IHNldFRpbWVvdXQoKCk9PnsgZWwuc3R5bGUub3BhY2l0eSA9ICcwJzsgZWwuc3R5bGUudHJhbnNmb3JtPSd0cmFuc2xhdGVZKC00cHgpJzsgc2V0VGltZW91dCgoKT0+IHRvYXN0Um9vdC5yZW1vdmVDaGlsZChlbCksIDIwMCk7IH0sIHR5cGU9PT0nbG9hZGluZyc/IDIwMDAgOiAxNjAwKTtcbiAgICAgICAgcmV0dXJuIHsgY2xvc2U6ICgpPT57IGNsZWFyVGltZW91dCh0KTsgaWYgKGVsLnBhcmVudE5vZGUpIHRvYXN0Um9vdC5yZW1vdmVDaGlsZChlbCk7IH0gfTtcbiAgICAgIH0sXG4gICAgICBsb2FkaW5nKG1zZyl7IHJldHVybiB0aGlzLm1ha2UoJ2xvYWRpbmcnLCBtc2cpOyB9LFxuICAgICAgc3VjY2Vzcyhtc2cpeyByZXR1cm4gdGhpcy5tYWtlKCdzdWNjZXNzJywgbXNnKTsgfSxcbiAgICAgIGVycm9yKG1zZyl7IHJldHVybiB0aGlzLm1ha2UoJ2Vycm9yJywgbXNnKTsgfSxcbiAgICB9O1xuXG4gICAgY29uc3QgU3RhdENhcmQgPSAoeyBpY29uLCB2YWx1ZSwgbGFiZWwgfSkgPT4gKFxuICAgICAgPGRpdiBjbGFzc05hbWU9e2Ake3RoZW1lLmNhcmR9IHJvdW5kZWQteGwgcC00ICR7dGhlbWUuYm9yZGVyfSBib3JkZXIgdGV4dC1jZW50ZXIgJHt0aGVtZS5jYXJkSG92ZXJ9IHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMGB9PlxuICAgICAgICA8aWNvbmlmeS1pY29uIGljb249e2ljb259IGNsYXNzTmFtZT1cInctNiBoLTZcIiBzdHlsZT17eyBjb2xvcjogdGhlbWUucHJpbWFyeSB9fT48L2ljb25pZnktaWNvbj5cbiAgICAgICAgPHAgY2xhc3NOYW1lPXtgJHt0aGVtZS50ZXh0fSB0ZXh0LWxnIGZvbnQtYm9sZCBtYi0xYH0+e3ZhbHVlfTwvcD5cbiAgICAgICAgPHAgY2xhc3NOYW1lPXtgJHt0aGVtZS50ZXh0TXV0ZWR9IHRleHQteHMgZm9udC1tZWRpdW0gdXBwZXJjYXNlIHRyYWNraW5nLXdpZGVgfT57bGFiZWx9PC9wPlxuICAgICAgPC9kaXY+XG4gICAgKTtcblxuICAgIGNvbnN0IEZlYXR1cmUgPSAoeyBpY29uLCB0aXRsZSwgZGVzY3JpcHRpb24gfSkgPT4gKFxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLXN0YXJ0IGdhcC0zIHAtNCByb3VuZGVkLWxnIGJnLW5ldXRyYWwtODAwLzUwIGJvcmRlciBib3JkZXItbmV1dHJhbC03MDBcIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ3LTggaC04IHJvdW5kZWQtbGcgYmctWyNGRUZEMENdIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHRleHQtYmxhY2sgZmxleC1zaHJpbmstMFwiPlxuICAgICAgICAgIDxpY29uaWZ5LWljb24gaWNvbj17aWNvbn0gY2xhc3NOYW1lPVwidy00IGgtNFwiPjwvaWNvbmlmeS1pY29uPlxuICAgICAgICA8L2Rpdj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4LTFcIj5cbiAgICAgICAgICA8aDQgY2xhc3NOYW1lPXtgJHt0aGVtZS50ZXh0fSBmb250LXNlbWlib2xkIG1iLTEgdGV4dC1zbWB9Pnt0aXRsZX08L2g0PlxuICAgICAgICAgIDxwIGNsYXNzTmFtZT17YCR7dGhlbWUudGV4dE11dGVkfSB0ZXh0LXhzIGxlYWRpbmctcmVsYXhlZGB9PntkZXNjcmlwdGlvbn08L3A+XG4gICAgICAgIDwvZGl2PlxuICAgICAgPC9kaXY+XG4gICAgKTtcblxuICAgIGZ1bmN0aW9uIEVCb29rU3RvcmUoKXtcbiAgICAgIGNvbnN0IFtzZWxlY3RlZE9wdGlvbiwgc2V0U2VsZWN0ZWRPcHRpb25dID0gdXNlU3RhdGUoJ2RpZ2l0YWwnKTtcblxuICAgICAgY29uc3QgaGFuZGxlR29CYWNrID0gKCkgPT4geyBpZiAoaGlzdG9yeS5sZW5ndGg+MSkgaGlzdG9yeS5iYWNrKCk7IGVsc2UgbG9jYXRpb24uaHJlZj0nLyc7IH07XG5cbiAgICAgIGNvbnN0IHN0YXRzID0gW1xuICAgICAgICB7IGljb246ICdsdWNpZGU6Ym9vay1vcGVuJywgdmFsdWU6ICczMjQnLCBsYWJlbDogJ1BhZ2VzJyB9LFxuICAgICAgICB7IGljb246ICdsdWNpZGU6Y2xvY2snLCB2YWx1ZTogJzYtOGgnLCBsYWJlbDogJ1JlYWQgVGltZScgfSxcbiAgICAgICAgeyBpY29uOiAnbHVjaWRlOmF3YXJkJywgdmFsdWU6ICcjMScsIGxhYmVsOiAnQmVzdHNlbGxlcicgfSxcbiAgICAgIF07XG5cbiAgICAgIHJldHVybiAoXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPXtgJHt0aGVtZS5iYWNrZ3JvdW5kfSBtaW4taC1zY3JlZW5gfSBzdHlsZT17eyBmb250RmFtaWx5OiAnSW50ZXIsIHNhbnMtc2VyaWYnIH19PlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibWF4LXctN3hsIG14LWF1dG8gcHgtNiBweS04XCI+XG4gICAgICAgICAgICB7LyogSGVhZGVyICovfVxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtYi04IGZsZXggaXRlbXMtY2VudGVyXCI+XG4gICAgICAgICAgICAgIDxoMSBjbGFzc05hbWU9XCJtbC00IHRleHQtMnhsIGZvbnQtZXh0cmFib2xkIHRleHQtd2hpdGVcIj5QdXJjaGFzZSBFLWJvb2s8L2gxPlxuICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZ3JpZCBsZzpncmlkLWNvbHMtMyBnYXAtOCBpdGVtcy1zdGFydFwiPlxuICAgICAgICAgICAgICB7LyogTGVmdCBDb2x1bW4gKi99XG4gICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibGc6Y29sLXNwYW4tMSBzcGFjZS15LTZcIj5cbiAgICAgICAgICAgICAgICB7LyogQm9vayBQcmV2aWV3ICovfVxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPXtgJHt0aGVtZS5jYXJkfSByb3VuZGVkLTJ4bCBwLTggJHt0aGVtZS5ib3JkZXJ9IGJvcmRlcmB9PlxuICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGp1c3RpZnktY2VudGVyIG1iLTZcIj5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ3LTQ4IGgtNjQgYmctYmxhY2sgcm91bmRlZC14bCBib3JkZXItMiBib3JkZXItWyNGRUZEMENdIHAtNSBmbGV4IGZsZXgtY29sIGp1c3RpZnktYmV0d2VlbiByZWxhdGl2ZSBvdmVyZmxvdy1oaWRkZW5cIj5cbiAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImFic29sdXRlIHRvcC0wIHJpZ2h0LTAgdy04IGgtOCBiZy1bI0ZFRkQwQ10gcm90YXRlLTQ1IHRyYW5zbGF0ZS14LTQgLXRyYW5zbGF0ZS15LTRcIiAvPlxuICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicmVsYXRpdmUgei0xMCB0ZXh0LWNlbnRlclwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGgzIGNsYXNzTmFtZT1cInRleHQtbGcgZm9udC1ibGFjayB0ZXh0LVsjRkVGRDBDXSBtYi0yXCI+TUFLRSBNT05FWTwvaDM+XG4gICAgICAgICAgICAgICAgICAgICAgICA8aDQgY2xhc3NOYW1lPVwidGV4dC1zbSBmb250LWJvbGQgdGV4dC13aGl0ZSBtYi00XCI+V0hJTEUgWU9VIFNMRUVQPC9oND5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXgtYXV0byB3LTEyIGgtMC41IGJnLVsjRkVGRDBDXVwiIC8+XG4gICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJyZWxhdGl2ZSB6LTEwIHRleHQtY2VudGVyXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJ0ZXh0LVsjRkVGRDBDXSBmb250LWJsYWNrIHRleHQtbGdcIj5CTkFJUkE8L3A+XG4gICAgICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJ0ZXh0LW5ldXRyYWwtMzAwIHRleHQteHMgbXQtMVwiPkZpbmFuY2lhbCBGcmVlZG9tIEd1aWRlPC9wPlxuICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgPGJ1dHRvbiBhcmlhLWxhYmVsPVwiUHJldmlldyBzYW1wbGUgcGFnZXNcIlxuICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9e2B3LWZ1bGwgZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTIgcHktMyBweC02ICR7dGhlbWUuc3VyZmFjZX0gJHt0aGVtZS5zdXJmYWNlSG92ZXJ9IHJvdW5kZWQteGwgJHt0aGVtZS5ib3JkZXJ9IGJvcmRlciB0cmFuc2l0aW9uLWNvbG9ycyBkdXJhdGlvbi0yMDBgfT5cbiAgICAgICAgICAgICAgICAgICAgPGljb25pZnktaWNvbiBpY29uPVwibHVjaWRlOmV5ZVwiIGNsYXNzTmFtZT1cInctNCBoLTRcIiBzdHlsZT17eyBjb2xvcjogdGhlbWUucHJpbWFyeSB9fT48L2ljb25pZnktaWNvbj5cbiAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPXtgJHt0aGVtZS50ZXh0fSBmb250LW1lZGl1bSB0ZXh0LXNtYH0+UHJldmlldyBTYW1wbGUgUGFnZXM8L3NwYW4+XG4gICAgICAgICAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgIHsvKiBTdGF0cyAqL31cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImdyaWQgZ3JpZC1jb2xzLTMgZ2FwLTNcIj5cbiAgICAgICAgICAgICAgICAgIHtzdGF0cy5tYXAoKHMsIGkpPT4gPFN0YXRDYXJkIGtleT17aX0gey4uLnN9IC8+KX1cbiAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgIHsvKiBUZXN0aW1vbmlhbHMgKi99XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9e2Ake3RoZW1lLmNhcmR9IHJvdW5kZWQtMnhsIHAtNiAke3RoZW1lLmJvcmRlcn0gYm9yZGVyYH0+XG4gICAgICAgICAgICAgICAgICA8aDQgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTIgbWItNCB0ZXh0LXNtIGZvbnQtc2VtaWJvbGQgdGV4dC13aGl0ZVwiPlxuICAgICAgICAgICAgICAgICAgICA8aWNvbmlmeS1pY29uIGljb249XCJsdWNpZGU6dXNlcnNcIiBjbGFzc05hbWU9XCJ3LTQgaC00XCIgc3R5bGU9e3sgY29sb3I6IHRoZW1lLnByaW1hcnkgfX0+PC9pY29uaWZ5LWljb24+XG4gICAgICAgICAgICAgICAgICAgIFdoYXQgUmVhZGVycyBBcmUgU2F5aW5nXG4gICAgICAgICAgICAgICAgICA8L2g0PlxuICAgICAgICAgICAgICAgICAge1tcbiAgICAgICAgICAgICAgICAgICAgeyBxdW90ZTogJ0NoYW5nZWQgbXkgZW50aXJlIGFwcHJvYWNoIHRvIHBhc3NpdmUgaW5jb21lLiBBbHJlYWR5IG1ha2luZyAkMmsvbW9udGghJywgYXV0aG9yOiAn4oCUIFNhcmFoIE0uLCBFbnRyZXByZW5ldXInIH0sXG4gICAgICAgICAgICAgICAgICAgIHsgcXVvdGU6ICdUaGUgc3RyYXRlZ2llcyBpbiB0aGlzIGJvb2sgYXJlIHB1cmUgZ29sZC4gV29ydGggZXZlcnkgcGVubnkgYW5kIG1vcmUuJywgYXV0aG9yOiAn4oCUIE1pY2hhZWwgUi4sIEludmVzdG9yJyB9LFxuICAgICAgICAgICAgICAgICAgXS5tYXAoKHJldmlldywgaWR4KT0+KFxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGtleT17aWR4fSBjbGFzc05hbWU9XCJib3JkZXItbC0yIGJvcmRlci1bI0ZFRkQwQ10gcGwtNCBweS0xIG1iLTMgbGFzdDptYi0wXCI+XG4gICAgICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPXtgJHt0aGVtZS50ZXh0U2Vjb25kYXJ5fSB0ZXh0LXNtIGxlYWRpbmctcmVsYXhlZCBtYi0yYH0+e3Jldmlldy5xdW90ZX08L3A+XG4gICAgICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPXtgJHt0aGVtZS50ZXh0TXV0ZWR9IHRleHQteHMgZm9udC1tZWRpdW1gfT57cmV2aWV3LmF1dGhvcn08L3A+XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgICAgICB7LyogQWN0aW9uIEljb25zICovfVxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTRcIj5cbiAgICAgICAgICAgICAgICAgIDxidXR0b24gYXJpYS1sYWJlbD1cIkZhdm9yaXRlXCIgY2xhc3NOYW1lPXtgcC0zIHJvdW5kZWQteGwgJHt0aGVtZS5jYXJkfSAke3RoZW1lLmNhcmRIb3Zlcn0gJHt0aGVtZS5ib3JkZXJ9IGJvcmRlciB0cmFuc2l0aW9uLWNvbG9ycyBkdXJhdGlvbi0yMDBgfT5cbiAgICAgICAgICAgICAgICAgICAgPGljb25pZnktaWNvbiBpY29uPVwibHVjaWRlOmhlYXJ0XCIgY2xhc3NOYW1lPVwidy01IGgtNVwiIHN0eWxlPXt7IGNvbG9yOiB0aGVtZS5wcmltYXJ5IH19PjwvaWNvbmlmeS1pY29uPlxuICAgICAgICAgICAgICAgICAgPC9idXR0b24+XG4gICAgICAgICAgICAgICAgICA8YnV0dG9uIGFyaWEtbGFiZWw9XCJTaGFyZVwiIGNsYXNzTmFtZT17YHAtMyByb3VuZGVkLXhsICR7dGhlbWUuY2FyZH0gJHt0aGVtZS5jYXJkSG92ZXJ9ICR7dGhlbWUuYm9yZGVyfSBib3JkZXIgdHJhbnNpdGlvbi1jb2xvcnMgZHVyYXRpb24tMjAwYH0+XG4gICAgICAgICAgICAgICAgICAgIDxpY29uaWZ5LWljb24gaWNvbj1cImx1Y2lkZTpzaGFyZS0yXCIgY2xhc3NOYW1lPVwidy01IGgtNVwiIHN0eWxlPXt7IGNvbG9yOiB0aGVtZS5wcmltYXJ5IH19PjwvaWNvbmlmeS1pY29uPlxuICAgICAgICAgICAgICAgICAgPC9idXR0b24+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICAgIHsvKiBSaWdodCBDb2x1bW4gKi99XG4gICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibGc6Y29sLXNwYW4tMiBzcGFjZS15LTZcIj5cbiAgICAgICAgICAgICAgICB7LyogRm9ybWF0IFNlbGVjdG9yICovfVxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPXtgJHt0aGVtZS5jYXJkfSByb3VuZGVkLTJ4bCBwLTQgJHt0aGVtZS5ib3JkZXJ9IGJvcmRlcmB9PlxuICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJncmlkIGdyaWQtY29scy0yIGdhcC0zXCI+XG4gICAgICAgICAgICAgICAgICAgIHtbJ2RpZ2l0YWwnLCdwaHlzaWNhbCddLm1hcCgodHlwZSk9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgPGJ1dHRvbiBrZXk9e3R5cGV9IHR5cGU9XCJidXR0b25cIiBvbkNsaWNrPXsoKT0+c2V0U2VsZWN0ZWRPcHRpb24odHlwZSl9IGFyaWEtcHJlc3NlZD17c2VsZWN0ZWRPcHRpb249PT10eXBlfVxuICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgcHktMyBweC00IHJvdW5kZWQteGwgZm9udC1zZW1pYm9sZCB0ZXh0LXNtIGZsZXggZmxleC1jb2wgaXRlbXMtY2VudGVyIGdhcC0yIHRyYW5zaXRpb24tY29sb3JzIGR1cmF0aW9uLTIwMCAke3NlbGVjdGVkT3B0aW9uPT09dHlwZT8gYCR7dGhlbWUucHJpbWFyeUJnfSB0ZXh0LWJsYWNrYCA6IGAke3RoZW1lLnRleHR9IGJnLW5ldXRyYWwtODAwIGhvdmVyOmJnLW5ldXRyYWwtNzAwYH1gfVxuICAgICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxpY29uaWZ5LWljb24gaWNvbj17dHlwZT09PSdkaWdpdGFsJz8gJ2x1Y2lkZTpkb3dubG9hZCc6J2x1Y2lkZTpwYWNrYWdlJ30gY2xhc3NOYW1lPVwidy01IGgtNVwiPjwvaWNvbmlmeS1pY29uPlxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4+e3R5cGU9PT0nZGlnaXRhbCc/J0RpZ2l0YWwgQ29weSc6J1BoeXNpY2FsIENvcHknfTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgIHsvKiBEaWdpdGFsIFB1cmNoYXNlICovfVxuICAgICAgICAgICAgICAgIHtzZWxlY3RlZE9wdGlvbj09PSdkaWdpdGFsJyAmJiAoXG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT17YCR7dGhlbWUuY2FyZH0gcm91bmRlZC0yeGwgcC02ICR7dGhlbWUuYm9yZGVyfSBib3JkZXIgc3BhY2UteS02YH0+XG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1zdGFydCBqdXN0aWZ5LWJldHdlZW5cIj5cbiAgICAgICAgICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgICAgICAgICAgPGgzIGNsYXNzTmFtZT17YHRleHQtMnhsIGZvbnQtYm9sZCAke3RoZW1lLnRleHR9IG1iLTJgfT5EaWdpdGFsIGVCb29rPC9oMz5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT17YCR7dGhlbWUudGV4dFNlY29uZGFyeX0gdGV4dC1zbWB9Pkluc3RhbnQgYWNjZXNzIOKAlCBleHRlcm5hbCBjaGVja291dDwvcD5cbiAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInRleHQtcmlnaHRcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1iYXNlbGluZSBnYXAtMlwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9e2B0ZXh0LTN4bCBmb250LWJsYWNrICR7dGhlbWUudGV4dH1gfT4kNDkuOTk8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT17YCR7dGhlbWUudGV4dE11dGVkfSB0ZXh0LWxnIGxpbmUtdGhyb3VnaGB9PiQ5OTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwibXQtMiBpbmxpbmUtYmxvY2sgYmctZ3JlZW4tNTAwIHRleHQteHMgdGV4dC13aGl0ZSBmb250LWJvbGQgcHgtMyBweS0xIHJvdW5kZWQtZnVsbFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICA1MCUgT0ZGXG4gICAgICAgICAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZ3JpZCBtZDpncmlkLWNvbHMtMiBnYXAtNFwiPlxuICAgICAgICAgICAgICAgICAgICAgIDxGZWF0dXJlIGljb249XCJsdWNpZGU6ZG93bmxvYWRcIiB0aXRsZT1cIkluc3RhbnQgRG93bmxvYWRcIiBkZXNjcmlwdGlvbj1cIkdldCBpbW1lZGlhdGUgYWNjZXNzIHRvIFBERiwgRVBVQiwgYW5kIE1PQkkgZm9ybWF0c1wiIC8+XG4gICAgICAgICAgICAgICAgICAgICAgPEZlYXR1cmUgaWNvbj1cImx1Y2lkZTpnbG9iZVwiIHRpdGxlPVwiUmVhZCBBbnl3aGVyZVwiIGRlc2NyaXB0aW9uPVwiQ29tcGF0aWJsZSB3aXRoIGFsbCBkZXZpY2VzIGFuZCBlLXJlYWRlcnNcIiAvPlxuICAgICAgICAgICAgICAgICAgICAgIDxGZWF0dXJlIGljb249XCJsdWNpZGU6c2hpZWxkXCIgdGl0bGU9XCJMaWZldGltZSBBY2Nlc3NcIiBkZXNjcmlwdGlvbj1cIkRvd25sb2FkIGFuZCBrZWVwIGZvcmV2ZXIgd2l0aCBmcmVlIHVwZGF0ZXNcIiAvPlxuICAgICAgICAgICAgICAgICAgICAgIDxGZWF0dXJlIGljb249XCJsdWNpZGU6bG9ja1wiIHRpdGxlPVwiU2VjdXJlIENoZWNrb3V0XCIgZGVzY3JpcHRpb249XCJIYW5kbGVkIG9uIHRyYWRld2l0aGJuYWlyYWFjYWRlbXkuY29tXCIgLz5cbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICAgICAgICBocmVmPVwiaHR0cHM6Ly90cmFkZXdpdGhibmFpcmFhY2FkZW15LmNvbVwiXG4gICAgICAgICAgICAgICAgICAgICAgdGFyZ2V0PVwiX2JsYW5rXCJcbiAgICAgICAgICAgICAgICAgICAgICByZWw9XCJub29wZW5lciBub3JlZmVycmVyXCJcbiAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9e2B3LWZ1bGwgZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTMgcHktNCBweC02IHRleHQtbGcgZm9udC1ib2xkIHJvdW5kZWQtMnhsIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMCAke3RoZW1lLnByaW1hcnlCZ30gJHt0aGVtZS5wcmltYXJ5SG92ZXJ9IHRleHQtYmxhY2sgYm9yZGVyLTIgYm9yZGVyLVsjRkVGRDBDXSBob3ZlcjpzaGFkb3ctbGcgaG92ZXI6c2hhZG93LVsjRkVGRDBDXS8yMGB9XG4gICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICA8aWNvbmlmeS1pY29uIGljb249XCJsdWNpZGU6Y3JlZGl0LWNhcmRcIiBjbGFzc05hbWU9XCJ3LTUgaC01XCI+PC9pY29uaWZ5LWljb24+XG4gICAgICAgICAgICAgICAgICAgICAgPHNwYW4+QnV5IERpZ2l0YWwgQ29weSDigJMgJDQ5Ljk5PC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgIDxpY29uaWZ5LWljb24gaWNvbj1cImx1Y2lkZTphcnJvdy1yaWdodFwiIGNsYXNzTmFtZT1cInctNSBoLTVcIj48L2ljb25pZnktaWNvbj5cbiAgICAgICAgICAgICAgICAgICAgPC9hPlxuXG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTIgdGV4dC1zbVwiPlxuICAgICAgICAgICAgICAgICAgICAgIDxpY29uaWZ5LWljb24gaWNvbj1cImx1Y2lkZTpzaGllbGRcIiBjbGFzc05hbWU9XCJ3LTQgaC00IHRleHQtZ3JlZW4tNDAwXCI+PC9pY29uaWZ5LWljb24+XG4gICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPXtgJHt0aGVtZS50ZXh0TXV0ZWR9YH0+U2VjdXJlIGNoZWNrb3V0IHZpYSBCTkFJUkEgQWNhZGVteTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICApfVxuXG4gICAgICAgICAgICAgICAgey8qIFBoeXNpY2FsIFBsYWNlaG9sZGVyICsgc2FtZSBleHRlcm5hbCBDVEEgKi99XG4gICAgICAgICAgICAgICAge3NlbGVjdGVkT3B0aW9uPT09J3BoeXNpY2FsJyAmJiAoXG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT17YCR7dGhlbWUuY2FyZH0gcm91bmRlZC0yeGwgcC02ICR7dGhlbWUuYm9yZGVyfSBib3JkZXIgc3BhY2UteS02YH0+XG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1zdGFydCBqdXN0aWZ5LWJldHdlZW5cIj5cbiAgICAgICAgICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgICAgICAgICAgPGgzIGNsYXNzTmFtZT17YHRleHQtMnhsIGZvbnQtYm9sZCAke3RoZW1lLnRleHR9IG1iLTJgfT5TaWduZWQgUGh5c2ljYWwgQ29weTwvaDM+XG4gICAgICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9e2Ake3RoZW1lLnRleHRTZWNvbmRhcnl9IHRleHQtc21gfT5QcmVtaXVtIGhhcmRjb3ZlciB3aXRoIGF1dGhvciBzaWduYXR1cmU8L3A+XG4gICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ0ZXh0LXJpZ2h0XCI+XG4gICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9e2B0ZXh0LTN4bCBmb250LWJsYWNrICR7dGhlbWUudGV4dH1gfT4kOTkuOTk8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJtdC0yIG1sLTIgaW5saW5lLWJsb2NrIGJnLVsjRkVGRDBDXSB0ZXh0LXhzIHRleHQtYmxhY2sgZm9udC1ib2xkIHB4LTMgcHktMSByb3VuZGVkLWZ1bGxcIj5GUkVFIFNISVBQSU5HPC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImdyaWQgbWQ6Z3JpZC1jb2xzLTIgZ2FwLTRcIj5cbiAgICAgICAgICAgICAgICAgICAgICA8RmVhdHVyZSBpY29uPVwibHVjaWRlOmF3YXJkXCIgdGl0bGU9XCJBdXRob3IgU2lnbmVkXCIgZGVzY3JpcHRpb249XCJTaWduZWQgYnkgQm5haXJhICsgY2VydGlmaWNhdGUgb2YgYXV0aGVudGljaXR5XCIgLz5cbiAgICAgICAgICAgICAgICAgICAgICA8RmVhdHVyZSBpY29uPVwibHVjaWRlOmJvb2stb3BlblwiIHRpdGxlPVwiUHJlbWl1bSBIYXJkY292ZXJcIiBkZXNjcmlwdGlvbj1cIkhpZ2gtcXVhbGl0eSBiaW5kaW5nIHdpdGggZHVzdCBqYWNrZXRcIiAvPlxuICAgICAgICAgICAgICAgICAgICAgIDxGZWF0dXJlIGljb249XCJsdWNpZGU6dHJ1Y2tcIiB0aXRsZT1cIkZyZWUgV29ybGR3aWRlIFNoaXBwaW5nXCIgZGVzY3JpcHRpb249XCJBcnJpdmVzIGluIDXigJMxMCBidXNpbmVzcyBkYXlzXCIgLz5cbiAgICAgICAgICAgICAgICAgICAgICA8RmVhdHVyZSBpY29uPVwibHVjaWRlOmRvd25sb2FkXCIgdGl0bGU9XCJEaWdpdGFsIENvcHkgSW5jbHVkZWRcIiBkZXNjcmlwdGlvbj1cIkltbWVkaWF0ZSBkaWdpdGFsIGFjY2VzcyB3aGlsZSBzaGlwcGluZ1wiIC8+XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgaHJlZj1cImh0dHBzOi8vdHJhZGV3aXRoYm5haXJhYWNhZGVteS5jb21cIlxuICAgICAgICAgICAgICAgICAgICAgIHRhcmdldD1cIl9ibGFua1wiXG4gICAgICAgICAgICAgICAgICAgICAgcmVsPVwibm9vcGVuZXIgbm9yZWZlcnJlclwiXG4gICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgdy1mdWxsIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIGdhcC0zIHB5LTQgcHgtNiB0ZXh0LWxnIGZvbnQtYm9sZCByb3VuZGVkLTJ4bCB0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi0yMDAgJHt0aGVtZS5wcmltYXJ5Qmd9ICR7dGhlbWUucHJpbWFyeUhvdmVyfSB0ZXh0LWJsYWNrIGJvcmRlci0yIGJvcmRlci1bI0ZFRkQwQ10gaG92ZXI6c2hhZG93LWxnIGhvdmVyOnNoYWRvdy1bI0ZFRkQwQ10vMjBgfVxuICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgPGljb25pZnktaWNvbiBpY29uPVwibHVjaWRlOmV4dGVybmFsLWxpbmtcIiBjbGFzc05hbWU9XCJ3LTUgaC01XCI+PC9pY29uaWZ5LWljb24+XG4gICAgICAgICAgICAgICAgICAgICAgPHNwYW4+QnV5IFBoeXNpY2FsIENvcHkg4oCTICQ5OS45OTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgICA8aWNvbmlmeS1pY29uIGljb249XCJsdWNpZGU6YXJyb3ctcmlnaHRcIiBjbGFzc05hbWU9XCJ3LTUgaC01XCI+PC9pY29uaWZ5LWljb24+XG4gICAgICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgIDwvZGl2PlxuICAgICAgKTtcbiAgICB9XG5cbiAgICBjb25zdCByb290ID0gUmVhY3RET00uY3JlYXRlUm9vdChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncm9vdCcpKTtcbiAgICByb290LnJlbmRlcig8RUJvb2tTdG9yZS8+KTtcbiAgIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFDSSxJQUFBQSxNQUFBLEdBQXFCQyxLQUFLO0VBQWxCQyxRQUFRLEdBQUFGLE1BQUEsQ0FBUkUsUUFBUTtBQUVoQixJQUFNQyxLQUFLLEdBQUc7RUFDWkMsT0FBTyxFQUFFLFNBQVM7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</script></head>
+<body>
+  <div id="root"><div class="bg-black min-h-screen" style="font-family: Inter, sans-serif;"><div class="max-w-7xl mx-auto px-6 py-8"><div class="mb-8 flex items-center"><h1 class="ml-4 text-2xl font-extrabold text-white">Purchase E-book</h1></div><div class="grid lg:grid-cols-3 gap-8 items-start"><div class="lg:col-span-1 space-y-6"><div class="bg-neutral-900 rounded-2xl p-8 border-neutral-700 border"><div class="flex justify-center mb-6"><div class="w-48 h-64 bg-black rounded-xl border-2 border-[#FEFD0C] p-5 flex flex-col justify-between relative overflow-hidden"><div class="absolute top-0 right-0 w-8 h-8 bg-[#FEFD0C] rotate-45 translate-x-4 -translate-y-4"></div><div class="relative z-10 text-center"><h3 class="text-lg font-black text-[#FEFD0C] mb-2">MAKE MONEY</h3><h4 class="text-sm font-bold text-white mb-4">WHILE YOU SLEEP</h4><div class="mx-auto w-12 h-0.5 bg-[#FEFD0C]"></div></div><div class="relative z-10 text-center"><p class="text-[#FEFD0C] font-black text-lg">BNAIRA</p><p class="text-neutral-300 text-xs mt-1">Financial Freedom Guide</p></div></div></div><button aria-label="Preview sample pages" class="w-full flex items-center justify-center gap-2 py-3 px-6 bg-neutral-900 hover:bg-neutral-800 rounded-xl border-neutral-700 border transition-colors duration-200"><iconify-icon icon="lucide:eye" classname="w-4 h-4" style="color: rgb(254, 253, 12);"></iconify-icon><span class="text-white font-medium text-sm">Preview Sample Pages</span></button></div><div class="grid grid-cols-3 gap-3"><div class="bg-neutral-900 rounded-xl p-4 border-neutral-700 border text-center hover:bg-neutral-800 transition-all duration-200"><iconify-icon icon="lucide:book-open" classname="w-6 h-6" style="color: rgb(254, 253, 12);"></iconify-icon><p class="text-white text-lg font-bold mb-1">324</p><p class="text-neutral-400 text-xs font-medium uppercase tracking-wide">Pages</p></div><div class="bg-neutral-900 rounded-xl p-4 border-neutral-700 border text-center hover:bg-neutral-800 transition-all duration-200"><iconify-icon icon="lucide:clock" classname="w-6 h-6" style="color: rgb(254, 253, 12);"></iconify-icon><p class="text-white text-lg font-bold mb-1">6-8h</p><p class="text-neutral-400 text-xs font-medium uppercase tracking-wide">Read Time</p></div><div class="bg-neutral-900 rounded-xl p-4 border-neutral-700 border text-center hover:bg-neutral-800 transition-all duration-200"><iconify-icon icon="lucide:award" classname="w-6 h-6" style="color: rgb(254, 253, 12);"></iconify-icon><p class="text-white text-lg font-bold mb-1">#1</p><p class="text-neutral-400 text-xs font-medium uppercase tracking-wide">Bestseller</p></div></div><div class="bg-neutral-900 rounded-2xl p-6 border-neutral-700 border"><h4 class="flex items-center gap-2 mb-4 text-sm font-semibold text-white"><iconify-icon icon="lucide:users" classname="w-4 h-4" style="color: rgb(254, 253, 12);"></iconify-icon>What Readers Are Saying</h4><div class="border-l-2 border-[#FEFD0C] pl-4 py-1 mb-3 last:mb-0"><p class="text-neutral-300 text-sm leading-relaxed mb-2">Changed my entire approach to passive income. Already making $2k/month!</p><p class="text-neutral-400 text-xs font-medium">— Sarah M., Entrepreneur</p></div><div class="border-l-2 border-[#FEFD0C] pl-4 py-1 mb-3 last:mb-0"><p class="text-neutral-300 text-sm leading-relaxed mb-2">The strategies in this book are pure gold. Worth every penny and more.</p><p class="text-neutral-400 text-xs font-medium">— Michael R., Investor</p></div></div><div class="flex items-center justify-center gap-4"><button aria-label="Favorite" class="p-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 border-neutral-700 border transition-colors duration-200"><iconify-icon icon="lucide:heart" classname="w-5 h-5" style="color: rgb(254, 253, 12);"></iconify-icon></button><button aria-label="Share" class="p-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 border-neutral-700 border transition-colors duration-200"><iconify-icon icon="lucide:share-2" classname="w-5 h-5" style="color: rgb(254, 253, 12);"></iconify-icon></button></div></div><div class="lg:col-span-2 space-y-6"><div class="bg-neutral-900 rounded-2xl p-4 border-neutral-700 border"><div class="grid grid-cols-2 gap-3"><button type="button" aria-pressed="false" class="py-3 px-4 rounded-xl font-semibold text-sm flex flex-col items-center gap-2 transition-colors duration-200 text-white bg-neutral-800 hover:bg-neutral-700"><iconify-icon icon="lucide:download" classname="w-5 h-5"></iconify-icon><span>Digital Copy</span></button><button type="button" aria-pressed="true" class="py-3 px-4 rounded-xl font-semibold text-sm flex flex-col items-center gap-2 transition-colors duration-200 bg-[#FEFD0C] text-black"><iconify-icon icon="lucide:package" classname="w-5 h-5"></iconify-icon><span>Physical Copy</span></button></div></div><div class="bg-neutral-900 rounded-2xl p-6 border-neutral-700 border space-y-6"><div class="flex items-start justify-between"><div><h3 class="text-2xl font-bold text-white mb-2">Signed Physical Copy</h3><p class="text-neutral-300 text-sm">Premium hardcover with author signature</p></div><div class="text-right"><span class="text-3xl font-black text-white">$99.99</span><span class="mt-2 ml-2 inline-block bg-[#FEFD0C] text-xs text-black font-bold px-3 py-1 rounded-full">FREE SHIPPING</span></div></div><div class="grid md:grid-cols-2 gap-4"><div class="flex items-start gap-3 p-4 rounded-lg bg-neutral-800/50 border border-neutral-700"><div class="w-8 h-8 rounded-lg bg-[#FEFD0C] flex items-center justify-center text-black flex-shrink-0"><iconify-icon icon="lucide:award" classname="w-4 h-4"></iconify-icon></div><div class="flex-1"><h4 class="text-white font-semibold mb-1 text-sm">Author Signed</h4><p class="text-neutral-400 text-xs leading-relaxed">Signed by Bnaira + certificate of authenticity</p></div></div><div class="flex items-start gap-3 p-4 rounded-lg bg-neutral-800/50 border border-neutral-700"><div class="w-8 h-8 rounded-lg bg-[#FEFD0C] flex items-center justify-center text-black flex-shrink-0"><iconify-icon icon="lucide:book-open" classname="w-4 h-4"></iconify-icon></div><div class="flex-1"><h4 class="text-white font-semibold mb-1 text-sm">Premium Hardcover</h4><p class="text-neutral-400 text-xs leading-relaxed">High-quality binding with dust jacket</p></div></div><div class="flex items-start gap-3 p-4 rounded-lg bg-neutral-800/50 border border-neutral-700"><div class="w-8 h-8 rounded-lg bg-[#FEFD0C] flex items-center justify-center text-black flex-shrink-0"><iconify-icon icon="lucide:truck" classname="w-4 h-4"></iconify-icon></div><div class="flex-1"><h4 class="text-white font-semibold mb-1 text-sm">Free Worldwide Shipping</h4><p class="text-neutral-400 text-xs leading-relaxed">Arrives in 5–10 business days</p></div></div><div class="flex items-start gap-3 p-4 rounded-lg bg-neutral-800/50 border border-neutral-700"><div class="w-8 h-8 rounded-lg bg-[#FEFD0C] flex items-center justify-center text-black flex-shrink-0"><iconify-icon icon="lucide:download" classname="w-4 h-4"></iconify-icon></div><div class="flex-1"><h4 class="text-white font-semibold mb-1 text-sm">Digital Copy Included</h4><p class="text-neutral-400 text-xs leading-relaxed">Immediate digital access while shipping</p></div></div></div><a href="https://tradewithbnairaacademy.com" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-3 py-4 px-6 text-lg font-bold rounded-2xl transition-all duration-200 bg-[#FEFD0C] hover:bg-[#FEFD0C]/90 text-black border-2 border-[#FEFD0C] hover:shadow-lg hover:shadow-[#FEFD0C]/20"><iconify-icon icon="lucide:external-link" classname="w-5 h-5"></iconify-icon><span>Buy Physical Copy – $99.99</span><iconify-icon icon="lucide:arrow-right" classname="w-5 h-5"></iconify-icon></a></div></div></div></div></div></div>
+  <div id="toast-root"></div>
+
+  <!-- IMPORTANT: add data-presets for JSX -->
+  <script type="text/babel" data-presets="env,react">
+    const { useState } = React;
+
+    const theme = {
+      primary: '#FEFD0C',
+      primaryBg: 'bg-[#FEFD0C]',
+      primaryHover: 'hover:bg-[#FEFD0C]/90',
+      background: 'bg-black',
+      surface: 'bg-neutral-900',
+      surfaceHover: 'hover:bg-neutral-800',
+      card: 'bg-neutral-900',
+      cardHover: 'hover:bg-neutral-800',
+      text: 'text-white',
+      textSecondary: 'text-neutral-300',
+      textMuted: 'text-neutral-400',
+      border: 'border-neutral-700',
+    };
+
+    // Minimal toast util (UI)
+    const toastRoot = document.getElementById('toast-root');
+    const toast = {
+      make(type, msg) {
+        const el = document.createElement('div');
+        el.className = 'toast';
+        el.dataset.type = type;
+        el.innerHTML = `<iconify-icon icon="lucide:${type==='success'?'check-circle-2':type==='error'?'alert-triangle':'loader-2'}" class="w-4 h-4 ${type==='loading'?'animate-spin':''}" style="color: var(--brand)"></iconify-icon><span class="text-sm">${msg}</span>`;
+        toastRoot.appendChild(el);
+        const t = setTimeout(()=>{ el.style.opacity = '0'; el.style.transform='translateY(-4px)'; setTimeout(()=> toastRoot.removeChild(el), 200); }, type==='loading'? 2000 : 1600);
+        return { close: ()=>{ clearTimeout(t); if (el.parentNode) toastRoot.removeChild(el); } };
+      },
+      loading(msg){ return this.make('loading', msg); },
+      success(msg){ return this.make('success', msg); },
+      error(msg){ return this.make('error', msg); },
+    };
+
+    const StatCard = ({ icon, value, label }) => (
+      <div className={`${theme.card} rounded-xl p-4 ${theme.border} border text-center ${theme.cardHover} transition-all duration-200`}>
+        <iconify-icon icon={icon} className="w-6 h-6" style={{ color: theme.primary }}></iconify-icon>
+        <p className={`${theme.text} text-lg font-bold mb-1`}>{value}</p>
+        <p className={`${theme.textMuted} text-xs font-medium uppercase tracking-wide`}>{label}</p>
+      </div>
+    );
+
+    const Feature = ({ icon, title, description }) => (
+      <div className="flex items-start gap-3 p-4 rounded-lg bg-neutral-800/50 border border-neutral-700">
+        <div className="w-8 h-8 rounded-lg bg-[#FEFD0C] flex items-center justify-center text-black flex-shrink-0">
+          <iconify-icon icon={icon} className="w-4 h-4"></iconify-icon>
+        </div>
+        <div className="flex-1">
+          <h4 className={`${theme.text} font-semibold mb-1 text-sm`}>{title}</h4>
+          <p className={`${theme.textMuted} text-xs leading-relaxed`}>{description}</p>
+        </div>
+      </div>
+    );
+
+    function EBookStore(){
+      const [selectedOption, setSelectedOption] = useState('digital');
+
+      const handleGoBack = () => { if (history.length>1) history.back(); else location.href='/'; };
+
+      const stats = [
+        { icon: 'lucide:book-open', value: '324', label: 'Pages' },
+        { icon: 'lucide:clock', value: '6-8h', label: 'Read Time' },
+        { icon: 'lucide:award', value: '#1', label: 'Bestseller' },
+      ];
+
+      return (
+        <div className={`${theme.background} min-h-screen`} style={{ fontFamily: 'Inter, sans-serif' }}>
+          <div className="max-w-7xl mx-auto px-6 py-8">
+            {/* Header */}
+            <div className="mb-8 flex items-center">
+              <h1 className="ml-4 text-2xl font-extrabold text-white">Purchase E-book</h1>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-8 items-start">
+              {/* Left Column */}
+              <div className="lg:col-span-1 space-y-6">
+                {/* Book Preview */}
+                <div className={`${theme.card} rounded-2xl p-8 ${theme.border} border`}>
+                  <div className="flex justify-center mb-6">
+                    <div className="w-48 h-64 bg-black rounded-xl border-2 border-[#FEFD0C] p-5 flex flex-col justify-between relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-8 h-8 bg-[#FEFD0C] rotate-45 translate-x-4 -translate-y-4" />
+                      <div className="relative z-10 text-center">
+                        <h3 className="text-lg font-black text-[#FEFD0C] mb-2">MAKE MONEY</h3>
+                        <h4 className="text-sm font-bold text-white mb-4">WHILE YOU SLEEP</h4>
+                        <div className="mx-auto w-12 h-0.5 bg-[#FEFD0C]" />
+                      </div>
+                      <div className="relative z-10 text-center">
+                        <p className="text-[#FEFD0C] font-black text-lg">BNAIRA</p>
+                        <p className="text-neutral-300 text-xs mt-1">Financial Freedom Guide</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button aria-label="Preview sample pages"
+                    className={`w-full flex items-center justify-center gap-2 py-3 px-6 ${theme.surface} ${theme.surfaceHover} rounded-xl ${theme.border} border transition-colors duration-200`}>
+                    <iconify-icon icon="lucide:eye" className="w-4 h-4" style={{ color: theme.primary }}></iconify-icon>
+                    <span className={`${theme.text} font-medium text-sm`}>Preview Sample Pages</span>
+                  </button>
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-3">
+                  {stats.map((s, i)=> <StatCard key={i} {...s} />)}
+                </div>
+
+                {/* Testimonials */}
+                <div className={`${theme.card} rounded-2xl p-6 ${theme.border} border`}>
+                  <h4 className="flex items-center gap-2 mb-4 text-sm font-semibold text-white">
+                    <iconify-icon icon="lucide:users" className="w-4 h-4" style={{ color: theme.primary }}></iconify-icon>
+                    What Readers Are Saying
+                  </h4>
+                  {[
+                    { quote: 'Changed my entire approach to passive income. Already making $2k/month!', author: '— Sarah M., Entrepreneur' },
+                    { quote: 'The strategies in this book are pure gold. Worth every penny and more.', author: '— Michael R., Investor' },
+                  ].map((review, idx)=>(
+                    <div key={idx} className="border-l-2 border-[#FEFD0C] pl-4 py-1 mb-3 last:mb-0">
+                      <p className={`${theme.textSecondary} text-sm leading-relaxed mb-2`}>{review.quote}</p>
+                      <p className={`${theme.textMuted} text-xs font-medium`}>{review.author}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Action Icons */}
+                <div className="flex items-center justify-center gap-4">
+                  <button aria-label="Favorite" className={`p-3 rounded-xl ${theme.card} ${theme.cardHover} ${theme.border} border transition-colors duration-200`}>
+                    <iconify-icon icon="lucide:heart" className="w-5 h-5" style={{ color: theme.primary }}></iconify-icon>
+                  </button>
+                  <button aria-label="Share" className={`p-3 rounded-xl ${theme.card} ${theme.cardHover} ${theme.border} border transition-colors duration-200`}>
+                    <iconify-icon icon="lucide:share-2" className="w-5 h-5" style={{ color: theme.primary }}></iconify-icon>
+                  </button>
+                </div>
+              </div>
+
+              {/* Right Column */}
+              <div className="lg:col-span-2 space-y-6">
+                {/* Format Selector */}
+                <div className={`${theme.card} rounded-2xl p-4 ${theme.border} border`}>
+                  <div className="grid grid-cols-2 gap-3">
+                    {['digital','physical'].map((type)=> (
+                      <button key={type} type="button" onClick={()=>setSelectedOption(type)} aria-pressed={selectedOption===type}
+                        className={`py-3 px-4 rounded-xl font-semibold text-sm flex flex-col items-center gap-2 transition-colors duration-200 ${selectedOption===type? `${theme.primaryBg} text-black` : `${theme.text} bg-neutral-800 hover:bg-neutral-700`}`}
+                      >
+                        <iconify-icon icon={type==='digital'? 'lucide:download':'lucide:package'} className="w-5 h-5"></iconify-icon>
+                        <span>{type==='digital'?'Digital Copy':'Physical Copy'}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Digital Purchase */}
+                {selectedOption==='digital' && (
+                  <div className={`${theme.card} rounded-2xl p-6 ${theme.border} border space-y-6`}>
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h3 className={`text-2xl font-bold ${theme.text} mb-2`}>Digital eBook</h3>
+                        <p className={`${theme.textSecondary} text-sm`}>Instant access — external checkout</p>
+                      </div>
+                      <div className="text-right">
+                        <div className="flex items-baseline gap-2">
+                          <span className={`text-3xl font-black ${theme.text}`}>$49.99</span>
+                          <span className={`${theme.textMuted} text-lg line-through`}>$99</span>
+                        </div>
+                        <span className="mt-2 inline-block bg-green-500 text-xs text-white font-bold px-3 py-1 rounded-full">
+                          50% OFF
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <Feature icon="lucide:download" title="Instant Download" description="Get immediate access to PDF, EPUB, and MOBI formats" />
+                      <Feature icon="lucide:globe" title="Read Anywhere" description="Compatible with all devices and e-readers" />
+                      <Feature icon="lucide:shield" title="Lifetime Access" description="Download and keep forever with free updates" />
+                      <Feature icon="lucide:lock" title="Secure Checkout" description="Handled on tradewithbnairaacademy.com" />
+                    </div>
+
+                    <a
+                      href="https://tradewithbnairaacademy.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full flex items-center justify-center gap-3 py-4 px-6 text-lg font-bold rounded-2xl transition-all duration-200 ${theme.primaryBg} ${theme.primaryHover} text-black border-2 border-[#FEFD0C] hover:shadow-lg hover:shadow-[#FEFD0C]/20`}
+                    >
+                      <iconify-icon icon="lucide:credit-card" className="w-5 h-5"></iconify-icon>
+                      <span>Buy Digital Copy – $49.99</span>
+                      <iconify-icon icon="lucide:arrow-right" className="w-5 h-5"></iconify-icon>
+                    </a>
+
+                    <div className="flex items-center justify-center gap-2 text-sm">
+                      <iconify-icon icon="lucide:shield" className="w-4 h-4 text-green-400"></iconify-icon>
+                      <span className={`${theme.textMuted}`}>Secure checkout via BNAIRA Academy</span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Physical Placeholder + same external CTA */}
+                {selectedOption==='physical' && (
+                  <div className={`${theme.card} rounded-2xl p-6 ${theme.border} border space-y-6`}>
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h3 className={`text-2xl font-bold ${theme.text} mb-2`}>Signed Physical Copy</h3>
+                        <p className={`${theme.textSecondary} text-sm`}>Premium hardcover with author signature</p>
+                      </div>
+                      <div className="text-right">
+                        <span className={`text-3xl font-black ${theme.text}`}>$99.99</span>
+                        <span className="mt-2 ml-2 inline-block bg-[#FEFD0C] text-xs text-black font-bold px-3 py-1 rounded-full">FREE SHIPPING</span>
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <Feature icon="lucide:award" title="Author Signed" description="Signed by Bnaira + certificate of authenticity" />
+                      <Feature icon="lucide:book-open" title="Premium Hardcover" description="High-quality binding with dust jacket" />
+                      <Feature icon="lucide:truck" title="Free Worldwide Shipping" description="Arrives in 5–10 business days" />
+                      <Feature icon="lucide:download" title="Digital Copy Included" description="Immediate digital access while shipping" />
+                    </div>
+
+                    <a
+                      href="https://tradewithbnairaacademy.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full flex items-center justify-center gap-3 py-4 px-6 text-lg font-bold rounded-2xl transition-all duration-200 ${theme.primaryBg} ${theme.primaryHover} text-black border-2 border-[#FEFD0C] hover:shadow-lg hover:shadow-[#FEFD0C]/20`}
+                    >
+                      <iconify-icon icon="lucide:external-link" className="w-5 h-5"></iconify-icon>
+                      <span>Buy Physical Copy – $99.99</span>
+                      <iconify-icon icon="lucide:arrow-right" className="w-5 h-5"></iconify-icon>
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<EBookStore/>);
+  </script>
+
+
+</body></html>

@@ -1217,58 +1217,6 @@
     startAuto();
   });
 </script>
-<!-- WhatsApp Floating Chat Button -->
-<style>
-  #whatsapp-fab{
-    position:fixed; right:16px; bottom:16px; z-index:9999;
-    display:inline-flex; align-items:center; justify-content:center;
-    width:56px; height:56px; border-radius:9999px;
-    background: var(--brand, #25D366); color:#000; border:none; cursor:pointer;
-    box-shadow:0 8px 24px rgba(0,0,0,.25); transition:transform .15s ease, box-shadow .15s ease;
-  }
-  #whatsapp-fab:hover{ transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.3); }
-  #whatsapp-fab svg{ width:28px; height:28px; display:block; }
-  /* Optional tooltip */
-  #whatsapp-tip{
-    position:fixed; right:80px; bottom:26px; z-index:9999;
-    background:rgba(0,0,0,.8); color:#fff; padding:8px 10px; border-radius:10px; font-size:12px;
-    line-height:1; white-space:nowrap; opacity:.95;
-  }
-  @media (max-width:640px){ #whatsapp-tip{ display:none; } }
-</style>
-
-<button id="whatsapp-fab" aria-label="Chat on WhatsApp">
-  <!-- WhatsApp logo (inline SVG, no deps) -->
-  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-     <path fill="#fff" d="M.057 24l1.687-6.163c-1.04-1.806-1.588-3.849-1.587-5.946C.16 5.29 5.435 0 12.016 0c6.578 0 11.854 5.29 11.854 11.801-.002 6.51-5.276 11.8-11.854 11.8-1.99-.001-3.951-.501-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.885-4.429 9.887-9.867C21.93 6.48 17.494 2.05 12.046 2.05 6.596 2.05 2.16 6.48 2.16 11.919c-.002 2.225.651 3.891 1.746 5.596l-.999 3.648 3.747-1.97zm11.387-5.468c-.074-.124-.272-.198-.568-.347-.294-.149-1.742-.861-2.013-.959-.272-.099-.47-.149-.669.149-.198.297-.768.959-.941 1.156-.173.198-.347.223-.641.074-.294-.149-1.246-.459-2.374-1.461-.878-.783-1.47-1.756-1.644-2.053-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.742-.706 1.988-1.388.247-.68.247-1.262.173-1.387z"></path>
-  </svg>
-</button>
-<div id="whatsapp-tip">Chat with us on WhatsApp</div>
-
-<script>
-  (function(){
-    // Your WhatsApp number (no +, no spaces)
-    var WA_NUMBER = '447498349775';
-    // Default prefilled message
-    var DEFAULT_MSG = 'Hi! I need help with an exchange.';
-
-    function isMobile(){
-      var ua = navigator.userAgent || navigator.vendor || window.opera;
-      return /android|iphone|ipad|ipod|iemobile|wpdesktop|blackberry/i.test(ua.toLowerCase());
-    }
-
-    function openWhatsApp(){
-      var text = encodeURIComponent(DEFAULT_MSG);
-      var link = isMobile()
-        ? 'whatsapp://send?phone=' + WA_NUMBER + '&text=' + text
-        : 'https://wa.me/' + WA_NUMBER + '?text=' + text;
-      window.open(link, '_blank');
-    }
-
-    var btn = document.getElementById('whatsapp-fab');
-    if (btn){ btn.addEventListener('click', openWhatsApp); }
-  })();
-</script>
 
 
 

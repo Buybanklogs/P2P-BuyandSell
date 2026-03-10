@@ -1,0 +1,409 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>SFPF Global – Sign In</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/logo.png" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <style>
+    :root { --brand: #FEFD0C; }
+    html { -webkit-text-size-adjust: 100%; } /* avoid auto-zoom tweaks */
+    body {
+      background: #000;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    /* Core input styles */
+    .input-base{
+      width:100%;
+      background-color:rgba(0,0,0,0.4);
+      border:1px solid #1f2937; /* gray-800 */
+      color:#fff;
+      border-radius:0.75rem;
+      padding:0.75rem 1rem 0.75rem 2.5rem;
+      font-size:1rem;            /* 16px to prevent iOS zoom */
+      line-height:1.5;           /* comfortable tap targets */
+      transition:all .2s;
+      outline:none;
+    }
+    .input-base::placeholder{color:#6b7280}
+    .input-base:focus{background-color:rgba(0,0,0,0.6); box-shadow:0 0 0 1px var(--brand)}
+
+    /* Extra safety for iOS Safari */
+    @supports (-webkit-touch-callout: none) {
+      input, select, textarea { font-size:16px !important; }
+    }
+
+    /* If you prefer to only force 16px on small screens: */
+    @media (max-width: 640px){
+      .input-base { font-size:16px; }
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.left-3{left:0.75rem}.top-1\/2{top:50%}.right-3{right:0.75rem}.mb-6{margin-bottom:1.5rem}.mb-1{margin-bottom:0.25rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.hidden{display:none}.h-4{height:1rem}.h-3{height:0.75rem}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-4{width:1rem}.w-3{width:0.75rem}.max-w-md{max-width:28rem}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.select-none{-webkit-user-select:none;user-select:none}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-1{gap:0.25rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.rounded-full{border-radius:9999px}.rounded-2xl{border-radius:1rem}.rounded-lg{border-radius:0.5rem}.rounded{border-radius:0.25rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-t{border-top-width:1px}.border-black\/10{border-color:rgb(0 0 0 / 0.1)}.border-green-500\/30{border-color:rgb(34 197 94 / 0.3)}.border-red-500\/30{border-color:rgb(239 68 68 / 0.3)}.border-gray-400{--tw-border-opacity:1;border-color:rgb(156 163 175 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-t-transparent{border-top-color:transparent}.bg-black\/60{background-color:rgb(0 0 0 / 0.6)}.bg-green-500\/10{background-color:rgb(34 197 94 / 0.1)}.bg-red-500\/10{background-color:rgb(239 68 68 / 0.1)}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-gray-700{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-black\/75{--tw-gradient-from:rgb(0 0 0 / 0.75) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-black\/60{--tw-gradient-to:rgb(0 0 0 / 0.6) var(--tw-gradient-to-position)}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pr-4{padding-right:1rem}.pr-10{padding-right:2.5rem}.pt-4{padding-top:1rem}.text-center{text-align:center}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.tracking-wide{letter-spacing:0.025em}.text-gray-300\/90{color:rgb(209 213 219 / 0.9)}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-\[color\:var\(--brand\)\]{color:var(--brand)}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.underline-offset-2{text-underline-offset:2px}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.hover\:text-\[color\:var\(--brand\)\]:hover{color:var(--brand)}.hover\:opacity-80:hover{opacity:0.8}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-offset-0:focus{--tw-ring-offset-width:0px}</style></head>
+<body>
+  <div class="min-h-screen w-full flex items-center justify-center py-10 px-2">
+    <div class="w-full max-w-md">
+
+      <!-- Security Badge -->
+      <div class="flex justify-center mb-6">
+        <div class="bg-black/60 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2">
+          <iconify-icon icon="lucide:shield" class="w-4 h-4" style="color:var(--brand)"></iconify-icon>
+          <span class="text-xs font-medium tracking-wide" style="color:var(--brand)">SECURE LOGIN</span>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="rounded-2xl shadow-2xl border border-black/10 bg-gradient-to-br from-black/75 to-black/60 backdrop-blur-md p-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+          <h1 class="text-3xl font-extrabold text-white mb-1">
+            Welcome <span style="color:var(--brand)">Back</span>
+          </h1>
+          <p class="text-gray-300/90 text-sm">Sign in to access your account</p>
+        </div>
+
+        <!-- Alerts -->
+        <div id="alert-success" class="hidden bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-3 rounded-lg mb-4 flex items-center gap-3" role="alert">
+          <iconify-icon icon="lucide:check-circle-2" class="h-4 w-4"></iconify-icon>
+          <span class="text-sm" id="alert-success-text">Login successful! Redirecting...</span>
+        </div>
+        <div id="alert-error" class="hidden bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg mb-4 flex items-center gap-3" role="alert">
+          <iconify-icon icon="lucide:alert-circle" class="h-4 w-4"></iconify-icon>
+          <span class="text-sm" id="alert-error-text"></span>
+        </div>
+
+        <!-- FORM -->
+        <form id="login-form" class="space-y-5" method="post" action="auth/login.php" novalidate="">
+          <!-- Email -->
+          <div class="space-y-2">
+            <label for="email" class="block text-sm font-medium text-white">
+              Email Address <span class="text-red-400">*</span>
+            </label>
+            <div class="relative">
+              <iconify-icon icon="lucide:mail" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4"></iconify-icon>
+              <input id="email" name="email" type="email" inputmode="email" placeholder="Enter your email" autocomplete="email" required="" class="input-base pr-4">
+            </div>
+            <p id="email-error" class="hidden text-red-400 text-xs flex items-center gap-1">
+              <iconify-icon icon="lucide:alert-circle" class="w-3 h-3"></iconify-icon>
+              <span></span>
+            </p>
+          </div>
+
+          <!-- Password -->
+          <div class="space-y-2">
+            <label for="password" class="block text-sm font-medium text-white">
+              Password <span class="text-red-400">*</span>
+            </label>
+            <div class="relative">
+              <iconify-icon icon="lucide:lock" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4"></iconify-icon>
+              <input id="password" name="password" type="password" inputmode="text" placeholder="Enter your password" autocomplete="current-password" required="" class="input-base pr-10">
+              <button type="button" id="toggle-password" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[color:var(--brand)] transition-colors">
+                <iconify-icon id="toggle-password-icon" icon="lucide:eye" class="w-4 h-4"></iconify-icon>
+              </button>
+            </div>
+            <p id="password-error" class="hidden text-red-400 text-xs flex items-center gap-1">
+              <iconify-icon icon="lucide:alert-circle" class="w-3 h-3"></iconify-icon>
+              <span></span>
+            </p>
+          </div>
+
+          <!-- Remember / Forgot -->
+          <div class="flex items-center justify-between">
+            <label class="flex items-center gap-3 select-none">
+              <input id="remember" name="remember" type="checkbox" class="w-4 h-4 text-[color:var(--brand)] bg-black/40 border-gray-700 rounded focus:ring-[color:var(--brand)]/20 focus:ring-2 focus:ring-offset-0">
+              <span class="text-sm text-gray-300">Remember me</span>
+            </label>
+            <button type="button" id="btn-forgot" class="text-sm underline underline-offset-2 font-medium hover:opacity-80" style="color:var(--brand)">
+              Forgot Password?
+            </button>
+          </div>
+
+          <!-- Submit -->
+          <button id="btn-submit" type="submit" class="w-full py-3 px-4 rounded-xl font-semibold text-sm transition-all duration-200 flex items-center justify-center gap-2 bg-gray-700 text-gray-400 cursor-not-allowed" disabled="">
+            <span id="btn-spinner" class="hidden animate-spin rounded-full h-4 w-4 border-2 border-gray-400 border-t-transparent"></span>
+            <iconify-icon id="btn-lock" icon="lucide:lock" class="w-4 h-4"></iconify-icon>
+            <span id="btn-text">Sign In</span>
+          </button>
+
+          <!-- Signup -->
+          <div class="text-center pt-4 border-t border-white/10">
+            <p class="text-gray-300 text-sm">
+              Don’t have an account?
+              <a href="/signup" class="font-semibold underline underline-offset-2 hover:opacity-80" style="color:var(--brand)">Sign Up</a>
+            </p>
+          </div>
+        </form>
+
+        <!-- Footer line -->
+        <div class="text-center mt-6">
+          <p class="text-gray-400 text-xs">Protected by industry-standard encryption</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---------- Utilities ----------
+    const $ = (s)=>document.querySelector(s);
+    const isValidEmail = (e)=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+    const getErrors = (email, password) => {
+      const errors = {};
+      if (!email.trim()) errors.email = "Email is required";
+      else if (!isValidEmail(email)) errors.email = "Please enter a valid email address";
+      if (!password.trim()) errors.password = "Password is required";
+      return errors;
+    };
+
+    // Persistent storage helpers for "Remember me"
+    const STORAGE = (() => {
+      try { const t="__test__"; localStorage.setItem(t,t); localStorage.removeItem(t); return localStorage; }
+      catch { return null; }
+    })();
+    const LS_REMEMBER = "sfpfg_remember";
+    const LS_EMAIL    = "sfpfg_email";
+
+    // ---------- Elements ----------
+    const elForm = $("#login-form");
+    const elEmail = $("#email");
+    const elPass  = $("#password");
+    const elRemember = $("#remember");
+    const elForgot = $("#btn-forgot");
+
+    const elErrEmail = $("#email-error");
+    const elErrEmailText = $("#email-error span");
+    const elErrPass  = $("#password-error");
+    theEmailErrorText = null;
+    const elErrPassText = $("#password-error span");
+
+    const elAlertSuccess = $("#alert-success");
+    const elAlertSuccessText = $("#alert-success-text");
+    const elAlertError = $("#alert-error");
+    const elAlertErrorText = $("#alert-error-text");
+
+    const elBtn = $("#btn-submit");
+    const elBtnText = $("#btn-text");
+    const elBtnSpinner = $("#btn-spinner");
+    const elBtnLock = $("#btn-lock");
+
+    const elTogglePass = $("#toggle-password");
+    const elToggleIcon = $("#toggle-password-icon");
+
+    let showPassword=false, isLoading=false;
+
+    // Track interaction so errors only show after user touches fields
+    const touched = { email: false, password: false };
+
+    // ---------- UI helpers ----------
+    function setFieldError(wrapper, textEl, message){
+      if(message){
+        wrapper.classList.remove("hidden");
+        textEl.textContent = message;
+        const input = wrapper.previousElementSibling.querySelector("input");
+        if(input){
+          input.style.boxShadow = "0 0 0 1px rgba(239,68,68,.9)";
+          input.style.borderColor = "rgb(239,68,68)";
+        }
+      } else {
+        wrapper.classList.add("hidden");
+        textEl.textContent = "";
+        const input = wrapper.previousElementSibling.querySelector("input");
+        if(input){
+          input.style.boxShadow = "";
+          input.style.borderColor = "#1f2937"; // reset to gray-800
+        }
+      }
+    }
+
+    function setButtonState(enabled){
+      if(isLoading) return;
+      if(enabled){
+        elBtn.classList.remove("bg-gray-700","text-gray-400","cursor-not-allowed");
+        elBtn.classList.add("bg-[color:var(--brand)]","text-black","hover:bg-[color:var(--brand)]/90","hover:shadow-lg","hover:shadow-[color:var(--brand)]/20");
+        elBtn.disabled = false;
+      } else {
+        elBtn.classList.add("bg-gray-700","text-gray-400","cursor-not-allowed");
+        elBtn.classList.remove("bg-[color:var(--brand)]","text-black","hover:bg-[color:var(--brand)]/90","hover:shadow-lg","hover:shadow-[color:var(--brand)]/20");
+        elBtn.disabled = true;
+      }
+    }
+
+    function updateFieldUI(field){
+      const email = elEmail.value;
+      const password = elPass.value;
+      const errs = getErrors(email, password);
+
+      if(field === "email" && touched.email){
+        setFieldError(elErrEmail, elErrEmailText, errs.email);
+      }
+      if(field === "password" && touched.password){
+        setFieldError(elErrPass, elErrPassText, errs.password);
+      }
+
+      const hasErrors = !!(errs.email || errs.password);
+      setButtonState(!hasErrors);
+    }
+
+    function showError(msg){
+      elAlertErrorText.textContent = msg || "Invalid email or password";
+      elAlertError.classList.remove("hidden");
+    }
+    function hideError(){ elAlertError.classList.add("hidden"); }
+    function showSuccess(msg){
+      elAlertSuccessText.textContent = msg || "Login successful! Redirecting...";
+      elAlertSuccess.classList.remove("hidden");
+    }
+    function hideSuccess(){ elAlertSuccess.classList.add("hidden"); }
+
+    // ---------- Remember Me: load saved state ----------
+    (function initRememberMe(){
+      if(!STORAGE) return;
+      const remembered = STORAGE.getItem(LS_REMEMBER) === "1";
+      if(remembered){
+        const savedEmail = STORAGE.getItem(LS_EMAIL) || "";
+        if(savedEmail){
+          elEmail.value = savedEmail;
+          touched.email = true;           // prevents initial error for email
+          updateFieldUI("email");
+        }
+        elRemember.checked = true;
+        // If email is prefilled, move focus to password
+        setTimeout(()=> elPass.focus(), 0);
+      } else {
+        elRemember.checked = false;
+      }
+    })();
+
+    // ---------- Listeners ----------
+    elEmail.addEventListener("input", ()=>{
+      hideError();
+      touched.email = true;
+      updateFieldUI("email");
+      // If user wants to be remembered, keep email in storage as they type
+      if(STORAGE && elRemember.checked){
+        STORAGE.setItem(LS_EMAIL, elEmail.value.trim().toLowerCase());
+      }
+    });
+
+    elPass.addEventListener("input", ()=>{ hideError(); touched.password = true; updateFieldUI("password"); });
+    elEmail.addEventListener("blur",  ()=>{ touched.email = true; updateFieldUI("email"); });
+    elPass .addEventListener("blur",  ()=>{ touched.password = true; updateFieldUI("password"); });
+
+    elTogglePass.addEventListener("click", ()=>{
+      showPassword = !showPassword;
+      elPass.type = showPassword ? "text" : "password";
+      elToggleIcon.setAttribute("icon", showPassword ? "lucide:eye-off" : "lucide:eye");
+    });
+
+    elForgot.addEventListener("click", ()=>{ window.location.href="/forgot-password"; });
+
+    // Handle remember checkbox toggling immediately
+    elRemember.addEventListener("change", ()=>{
+      if(!STORAGE) return;
+      if(elRemember.checked){
+        STORAGE.setItem(LS_REMEMBER, "1");
+        STORAGE.setItem(LS_EMAIL, elEmail.value.trim().toLowerCase());
+      } else {
+        STORAGE.removeItem(LS_REMEMBER);
+        STORAGE.removeItem(LS_EMAIL);
+      }
+    });
+
+    // Initial button state: disabled, with NO errors shown
+    setButtonState(false);
+
+    // ---------- AJAX submit (to PHP) ----------
+    elForm.addEventListener("submit", async (e)=>{
+      e.preventDefault();
+      if(isLoading) return;
+
+      hideError(); hideSuccess();
+
+      // Mark both fields as touched on submit to reveal messages if invalid
+      touched.email = true;
+      touched.password = true;
+
+      const email = elEmail.value.trim();
+      const password = elPass.value;
+      const errs = getErrors(email, password);
+
+      setFieldError(elErrEmail, elErrEmailText, errs.email);
+      setFieldError(elErrPass, elErrPassText, errs.password);
+
+      if (errs.email || errs.password) {
+        setButtonState(false);
+        return;
+      }
+
+      // loading UI
+      isLoading = true;
+      elBtn.disabled = true;
+      elBtnSpinner.classList.remove("hidden");
+      elBtnLock.classList.add("hidden");
+      elBtnText.textContent = "Signing In...";
+      elBtn.classList.add("bg-[color:var(--brand)]/20","border-2","border-[color:var(--brand)]","text-[color:var(--brand)]","scale-105","animate-pulse");
+
+      try {
+        const fd = new FormData();
+        fd.append("email", email.toLowerCase());
+        fd.append("password", password);
+        // Send remember preference to backend to extend session lifetime server-side
+        fd.append("remember", elRemember.checked ? "1" : "0");
+
+        const res = await fetch(elForm.action, {
+          method: "POST",
+          body: fd,
+          headers: { "X-Requested-With": "XMLHttpRequest" }
+          // credentials default to "same-origin" for same-origin requests (cookies included)
+        });
+
+        const data = await res.json().catch(()=> ({}));
+
+        if(!res.ok || !data || data.success !== true){
+          throw new Error((data && data.message) || "Login failed");
+        }
+
+        // Persist email only if "Remember me" is enabled; otherwise clear any stored email
+        if(STORAGE){
+          if(elRemember.checked){
+            STORAGE.setItem(LS_REMEMBER, "1");
+            STORAGE.setItem(LS_EMAIL, email.toLowerCase());
+          } else {
+            STORAGE.removeItem(LS_REMEMBER);
+            STORAGE.removeItem(LS_EMAIL);
+          }
+        }
+
+        showSuccess(data.message || "Login successful! Redirecting...");
+        setTimeout(()=>{ window.location.href = data.redirect || "/users"; }, 1200);
+
+      } catch (err){
+        showError(err?.message || "Invalid email or password");
+      } finally {
+        isLoading = false;
+        elBtnSpinner.classList.add("hidden");
+        elBtnLock.classList.remove("hidden");
+        elBtnText.textContent = "Sign In";
+        elBtn.classList.remove("scale-105","animate-pulse","border-2","border-[color:var(--brand)]");
+        const errs2 = getErrors(elEmail.value, elPass.value);
+        setButtonState(!(errs2.email || errs2.password));
+      }
+    });
+
+    // Enter to submit
+    elEmail.addEventListener("keydown",(e)=>{ if(e.key==="Enter"){ e.preventDefault(); elForm.requestSubmit(); }});
+    elPass .addEventListener("keydown",(e)=>{ if(e.key==="Enter"){ e.preventDefault(); elForm.requestSubmit(); }});
+  </script>
+
+
+</body></html>

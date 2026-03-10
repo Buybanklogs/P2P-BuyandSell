@@ -1,0 +1,626 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>SFPF Global – Sign Up</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/logo.png" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <style>
+    :root { --brand:#FEFD0C; }
+    body{
+      background:#000;
+      font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    .input-base{
+      width:100%;
+      background-color:rgba(0,0,0,.4);
+      border:1px solid #1f2937; /* gray-800 */
+      color:#fff;
+      border-radius:.75rem;
+      padding:.75rem 1rem .75rem 2.5rem;
+      font-size:16px; /* prevent iOS zoom */
+      transition:all .2s;
+      outline:none;
+    }
+    @media (min-width:768px){
+      .input-base{ font-size:.925rem; }
+    }
+    .input-base::placeholder{ color:#6b7280; }
+    .input-base:focus{ background-color:rgba(0,0,0,.6); box-shadow:0 0 0 1px var(--brand); }
+
+    /* Phone group */
+    .phone-group input{ border-top-left-radius:0; border-bottom-left-radius:0; padding-left:1rem; }
+    .dropdown-scroll{ max-height:12rem; overflow:auto; }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.left-3{left:0.75rem}.top-1\/2{top:50%}.right-3{right:0.75rem}.z-50{z-index:50}.mb-6{margin-bottom:1.5rem}.mb-1{margin-bottom:0.25rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mb-2{margin-bottom:0.5rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-4{height:1rem}.h-3{height:0.75rem}.h-\[45px\]{height:45px}.h-1{height:0.25rem}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-4{width:1rem}.w-3{width:0.75rem}.w-44{width:11rem}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.select-none{-webkit-user-select:none;user-select:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-1{gap:0.25rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.rounded-full{border-radius:9999px}.rounded-2xl{border-radius:1rem}.rounded-lg{border-radius:0.5rem}.rounded{border-radius:0.25rem}.rounded-xl{border-radius:0.75rem}.rounded-l-lg{border-top-left-radius:0.5rem;border-bottom-left-radius:0.5rem}.border{border-width:1px}.border-2{border-width:2px}.border-r-0{border-right-width:0px}.border-t{border-top-width:1px}.border-black\/10{border-color:rgb(0 0 0 / 0.1)}.border-green-500\/30{border-color:rgb(34 197 94 / 0.3)}.border-red-500\/30{border-color:rgb(239 68 68 / 0.3)}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-gray-600{--tw-border-opacity:1;border-color:rgb(75 85 99 / var(--tw-border-opacity, 1))}.border-gray-400{--tw-border-opacity:1;border-color:rgb(156 163 175 / var(--tw-border-opacity, 1))}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-t-transparent{border-top-color:transparent}.bg-black\/60{background-color:rgb(0 0 0 / 0.6)}.bg-green-500\/10{background-color:rgb(34 197 94 / 0.1)}.bg-red-500\/10{background-color:rgb(239 68 68 / 0.1)}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-black\/90{background-color:rgb(0 0 0 / 0.9)}.bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.bg-gray-700{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.bg-red-500{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-black\/75{--tw-gradient-from:rgb(0 0 0 / 0.75) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-black\/60{--tw-gradient-to:rgb(0 0 0 / 0.6) var(--tw-gradient-to-position)}.p-8{padding:2rem}.p-3{padding:0.75rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.pr-4{padding-right:1rem}.pr-10{padding-right:2.5rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-5{line-height:1.25rem}.tracking-wide{letter-spacing:0.025em}.text-gray-300\/90{color:rgb(209 213 219 / 0.9)}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-\[color\:var\(--brand\)\]{color:var(--brand)}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.underline-offset-2{text-underline-offset:2px}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-200{transition-duration:200ms}.hover\:bg-black\/60:hover{background-color:rgb(0 0 0 / 0.6)}.hover\:bg-gray-800\/50:hover{background-color:rgb(31 41 55 / 0.5)}.hover\:text-\[color\:var\(--brand\)\]:hover{color:var(--brand)}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.hover\:opacity-80:hover{opacity:0.8}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}@media (min-width: 640px){.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style></head>
+<body>
+  <div class="min-h-screen w-full flex items-center justify-center py-10 px-2">
+    <div class="w-full max-w-md">
+      <!-- Security Badge -->
+      <div class="flex justify-center mb-6">
+        <div class="bg-black/60 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2">
+          <iconify-icon icon="lucide:shield" class="w-4 h-4" style="color:var(--brand)"></iconify-icon>
+          <span class="text-xs font-medium tracking-wide" style="color:var(--brand)">SECURE REGISTRATION</span>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="rounded-2xl shadow-2xl border border-black/10 bg-gradient-to-br from-black/75 to-black/60 backdrop-blur-md p-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+          <h1 class="text-3xl font-extrabold text-white mb-1">
+            Create <span style="color:var(--brand)">Account</span>
+          </h1>
+          <p class="text-gray-300/90 text-sm">Join us and start your journey today</p>
+        </div>
+
+        <!-- Alerts -->
+        <div id="alert-success" class="hidden bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-3 rounded-lg mb-4 flex items-center gap-3" role="alert">
+          <iconify-icon icon="lucide:check-circle-2" class="h-4 w-4"></iconify-icon>
+          <span class="text-sm" id="alert-success-text">Success.</span>
+        </div>
+        <div id="alert-error" class="hidden bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg mb-4 flex items-center gap-3" role="alert">
+          <iconify-icon icon="lucide:alert-circle" class="h-4 w-4"></iconify-icon>
+          <span class="text-sm" id="alert-error-text"></span>
+        </div>
+
+        <!-- Form -->
+        <form id="signup-form" class="space-y-5" method="post" action="/auth/signup.php" novalidate="">
+          <!-- Names -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <label for="firstname" class="block text-sm font-medium text-white">
+                First Name <span class="text-red-400">*</span>
+              </label>
+              <div class="relative">
+                <iconify-icon icon="lucide:user" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4"></iconify-icon>
+                <input id="firstname" name="firstname" type="text" placeholder="John" autocomplete="given-name" class="input-base pr-4">
+              </div>
+              <p id="firstname-error" class="hidden text-red-400 text-xs flex items-center gap-1">
+                <iconify-icon icon="lucide:alert-circle" class="w-3 h-3"></iconify-icon><span></span>
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <label for="lastname" class="block text-sm font-medium text-white">
+                Last Name <span class="text-red-400">*</span>
+              </label>
+              <div class="relative">
+                <iconify-icon icon="lucide:user" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4"></iconify-icon>
+                <input id="lastname" name="lastname" type="text" placeholder="Doe" autocomplete="family-name" class="input-base pr-4">
+              </div>
+              <p id="lastname-error" class="hidden text-red-400 text-xs flex items-center gap-1">
+                <iconify-icon icon="lucide:alert-circle" class="w-3 h-3"></iconify-icon><span></span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="space-y-2">
+            <label for="email" class="block text-sm font-medium text-white">
+              Email Address <span class="text-red-400">*</span>
+            </label>
+            <div class="relative">
+              <iconify-icon icon="lucide:mail" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4"></iconify-icon>
+              <input id="email" name="email" type="email" placeholder="john.doe@example.com" autocomplete="email" class="input-base pr-4">
+            </div>
+            <p id="email-error" class="hidden text-red-400 text-xs flex items-center gap-1">
+              <iconify-icon icon="lucide:alert-circle" class="w-3 h-3"></iconify-icon><span></span>
+            </p>
+          </div>
+
+          <!-- Username -->
+          <div class="space-y-2">
+            <label for="username" class="block text-sm font-medium text-white">
+              Username <span class="text-red-400">*</span>
+            </label>
+            <div class="relative">
+              <iconify-icon icon="lucide:at-sign" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4"></iconify-icon>
+              <input id="username" name="username" type="text" placeholder="johndoe123" autocomplete="username" class="input-base pr-4">
+            </div>
+            <p id="username-error" class="hidden text-red-400 text-xs flex items-center gap-1">
+              <iconify-icon icon="lucide:alert-circle" class="w-3 h-3"></iconify-icon><span></span>
+            </p>
+          </div>
+
+          <!-- Phone with country code -->
+          <div class="space-y-2">
+            <label for="phone" class="block text-sm font-medium text-white">
+              Phone Number <span class="text-red-400">*</span>
+            </label>
+            <div class="flex phone-group">
+              <div class="relative">
+                <button type="button" id="cc-btn" class="h-[45px] bg-black/40 border border-gray-800 border-r-0 rounded-l-lg px-3 flex items-center gap-2 text-white hover:bg-black/60">
+                  <span id="cc-flag" class="text-sm">🇳🇬</span>
+                  <span id="cc-code" class="text-sm font-medium">+234</span>
+                  <iconify-icon icon="lucide:chevron-down" class="w-3 h-3 text-gray-400"></iconify-icon>
+                </button>
+
+                <!-- Dropdown -->
+                <div id="cc-menu" class="hidden absolute z-50 mt-1 w-44 bg-black/90 border border-gray-800 rounded-lg shadow-xl dropdown-scroll"><button type="button" class="w-full px-3 py-2 text-left hover:bg-gray-800/50 flex items-center gap-3 text-white text-sm"><span>🇳🇬</span><span class="font-medium">+234</span><span class="text-gray-400">NG</span></button><button type="button" class="w-full px-3 py-2 text-left hover:bg-gray-800/50 flex items-center gap-3 text-white text-sm"><span>🇺🇸</span><span class="font-medium">+1</span><span class="text-gray-400">US</span></button><button type="button" class="w-full px-3 py-2 text-left hover:bg-gray-800/50 flex items-center gap-3 text-white text-sm"><span>🇬🇧</span><span class="font-medium">+44</span><span class="text-gray-400">UK</span></button><button type="button" class="w-full px-3 py-2 text-left hover:bg-gray-800/50 flex items-center gap-3 text-white text-sm"><span>🇮🇳</span><span class="font-medium">+91</span><span class="text-gray-400">IN</span></button><button type="button" class="w-full px-3 py-2 text-left hover:bg-gray-800/50 flex items-center gap-3 text-white text-sm"><span>🇦🇺</span><span class="font-medium">+61</span><span class="text-gray-400">AU</span></button><button type="button" class="w-full px-3 py-2 text-left hover:bg-gray-800/50 flex items-center gap-3 text-white text-sm"><span>🇯🇵</span><span class="font-medium">+81</span><span class="text-gray-400">JP</span></button><button type="button" class="w-full px-3 py-2 text-left hover:bg-gray-800/50 flex items-center gap-3 text-white text-sm"><span>🇩🇪</span><span class="font-medium">+49</span><span class="text-gray-400">DE</span></button><button type="button" class="w-full px-3 py-2 text-left hover:bg-gray-800/50 flex items-center gap-3 text-white text-sm"><span>🇫🇷</span><span class="font-medium">+33</span><span class="text-gray-400">FR</span></button><button type="button" class="w-full px-3 py-2 text-left hover:bg-gray-800/50 flex items-center gap-3 text-white text-sm"><span>🇧🇷</span><span class="font-medium">+55</span><span class="text-gray-400">BR</span></button><button type="button" class="w-full px-3 py-2 text-left hover:bg-gray-800/50 flex items-center gap-3 text-white text-sm"><span>🇿🇦</span><span class="font-medium">+27</span><span class="text-gray-400">ZA</span></button></div>
+              </div>
+
+              <div class="relative flex-1">
+                <input id="phone" name="phone" type="tel" placeholder="812 345 6789" autocomplete="tel" class="input-base pr-4">
+              </div>
+            </div>
+            <p id="phone-error" class="hidden text-red-400 text-xs flex items-center gap-1">
+              <iconify-icon icon="lucide:alert-circle" class="w-3 h-3"></iconify-icon><span></span>
+            </p>
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="space-y-2">
+            <label for="dob" class="block text-sm font-medium text-white">
+              Date of Birth <span class="text-red-400">*</span>
+            </label>
+            <div class="relative">
+              <iconify-icon icon="lucide:calendar" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4"></iconify-icon>
+              <input id="dob" name="dateOfBirth" type="date" class="input-base pr-4" max="2008-03-09">
+            </div>
+            <p id="dob-error" class="hidden text-red-400 text-xs flex items-center gap-1">
+              <iconify-icon icon="lucide:alert-circle" class="w-3 h-3"></iconify-icon><span></span>
+            </p>
+          </div>
+
+          <!-- Password -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <label for="password" class="block text-sm font-medium text-white">
+                Password <span class="text-red-400">*</span>
+              </label>
+              <button type="button" id="req-toggle" class="text-gray-400 hover:text-[color:var(--brand)] text-xs flex items-center gap-1">
+                <iconify-icon icon="lucide:info" class="w-3 h-3"></iconify-icon>
+                <span>Requirements</span>
+              </button>
+            </div>
+            <div class="relative">
+              <iconify-icon icon="lucide:lock" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4"></iconify-icon>
+              <input id="password" name="password" type="password" placeholder="Create a strong password" autocomplete="new-password" class="input-base pr-10">
+              <button type="button" id="toggle-password" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[color:var(--brand)]">
+                <iconify-icon id="toggle-password-icon" icon="lucide:eye" class="w-4 h-4"></iconify-icon>
+              </button>
+            </div>
+            <p id="password-error" class="hidden text-red-400 text-xs flex items-center gap-1">
+              <iconify-icon icon="lucide:alert-circle" class="w-3 h-3"></iconify-icon><span></span>
+            </p>
+
+            <!-- Requirements (collapsible) -->
+            <div id="req-box" class="hidden bg-gray-800/50 border border-gray-700 rounded-lg p-3 text-xs">
+              <p class="text-gray-300 mb-2">Password must include:</p>
+              <div class="space-y-1" id="req-list">
+                <div id="req-length" class="flex items-center gap-2 text-gray-400">
+                  <iconify-icon data-ico="" icon="lucide:circle" class="w-3 h-3"></iconify-icon>
+                  <span>At least 8 characters</span>
+                </div>
+                <div id="req-lowercase" class="flex items-center gap-2 text-gray-400">
+                  <iconify-icon data-ico="" icon="lucide:circle" class="w-3 h-3"></iconify-icon>
+                  <span>One lowercase letter</span>
+                </div>
+                <div id="req-uppercase" class="flex items-center gap-2 text-gray-400">
+                  <iconify-icon data-ico="" icon="lucide:circle" class="w-3 h-3"></iconify-icon>
+                  <span>One uppercase letter</span>
+                </div>
+                <div id="req-number" class="flex items-center gap-2 text-gray-400">
+                  <iconify-icon data-ico="" icon="lucide:circle" class="w-3 h-3"></iconify-icon>
+                  <span>One number</span>
+                </div>
+                <div id="req-special" class="flex items-center gap-2 text-gray-400">
+                  <iconify-icon data-ico="" icon="lucide:circle" class="w-3 h-3"></iconify-icon>
+                  <span>One special character</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Strength -->
+            <div id="strength-wrap" class="space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-gray-500">Password strength:</span>
+                <span id="strength-label" class="font-medium text-gray-400">—</span>
+              </div>
+              <div class="w-full bg-gray-700 rounded-full h-1">
+                <div id="strength-bar" class="h-1 rounded-full transition-all duration-300 bg-red-500" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="space-y-2">
+            <label for="confirm" class="block text-sm font-medium text-white">
+              Confirm Password <span class="text-red-400">*</span>
+            </label>
+            <div class="relative">
+              <iconify-icon icon="lucide:lock" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4"></iconify-icon>
+              <input id="confirm" name="confirmPassword" type="password" placeholder="Confirm your password" autocomplete="new-password" class="input-base pr-10">
+              <button type="button" id="toggle-confirm" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[color:var(--brand)]">
+                <iconify-icon id="toggle-confirm-icon" icon="lucide:eye" class="w-4 h-4"></iconify-icon>
+              </button>
+            </div>
+            <p id="confirm-error" class="hidden text-red-400 text-xs flex items-center gap-1">
+              <iconify-icon icon="lucide:alert-circle" class="w-3 h-3"></iconify-icon><span></span>
+            </p>
+            <!-- Only shows green “match” briefly; no red duplicate -->
+            <div id="match-hint" class="text-xs flex items-center gap-1" style="display:none">
+              <iconify-icon id="match-icon" icon="lucide:check-circle-2" class="w-3 h-3 text-green-400"></iconify-icon>
+              <span id="match-text" class="text-green-400">Passwords match</span>
+            </div>
+          </div>
+
+          <!-- Terms -->
+          <div class="space-y-2">
+            <label class="flex items-start gap-3 select-none">
+              <input id="terms" type="checkbox" class="mt-1 h-4 w-4 rounded border-gray-600 bg-black/40 text-[color:var(--brand)] focus:ring-[color:var(--brand)]/20 focus:ring-2">
+              <span class="text-sm text-gray-300 leading-5">
+                I agree to the
+                <a href="/terms" class="text-[color:var(--brand)] hover:underline font-medium">Terms of Service</a>
+                and
+                <a href="/privacy" class="text-[color:var(--brand)] hover:underline font-medium">Privacy Policy</a>
+              </span>
+            </label>
+            <p id="terms-error" class="hidden text-red-400 text-xs flex items-center gap-1">
+              <iconify-icon icon="lucide:alert-circle" class="w-3 h-3"></iconify-icon><span></span>
+            </p>
+          </div>
+
+          <!-- Submit -->
+          <button id="btn-submit" type="submit" class="w-full py-3 px-4 rounded-xl font-semibold text-sm transition-all duration-200 flex items-center justify-center gap-2 bg-gray-700 text-gray-400 cursor-not-allowed" disabled="">
+            <span id="btn-spinner" class="hidden animate-spin rounded-full h-4 w-4 border-2 border-gray-400 border-t-transparent"></span>
+            <span id="btn-text">Create Account</span>
+          </button>
+
+          <!-- Sign In -->
+          <div class="text-center pt-4 border-t border-white/10">
+            <p class="text-gray-300 text-sm">
+              Already have an account?
+              <a href="/signin" class="font-semibold underline underline-offset-2 hover:opacity-80" style="color:var(--brand)">Sign In</a>
+            </p>
+          </div>
+        </form>
+
+        <!-- Footer line -->
+        <div class="text-center mt-6">
+          <p class="text-gray-400 text-xs">Your information is protected with industry-standard encryption</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---------- Utilities ----------
+    const $ = (s)=>document.querySelector(s);
+    const isValidEmail = (e)=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+    const digitsOnly = (v)=>v.replace(/\D/g,'');
+    const now = new Date();
+    const maxDOB = new Date(now.getFullYear()-18, now.getMonth(), now.getDate()).toISOString().split('T')[0];
+    $("#dob").setAttribute("max", maxDOB);
+
+    // Country codes (subset)
+    const CC = [
+      { code:'+234', name:'NG', flag:'🇳🇬' }, { code:'+1', name:'US', flag:'🇺🇸' },
+      { code:'+44', name:'UK', flag:'🇬🇧' }, { code:'+91', name:'IN', flag:'🇮🇳' },
+      { code:'+61', name:'AU', flag:'🇦🇺' }, { code:'+81', name:'JP', flag:'🇯🇵' },
+      { code:'+49', name:'DE', flag:'🇩🇪' }, { code:'+33', name:'FR', flag:'🇫🇷' },
+      { code:'+55', name:'BR', flag:'🇧🇷' }, { code:'+27', name:'ZA', flag:'🇿🇦' }
+    ];
+
+    // ---------- Elements ----------
+    const fForm=$("#signup-form");
+    const fFirst=$("#firstname"), fLast=$("#lastname"), fEmail=$("#email"), fUser=$("#username");
+    const fPhone=$("#phone"), fDOB=$("#dob"), fPass=$("#password"), fConfirm=$("#confirm"), fTerms=$("#terms");
+
+    const eFirst=$("#firstname-error"), eLast=$("#lastname-error"), eEmail=$("#email-error"), eUser=$("#username-error"),
+          ePhone=$("#phone-error"), eDOB=$("#dob-error"), ePass=$("#password-error"), eConfirm=$("#confirm-error"),
+          eTerms=$("#terms-error");
+
+    const btn=$("#btn-submit"), btnText=$("#btn-text"), btnSpin=$("#btn-spinner");
+
+    const ccBtn=$("#cc-btn"), ccMenu=$("#cc-menu"), ccCode=$("#cc-code"), ccFlag=$("#cc-flag");
+
+    const reqToggle=$("#req-toggle"), reqBox=$("#req-box");
+    const strengthBar=$("#strength-bar"), strengthLabel=$("#strength-label");
+    const matchHint=$("#match-hint"), matchIcon=$("#match-icon"), matchText=$("#match-text");
+
+    const alertOK=$("#alert-success"), alertOKText=$("#alert-success-text");
+    const alertErr=$("#alert-error"), alertErrText=$("#alert-error-text");
+
+    // ---------- Country dropdown ----------
+    function buildCC(){
+      ccMenu.innerHTML="";
+      CC.forEach(c=>{
+        const row = document.createElement('button');
+        row.type="button";
+        row.className='w-full px-3 py-2 text-left hover:bg-gray-800/50 flex items-center gap-3 text-white text-sm';
+        row.innerHTML = `<span>${c.flag}</span><span class="font-medium">${c.code}</span><span class="text-gray-400">${c.name}</span>`;
+        row.addEventListener('click',()=>{
+          ccCode.textContent = c.code;
+          ccFlag.textContent = c.flag;
+          ccMenu.classList.add('hidden');
+        });
+        ccMenu.appendChild(row);
+      });
+    }
+    buildCC();
+    ccBtn.addEventListener('click',()=> ccMenu.classList.toggle('hidden'));
+    document.addEventListener('click',(e)=>{ if(!ccBtn.contains(e.target) && !ccMenu.contains(e.target)) ccMenu.classList.add('hidden'); });
+
+    // ---------- Password helpers ----------
+    const checkReq = (pwd)=>({
+      length: pwd.length>=8,
+      lowercase: /[a-z]/.test(pwd),
+      uppercase: /[A-Z]/.test(pwd),
+      number: /[0-9]/.test(pwd),
+      special: /[^A-Za-z0-9]/.test(pwd)
+    });
+
+    function updateReqUI(req){
+      const map = {
+        length: $("#req-length"),
+        lowercase: $("#req-lowercase"),
+        uppercase: $("#req-uppercase"),
+        number: $("#req-number"),
+        special: $("#req-special")
+      };
+      Object.entries(map).forEach(([k,el])=>{
+        const ok = req[k];
+        el.classList.toggle("text-green-400", ok);
+        el.classList.toggle("text-gray-400", !ok);
+        const ico = el.querySelector("[data-ico]");
+        if (ico) ico.setAttribute("icon", ok ? "lucide:check-circle-2" : "lucide:circle");
+      });
+    }
+
+    function updateStrength(pwd){
+      const req = checkReq(pwd);
+      updateReqUI(req);
+      const score = Object.values(req).filter(Boolean).length; // 0..5
+      const pct = (score/5)*100;
+      strengthBar.style.width = pct + "%";
+      let label="Weak", color="bg-red-500";
+      if(score<=2){ label="Weak"; color="bg-red-500"; }
+      else if(score===3){ label="Medium"; color="bg-yellow-500"; }
+      else if(score===4){ label="Strong"; color="bg-green-500"; }
+      else { label="Very Strong"; color="bg-emerald-500"; }
+      strengthLabel.textContent = pwd ? label : "—";
+      strengthLabel.className = "font-medium " + (pwd ? color.replace("bg-","text-") : "text-gray-400");
+      strengthBar.className = "h-1 rounded-full transition-all duration-300 " + color;
+      return { score, req };
+    }
+
+    // Toggle show/hide password
+    const togglePwd = (input, iconEl)=>{
+      if(input.type==="password"){ input.type="text"; iconEl.setAttribute('icon','lucide:eye-off'); }
+      else { input.type="password"; iconEl.setAttribute('icon','lucide:eye'); }
+    };
+    $("#toggle-password").addEventListener('click', ()=>togglePwd(fPass, $("#toggle-password-icon")));
+    $("#toggle-confirm").addEventListener('click', ()=>togglePwd(fConfirm, $("#toggle-confirm-icon")));
+
+    // Requirements collapse
+    reqToggle.addEventListener('click', ()=> reqBox.classList.toggle('hidden'));
+    fPass.addEventListener('focus', ()=> reqBox.classList.remove('hidden'));
+
+    // ---------- Validation ----------
+    const touched = { firstname:false, lastname:false, email:false, username:false, phone:false, dob:false, password:false, confirm:false, terms:false };
+    let isLoading = false;
+    let matchHintTimer = null;
+
+    const showFieldError = (wrap, msg)=>{
+      if(!msg){ wrap.classList.add("hidden"); wrap.querySelector("span").textContent=""; return; }
+      wrap.classList.remove("hidden");
+      wrap.querySelector("span").textContent = msg;
+    };
+
+    const setBtn = (enabled)=>{
+      if(isLoading) return;
+      if(enabled){
+        btn.classList.remove("bg-gray-700","text-gray-400","cursor-not-allowed");
+        btn.classList.add("bg-[color:var(--brand)]","text-black","hover:bg-[color:var(--brand)]/90","hover:shadow-lg","hover:shadow-[color:var(--brand)]/20");
+        btn.disabled = false;
+      } else {
+        btn.classList.add("bg-gray-700","text-gray-400","cursor-not-allowed");
+        btn.classList.remove("bg-[color:var(--brand)]","text-black","hover:bg-[color:var(--brand)]/90","hover:shadow-lg","hover:shadow-[color:var(--brand)]/20");
+        btn.disabled = true;
+      }
+    };
+
+    function fieldErrors(){
+      const errs={};
+      const firstname=fFirst.value.trim(), lastname=fLast.value.trim();
+      const email=fEmail.value.trim(), username=fUser.value.trim();
+      const localDigits = digitsOnly(fPhone.value.trim());
+      const ccDigits = digitsOnly(ccCode.textContent); // "234" from "+234"
+      const fullDigits = ccDigits + localDigits; // send/store digits only
+      const dob=fDOB.value, pwd=fPass.value, cp=fConfirm.value;
+
+      if(!firstname) errs.firstname="First name is required";
+      else if(firstname.length<2) errs.firstname="First name must be at least 2 characters";
+
+      if(!lastname) errs.lastname="Last name is required";
+      else if(lastname.length<2) errs.lastname="Last name must be at least 2 characters";
+
+      if(!email) errs.email="Email is required";
+      else if(!isValidEmail(email)) errs.email="Please enter a valid email address";
+
+      if(!username) errs.username="Username is required";
+      else if(!/^[a-zA-Z0-9_.-]{3,20}$/.test(username)) errs.username="3–20 chars: letters, numbers, . _ -";
+
+      if(!localDigits) errs.phone="Phone number is required";
+      else if(fullDigits.length < 7 || fullDigits.length > 15) errs.phone="Please enter a valid phone number (7–15 digits)";
+
+      if(!dob) errs.dob="Date of birth is required";
+      else {
+        const b=new Date(dob); const today=new Date();
+        let age=today.getFullYear()-b.getFullYear();
+        const md=today.getMonth()-b.getMonth();
+        if(md<0 || (md===0 && today.getDate()<b.getDate())) age--;
+        if(isNaN(age)) errs.dob="Invalid date";
+        else if(age<18) errs.dob="You must be at least 18 years old";
+      }
+
+      const { score } = updateStrength(pwd);
+      if(!pwd) errs.password="Password is required";
+      else if(score<4) errs.password="Password must meet at least 4 requirements";
+
+      if(!cp) errs.confirm="Please confirm your password";
+      else if(cp!==pwd) errs.confirm="Passwords do not match";
+
+      if(!fTerms.checked) errs.terms="You must accept the terms and conditions";
+
+      return { errs, fullDigits };
+    }
+
+    function paintErrors(showAll=false){
+      const { errs } = fieldErrors();
+      const should = (k)=> showAll || touched[k];
+
+      showFieldError(eFirst,   should('firstname') ? errs.firstname : "");
+      showFieldError(eLast,    should('lastname')  ? errs.lastname  : "");
+      showFieldError(eEmail,   should('email')     ? errs.email     : "");
+      showFieldError(eUser,    should('username')  ? errs.username  : "");
+      showFieldError(ePhone,   should('phone')     ? errs.phone     : "");
+      showFieldError(eDOB,     should('dob')       ? errs.dob       : "");
+      showFieldError(ePass,    should('password')  ? errs.password  : "");
+      showFieldError(eConfirm, should('confirm')   ? errs.confirm   : "");
+      showFieldError(eTerms,   should('terms')     ? errs.terms     : "");
+
+      const hasErrors = Object.values(errs).some(Boolean);
+      setBtn(!hasErrors);
+      return !hasErrors;
+    }
+
+    // Only show the green “match” hint briefly when they match (no red duplicate)
+    function showMatchHint(ok){
+      if(!ok){
+        matchHint.style.display = 'none';
+        if(matchHintTimer) clearTimeout(matchHintTimer);
+        return;
+      }
+      matchHint.style.display = 'flex';
+      matchIcon.setAttribute('icon','lucide:check-circle-2');
+      matchIcon.classList.remove('text-red-400'); matchIcon.classList.add('text-green-400');
+      matchText.textContent = 'Passwords match';
+      matchText.classList.remove('text-red-400'); matchText.classList.add('text-green-400');
+      if(matchHintTimer) clearTimeout(matchHintTimer);
+      matchHintTimer = setTimeout(()=>{ matchHint.style.display='none'; }, 1000);
+    }
+
+    // Touch tracking + realtime validation
+    [fFirst,fLast,fEmail,fUser,fPhone,fDOB,fPass,fConfirm].forEach((input)=>{
+      input.addEventListener('focus', ()=>{ const id=input.id; touched[id==='dob'?'dob':id]=true; });
+      input.addEventListener('input', ()=>{
+        if(input===fPass){ updateStrength(fPass.value); }
+        if(input===fConfirm || input===fPass){
+          const ok = fConfirm.value.length>0 && fConfirm.value===fPass.value;
+          showMatchHint(ok);
+        }
+        paintErrors(false);
+      });
+      input.addEventListener('blur', ()=>paintErrors(false));
+    });
+    fTerms.addEventListener('change', ()=>{ touched.terms=true; paintErrors(false); });
+
+    // initial state
+    updateStrength('');
+    setBtn(false);
+
+    // show/hide alerts
+    const showErrorAlert = (msg)=>{ alertErrText.textContent = msg; alertErr.classList.remove('hidden'); };
+    const showSuccessAlert = (msg)=>{ alertOKText.textContent = msg; alertOK.classList.remove('hidden'); };
+    const hideAlerts = ()=>{ alertErr.classList.add('hidden'); alertOK.classList.add('hidden'); };
+
+    // loading
+    function setLoading(on){
+      isLoading = on;
+      if(on){
+        btn.disabled = true;
+        btnSpin.classList.remove('hidden');
+        // force disabled look
+        btn.classList.remove("bg-[color:var(--brand)]","text-black","hover:bg-[color:var(--brand)]/90","hover:shadow-lg","hover:shadow-[color:var(--brand)]/20");
+        btn.classList.add("bg-gray-700","text-gray-400","cursor-not-allowed","opacity-90","cursor-wait");
+      }else{
+        btnSpin.classList.add('hidden');
+        btn.classList.remove("opacity-90","cursor-wait");
+        // re-evaluate enabled/disabled via validation
+        paintErrors(false);
+      }
+    }
+
+    // Submit
+    fForm.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      hideAlerts();
+      const ok = paintErrors(true);
+      if(!ok) return;
+
+      // Build final phone digits to satisfy backend /^\d{7,15}$/
+      const localDigits = digitsOnly(fPhone.value.trim());
+      const ccDigits = digitsOnly(ccCode.textContent);
+      const fullDigits = ccDigits + localDigits;
+
+      setLoading(true);
+
+      const payload = {
+        firstname: fFirst.value.trim(),
+        lastname:  fLast.value.trim(),
+        email:     fEmail.value.trim().toLowerCase(),
+        username:  fUser.value.trim(),
+        phone:     fullDigits,                 // digits only (matches PHP)
+        dateOfBirth: fDOB.value,
+        password:  fPass.value,
+        role:      'user'
+      };
+
+      try{
+        const res = await fetch(fForm.getAttribute('action') || '/auth/signup.php', {
+          method:'POST',
+          headers:{ 'Content-Type':'application/json', 'X-Requested-With':'XMLHttpRequest' },
+          body: JSON.stringify(payload),
+          credentials: 'same-origin'
+        });
+
+        const data = await res.json().catch(()=> ({}));
+
+        if(!res.ok || data?.success === false){
+          if(res.status===422 && data?.errors){
+            const serverErrs = data.errors || {};
+            if(serverErrs.firstname) showFieldError(eFirst, serverErrs.firstname);
+            if(serverErrs.lastname)  showFieldError(eLast,  serverErrs.lastname);
+            if(serverErrs.email)     showFieldError(eEmail, serverErrs.email);
+            if(serverErrs.username)  showFieldError(eUser,  serverErrs.username);
+            if(serverErrs.phone)     showFieldError(ePhone, serverErrs.phone);
+            if(serverErrs.dateOfBirth) showFieldError(eDOB, serverErrs.dateOfBirth);
+            if(serverErrs.password)  showFieldError(ePass,  serverErrs.password);
+            if(serverErrs.confirmPassword) showFieldError(eConfirm, serverErrs.confirmPassword);
+            showErrorAlert(data?.message || 'Validation failed. Please fix the highlighted fields.');
+            setBtn(false);
+          } else {
+            showErrorAlert(data?.message || 'Could not create account. Please try again.');
+          }
+          return;
+        }
+
+        showSuccessAlert(data?.message || 'Account created. Redirecting...');
+        const to = data?.redirect || ('/otp-verify?email=' + encodeURIComponent(payload.email));
+        setTimeout(()=>{ window.location.href = to; }, 1200);
+      }catch(err){
+        showErrorAlert('Network error. Please try again.');
+      }finally{
+        setLoading(false);
+      }
+    });
+  </script>
+
+
+</body></html>

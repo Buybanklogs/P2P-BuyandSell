@@ -1,10 +1,13 @@
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>SFPF Global – P2P Crypto</title>
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MIC Trades – P2P Crypto</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&amp;family=Poppins:wght@200;300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Poppins:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet" />
   
   <!-- Favicon -->
   <link rel="icon" href="/assets/logo.png" sizes="any">
@@ -19,7 +22,7 @@
   <style>
     /* ===== Global page background ===== */
     body {
-      background: #fff; /* full-site yellow */
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 45%, #eff6ff 100%); /* MIC Trades light theme */
       font-family: Poppins, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       font-weight: 300;
     }
@@ -53,7 +56,7 @@
     @keyframes slideInFromRight { 0%{transform:translateX(100px);opacity:0} 100%{transform:translateX(0);opacity:1} }
     @keyframes slideInFromBottom { 0%{transform:translateY(50px);opacity:0} 100%{transform:translateY(0);opacity:1} }
     @keyframes fadeInScale { 0%{transform:scale(.8);opacity:0} 100%{transform:scale(1);opacity:1} }
-    @keyframes glowPulse { 0%,100%{box-shadow:0 0 20px rgba(254,253,12,.3)} 50%{box-shadow:0 0 40px rgba(254, 254, 12, 0.35)} }
+    @keyframes glowPulse { 0%,100%{box-shadow:0 0 20px rgba(37,99,235,.18)} 50%{box-shadow:0 0 40px rgba(37,99,235,.24)} }
     .animate-slide-left{animation:slideInFromLeft .8s ease-out forwards}
     .animate-slide-right{animation:slideInFromRight .8s ease-out .3s forwards}
     .animate-slide-bottom{animation:slideInFromBottom .8s ease-out .6s forwards}
@@ -76,125 +79,131 @@
       50%{transform:translateY(-8px) scale(1.2);opacity:1}
     }
 
-    /* Utility for dark text on yellow where needed */
-    .text-on-yellow { color: #111; }
+    /* Utility for dark text on light theme where needed */
+    .text-on-yellow { color: #0f172a; }
   </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.inset-1{inset:0.25rem}.-bottom-1{bottom:-0.25rem}.bottom-1\/4{bottom:25%}.left-0{left:0px}.left-1\/4{left:25%}.right-1\/4{right:25%}.top-0{top:0px}.top-1\/4{top:25%}.left-1\/2{left:50%}.top-1\/2{top:50%}.bottom-20{bottom:5rem}.top-20{top:5rem}.z-50{z-index:50}.z-\[60\]{z-index:60}.z-10{z-index:10}.z-20{z-index:20}.mx-auto{margin-left:auto;margin-right:auto}.mx-3{margin-left:0.75rem;margin-right:0.75rem}.mb-16{margin-bottom:4rem}.mt-8{margin-top:2rem}.mr-2{margin-right:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-4{margin-right:1rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mt-16{margin-top:4rem}.mb-20{margin-bottom:5rem}.mb-3{margin-bottom:0.75rem}.mb-12{margin-bottom:3rem}.mt-4{margin-top:1rem}.mr-3{margin-right:0.75rem}.ml-2{margin-left:0.5rem}.mt-6{margin-top:1.5rem}.mt-2{margin-top:0.5rem}.mt-10{margin-top:2.5rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-0\.5{height:0.125rem}.h-12{height:3rem}.h-64{height:16rem}.h-\[20px\]{height:20px}.h-96{height:24rem}.h-\[800px\]{height:800px}.h-full{height:100%}.h-10{height:2.5rem}.h-48{height:12rem}.h-52{height:13rem}.h-56{height:14rem}.h-\[340px\]{height:340px}.h-1{height:0.25rem}.h-32{height:8rem}.h-40{height:10rem}.h-20{height:5rem}.h-4{height:1rem}.h-8{height:2rem}.h-2{height:0.5rem}.h-\[203px\]{height:203px}.h-\[72px\]{height:72px}.max-h-\[calc\(100dvh-140px\)\]{max-height:calc(100dvh - 140px)}.min-h-screen{min-height:100vh}.min-h-\[70vh\]{min-height:70vh}.w-0{width:0px}.w-12{width:3rem}.w-64{width:16rem}.w-auto{width:auto}.w-full{width:100%}.w-96{width:24rem}.w-\[800px\]{width:800px}.w-10{width:2.5rem}.w-48{width:12rem}.w-52{width:13rem}.w-56{width:14rem}.w-20{width:5rem}.w-32{width:8rem}.w-40{width:10rem}.w-24{width:6rem}.w-4{width:1rem}.w-8{width:2rem}.w-2{width:0.5rem}.w-\[203px\]{width:203px}.w-\[72px\]{width:72px}.min-w-0{min-width:0px}.max-w-md{max-width:28rem}.max-w-2xl{max-width:42rem}.max-w-lg{max-width:32rem}.max-w-3xl{max-width:48rem}.max-w-6xl{max-width:72rem}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-1\.5{--tw-translate-x:0.375rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-1\.5{--tw-translate-y:0.375rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.cursor-default{cursor:default}.select-none{-webkit-user-select:none;user-select:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-8{gap:2rem}.gap-16{gap:4rem}.gap-4{gap:1rem}.gap-2{gap:0.5rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-3{gap:0.75rem}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-visible{overflow:visible}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.break-words{overflow-wrap:break-word}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-3xl{border-radius:1.5rem}.rounded-2xl{border-radius:1rem}.rounded-\[16px\]{border-radius:16px}.border{border-width:1px}.border-2{border-width:2px}.border-t{border-top-width:1px}.border-\[\#FEFD0C\]\/20{border-color:rgb(254 253 12 / 0.2)}.border-\[\#FEFD0C\]\/30{border-color:rgb(254 253 12 / 0.3)}.border-\[\#FEFD0C\]\/10{border-color:rgb(254 253 12 / 0.1)}.border-\[\#ccc\]\/20{border-color:rgb(204 204 204 / 0.2)}.border-transparent{border-color:transparent}.border-black\/10{border-color:rgb(0 0 0 / 0.1)}.border-black\/20{border-color:rgb(0 0 0 / 0.2)}.border-\[\#FEFD0C\]\/60{border-color:rgb(254 253 12 / 0.6)}.border-yellow-300\/30{border-color:rgb(253 224 71 / 0.3)}.border-\[\#FEFD0C\]\/40{border-color:rgb(254 253 12 / 0.4)}.bg-\[\#FEFD0C\]\/10{background-color:rgb(254 253 12 / 0.1)}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-black\/80{background-color:rgb(0 0 0 / 0.8)}.bg-\[\#FEFD0C\]\/30{background-color:rgb(254 253 12 / 0.3)}.bg-black\/30{background-color:rgb(0 0 0 / 0.3)}.bg-black\/60{background-color:rgb(0 0 0 / 0.6)}.bg-black\/20{background-color:rgb(0 0 0 / 0.2)}.bg-black\/10{background-color:rgb(0 0 0 / 0.1)}.bg-\[\#000\]\/10{background-color:rgb(0 0 0 / 0.1)}.bg-\[\#FEFD0C\]{--tw-bg-opacity:1;background-color:rgb(254 253 12 / var(--tw-bg-opacity, 1))}.bg-\[\#1d1d1d\]{--tw-bg-opacity:1;background-color:rgb(29 29 29 / var(--tw-bg-opacity, 1))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.bg-\[radial-gradient\(ellipse_at_center\2c rgba\(0\2c 0\2c 0\2c 0\.12\)\2c transparent_60\%\)\]{background-image:radial-gradient(ellipse at center,rgba(0,0,0,0.12),transparent 60%)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-\[radial-gradient\(ellipse_at_center\2c rgba\(0\2c 0\2c 0\2c 0\.08\)\2c transparent_60\%\)\]{background-image:radial-gradient(ellipse at center,rgba(0,0,0,0.08),transparent 60%)}.from-\[\#FEFD0C\]{--tw-gradient-from:#FEFD0C var(--tw-gradient-from-position);--tw-gradient-to:rgb(254 253 12 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\[\#FEFD0C\]\/10{--tw-gradient-from:rgb(254 253 12 / 0.1) var(--tw-gradient-from-position);--tw-gradient-to:rgb(254 253 12 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\[\#FEFD0C\]\/25{--tw-gradient-from:rgb(254 253 12 / 0.25) var(--tw-gradient-from-position);--tw-gradient-to:rgb(254 253 12 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-white{--tw-gradient-from:#fff var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\[\#FEFD0C\]\/50{--tw-gradient-from:rgb(254 253 12 / 0.5) var(--tw-gradient-from-position);--tw-gradient-to:rgb(254 253 12 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-black\/40{--tw-gradient-from:rgb(0 0 0 / 0.4) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-black\/60{--tw-gradient-from:rgb(0 0 0 / 0.6) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-transparent{--tw-gradient-from:transparent var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-black\/70{--tw-gradient-from:rgb(0 0 0 / 0.7) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-gray-100{--tw-gradient-to:rgb(243 244 246 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #f3f4f6 var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-yellow-300{--tw-gradient-to:rgb(253 224 71 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #fde047 var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-gray-900\/60{--tw-gradient-to:rgb(17 24 39 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(17 24 39 / 0.6) var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-yellow-300\/30{--tw-gradient-to:rgb(253 224 71 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(253 224 71 / 0.3) var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-yellow-400\/30{--tw-gradient-to:rgb(250 204 21 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(250 204 21 / 0.3) var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-\[\#FEFD0C\]{--tw-gradient-to:rgb(254 253 12 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #FEFD0C var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-gray-900\/80{--tw-gradient-to:rgb(17 24 39 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(17 24 39 / 0.8) var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-\[\#FEFD0C\]\/10{--tw-gradient-to:rgb(254 253 12 / 0.1) var(--tw-gradient-to-position)}.to-\[\#FEFD0C\]\/50{--tw-gradient-to:rgb(254 253 12 / 0.5) var(--tw-gradient-to-position)}.to-\[\#FEFD0C\]\/90{--tw-gradient-to:rgb(254 253 12 / 0.9) var(--tw-gradient-to-position)}.to-yellow-400\/25{--tw-gradient-to:rgb(250 204 21 / 0.25) var(--tw-gradient-to-position)}.to-gray-300{--tw-gradient-to:#d1d5db var(--tw-gradient-to-position)}.to-yellow-400{--tw-gradient-to:#facc15 var(--tw-gradient-to-position)}.to-\[\#FEFD0C\]\/30{--tw-gradient-to:rgb(254 253 12 / 0.3) var(--tw-gradient-to-position)}.to-black\/40{--tw-gradient-to:rgb(0 0 0 / 0.4) var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.to-black\/90{--tw-gradient-to:rgb(0 0 0 / 0.9) var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.object-contain{object-fit:contain}.p-8{padding:2rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-4{padding:1rem}.p-3{padding:0.75rem}.p-\[17px\]{padding:17px}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-8{padding-left:2rem;padding-right:2rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.px-\[16px\]{padding-left:16px;padding-right:16px}.px-5{padding-left:1.25rem;padding-right:1.25rem}.pb-16{padding-bottom:4rem}.pt-10{padding-top:2.5rem}.pt-6{padding-top:1.5rem}.pb-\[40px\]{padding-bottom:40px}.pt-\[100px\]{padding-top:100px}.text-center{text-align:center}.align-\[-2px\]{vertical-align:-2px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-5xl{font-size:3rem;line-height:1}.text-xs{font-size:0.75rem;line-height:1rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-light{font-weight:300}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-\[0\.9\]{line-height:0.9}.leading-relaxed{line-height:1.625}.leading-4{line-height:1rem}.leading-5{line-height:1.25rem}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-\[\#FEFD0C\]{--tw-text-opacity:1;color:rgb(254 253 12 / var(--tw-text-opacity, 1))}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-black\/80{color:rgb(0 0 0 / 0.8)}.text-black\/90{color:rgb(0 0 0 / 0.9)}.text-transparent{color:transparent}.text-black\/70{color:rgb(0 0 0 / 0.7)}.text-black\/60{color:rgb(0 0 0 / 0.6)}.text-white\/80{color:rgb(255 255 255 / 0.8)}.text-white\/70{color:rgb(255 255 255 / 0.7)}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.decoration-black\/30{-webkit-text-decoration-color:rgb(0 0 0 / 0.3);text-decoration-color:rgb(0 0 0 / 0.3)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.opacity-50{opacity:0.5}.opacity-40{opacity:0.4}.opacity-20{opacity:0.2}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_6px_20px_rgba\(0\2c 0\2c 0\2c 0\.2\)\]{--tw-shadow:0 6px 20px rgba(0,0,0,0.2);--tw-shadow-colored:0 6px 20px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-black\/50{--tw-shadow-color:rgb(0 0 0 / 0.5);--tw-shadow:var(--tw-shadow-colored)}.shadow-yellow-300\/40{--tw-shadow-color:rgb(253 224 71 / 0.4);--tw-shadow:var(--tw-shadow-colored)}.shadow-\[\#FEFD0C\]\/20{--tw-shadow-color:rgb(254 253 12 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.shadow-black\/30{--tw-shadow-color:rgb(0 0 0 / 0.3);--tw-shadow:var(--tw-shadow-colored)}.shadow-\[\#FEFD0C\]\/30{--tw-shadow-color:rgb(254 253 12 / 0.3);--tw-shadow:var(--tw-shadow-colored)}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.blur-xl{--tw-blur:blur(24px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.blur-2xl{--tw-blur:blur(40px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.blur-lg{--tw-blur:blur(16px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-sm{--tw-drop-shadow:drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-lg{--tw-drop-shadow:drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.duration-700{transition-duration:700ms}.ease-out{transition-timing-function:cubic-bezier(0, 0, 0.2, 1)}.hover\:-translate-y-0\.5:hover{--tw-translate-y:-0.125rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-\[1\.02\]:hover{--tw-scale-x:1.02;--tw-scale-y:1.02;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-110:hover{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-\[\#FEFD0C\]\/40:hover{border-color:rgb(254 253 12 / 0.4)}.hover\:border-\[\#FEFD0C\]\/50:hover{border-color:rgb(254 253 12 / 0.5)}.hover\:border-\[\#FEFD0C\]\/10:hover{border-color:rgb(254 253 12 / 0.1)}.hover\:border-yellow-300\/40:hover{border-color:rgb(253 224 71 / 0.4)}.hover\:border-\[\#FEFD0C\]\/80:hover{border-color:rgb(254 253 12 / 0.8)}.hover\:border-\[\#FEFD0C\]\/30:hover{border-color:rgb(254 253 12 / 0.3)}.hover\:border-\[\#FEFD0C\]\/70:hover{border-color:rgb(254 253 12 / 0.7)}.hover\:bg-\[\#FEFD0C\]\/20:hover{background-color:rgb(254 253 12 / 0.2)}.hover\:bg-\[\#FEFD0C\]\/5:hover{background-color:rgb(254 253 12 / 0.05)}.hover\:bg-black\/10:hover{background-color:rgb(0 0 0 / 0.1)}.hover\:bg-black\/20:hover{background-color:rgb(0 0 0 / 0.2)}.hover\:bg-black\/90:hover{background-color:rgb(0 0 0 / 0.9)}.hover\:bg-black\/60:hover{background-color:rgb(0 0 0 / 0.6)}.hover\:text-\[\#FEFD0C\]:hover{--tw-text-opacity:1;color:rgb(254 253 12 / var(--tw-text-opacity, 1))}.hover\:opacity-90:hover{opacity:0.9}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-2xl:hover{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-\[\#FEFD0C\]\/20:hover{--tw-shadow-color:rgb(254 253 12 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.hover\:shadow-yellow-300\/10:hover{--tw-shadow-color:rgb(253 224 71 / 0.1);--tw-shadow:var(--tw-shadow-colored)}.hover\:shadow-yellow-300\/60:hover{--tw-shadow-color:rgb(253 224 71 / 0.6);--tw-shadow:var(--tw-shadow-colored)}.hover\:shadow-\[\#FEFD0C\]\/10:hover{--tw-shadow-color:rgb(254 253 12 / 0.1);--tw-shadow:var(--tw-shadow-colored)}.hover\:shadow-\[\#FEFD0C\]\/50:hover{--tw-shadow-color:rgb(254 253 12 / 0.5);--tw-shadow:var(--tw-shadow-colored)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.group:hover .group-hover\:w-full{width:100%}.group:hover .group-hover\:w-20{width:5rem}.group:hover .group-hover\:translate-x-2{--tw-translate-x:0.5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:rotate-180{--tw-rotate:180deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:border-yellow-300\/60{border-color:rgb(253 224 71 / 0.6)}.group:hover .group-hover\:bg-\[\#FEFD0C\]\/20{background-color:rgb(254 253 12 / 0.2)}.group:hover .group-hover\:bg-black\/25{background-color:rgb(0 0 0 / 0.25)}.group:hover .group-hover\:bg-\[\#FEFD0C\]\/10{background-color:rgb(254 253 12 / 0.1)}.group:hover .group-hover\:bg-black\/20{background-color:rgb(0 0 0 / 0.2)}.group:hover .group-hover\:text-\[\#FEFD0C\]{--tw-text-opacity:1;color:rgb(254 253 12 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 640px){.sm\:inset-2{inset:0.5rem}.sm\:h-64{height:16rem}.sm\:h-72{height:18rem}.sm\:h-80{height:20rem}.sm\:h-\[400px\]{height:400px}.sm\:w-64{width:16rem}.sm\:w-72{width:18rem}.sm\:w-80{width:20rem}.sm\:flex-1{flex:1 1 0%}.sm\:translate-x-4{--tw-translate-x:1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.sm\:translate-y-4{--tw-translate-y:1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:gap-6{gap:1.5rem}.sm\:p-6{padding:1.5rem}.sm\:px-0{padding-left:0px;padding-right:0px}}@media (min-width: 768px){.md\:max-w-2xl{max-width:42rem}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:gap-8{gap:2rem}.md\:p-8{padding:2rem}.md\:p-12{padding:3rem}.md\:py-6{padding-top:1.5rem;padding-bottom:1.5rem}.md\:px-6{padding-left:1.5rem;padding-right:1.5rem}.md\:py-8{padding-top:2rem;padding-bottom:2rem}.md\:py-24{padding-top:6rem;padding-bottom:6rem}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:py-32{padding-top:8rem;padding-bottom:8rem}.lg\:text-7xl{font-size:4.5rem;line-height:1}.lg\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1280px){.xl\:col-span-2{grid-column:span 2 / span 2}.xl\:flex{display:flex}.xl\:hidden{display:none}.xl\:h-16{height:4rem}.xl\:w-16{width:4rem}.xl\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.xl\:px-24{padding-left:6rem;padding-right:6rem}.xl\:px-\[96px\]{padding-left:96px;padding-right:96px}.xl\:pt-\[120px\]{padding-top:120px}.xl\:text-2xl{font-size:1.5rem;line-height:2rem}.xl\:text-6xl{font-size:3.75rem;line-height:1}.xl\:text-xl{font-size:1.25rem;line-height:1.75rem}}</style></head>
+</head>
 
-<body class="antialiased is-loaded" id="top">
+<body class="antialiased" id="top">
   <!-- ====== HEADER (static, responsive, scroll-reactive) ====== -->
-  <header id="site-header" class="fixed top-0 w-full z-50 transition-all duration-500 bg-black">
+  <header id="site-header" class="fixed top-0 w-full z-50 transition-all duration-500 bg-white/95 border-b border-blue-100 shadow-sm">
     <!-- pattern only visible when scrolled -->
-    <div id="header-pattern" class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-500" style="opacity: 0;">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#FEFD0C]/10 via-transparent to-[#FEFD0C]/10"></div>
-      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-[#FEFD0C]/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#FEFD0C]/10 rounded-full blur-3xl"></div>
+    <div id="header-pattern" class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-500">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#2563EB]/10 via-transparent to-[#2563EB]/10"></div>
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-[#2563EB]/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#2563EB]/10 rounded-full blur-3xl"></div>
     </div>
 
     <div class="relative flex items-center justify-between xl:px-24 px-4 mx-auto w-full md:py-6 py-4">
       <a href="#top" class="flex items-center group" aria-label="Home">
         <div class="relative">
           <!-- Use your own path/logo file -->
-          <img src="assets/logo-white.png" class="h-[20px] w-auto object-contain transition-all duration-300 group-hover:scale-105" alt="Logo">
-          <div class="absolute inset-0 bg-[#FEFD0C]/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+          <img src="assets/logo.png" class="h-[20px] w-auto object-contain transition-all duration-300 group-hover:scale-105" alt="Logo" />
+          <div class="absolute inset-0 bg-[#2563EB]/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
         </div>
       </a>
 
       <!-- Desktop Nav -->
       <nav class="xl:flex hidden items-center gap-8">
         <a href="#top" class="group relative" aria-current="page">
-          <h3 class="text-lg font-medium text-[#FEFD0C] drop-shadow-sm">Home</h3>
-          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 w-full"></span>
+          <h3 class="text-lg font-medium text-[#2563EB] drop-shadow-sm">Home</h3>
+          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#2563EB] to-[#2563EB]/50 w-full"></span>
         </a>
-        <a href="#" class="group relative">
-          <h3 class="text-lg font-medium text-white group-hover:text-[#FEFD0C] transition-colors">EBook</h3>
-          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 w-0 group-hover:w-full transition-all"></span>
+        <a href="https://tradewithbnairaacademy.com" class="group relative">
+          <h3 class="text-lg font-medium text-slate-800 group-hover:text-[#2563EB] transition-colors">EBook</h3>
+          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#2563EB] to-[#2563EB]/50 w-0 group-hover:w-full transition-all"></span>
         </a>
-        <a href="/rates.html" class="group relative">
-          <h3 class="text-lg font-medium text-white group-hover:text-[#FEFD0C] transition-colors">Rates</h3>
-          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 w-0 group-hover:w-full transition-all"></span>
+        <a href="/rates" class="group relative">
+          <h3 class="text-lg font-medium text-slate-800 group-hover:text-[#2563EB] transition-colors">Rates</h3>
+          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#2563EB] to-[#2563EB]/50 w-0 group-hover:w-full transition-all"></span>
         </a>
-        <a href="/about.html" class="group relative">
-          <h3 class="text-lg font-medium text-white group-hover:text-[#FEFD0C] transition-colors">About Us</h3>
-          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 w-0 group-hover:w-full transition-all"></span>
+        <a href="/about" class="group relative">
+          <h3 class="text-lg font-medium text-slate-800 group-hover:text-[#2563EB] transition-colors">About Us</h3>
+          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#2563EB] to-[#2563EB]/50 w-0 group-hover:w-full transition-all"></span>
         </a>
-        <a href="/support.html" class="group relative">
-          <h3 class="text-lg font-medium text-white group-hover:text-[#FEFD0C] transition-colors">Support</h3>
-          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 w-0 group-hover:w-full transition-all"></span>
+        <a href="/support" class="group relative">
+          <h3 class="text-lg font-medium text-slate-800 group-hover:text-[#2563EB] transition-colors">Support</h3>
+          <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#2563EB] to-[#2563EB]/50 w-0 group-hover:w-full transition-all"></span>
         </a>
 
-        <a href="/signin.html" class="group">
-          <div class="bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/90 px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-[#FEFD0C]/20 hover:scale-105 border border-[#FEFD0C]/20">
-            <span class="text-black text-base font-semibold">Let’s trade</span>
+        <a href="/signin" class="group">
+          <div class="bg-gradient-to-r from-[#2563EB] to-[#2563EB]/90 px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-[#2563EB]/20 hover:scale-105 border border-[#2563EB]/20">
+            <span class="text-white text-base font-semibold">Let&rsquo;s trade</span>
           </div>
         </a>
       </nav>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-toggle" class="xl:hidden h-12 w-12 flex items-center justify-center rounded-xl cursor-pointer transition-all duration-300 backdrop-blur-md border border-[#FEFD0C]/20 bg-[#FEFD0C]/10 text-[#FEFD0C] hover:bg-[#FEFD0C]/20 hover:border-[#FEFD0C]/40 hover:scale-105" aria-label="Open menu" aria-expanded="false">
+      <button id="mobile-menu-toggle" class="xl:hidden h-12 w-12 flex items-center justify-center rounded-xl cursor-pointer transition-all duration-300 backdrop-blur-md border border-[#2563EB]/20 bg-[#2563EB]/10 text-[#2563EB] hover:bg-[#2563EB]/20 hover:border-[#2563EB]/40 hover:scale-105" aria-label="Open menu" aria-expanded="false">
         <iconify-icon icon="heroicons-outline:menu-alt-3" class="text-2xl"></iconify-icon>
       </button>
     </div>
   </header>
 
   <!-- Spacer to offset fixed header height -->
-  <div id="header-spacer" style="height: 96px;"></div>
+  <div id="header-spacer"></div>
 
   <!-- Mobile Nav Overlay -->
   <!-- Mobile Nav Overlay -->
-    <div id="mobile-nav" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
+    <div id="mobile-nav"
+         class="fixed inset-0 z-50 hidden"
+         role="dialog" aria-modal="true">
       <!-- Backdrop -->
-      <div class="absolute inset-0 bg-black/80 backdrop-blur-xl"></div>
+      <div class="absolute inset-0 bg-white/85 backdrop-blur-xl"></div>
     
       <!-- Close button (fixed: never hides under browser UI) -->
-      <button id="mobile-menu-close" class="fixed z-[60] h-12 w-12 flex items-center justify-center rounded-xl border border-[#FEFD0C]/30 bg-[#FEFD0C]/10 text-[#FEFD0C] hover:bg-[#FEFD0C]/20 hover:border-[#FEFD0C]/50 transition focus:outline-none" style="
+      <button id="mobile-menu-close"
+              class="fixed z-[60] h-12 w-12 flex items-center justify-center rounded-xl border border-[#2563EB]/30 bg-[#2563EB]/10 text-[#2563EB] hover:bg-[#2563EB]/20 hover:border-[#2563EB]/50 transition focus:outline-none"
+              style="
                 top: calc(env(safe-area-inset-top, 0px) + 16px);
                 right: calc(env(safe-area-inset-right, 0px) + 16px);
                 touch-action: manipulation;
-              " aria-label="Close menu">
+              "
+              aria-label="Close menu">
         <iconify-icon icon="ri:close-fill" class="text-2xl"></iconify-icon>
       </button>
     
       <!-- Content wrapper (centers card, respects safe areas) -->
-      <div class="relative z-50 h-full w-full flex items-center justify-center px-4" style="
+      <div class="relative z-50 h-full w-full flex items-center justify-center px-4"
+           style="
              padding-top: calc(env(safe-area-inset-top, 0px) + 16px);
              padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
            ">
         <!-- Card: capped height, scrolls if content is tall -->
-        <div class="w-full max-w-md bg-black/60 backdrop-blur-xl border border-[#FEFD0C]/10 rounded-3xl p-8 shadow-2xl shadow-black/50
+        <div class="w-full max-w-md bg-white/95 backdrop-blur-xl border border-blue-100 rounded-3xl p-8 shadow-2xl shadow-blue-100/60
                     max-h-[calc(100dvh-140px)] overflow-y-auto">
           <div class="space-y-6 text-center">
             <a href="#top" class="block group nav-mobile-link">
-              <div class="py-3 px-4 rounded-xl hover:bg-[#FEFD0C]/5 border border-transparent hover:border-[#FEFD0C]/10 transition-all">
-                <h3 class="text-xl font-medium text-white group-hover:text-[#FEFD0C]">Home</h3>
+              <div class="py-3 px-4 rounded-xl hover:bg-[#2563EB]/5 border border-transparent hover:border-[#2563EB]/10 transition-all">
+                <h3 class="text-xl font-medium text-slate-800 group-hover:text-[#2563EB]">Home</h3>
               </div>
             </a>
-            <a href="#" class="block group nav-mobile-link">
-              <div class="py-3 px-4 rounded-xl hover:bg-[#FEFD0C]/5 border border-transparent hover:border-[#FEFD0C]/10 transition-all">
-                <h3 class="text-xl font-medium text-white group-hover:text-[#FEFD0C]">EBook</h3>
+            <a href="https://tradewithbnairaacademy.com" class="block group nav-mobile-link">
+              <div class="py-3 px-4 rounded-xl hover:bg-[#2563EB]/5 border border-transparent hover:border-[#2563EB]/10 transition-all">
+                <h3 class="text-xl font-medium text-slate-800 group-hover:text-[#2563EB]">EBook</h3>
               </div>
             </a>
-            <a href="/rates.html" class="block group nav-mobile-link">
-              <div class="py-3 px-4 rounded-xl hover:bg-[#FEFD0C]/5 border border-transparent hover:border-[#FEFD0C]/10 transition-all">
-                <h3 class="text-xl font-medium text-white group-hover:text-[#FEFD0C]">Rates</h3>
+            <a href="/rates" class="block group nav-mobile-link">
+              <div class="py-3 px-4 rounded-xl hover:bg-[#2563EB]/5 border border-transparent hover:border-[#2563EB]/10 transition-all">
+                <h3 class="text-xl font-medium text-slate-800 group-hover:text-[#2563EB]">Rates</h3>
               </div>
             </a>
-            <a href="/about.html" class="block group nav-mobile-link">
-              <div class="py-3 px-4 rounded-xl hover:bg-[#FEFD0C]/5 border border-transparent hover:border-[#FEFD0C]/10 transition-all">
-                <h3 class="text-xl font-medium text-white group-hover:text-[#FEFD0C]">About Us</h3>
+            <a href="/about" class="block group nav-mobile-link">
+              <div class="py-3 px-4 rounded-xl hover:bg-[#2563EB]/5 border border-transparent hover:border-[#2563EB]/10 transition-all">
+                <h3 class="text-xl font-medium text-slate-800 group-hover:text-[#2563EB]">About Us</h3>
               </div>
             </a>
-            <a href="/support.html" class="block group nav-mobile-link">
-              <div class="py-3 px-4 rounded-xl hover:bg-[#FEFD0C]/5 border border-transparent hover:border-[#FEFD0C]/10 transition-all">
-                <h3 class="text-xl font-medium text-white group-hover:text-[#FEFD0C]">Support</h3>
+            <a href="/support" class="block group nav-mobile-link">
+              <div class="py-3 px-4 rounded-xl hover:bg-[#2563EB]/5 border border-transparent hover:border-[#2563EB]/10 transition-all">
+                <h3 class="text-xl font-medium text-slate-800 group-hover:text-[#2563EB]">Support</h3>
               </div>
             </a>
           </div>
     
-          <div class="mt-8 pt-6 border-t border-[#FEFD0C]/10">
-            <a href="/signin.html" class="block group nav-mobile-link">
-              <div class="bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/90 px-8 py-4 rounded-xl hover:shadow-lg hover:shadow-[#FEFD0C]/20 transition-all duration-300 text-center group-hover:scale-105">
-                <span class="text-black text-lg font-semibold">Let’s trade</span>
+          <div class="mt-8 pt-6 border-t border-[#2563EB]/10">
+            <a href="/signin" class="block group nav-mobile-link">
+              <div class="bg-gradient-to-r from-[#2563EB] to-[#2563EB]/90 px-8 py-4 rounded-xl hover:shadow-lg hover:shadow-[#2563EB]/20 transition-all duration-300 text-center group-hover:scale-105">
+                <span class="text-white text-lg font-semibold">Let&rsquo;s trade</span>
               </div>
             </a>
           </div>
@@ -207,19 +216,19 @@
   <section class="w-full min-h-screen relative overflow-hidden" id="home">
     <!-- Background effects, tuned for yellow page -->
     <div class="absolute inset-0">
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.12),transparent_60%)]"></div>
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FEFD0C]/30 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#FEFD0C]/30 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#FEFD0C]/25 to-yellow-400/25 rounded-full blur-3xl"></div>
-      <div class="absolute inset-0 opacity-50" style="background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.18) 1px, transparent 0); background-size: 40px 40px;"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.08),transparent_60%)]"></div>
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2563EB]/30 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#2563EB]/30 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#2563EB]/25 to-blue-500/25 rounded-full blur-3xl"></div>
+      <div class="absolute inset-0 opacity-50" style="background-image: radial-gradient(circle at 1px 1px, rgba(37,99,235,0.10) 1px, transparent 0); background-size: 40px 40px;"></div>
     </div>
 
     <!-- Floating crypto icons -->
-    <div class="absolute inset-0 pointer-events-none overflow-hidden" id="floating-cryptos"><div class="absolute text-black" style="left: 31.591%; top: 25.9722%; opacity: 0.35; animation: 16.6703s ease-in-out 0.717151s infinite normal none running cryptoFloat; filter: saturate(1.1);"><iconify-icon icon="fa6-brands:bitcoin" class="text-4xl"></iconify-icon></div><div class="absolute text-black/80" style="left: 23.5933%; top: 20.4647%; opacity: 0.35; animation: 16.0487s ease-in-out 1.19861s infinite normal none running cryptoFloat; filter: saturate(1.1);"><iconify-icon icon="simple-icons:tether" class="text-4xl"></iconify-icon></div><div class="absolute text-black/80" style="left: 41.3512%; top: 57.7979%; opacity: 0.35; animation: 12.3226s ease-in-out 2.64676s infinite normal none running cryptoFloat; filter: saturate(1.1);"><iconify-icon icon="mdi:ethereum" class="text-4xl"></iconify-icon></div><div class="absolute text-black/60" style="left: 32.7188%; top: 28.6927%; opacity: 0.35; animation: 18.4529s ease-in-out 1.14576s infinite normal none running cryptoFloat; filter: saturate(1.1);"><iconify-icon icon="simple-icons:ripple" class="text-4xl"></iconify-icon></div><div class="absolute text-black" style="left: 45.2154%; top: 30.6941%; opacity: 0.35; animation: 14.1263s ease-in-out 0.709973s infinite normal none running cryptoFloat; filter: saturate(1.1);"><iconify-icon icon="fa6-brands:bitcoin" class="text-4xl"></iconify-icon></div><div class="absolute text-black/80" style="left: 62.6211%; top: 69.8427%; opacity: 0.35; animation: 15.1614s ease-in-out 1.9067s infinite normal none running cryptoFloat; filter: saturate(1.1);"><iconify-icon icon="simple-icons:tether" class="text-4xl"></iconify-icon></div></div>
+    <div class="absolute inset-0 pointer-events-none overflow-hidden" id="floating-cryptos"></div>
 
     <div class="container mx-auto px-4 md:px-6 relative z-10 pt-10 pb-16">
       <div class="text-center mb-16">
-        <div class="reveal inline-block bg-black/30 backdrop-blur-sm text-black font-light px-6 py-3 rounded-full text-sm border border-[#ccc]/20 shadow-lg">
+        <div class="reveal inline-block bg-white/80 backdrop-blur-sm text-slate-700 font-light px-6 py-3 rounded-full text-sm border border-[#ccc]/20 shadow-lg">
           <iconify-icon icon="mdi:verified" class="align-[-2px] mr-2"></iconify-icon>
           Trusted by 50,000+ Users Worldwide
         </div>
@@ -230,12 +239,12 @@
         <div class="reveal rounded-2xl p-6 md:p-8">
           <div class="mb-6">
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-black leading-[0.9] mb-4" style="font-weight:200;">
-              <span class="inline-block animate-float bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-black drop-shadow-sm">Fast</span>
-              <span class="mx-3 text-black/80">and</span><br>
-              <span class="text-[#FEFD0C] inline-block animate-float bg-gradient-to-r from-[#FEFD0C] via-yellow-300 to-yellow-400 bg-clip-text text-transparent drop-shadow-lg" style="animation-delay:.5s">Trusted</span><br>
-              <span class="inline-block animate-float bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-black drop-shadow-sm" style="animation-delay:1s">Crypto Trading</span>
+              <span class="inline-block animate-float bg-gradient-to-r from-slate-900 via-slate-700 to-blue-700 bg-clip-text text-transparent drop-shadow-sm">Fast</span>
+              <span class="mx-3 text-slate-500">and</span><br />
+              <span class="text-[#2563EB] inline-block animate-float bg-gradient-to-r from-[#2563EB] via-blue-400 to-blue-500 bg-clip-text text-transparent drop-shadow-lg" style="animation-delay:.5s">Trusted</span><br />
+              <span class="inline-block animate-float bg-gradient-to-r from-slate-900 via-slate-700 to-blue-700 bg-clip-text text-transparent drop-shadow-sm" style="animation-delay:1s">Crypto Trading</span>
             </h1>
-            <p class="text-black/90 leading-relaxed text-sm font-light max-w-lg md:max-w-2xl mx-auto px-4 sm:px-0 break-words">
+            <p class="text-slate-600 leading-relaxed text-sm font-light max-w-lg md:max-w-2xl mx-auto px-4 sm:px-0 break-words">
               Peer-to-peer cryptocurrency trading platform—where buyers and sellers connect directly for lightning-fast, secure transactions.
               Join thousands who trust us for seamless crypto trading and reliable, professional support.
             </p>
@@ -245,30 +254,34 @@
           <!-- App Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full max-w-2xl mx-auto mb-8 px-4 sm:px-0">
               <!-- Google Play -->
-              <a class="group w-full sm:flex-1 min-w-0 bg-black/20 backdrop-blur-xl rounded-2xl p-5 sm:p-6 border border-black/10 shadow-2xl hover:shadow-yellow-300/10 hover:border-yellow-300/40 transition-all duration-500 hover:scale-[1.02] flex items-center overflow-visible" href="#" aria-label="Coming soon on Google Play">
-                <div class="w-10 h-10 rounded-xl bg-[#FEFD0C]/10 flex items-center justify-center mr-4 shrink-0 group-hover:bg-[#FEFD0C]/20 transition-colors duration-300">
-                  <iconify-icon icon="fa6-brands:google-play" class="text-[#FEFD0C] text-lg"></iconify-icon>
+              <a
+                 class="group w-full sm:flex-1 min-w-0 bg-white/90 backdrop-blur-xl rounded-2xl p-5 sm:p-6 border border-blue-100 shadow-2xl hover:shadow-blue-200/60 hover:border-blue-300 transition-all duration-500 hover:scale-[1.02] flex items-center overflow-visible"
+                 href="#" aria-label="Coming soon on Google Play">
+                <div class="w-10 h-10 rounded-xl bg-[#2563EB]/10 flex items-center justify-center mr-4 shrink-0 group-hover:bg-[#2563EB]/20 transition-colors duration-300">
+                  <iconify-icon icon="fa6-brands:google-play" class="text-[#2563EB] text-lg"></iconify-icon>
                 </div>
                 <div class="min-w-0">
-                  <h4 class="text-black font-semibold text-sm mb-1 truncate group-hover:text-[#FEFD0C] transition-colors duration-300 leading-5">
+                  <h4 class="text-black font-semibold text-sm mb-1 truncate group-hover:text-[#2563EB] transition-colors duration-300 leading-5">
                     Coming Soon
                   </h4>
-                  <p class="text-black/70 text-xs font-light truncate leading-4">
+                  <p class="text-slate-500 text-xs font-light truncate leading-4">
                     on Google Play
                   </p>
                 </div>
               </a>
             
               <!-- App Store -->
-              <a class="group w-full sm:flex-1 min-w-0 bg-black/20 backdrop-blur-xl rounded-2xl p-5 sm:p-6 border border-black/10 shadow-2xl hover:shadow-yellow-300/10 hover:border-yellow-300/40 transition-all duration-500 hover:scale-[1.02] flex items-center overflow-visible" href="#" aria-label="Coming soon on the App Store">
-                <div class="w-10 h-10 rounded-xl bg-[#FEFD0C]/10 flex items-center justify-center mr-4 shrink-0 group-hover:bg-[#FEFD0C]/20 transition-colors duration-300">
-                  <iconify-icon icon="fa6-brands:apple" class="text-[#FEFD0C] text-lg"></iconify-icon>
+              <a
+                 class="group w-full sm:flex-1 min-w-0 bg-white/90 backdrop-blur-xl rounded-2xl p-5 sm:p-6 border border-blue-100 shadow-2xl hover:shadow-blue-200/60 hover:border-blue-300 transition-all duration-500 hover:scale-[1.02] flex items-center overflow-visible"
+                 href="#" aria-label="Coming soon on the App Store">
+                <div class="w-10 h-10 rounded-xl bg-[#2563EB]/10 flex items-center justify-center mr-4 shrink-0 group-hover:bg-[#2563EB]/20 transition-colors duration-300">
+                  <iconify-icon icon="fa6-brands:apple" class="text-[#2563EB] text-lg"></iconify-icon>
                 </div>
                 <div class="min-w-0">
-                  <h4 class="text-black font-semibold text-sm mb-1 truncate group-hover:text-[#FEFD0C] transition-colors duration-300 leading-5">
+                  <h4 class="text-black font-semibold text-sm mb-1 truncate group-hover:text-[#2563EB] transition-colors duration-300 leading-5">
                     Coming Soon
                   </h4>
-                  <p class="text-black/70 text-xs font-light truncate leading-4">
+                  <p class="text-slate-500 text-xs font-light truncate leading-4">
                     on the App Store
                   </p>
                 </div>
@@ -280,28 +293,28 @@
           <!-- Features (3 cards) -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <!-- 24/7 Support -->
-            <div class="border border-black/20 rounded-2xl p-6 shadow-xl hover:bg-black/10 transition-all duration-500 group hover:scale-105">
-              <div class="w-10 h-10 rounded-xl bg-black/10 flex items-center justify-center mb-4 group-hover:bg-[#FEFD0C]/20 transition-colors duration-300">
-                <iconify-icon icon="fa6-solid:headset" class="text-[#FEFD0C] text-lg"></iconify-icon>
+            <div class="border border-slate-200 rounded-2xl p-6 shadow-xl hover:bg-blue-50 transition-all duration-500 group hover:scale-105">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-[#2563EB]/20 transition-colors duration-300">
+                <iconify-icon icon="fa6-solid:headset" class="text-[#2563EB] text-lg"></iconify-icon>
               </div>
-              <h4 class="text-black font-medium text-sm mb-2 group-hover:text-[#FEFD0C] transition-colors duration-300">24/7 Support</h4>
-              <p class="text-black/70 text-xs font-light">Round-the-clock customer assistance whenever you need it</p>
+              <h4 class="text-slate-900 font-medium text-sm mb-2 group-hover:text-[#2563EB] transition-colors duration-300">24/7 Support</h4>
+              <p class="text-slate-500 text-xs font-light">Round-the-clock customer assistance whenever you need it</p>
             </div>
 
-            <div class="border border-black/20 rounded-2xl p-6 shadow-xl hover:bg-black/10 transition-all duration-500 group hover:scale-105">
-              <div class="w-10 h-10 rounded-xl bg-black/10 flex items-center justify-center mb-4 group-hover:bg-[#FEFD0C]/20 transition-colors duration-300">
-                <iconify-icon icon="material-symbols:speed" class="text-[#FEFD0C] text-lg"></iconify-icon>
+            <div class="border border-slate-200 rounded-2xl p-6 shadow-xl hover:bg-blue-50 transition-all duration-500 group hover:scale-105">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-[#2563EB]/20 transition-colors duration-300">
+                <iconify-icon icon="material-symbols:speed" class="text-[#2563EB] text-lg"></iconify-icon>
               </div>
-              <h4 class="text-black font-medium text-sm mb-2 group-hover:text-[#FEFD0C] transition-colors duration-300">Lightning Fast</h4>
-              <p class="text-black/70 text-xs font-light">Instant transactions and real-time processing</p>
+              <h4 class="text-slate-900 font-medium text-sm mb-2 group-hover:text-[#2563EB] transition-colors duration-300">Lightning Fast</h4>
+              <p class="text-slate-500 text-xs font-light">Instant transactions and real-time processing</p>
             </div>
 
-            <div class="border border-black/20 rounded-2xl p-6 shadow-xl hover:bg-black/10 transition-all duration-500 group hover:scale-105">
-              <div class="w-10 h-10 rounded-xl bg-black/10 flex items-center justify-center mb-4 group-hover:bg-[#FEFD0C]/20 transition-colors duration-300">
-                <iconify-icon icon="mdi:shield-check" class="text-[#FEFD0C] text-lg"></iconify-icon>
+            <div class="border border-slate-200 rounded-2xl p-6 shadow-xl hover:bg-blue-50 transition-all duration-500 group hover:scale-105">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-[#2563EB]/20 transition-colors duration-300">
+                <iconify-icon icon="mdi:shield-check" class="text-[#2563EB] text-lg"></iconify-icon>
               </div>
-              <h4 class="text-black font-medium text-sm mb-2 group-hover:text-[#FEFD0C] transition-colors duration-300">Fully Licensed</h4>
-              <p class="text-black/70 text-xs font-light">Regulated and compliant with global standards</p>
+              <h4 class="text-slate-900 font-medium text-sm mb-2 group-hover:text-[#2563EB] transition-colors duration-300">Fully Licensed</h4>
+              <p class="text-slate-500 text-xs font-light">Regulated and compliant with global standards</p>
             </div>
           </div>
         </div>
@@ -311,26 +324,30 @@
           <div class="relative mx-auto w-full max-w-md h-[340px] sm:h-[400px] px-4 sm:px-0 flex items-center justify-center">
             <!-- Soft glow 1 -->
             <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
-              <div class="w-56 h-56 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-[#FEFD0C]/50 via-yellow-300/30 to-[#FEFD0C]/30 blur-3xl animate-pulse-slow"></div>
+              <div class="w-56 h-56 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-[#2563EB]/50 via-blue-400/30 to-[#2563EB]/30 blur-3xl animate-pulse-slow"></div>
             </div>
         
             <!-- Soft glow 2 (slightly offset) -->
             <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
-              <div class="w-52 h-52 sm:w-72 sm:h-72 translate-x-1.5 translate-y-1.5 sm:translate-x-4 sm:translate-y-4 rounded-full bg-gradient-to-br from-[#FEFD0C]/50 via-yellow-400/30 to-transparent blur-2xl animate-glow"></div>
+              <div class="w-52 h-52 sm:w-72 sm:h-72 translate-x-1.5 translate-y-1.5 sm:translate-x-4 sm:translate-y-4 rounded-full bg-gradient-to-br from-[#2563EB]/50 via-blue-500/30 to-transparent blur-2xl animate-glow"></div>
             </div>
         
             <!-- Core sphere -->
             <div class="relative z-20">
-              <div class="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-gradient-to-br from-black/40 via-gray-900/60 to-black/40 backdrop-blur-xl border-2 border-[#FEFD0C]/60 shadow-2xl shadow-yellow-300/40 flex items-center justify-center overflow-hidden hover:border-[#FEFD0C]/80 transition-all duration-500 group hover:shadow-yellow-300/60">
-                <div class="absolute inset-1 sm:inset-2 rounded-full border border-[#FEFD0C]/20"></div>
+              <div class="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-gradient-to-br from-black/40 via-gray-900/60 to-black/40 backdrop-blur-xl border-2 border-[#2563EB]/60 shadow-2xl shadow-blue-400/40 flex items-center justify-center overflow-hidden hover:border-[#2563EB]/80 transition-all duration-500 group hover:shadow-blue-400/60">
+                <div class="absolute inset-1 sm:inset-2 rounded-full border border-[#2563EB]/20"></div>
                 <div class="relative w-48 h-48 sm:w-64 sm:h-64 overflow-hidden rounded-full">
-                  <img src="https://ik.imagekit.io/shiga/sfpf/pngimg%201.png?updatedAt=1713648296070" alt="Trading Platform" class="w-full h-full object-contain relative z-10 animate-magnify">
+                  <img
+                    src="https://ik.imagekit.io/shiga/sfpf/pngimg%201.png?updatedAt=1713648296070"
+                    alt="Trading Platform"
+                    class="w-full h-full object-contain relative z-10 animate-magnify"
+                  />
                 </div>
               </div>
             </div>
         
             <!-- Revolving cryptos ring -->
-            <div class="absolute inset-0 w-full h-full animate-spin-slow" id="revolving-cryptos"><div class="absolute rounded-full bg-gradient-to-br from-black/70 via-gray-900/80 to-black/90 backdrop-blur-xl border-2 border-[#FEFD0C]/40 shadow-2xl shadow-[#FEFD0C]/30 flex items-center justify-center hover:border-[#FEFD0C]/70 transition-all duration-500 hover:scale-110 animate-pulse hover:shadow-[#FEFD0C]/50 w-[72px] h-[72px]" style="left: calc(50% + 200px); top: calc(50% + 0px); transform: translate(-50%, -50%);"><iconify-icon icon="mdi:ethereum" class="text-3xl" style="color: rgb(98, 126, 234); filter: brightness(1.3) saturate(1.2);"></iconify-icon></div><div class="absolute rounded-full bg-gradient-to-br from-black/70 via-gray-900/80 to-black/90 backdrop-blur-xl border-2 border-[#FEFD0C]/40 shadow-2xl shadow-[#FEFD0C]/30 flex items-center justify-center hover:border-[#FEFD0C]/70 transition-all duration-500 hover:scale-110 animate-pulse hover:shadow-[#FEFD0C]/50 w-[72px] h-[72px]" style="left: calc(50% + 100px); top: calc(50% + 173.205px); transform: translate(-50%, -50%);"><iconify-icon icon="simple-icons:tether" class="text-3xl" style="color: rgb(38, 161, 123); filter: brightness(1.3) saturate(1.2);"></iconify-icon></div><div class="absolute rounded-full bg-gradient-to-br from-black/70 via-gray-900/80 to-black/90 backdrop-blur-xl border-2 border-[#FEFD0C]/40 shadow-2xl shadow-[#FEFD0C]/30 flex items-center justify-center hover:border-[#FEFD0C]/70 transition-all duration-500 hover:scale-110 animate-pulse hover:shadow-[#FEFD0C]/50 w-[72px] h-[72px]" style="left: calc(50% - 100px); top: calc(50% + 173.205px); transform: translate(-50%, -50%);"><iconify-icon icon="simple-icons:ripple" class="text-3xl" style="color: rgb(35, 41, 47); filter: brightness(1.3) saturate(1.2);"></iconify-icon></div><div class="absolute rounded-full bg-gradient-to-br from-black/70 via-gray-900/80 to-black/90 backdrop-blur-xl border-2 border-[#FEFD0C]/40 shadow-2xl shadow-[#FEFD0C]/30 flex items-center justify-center hover:border-[#FEFD0C]/70 transition-all duration-500 hover:scale-110 animate-pulse hover:shadow-[#FEFD0C]/50 w-[72px] h-[72px]" style="left: calc(50% - 200px); top: calc(50% + 2.44929e-14px); transform: translate(-50%, -50%);"><iconify-icon icon="simple-icons:litecoin" class="text-3xl" style="color: rgb(191, 187, 187); filter: brightness(1.3) saturate(1.2);"></iconify-icon></div><div class="absolute rounded-full bg-gradient-to-br from-black/70 via-gray-900/80 to-black/90 backdrop-blur-xl border-2 border-[#FEFD0C]/40 shadow-2xl shadow-[#FEFD0C]/30 flex items-center justify-center hover:border-[#FEFD0C]/70 transition-all duration-500 hover:scale-110 animate-pulse hover:shadow-[#FEFD0C]/50 w-[72px] h-[72px]" style="left: calc(50% - 100px); top: calc(50% - 173.205px); transform: translate(-50%, -50%);"><iconify-icon icon="simple-icons:cardano" class="text-3xl" style="color: rgb(13, 30, 48); filter: brightness(1.3) saturate(1.2);"></iconify-icon></div><div class="absolute rounded-full bg-gradient-to-br from-black/70 via-gray-900/80 to-black/90 backdrop-blur-xl border-2 border-[#FEFD0C]/40 shadow-2xl shadow-[#FEFD0C]/30 flex items-center justify-center hover:border-[#FEFD0C]/70 transition-all duration-500 hover:scale-110 animate-pulse hover:shadow-[#FEFD0C]/50 w-[72px] h-[72px]" style="left: calc(50% + 100px); top: calc(50% - 173.205px); transform: translate(-50%, -50%);"><iconify-icon icon="fa6-brands:bitcoin" class="text-3xl" style="color: rgb(247, 147, 26); filter: brightness(1.3) saturate(1.2);"></iconify-icon></div></div>
+            <div class="absolute inset-0 w-full h-full animate-spin-slow" id="revolving-cryptos"></div>
           </div>
         </div>
 
@@ -338,36 +355,36 @@
 
       <!-- Stats -->
       <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
-        <div class="reveal flex flex-col items-center justify-center border border-black/20 rounded-2xl p-6 shadow-2xl hover:bg-black/10 transition-all duration-500 group hover:scale-105">
-          <div class="w-12 h-12 bg-black/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-black/25 transition-colors duration-300">
-            <iconify-icon icon="fa6-solid:users" class="text-[#FEFD0C] text-xl"></iconify-icon>
+        <div class="reveal flex flex-col items-center justify-center border border-slate-200 rounded-2xl p-6 shadow-2xl hover:bg-blue-50 transition-all duration-500 group hover:scale-105">
+          <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors duration-300">
+            <iconify-icon icon="fa6-solid:users" class="text-[#2563EB] text-xl"></iconify-icon>
           </div>
-          <p class="font-medium text-black text-2xl mb-1 group-hover:text-black transition-colors duration-300">50K+</p>
-          <p class="text-black/70 text-sm font-light uppercase tracking-wider">Active Users</p>
+          <p class="font-medium text-slate-900 text-2xl mb-1 group-hover:text-slate-900 transition-colors duration-300">50K+</p>
+          <p class="text-slate-500 text-sm font-light uppercase tracking-wider">Active Users</p>
         </div>
 
-        <div class="reveal flex flex-col items-center justify-center border border-black/20 rounded-2xl p-6 shadow-2xl hover:bg-black/10 transition-all duration-500 group hover:scale-105">
-          <div class="w-12 h-12 bg-black/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-black/25 transition-colors duration-300">
-            <iconify-icon icon="fa6-solid:shield-halved" class="text-[#FEFD0C] text-xl"></iconify-icon>
+        <div class="reveal flex flex-col items-center justify-center border border-slate-200 rounded-2xl p-6 shadow-2xl hover:bg-blue-50 transition-all duration-500 group hover:scale-105">
+          <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors duration-300">
+            <iconify-icon icon="fa6-solid:shield-halved" class="text-[#2563EB] text-xl"></iconify-icon>
           </div>
-          <p class="font-medium text-black text-2xl mb-1 group-hover:text-black transition-colors duration-300">99.9%</p>
-          <p class="text-black/70 text-sm font-light uppercase tracking-wider">Security Rate</p>
+          <p class="font-medium text-slate-900 text-2xl mb-1 group-hover:text-slate-900 transition-colors duration-300">99.9%</p>
+          <p class="text-slate-500 text-sm font-light uppercase tracking-wider">Security Rate</p>
         </div>
 
-        <div class="reveal flex flex-col items-center justify-center border border-black/20 rounded-2xl p-6 shadow-2xl hover:bg-black/10 transition-all duration-500 group hover:scale-105">
-          <div class="w-12 h-12 bg-black/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-black/25 transition-colors duration-300">
-            <iconify-icon icon="fa6-solid:chart-line" class="text-[#FEFD0C] text-xl"></iconify-icon>
+        <div class="reveal flex flex-col items-center justify-center border border-slate-200 rounded-2xl p-6 shadow-2xl hover:bg-blue-50 transition-all duration-500 group hover:scale-105">
+          <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors duration-300">
+            <iconify-icon icon="fa6-solid:chart-line" class="text-[#2563EB] text-xl"></iconify-icon>
           </div>
-          <p class="font-medium text-black text-2xl mb-1 group-hover:text-black transition-colors duration-300">$2M+</p>
-          <p class="text-black/70 text-sm font-light uppercase tracking-wider">Daily Volume</p>
+          <p class="font-medium text-slate-900 text-2xl mb-1 group-hover:text-slate-900 transition-colors duration-300">$2M+</p>
+          <p class="text-slate-500 text-sm font-light uppercase tracking-wider">Daily Volume</p>
         </div>
 
-        <div class="reveal flex flex-col items-center justify-center border border-black/20 rounded-2xl p-6 shadow-2xl hover:bg-black/10 transition-all duration-500 group hover:scale-105">
-          <div class="w-12 h-12 bg-black/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-black/25 transition-colors duration-300">
-            <iconify-icon icon="material-symbols:speed" class="text-[#FEFD0C] text-xl"></iconify-icon>
+        <div class="reveal flex flex-col items-center justify-center border border-slate-200 rounded-2xl p-6 shadow-2xl hover:bg-blue-50 transition-all duration-500 group hover:scale-105">
+          <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors duration-300">
+            <iconify-icon icon="material-symbols:speed" class="text-[#2563EB] text-xl"></iconify-icon>
           </div>
-          <p class="font-medium text-black text-2xl mb-1 group-hover:text-black transition-colors duration-300">&lt;30s</p>
-          <p class="text-black/70 text-sm font-light uppercase tracking-wider">Transaction Speed</p>
+          <p class="font-medium text-slate-900 text-2xl mb-1 group-hover:text-slate-900 transition-colors duration-300">&lt;30s</p>
+          <p class="text-slate-500 text-sm font-light uppercase tracking-wider">Transaction Speed</p>
         </div>
       </div>
     </div>
@@ -376,22 +393,22 @@
   <!-- ===== STEPS ===== -->
   <section class="w-full py-20 relative overflow-hidden" id="steps">
     <div class="absolute inset-0">
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.08),transparent_60%)]"></div>
-      <div class="absolute inset-0 opacity-40" style="background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.18) 1px, transparent 0); background-size: 40px 40px;"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.06),transparent_60%)]"></div>
+      <div class="absolute inset-0 opacity-40" style="background-image: radial-gradient(circle at 2px 2px, rgba(37,99,235,0.10) 1px, transparent 0); background-size: 40px 40px;"></div>
       <div class="absolute top-20 left-1/4 w-32 h-32 bg-[#000]/10 rounded-full blur-3xl"></div>
       <div class="absolute bottom-20 right-1/4 w-40 h-40 bg-[#000]/10 rounded-full blur-3xl"></div>
     </div>
 
     <div class="container mx-auto px-6 xl:px-24 relative z-10">
       <div class="text-center mb-20">
-        <div class="inline-flex items-center gap-2 border border-black/20 text-black font-semibold px-6 py-3 rounded-full text-sm mb-8 backdrop-blur-sm hover:bg-black/20 hover:scale-105 transition-all duration-300">
+        <div class="inline-flex items-center gap-2 border border-blue-100 text-slate-800 font-semibold px-6 py-3 rounded-full text-sm mb-8 backdrop-blur-sm hover:bg-blue-50 hover:scale-105 transition-all duration-300">
           ✨ Why Choose Us
         </div>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-on-yellow mb-6 leading-tight">
           Simple Steps to <span class="text-black/70 underline decoration-black/30">Get Started</span>
         </h2>
-        <div class="w-20 h-1 bg-black rounded-full mx-auto shadow-[0_6px_20px_rgba(0,0,0,0.2)] mb-8 transition-all duration-500"></div>
-        <p class="text-xl text-black/80 max-w-3xl mx-auto leading-relaxed">
+        <div class="w-20 h-1 bg-blue-600 rounded-full mx-auto shadow-[0_6px_20px_rgba(37,99,235,0.20)] mb-8 transition-all duration-500"></div>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
           Follow these simple steps to join thousands of satisfied users and start your crypto journey with confidence.
         </p>
       </div>
@@ -399,58 +416,58 @@
       <!-- Steps grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto" id="steps-grid">
         <!-- 1 -->
-        <div class="group flex md:gap-8 gap-5 w-full md:py-8 py-6 border border-black/20 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:bg-black/10 transition-all duration-500 ease-out transform reveal" style="transition-delay:0s">
+        <div class="group flex md:gap-8 gap-5 w-full md:py-8 py-6 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:bg-blue-50 transition-all duration-500 ease-out transform reveal" style="transition-delay:0s">
           <div class="relative flex-shrink-0">
-            <div class="xl:w-16 xl:h-16 w-12 h-12 rounded-xl bg-black/30 border border-yellow-300/30 flex items-center justify-center shadow-lg group-hover:bg-[#FEFD0C]/10 group-hover:scale-105 group-hover:border-yellow-300/60 transition-all">
-              <iconify-icon icon="lucide:check-circle" class="xl:text-2xl text-xl text-[#FEFD0C]"></iconify-icon>
+            <div class="xl:w-16 xl:h-16 w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center shadow-lg group-hover:bg-[#2563EB]/10 group-hover:scale-105 group-hover:border-blue-400/60 transition-all">
+              <iconify-icon icon="lucide:check-circle" class="xl:text-2xl text-xl text-[#2563EB]"></iconify-icon>
             </div>
           </div>
           <div class="flex-1">
-            <h3 class="font-bold xl:text-2xl text-lg text-black mb-3 group-hover:text-[#FEFD0C] transition-colors">Easy to use</h3>
-            <div class="w-12 h-1 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 rounded-full shadow-lg shadow-[#FEFD0C]/20 mb-4 group-hover:w-20 transition-all"></div>
-            <p class="text-black/80 group-hover:text-black transition-colors">The most secure way to sell your Bitcoin!</p>
+            <h3 class="font-bold xl:text-2xl text-lg text-slate-900 mb-3 group-hover:text-[#2563EB] transition-colors">Easy to use</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-[#2563EB] to-[#2563EB]/50 rounded-full shadow-lg shadow-[#2563EB]/20 mb-4 group-hover:w-20 transition-all"></div>
+            <p class="text-slate-600 group-hover:text-slate-900 transition-colors">The most secure way to sell your Bitcoin!</p>
           </div>
         </div>
 
         <!-- 2 -->
-        <div class="group flex md:gap-8 gap-5 w-full md:py-8 py-6 border border-black/20 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:bg-black/10 transition-all duration-500 ease-out transform reveal" style="transition-delay:.0s">
+        <div class="group flex md:gap-8 gap-5 w-full md:py-8 py-6 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:bg-blue-50 transition-all duration-500 ease-out transform reveal" style="transition-delay:.0s">
           <div class="relative flex-shrink-0">
-            <div class="xl:w-16 xl:h-16 w-12 h-12 rounded-xl bg-black/30 border border-yellow-300/30 flex items-center justify-center shadow-lg group-hover:bg-[#FEFD0C]/10 group-hover:scale-105 group-hover:border-yellow-300/60 transition-all">
-              <iconify-icon icon="lucide:dollar-sign" class="xl:text-2xl text-xl text-[#FEFD0C]"></iconify-icon>
+            <div class="xl:w-16 xl:h-16 w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center shadow-lg group-hover:bg-[#2563EB]/10 group-hover:scale-105 group-hover:border-blue-400/60 transition-all">
+              <iconify-icon icon="lucide:dollar-sign" class="xl:text-2xl text-xl text-[#2563EB]"></iconify-icon>
             </div>
           </div>
           <div class="flex-1">
-            <h3 class="font-bold xl:text-2xl text-lg text-black mb-3 group-hover:text-[#FEFD0C] transition-colors">Fast payments</h3>
-            <div class="w-12 h-1 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 rounded-full shadow-lg shadow-[#FEFD0C]/20 mb-4 group-hover:w-20 transition-all"></div>
-            <p class="text-black/80 group-hover:text-black transition-colors">Head over to the website and follow the quick and easy sign-up process. All you need is your basic personal information.</p>
+            <h3 class="font-bold xl:text-2xl text-lg text-slate-900 mb-3 group-hover:text-[#2563EB] transition-colors">Fast payments</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-[#2563EB] to-[#2563EB]/50 rounded-full shadow-lg shadow-[#2563EB]/20 mb-4 group-hover:w-20 transition-all"></div>
+            <p class="text-slate-600 group-hover:text-slate-900 transition-colors">Head over to the website and follow the quick and easy sign-up process. All you need is your basic personal information.</p>
           </div>
         </div>
 
         <!-- 3 -->
-        <div class="group flex md:gap-8 gap-5 w-full md:py-8 py-6 border border-black/20 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:bg-black/10 transition-all duration-500 ease-out transform reveal" style="transition-delay:.0s">
+        <div class="group flex md:gap-8 gap-5 w-full md:py-8 py-6 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:bg-blue-50 transition-all duration-500 ease-out transform reveal" style="transition-delay:.0s">
           <div class="relative flex-shrink-0">
-            <div class="xl:w-16 xl:h-16 w-12 h-12 rounded-xl bg-black/30 border border-yellow-300/30 flex items-center justify-center shadow-lg group-hover:bg-[#FEFD0C]/10 group-hover:scale-105 group-hover:border-yellow-300/60 transition-all">
-              <iconify-icon icon="lucide:book-open" class="xl:text-2xl text-xl text-[#FEFD0C]"></iconify-icon>
+            <div class="xl:w-16 xl:h-16 w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center shadow-lg group-hover:bg-[#2563EB]/10 group-hover:scale-105 group-hover:border-blue-400/60 transition-all">
+              <iconify-icon icon="lucide:book-open" class="xl:text-2xl text-xl text-[#2563EB]"></iconify-icon>
             </div>
           </div>
           <div class="flex-1">
-            <h3 class="font-bold xl:text-2xl text-lg text-black mb-3 group-hover:text-[#FEFD0C] transition-colors">Free registration</h3>
-            <div class="w-12 h-1 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 rounded-full shadow-lg shadow-[#FEFD0C]/20 mb-4 group-hover:w-20 transition-all"></div>
-            <p class="text-black/80 group-hover:text-black transition-colors">The most secure way to sell your Bitcoin!</p>
+            <h3 class="font-bold xl:text-2xl text-lg text-slate-900 mb-3 group-hover:text-[#2563EB] transition-colors">Free registration</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-[#2563EB] to-[#2563EB]/50 rounded-full shadow-lg shadow-[#2563EB]/20 mb-4 group-hover:w-20 transition-all"></div>
+            <p class="text-slate-600 group-hover:text-slate-900 transition-colors">The most secure way to sell your Bitcoin!</p>
           </div>
         </div>
 
         <!-- 4 -->
-        <div class="group flex md:gap-8 gap-5 w-full md:py-8 py-6 border border-black/20 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:bg-black/10 transition-all duration-500 ease-out transform reveal" style="transition-delay:.0s">
+        <div class="group flex md:gap-8 gap-5 w-full md:py-8 py-6 border border-slate-200 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:bg-blue-50 transition-all duration-500 ease-out transform reveal" style="transition-delay:.0s">
           <div class="relative flex-shrink-0">
-            <div class="xl:w-16 xl:h-16 w-12 h-12 rounded-xl bg-black/30 border border-yellow-300/30 flex items-center justify-center shadow-lg group-hover:bg-[#FEFD0C]/10 group-hover:scale-105 group-hover:border-yellow-300/60 transition-all">
-              <iconify-icon icon="lucide:shield" class="xl:text-2xl text-xl text-[#FEFD0C]"></iconify-icon>
+            <div class="xl:w-16 xl:h-16 w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center shadow-lg group-hover:bg-[#2563EB]/10 group-hover:scale-105 group-hover:border-blue-400/60 transition-all">
+              <iconify-icon icon="lucide:shield" class="xl:text-2xl text-xl text-[#2563EB]"></iconify-icon>
             </div>
           </div>
           <div class="flex-1">
-            <h3 class="font-bold xl:text-2xl text-lg text-black mb-3 group-hover:text-[#FEFD0C] transition-colors">Safe and secured</h3>
-            <div class="w-12 h-1 bg-gradient-to-r from-[#FEFD0C] to-[#FEFD0C]/50 rounded-full shadow-lg shadow-[#FEFD0C]/20 mb-4 group-hover:w-20 transition-all"></div>
-            <p class="text-black/80 group-hover:text-black transition-colors">The most secure way to sell your Bitcoin!</p>
+            <h3 class="font-bold xl:text-2xl text-lg text-slate-900 mb-3 group-hover:text-[#2563EB] transition-colors">Safe and secured</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-[#2563EB] to-[#2563EB]/50 rounded-full shadow-lg shadow-[#2563EB]/20 mb-4 group-hover:w-20 transition-all"></div>
+            <p class="text-slate-600 group-hover:text-slate-900 transition-colors">The most secure way to sell your Bitcoin!</p>
           </div>
         </div>
       </div>
@@ -458,61 +475,61 @@
 
     <!-- Tiny sparkles -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
-      <div id="steps-sparkles"><div class="absolute rounded-full backdrop-blur-sm" style="width: 2.19448px; height: 3.88766px; left: 40.5136%; top: 10.0377%; background: rgba(0, 0, 0, 0.2); opacity: 0.211977; animation: 20.2111s linear 0.241281s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 4.15661px; height: 7.35476px; left: 80.1389%; top: 97.8473%; background: rgba(0, 0, 0, 0.2); opacity: 0.18484; animation: 12.1147s linear 4.07982s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 5.15959px; height: 6.27768px; left: 31.9255%; top: 68.5235%; background: rgba(0, 0, 0, 0.2); opacity: 0.21233; animation: 14.4541s linear 1.48738s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 6.08799px; height: 7.6411px; left: 47.2151%; top: 88.9279%; background: rgba(0, 0, 0, 0.2); opacity: 0.121789; animation: 11.6754s linear 4.38354s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 7.88058px; height: 4.60521px; left: 35.3024%; top: 37.2451%; background: rgba(0, 0, 0, 0.2); opacity: 0.195612; animation: 12.3065s linear 3.94453s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 2.9163px; height: 7.48742px; left: 62.3155%; top: 48.5834%; background: rgba(0, 0, 0, 0.2); opacity: 0.19815; animation: 17.3908s linear 3.08443s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 4.96257px; height: 4.27995px; left: 59.223%; top: 78.7046%; background: rgba(0, 0, 0, 0.2); opacity: 0.208463; animation: 17.5119s linear 0.81502s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 7.50836px; height: 6.41064px; left: 4.10787%; top: 56.7907%; background: rgba(0, 0, 0, 0.2); opacity: 0.134776; animation: 21.4508s linear 0.415527s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 3.47878px; height: 6.5499px; left: 20.5275%; top: 42.33%; background: rgba(0, 0, 0, 0.2); opacity: 0.254243; animation: 10.8053s linear 0.965307s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 2.66787px; height: 4.05574px; left: 9.57073%; top: 83.6084%; background: rgba(0, 0, 0, 0.2); opacity: 0.182691; animation: 24.2247s linear 4.32774s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 7.34092px; height: 5.40199px; left: 18.2311%; top: 79.4324%; background: rgba(0, 0, 0, 0.2); opacity: 0.220795; animation: 10.9537s linear 0.537247s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 3.11643px; height: 6.07281px; left: 74.098%; top: 61.3986%; background: rgba(0, 0, 0, 0.2); opacity: 0.150378; animation: 11.6619s linear 2.03403s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 2.78454px; height: 7.12087px; left: 1.98778%; top: 45.3423%; background: rgba(0, 0, 0, 0.2); opacity: 0.157723; animation: 20.8374s linear 2.69847s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 3.2465px; height: 5.61936px; left: 71.3886%; top: 17.7878%; background: rgba(0, 0, 0, 0.2); opacity: 0.115513; animation: 12.2836s linear 2.30994s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 3.7963px; height: 3.52227px; left: 16.982%; top: 80.0981%; background: rgba(0, 0, 0, 0.2); opacity: 0.294545; animation: 22.5161s linear 4.22115s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 7.95744px; height: 2.97727px; left: 46.5379%; top: 90.7534%; background: rgba(0, 0, 0, 0.2); opacity: 0.176804; animation: 21.6695s linear 0.464073s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 3.91588px; height: 2.98745px; left: 5.60162%; top: 98.2005%; background: rgba(0, 0, 0, 0.2); opacity: 0.228335; animation: 19.5585s linear 4.27318s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 2.39233px; height: 3.91201px; left: 15.2117%; top: 5.61479%; background: rgba(0, 0, 0, 0.2); opacity: 0.2355; animation: 18.2102s linear 2.52708s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 7.49682px; height: 4.53337px; left: 82.8502%; top: 18.0747%; background: rgba(0, 0, 0, 0.2); opacity: 0.244357; animation: 12.9133s linear 1.44818s infinite normal none running backgroundFloat;"></div><div class="absolute rounded-full backdrop-blur-sm" style="width: 2.07385px; height: 2.21294px; left: 67.3495%; top: 80.8168%; background: rgba(0, 0, 0, 0.2); opacity: 0.143157; animation: 11.5724s linear 1.74603s infinite normal none running backgroundFloat;"></div></div>
+      <div id="steps-sparkles"></div>
     </div>
   </section>
 
   <!-- ===== CTA ===== -->
   <section class="w-full py-16 md:py-24 lg:py-32 relative overflow-hidden" id="cta">
     <div class="absolute inset-0">
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.08),transparent_60%)]"></div>
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-black/10 rounded-full blur-3xl animate-float"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-black/10 rounded-full blur-3xl animate-float" style="animation-delay:1.5s"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.06),transparent_60%)]"></div>
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-50 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-50 rounded-full blur-3xl animate-float" style="animation-delay:1.5s"></div>
     </div>
 
     <div class="container mx-auto px-4 md:px-6 relative z-10">
       <div class="text-center mb-20">
-        <div class="inline-block border border-black/20 backdrop-blur-md text-black font-medium px-6 py-3 rounded-full text-sm mb-6 hover:bg-black/20 hover:scale-105 transition-all duration-300 cursor-default animate-fade-scale initial-hidden-scale">
+        <div class="inline-block border border-slate-200 backdrop-blur-md text-black font-medium px-6 py-3 rounded-full text-sm mb-6 hover:bg-blue-50 hover:scale-105 transition-all duration-300 cursor-default animate-fade-scale initial-hidden-scale">
           <iconify-icon icon="ri:exchange-fill" class="align-[-2px] mr-2"></iconify-icon>
           Join the P2P Revolution
         </div>
 
         <div class="mb-8">
           <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-on-yellow leading-tight initial-hidden animate-slide-left">Connect. Trade. Profit.</h1>
-          <span class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-black/80 block mt-4 initial-hidden-right animate-slide-right">Peer-to-Peer Crypto Trading</span>
+          <span class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-600 block mt-4 initial-hidden-right animate-slide-right">Peer-to-Peer Crypto Trading</span>
         </div>
 
-        <div class="w-24 h-1 bg-black rounded-full mx-auto shadow-[0_6px_20px_rgba(0,0,0,0.2)] mb-8 animate-glow-pulse initial-hidden-bottom animate-slide-bottom"></div>
+        <div class="w-24 h-1 bg-blue-600 rounded-full mx-auto shadow-[0_6px_20px_rgba(37,99,235,0.20)] mb-8 animate-glow-pulse initial-hidden-bottom animate-slide-bottom"></div>
 
-        <p class="text-lg md:text-xl text-black/80 leading-relaxed max-w-4xl mx-auto mb-12 initial-hidden-bottom animate-slide-bottom" style="animation-delay:.8s">
+        <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto mb-12 initial-hidden-bottom animate-slide-bottom" style="animation-delay:.8s">
           The world's most trusted peer-to-peer cryptocurrency marketplace. Connect directly with verified buyers and sellers for secure, fast, and reliable crypto transactions. Trade on your terms with zero platform fees.
         </p>
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row justify-center gap-6 mb-16 initial-hidden-bottom animate-slide-bottom" style="animation-delay:1s">
-          <a href="/signin.html" class="group inline-flex items-center justify-center px-10 py-5 rounded-xl bg-black text-[#FEFD0C] font-bold hover:bg-black/90 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-black/30 text-lg animate-glow-pulse">
+          <a href="/signin" class="group inline-flex items-center justify-center px-10 py-5 rounded-xl bg-blue-600 text-white font-bold hover:bg-black/90 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-black/30 text-lg animate-glow-pulse">
             <iconify-icon icon="ri:exchange-fill" class="mr-3 text-2xl group-hover:rotate-180 transition-transform duration-500"></iconify-icon>
             Start P2P Trading
             <iconify-icon icon="material-symbols:arrow-forward-rounded" class="ml-2 text-xl group-hover:translate-x-2 transition-transform duration-300"></iconify-icon>
           </a>
-          <a href="https://youtu.be/M7Pj7ZYEEUM?si=d_vDJGlk9_VKviJm" class="group inline-flex items-center justify-center px-10 py-5 rounded-xl border border-black/20 text-black font-bold hover:bg-black/10 transition-all duration-300 transform hover:scale-105 text-lg">
+          <a href="https://youtu.be/M7Pj7ZYEEUM?si=d_vDJGlk9_VKviJm" class="group inline-flex items-center justify-center px-10 py-5 rounded-xl border border-blue-100 text-slate-800 font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 text-lg">
             <iconify-icon icon="material-symbols:play-arrow" class="mr-3 text-2xl"></iconify-icon>
             See How P2P Works
           </a>
         </div>
 
         <!-- Trust Indicators -->
-        <div class="flex flex-wrap justify-center items-center gap-8 text-black/70 text-sm initial-hidden-scale animate-fade-scale" style="animation-delay:1.2s">
-          <div class="flex items-center border border-black/20 rounded-lg px-4 py-2 transition-all duration-300 hover:scale-105 cursor-default">
-            <iconify-icon icon="material-symbols:verified-user" class="text-black mr-2"></iconify-icon>
+        <div class="flex flex-wrap justify-center items-center gap-8 text-slate-500 text-sm initial-hidden-scale animate-fade-scale" style="animation-delay:1.2s">
+          <div class="flex items-center border border-slate-200 rounded-lg px-4 py-2 transition-all duration-300 hover:scale-105 cursor-default">
+            <iconify-icon icon="material-symbols:verified-user" class="text-blue-600 mr-2"></iconify-icon>
             <span class="text-on-yellow">Verified P2P Network</span>
           </div>
-          <div class="flex items-center border border-black/20 rounded-lg px-4 py-2 transition-all duration-300 hover:scale-105 cursor-default">
-            <iconify-icon icon="material-symbols:shield-lock" class="text-black mr-2"></iconify-icon>
+          <div class="flex items-center border border-slate-200 rounded-lg px-4 py-2 transition-all duration-300 hover:scale-105 cursor-default">
+            <iconify-icon icon="material-symbols:shield-lock" class="text-blue-600 mr-2"></iconify-icon>
             <span class="text-on-yellow">Escrow Protected Trades</span>
           </div>
-          <div class="flex items-center border border-black/20 rounded-lg px-4 py-2 transition-all duration-300 hover:scale-105 cursor-default">
-            <iconify-icon icon="material-symbols:headphones" class="text-black mr-2"></iconify-icon>
+          <div class="flex items-center border border-slate-200 rounded-lg px-4 py-2 transition-all duration-300 hover:scale-105 cursor-default">
+            <iconify-icon icon="material-symbols:headphones" class="text-blue-600 mr-2"></iconify-icon>
             <span class="text-on-yellow">24/7 Dispute Resolution</span>
           </div>
         </div>
@@ -520,95 +537,95 @@
 
       <!-- Social Proof -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-        <div class="border border-black/20 rounded-2xl p-6 text-center shadow-xl transition-all duration-500 group hover:scale-105">
-          <p class="text-3xl md:text-4xl font-extrabold text-black mb-2 group-hover:scale-110 transition-transform">2M+</p>
-          <p class="text-black font-semibold mb-1">P2P Trades</p>
-          <p class="text-black/70 text-sm">Successful peer connections</p>
+        <div class="border border-slate-200 rounded-2xl p-6 text-center shadow-xl bg-white/80 transition-all duration-500 group hover:scale-105">
+          <p class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-2 group-hover:scale-110 transition-transform">2M+</p>
+          <p class="text-slate-900 font-semibold mb-1">P2P Trades</p>
+          <p class="text-slate-500 text-sm">Successful peer connections</p>
         </div>
-        <div class="border border-black/20 rounded-2xl p-6 text-center shadow-xl transition-all duration-500 group hover:scale-105">
-          <p class="text-3xl md:text-4xl font-extrabold text-black mb-2 group-hover:scale-110 transition-transform">$75B+</p>
-          <p class="text-black font-semibold mb-1">P2P Volume</p>
-          <p class="text-black/70 text-sm">Direct trader exchanges</p>
+        <div class="border border-slate-200 rounded-2xl p-6 text-center shadow-xl bg-white/80 transition-all duration-500 group hover:scale-105">
+          <p class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-2 group-hover:scale-110 transition-transform">$75B+</p>
+          <p class="text-slate-900 font-semibold mb-1">P2P Volume</p>
+          <p class="text-slate-500 text-sm">Direct trader exchanges</p>
         </div>
-        <div class="border border-black/20 rounded-2xl p-6 text-center shadow-xl transition-all duration-500 group hover:scale-105">
-          <p class="text-3xl md:text-4xl font-extrabold text-black mb-2 group-hover:scale-110 transition-transform">300+</p>
-          <p class="text-black font-semibold mb-1">Payment Methods</p>
-          <p class="text-black/70 text-sm">Flexible transaction options</p>
+        <div class="border border-slate-200 rounded-2xl p-6 text-center shadow-xl bg-white/80 transition-all duration-500 group hover:scale-105">
+          <p class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-2 group-hover:scale-110 transition-transform">300+</p>
+          <p class="text-slate-900 font-semibold mb-1">Payment Methods</p>
+          <p class="text-slate-500 text-sm">Flexible transaction options</p>
         </div>
-        <div class="border border-black/20 rounded-2xl p-6 text-center shadow-xl transition-all duration-500 group hover:scale-105">
-          <p class="text-3xl md:text-4xl font-extrabold text-black mb-2 group-hover:scale-110 transition-transform">99.8%</p>
-          <p class="text-black font-semibold mb-1">Success Rate</p>
-          <p class="text-black/70 text-sm">Completed P2P trades</p>
+        <div class="border border-slate-200 rounded-2xl p-6 text-center shadow-xl bg-white/80 transition-all duration-500 group hover:scale-105">
+          <p class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-2 group-hover:scale-110 transition-transform">99.8%</p>
+          <p class="text-slate-900 font-semibold mb-1">Success Rate</p>
+          <p class="text-slate-500 text-sm">Completed P2P trades</p>
         </div>
       </div>
 
       <!-- Features Grid -->
       <div class="mb-20">
         <div class="text-center mb-12">
-          <div class="inline-block border border-black/20 text-black font-semibold px-4 py-2 rounded-full text-sm mb-4 ">
+          <div class="inline-block border border-blue-100 text-slate-800 font-semibold px-4 py-2 rounded-full text-sm mb-4 ">
             <iconify-icon icon="mdi:account-group" class="align-[-2px] mr-2"></iconify-icon>
             P2P Trading Features
           </div>
           <h2 class="text-3xl md:text-4xl font-extrabold text-on-yellow mb-4 initial-hidden animate-slide-left" style="animation-delay:1.8s">Why Choose Our P2P Platform?</h2>
-          <p class="text-black/80 text-lg max-w-2xl mx-auto initial-hidden-right animate-slide-right" style="animation-delay:2s">
+          <p class="text-slate-600 text-lg max-w-2xl mx-auto initial-hidden-right animate-slide-right" style="animation-delay:2s">
             Experience true peer-to-peer trading with direct connections, secure escrow protection, and complete control over your transactions.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- Direct P2P -->
-          <div class="border border-black/20 rounded-2xl p-6 shadow-xl transition-all duration-500 group hover:scale-105">
-            <div class="flex items-center mb-4 text-black">
-              <div class="w-12 h-12 bg-black/10 rounded-lg flex items-center justify-center mr-3 group-hover:bg-black/20 transition-all">
+          <div class="border border-slate-200 rounded-2xl p-6 shadow-xl transition-all duration-500 group hover:scale-105">
+            <div class="flex items-center mb-4 text-slate-900">
+              <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-3 group-hover:bg-blue-50 transition-all">
                 <iconify-icon icon="material-symbols:swap-horiz" class="text-2xl"></iconify-icon>
               </div>
               <h3 class="text-xl font-extrabold">Direct P2P Trading</h3>
             </div>
-            <p class="text-black/80 mb-6">Connect directly with buyers and sellers worldwide</p>
-            <div class="text-black font-extrabold text-3xl flex items-baseline">
-              &lt; 2min <span class="text-base ml-2 text-black/60">Connection Time</span>
+            <p class="text-slate-600 mb-6">Connect directly with buyers and sellers worldwide</p>
+            <div class="text-slate-900 font-extrabold text-3xl flex items-baseline">
+              &lt; 2min <span class="text-base ml-2 text-slate-500">Connection Time</span>
             </div>
           </div>
 
           <!-- Escrow -->
-          <div class="border border-black/20 rounded-2xl p-6 shadow-xl transition-all duration-500 group hover:scale-105">
-            <div class="flex items-center mb-4 text-black">
-              <div class="w-12 h-12 bg-black/10 rounded-lg flex items-center justify-center mr-3 group-hover:bg-black/20 transition-all">
+          <div class="border border-slate-200 rounded-2xl p-6 shadow-xl transition-all duration-500 group hover:scale-105">
+            <div class="flex items-center mb-4 text-slate-900">
+              <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-3 group-hover:bg-blue-50 transition-all">
                 <iconify-icon icon="ri:shield-check-line" class="text-2xl"></iconify-icon>
               </div>
               <h3 class="text-xl font-extrabold">Escrow Protection</h3>
             </div>
-            <p class="text-black/80 mb-6">Secure transactions with built-in escrow system</p>
-            <div class="text-black font-extrabold text-3xl flex items-baseline">
-              100% <span class="text-base ml-2 text-black/60">Trade Security</span>
+            <p class="text-slate-600 mb-6">Secure transactions with built-in escrow system</p>
+            <div class="text-slate-900 font-extrabold text-3xl flex items-baseline">
+              100% <span class="text-base ml-2 text-slate-500">Trade Security</span>
             </div>
           </div>
 
           <!-- Zero Fees -->
-          <div class="border border-black/20 rounded-2xl p-6 shadow-xl transition-all duration-500 group hover:scale-105">
-            <div class="flex items-center mb-4 text-black">
-              <div class="w-12 h-12 bg-black/10 rounded-lg flex items-center justify-center mr-3 group-hover:bg-black/20 transition-all">
+          <div class="border border-slate-200 rounded-2xl p-6 shadow-xl transition-all duration-500 group hover:scale-105">
+            <div class="flex items-center mb-4 text-slate-900">
+              <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-3 group-hover:bg-blue-50 transition-all">
                 <iconify-icon icon="ri:coin-line" class="text-2xl"></iconify-icon>
               </div>
               <h3 class="text-xl font-extrabold">Zero Platform Fees</h3>
             </div>
-            <p class="text-black/80 mb-6">Keep more of your profits with no hidden costs</p>
-            <div class="text-black font-extrabold text-3xl flex items-baseline">
-              0% <span class="text-base ml-2 text-black/60">Platform Fee</span>
+            <p class="text-slate-600 mb-6">Keep more of your profits with no hidden costs</p>
+            <div class="text-slate-900 font-extrabold text-3xl flex items-baseline">
+              0% <span class="text-base ml-2 text-slate-500">Platform Fee</span>
             </div>
           </div>
 
           <!-- Global Network -->
-          <div class="border border-black/20 rounded-2xl p-6 shadow-xl transition-all duration-500 group hover:scale-105">
-            <div class="flex items-center mb-4 text-black">
-              <div class="w-12 h-12 bg-black/10 rounded-lg flex items-center justify-center mr-3 group-hover:bg-black/20 transition-all">
+          <div class="border border-slate-200 rounded-2xl p-6 shadow-xl transition-all duration-500 group hover:scale-105">
+            <div class="flex items-center mb-4 text-slate-900">
+              <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-3 group-hover:bg-blue-50 transition-all">
                 <iconify-icon icon="mdi:account-group-outline" class="text-2xl"></iconify-icon>
               </div>
               <h3 class="text-xl font-extrabold">Global Network</h3>
             </div>
-            <p class="text-black/80 mb-6">Access to verified traders in 180+ countries</p>
-            <div class="text-black font-extrabold text-3xl flex items-baseline">
-              500K+ <span class="text-base ml-2 text-black/60">Active Traders</span>
+            <p class="text-slate-600 mb-6">Access to verified traders in 180+ countries</p>
+            <div class="text-slate-900 font-extrabold text-3xl flex items-baseline">
+              500K+ <span class="text-base ml-2 text-slate-500">Active Traders</span>
             </div>
           </div>
         </div>
@@ -617,7 +634,7 @@
       <!-- Testimonials -->
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
-          <div class="inline-block border border-black/20 text-black font-semibold px-4 py-2 rounded-full text-sm mb-4 ">
+          <div class="inline-block border border-blue-100 text-slate-800 font-semibold px-4 py-2 rounded-full text-sm mb-4 ">
             <iconify-icon icon="ri:trophy-line" class="align-[-2px] mr-2"></iconify-icon>
             P2P Trader Reviews
           </div>
@@ -625,14 +642,14 @@
         </div>
 
         <div class="relative">
-          <div class="overflow-hidden rounded-3xl shadow-xl shadow-black/30 border border-black/20">
-            <div id="testimonial-track" class="flex transition-transform duration-700 ease-out" style="transform: translateX(0%);">
+          <div class="overflow-hidden rounded-3xl shadow-xl shadow-black/30 border border-slate-200">
+            <div id="testimonial-track" class="flex transition-transform duration-700 ease-out">
               <!-- Slide 1 -->
               <div class="flex-shrink-0 w-full p-8 md:p-12 text-on-yellow text-center">
                 <div class="mb-6 flex justify-center items-center">
                   <div class="relative">
-                    <div class="absolute inset-0 bg-black rounded-full blur-lg opacity-20 animate-pulse"></div>
-                    <div class="relative w-20 h-20 rounded-full bg-black text-[#FEFD0C] flex items-center justify-center text-2xl font-bold select-none shadow-lg">
+                    <div class="absolute inset-0 bg-blue-600 rounded-full blur-lg opacity-20 animate-pulse"></div>
+                    <div class="relative w-20 h-20 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold select-none shadow-lg">
                       SJ
                     </div>
                   </div>
@@ -646,8 +663,8 @@
               <div class="flex-shrink-0 w-full p-8 md:p-12 text-on-yellow text-center">
                 <div class="mb-6 flex justify-center items-center">
                   <div class="relative">
-                    <div class="absolute inset-0 bg-black rounded-full blur-lg opacity-20 animate-pulse"></div>
-                    <div class="relative w-20 h-20 rounded-full bg-black text-[#FEFD0C] flex items-center justify-center text-2xl font-bold">MC</div>
+                    <div class="absolute inset-0 bg-blue-600 rounded-full blur-lg opacity-20 animate-pulse"></div>
+                    <div class="relative w-20 h-20 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold">MC</div>
                   </div>
                 </div>
                 <p class="mb-6 italic text-lg max-w-3xl mx-auto text-black/90">"I love connecting directly with buyers. No middleman fees means I keep more profit, and the verification system ensures safe trades."</p>
@@ -659,8 +676,8 @@
               <div class="flex-shrink-0 w-full p-8 md:p-12 text-on-yellow text-center">
                 <div class="mb-6 flex justify-center items-center">
                   <div class="relative">
-                    <div class="absolute inset-0 bg-black rounded-full blur-lg opacity-20 animate-pulse"></div>
-                    <div class="relative w-20 h-20 rounded-full bg-black text-[#FEFD0C] flex items-center justify-center text-2xl font-bold">ER</div>
+                    <div class="absolute inset-0 bg-blue-600 rounded-full blur-lg opacity-20 animate-pulse"></div>
+                    <div class="relative w-20 h-20 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold">ER</div>
                   </div>
                 </div>
                 <p class="mb-6 italic text-lg max-w-3xl mx-auto text-black/90">"Finding trusted sellers is so easy here. The peer-to-peer system lets me negotiate better prices and choose my preferred payment method."</p>
@@ -672,9 +689,9 @@
 
           <!-- Dots -->
           <div class="flex justify-center mt-6 space-x-4">
-            <button class="w-4 h-4 rounded-full bg-black" data-dot="0" aria-label="Show testimonial 1" role="button" tabindex="0" aria-pressed="true"></button>
-            <button class="w-4 h-4 rounded-full bg-black/20" data-dot="1" aria-label="Show testimonial 2" role="button" tabindex="0" aria-pressed="false"></button>
-            <button class="w-4 h-4 rounded-full bg-black/20" data-dot="2" aria-label="Show testimonial 3" role="button" tabindex="0" aria-pressed="false"></button>
+            <button class="w-4 h-4 rounded-full bg-black" data-dot="0" aria-label="Show testimonial 1"></button>
+            <button class="w-4 h-4 rounded-full bg-blue-200" data-dot="1" aria-label="Show testimonial 2"></button>
+            <button class="w-4 h-4 rounded-full bg-blue-200" data-dot="2" aria-label="Show testimonial 3"></button>
           </div>
         </div>
       </div>
@@ -684,22 +701,22 @@
   <!-- ===== REVIEW ===== -->
   <section class="w-full py-20 relative overflow-hidden" id="review">
     <div class="absolute inset-0">
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.08),transparent_60%)]"></div>
-      <div class="absolute inset-0 opacity-40" style="background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.18) 1px, transparent 0); background-size: 40px 40px;"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.06),transparent_60%)]"></div>
+      <div class="absolute inset-0 opacity-40" style="background-image: radial-gradient(circle at 2px 2px, rgba(37,99,235,0.10) 1px, transparent 0); background-size: 40px 40px;"></div>
     </div>
 
     <div class="container mx-auto px-6 xl:px-24 relative z-10">
       <!-- Header -->
       <div class="text-center mb-20">
-        <div class="inline-flex items-center gap-2 border border-black/20 text-black font-semibold px-6 py-3 rounded-full text-sm mb-8 backdrop-blur-sm">
+        <div class="inline-flex items-center gap-2 border border-blue-100 text-slate-800 font-semibold px-6 py-3 rounded-full text-sm mb-8 backdrop-blur-sm">
           <iconify-icon icon="mdi:earth" class="w-4 h-4"></iconify-icon>
           Global P2P Crypto Platform
         </div>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-on-yellow mb-6 leading-tight">
-          Trusted by <span class="underline decoration-black/30">Millions</span><br>Worldwide
+          Trusted by <span class="underline decoration-black/30">Millions</span><br />Worldwide
         </h2>
-        <div class="w-20 h-1 bg-black rounded-full mx-auto shadow-[0_6px_20px_rgba(0,0,0,0.2)] mb-8"></div>
-        <p class="text-xl text-black/80 max-w-3xl mx-auto leading-relaxed">
+        <div class="w-20 h-1 bg-blue-600 rounded-full mx-auto shadow-[0_6px_20px_rgba(37,99,235,0.20)] mb-8"></div>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
           Connect with crypto traders globally on our secure peer-to-peer platform. Experience fast, reliable, and secure cryptocurrency transactions with users from over 150 countries worldwide.
         </p>
       </div>
@@ -707,34 +724,34 @@
       <!-- Metrics -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-20">
         <div class="group">
-          <div class="border border-black/20 rounded-2xl p-6 text-center shadow-xl transition-all duration-300 hover:-translate-y-0.5">
+          <div class="border border-slate-200 rounded-2xl p-6 text-center shadow-xl bg-white/80 transition-all duration-300 hover:-translate-y-0.5">
             <iconify-icon icon="lucide:star" class="text-black w-8 h-8 mx-auto mb-4"></iconify-icon>
             <p class="text-3xl font-extrabold mb-2 text-on-yellow">4.9/5</p>
-            <p class="text-sm font-semibold text-black/80 mb-1">Global Rating</p>
+            <p class="text-sm font-semibold text-slate-600 mb-1">Global Rating</p>
             <p class="text-xs text-black/70">From 50,000+ reviews worldwide</p>
           </div>
         </div>
         <div class="group">
-          <div class="border border-black/20 rounded-2xl p-6 text-center shadow-xl transition-all duration-300 hover:-translate-y-0.5">
+          <div class="border border-slate-200 rounded-2xl p-6 text-center shadow-xl bg-white/80 transition-all duration-300 hover:-translate-y-0.5">
             <iconify-icon icon="mdi:earth" class="text-black w-8 h-8 mx-auto mb-4"></iconify-icon>
             <p class="text-3xl font-extrabold mb-2 text-on-yellow">150+</p>
-            <p class="text-sm font-semibold text-black/80 mb-1">Countries</p>
+            <p class="text-sm font-semibold text-slate-600 mb-1">Countries</p>
             <p class="text-xs text-black/70">Active trading globally</p>
           </div>
         </div>
         <div class="group">
-          <div class="border border-black/20 rounded-2xl p-6 text-center shadow-xl transition-all duration-300 hover:-translate-y-0.5">
+          <div class="border border-slate-200 rounded-2xl p-6 text-center shadow-xl bg-white/80 transition-all duration-300 hover:-translate-y-0.5">
             <iconify-icon icon="lucide:users" class="text-black w-8 h-8 mx-auto mb-4"></iconify-icon>
             <p class="text-3xl font-extrabold mb-2 text-on-yellow">2M+</p>
-            <p class="text-sm font-semibold text-black/80 mb-1">Global Users</p>
+            <p class="text-sm font-semibold text-slate-600 mb-1">Global Users</p>
             <p class="text-xs text-black/70">Worldwide community</p>
           </div>
         </div>
         <div class="group">
-          <div class="border border-black/20 rounded-2xl p-6 text-center shadow-xl transition-all duration-300 hover:-translate-y-0.5">
+          <div class="border border-slate-200 rounded-2xl p-6 text-center shadow-xl bg-white/80 transition-all duration-300 hover:-translate-y-0.5">
             <iconify-icon icon="lucide:shield" class="text-black w-8 h-8 mx-auto mb-4"></iconify-icon>
             <p class="text-3xl font-extrabold mb-2 text-on-yellow">99.9%</p>
-            <p class="text-sm font-semibold text-black/80 mb-1">Security Rate</p>
+            <p class="text-sm font-semibold text-slate-600 mb-1">Security Rate</p>
             <p class="text-xs text-black/70">Protected transactions</p>
           </div>
         </div>
@@ -749,19 +766,19 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer id="footer" class="w-full bg-black relative overflow-hidden" role="contentinfo" aria-label="Site Footer">
+  <footer id="footer" class="w-full bg-[#0B1220] relative overflow-hidden" role="contentinfo" aria-label="Site Footer">
     <div class="w-full xl:px-[96px] px-[16px] mx-auto xl:pt-[120px] pb-[40px] pt-[100px] relative z-10">
 
       <!-- Hero / call-to-action -->
       <div class="text-center mb-20">
-        <div class="inline-block bg-black/20 text-[#FEFD0C] font-medium px-6 py-3 rounded-full text-sm mb-6 border border-[#FEFD0C]/20 backdrop-blur-sm">
+        <div class="inline-block bg-black/20 text-[#2563EB] font-medium px-6 py-3 rounded-full text-sm mb-6 border border-[#2563EB]/20 backdrop-blur-sm">
           <iconify-icon icon="mdi:security" class="align-[-2px] mr-2"></iconify-icon>
           Trusted Platform
         </div>
         <h2 class="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
-          Join the Future of <span class="text-[#FEFD0C] block mt-2">Crypto Trading</span>
+          Join the Future of <span class="text-[#2563EB] block mt-2">MIC Trades</span>
         </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-transparent via-[#FEFD0C] to-transparent rounded-full mx-auto shadow-lg mb-8"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent rounded-full mx-auto shadow-lg mb-8"></div>
         <p class="text-lg xl:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
           The most trustworthy cryptocurrency exchange platform available. Quick access to your money, whenever you desire.
         </p>
@@ -769,37 +786,37 @@
 
       <!-- Trust Metrics -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-20">
-        <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-8 hover:scale-105 hover:border-[#FEFD0C]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FEFD0C]/10">
+        <div class="bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#2563EB]/20 rounded-2xl p-8 hover:scale-105 hover:border-[#2563EB]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#2563EB]/10">
           <div class="flex flex-col items-center text-center">
-            <div class="bg-[#FEFD0C]/10 p-4 rounded-full mb-4">
-              <iconify-icon icon="mdi:security" class="text-[#FEFD0C] text-3xl"></iconify-icon>
+            <div class="bg-[#2563EB]/10 p-4 rounded-full mb-4">
+              <iconify-icon icon="mdi:security" class="text-[#2563EB] text-3xl"></iconify-icon>
             </div>
             <p class="text-3xl font-bold text-white mb-2">100%</p>
             <p class="text-sm text-white/70 font-medium">Secure</p>
           </div>
         </div>
-        <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-8 hover:scale-105 hover:border-[#FEFD0C]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FEFD0C]/10">
+        <div class="bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#2563EB]/20 rounded-2xl p-8 hover:scale-105 hover:border-[#2563EB]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#2563EB]/10">
           <div class="flex flex-col items-center text-center">
-            <div class="bg-[#FEFD0C]/10 p-4 rounded-full mb-4">
-              <iconify-icon icon="ri:customer-service-2-line" class="text-[#FEFD0C] text-3xl"></iconify-icon>
+            <div class="bg-[#2563EB]/10 p-4 rounded-full mb-4">
+              <iconify-icon icon="ri:customer-service-2-line" class="text-[#2563EB] text-3xl"></iconify-icon>
             </div>
             <p class="text-3xl font-bold text-white mb-2">24/7</p>
             <p class="text-sm text-white/70 font-medium">Support</p>
           </div>
         </div>
-        <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-8 hover:scale-105 hover:border-[#FEFD0C]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FEFD0C]/10">
+        <div class="bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#2563EB]/20 rounded-2xl p-8 hover:scale-105 hover:border-[#2563EB]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#2563EB]/10">
           <div class="flex flex-col items-center text-center">
-            <div class="bg-[#FEFD0C]/10 p-4 rounded-full mb-4">
-              <iconify-icon icon="mdi:trending-up" class="text-[#FEFD0C] text-3xl"></iconify-icon>
+            <div class="bg-[#2563EB]/10 p-4 rounded-full mb-4">
+              <iconify-icon icon="mdi:trending-up" class="text-[#2563EB] text-3xl"></iconify-icon>
             </div>
             <p class="text-3xl font-bold text-white mb-2">50K+</p>
             <p class="text-sm text-white/70 font-medium">Users</p>
           </div>
         </div>
-        <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-8 hover:scale-105 hover:border-[#FEFD0C]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FEFD0C]/10">
+        <div class="bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#2563EB]/20 rounded-2xl p-8 hover:scale-105 hover:border-[#2563EB]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#2563EB]/10">
           <div class="flex flex-col items-center text-center">
-            <div class="bg-[#FEFD0C]/10 p-4 rounded-full mb-4">
-              <iconify-icon icon="mdi:clock-fast" class="text-[#FEFD0C] text-3xl"></iconify-icon>
+            <div class="bg-[#2563EB]/10 p-4 rounded-full mb-4">
+              <iconify-icon icon="mdi:clock-fast" class="text-[#2563EB] text-3xl"></iconify-icon>
             </div>
             <p class="text-3xl font-bold text-white mb-2">&lt;2min</p>
             <p class="text-sm text-white/70 font-medium">Response</p>
@@ -811,54 +828,57 @@
     <!-- Social + QR -->
     <div class="xl:col-span-2 grid md:grid-cols-2 gap-8">
     <!-- Social -->
-    <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-8">
-        <h3 class="text-[#FEFD0C] font-bold text-xl mb-6 flex items-center gap-3">
-        <div class="w-2 h-2 bg-[#FEFD0C] rounded-full"></div>
+    <div class="bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#2563EB]/20 rounded-2xl p-8">
+        <h3 class="text-[#2563EB] font-bold text-xl mb-6 flex items-center gap-3">
+        <div class="w-2 h-2 bg-[#2563EB] rounded-full"></div>
         Connect With Us
         </h3>
 
         <div class="space-y-4">
-        <a href="https://www.instagram.com/sfpfglobal?igsh=cDI0eWd6dHZucnZt" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-black/20 border border-[#FEFD0C]/10 rounded-xl px-5 py-4 hover:border-[#FEFD0C]/30 hover:bg-black/60 transition-all">
-            <div class="bg-[#FEFD0C]/10 p-3 rounded-full">
-            <iconify-icon icon="ri:instagram-line" class="text-[#FEFD0C] text-xl"></iconify-icon>
+        <a href="https://www.instagram.com/sfpfglobal?igsh=cDI0eWd6dHZucnZt" target="_blank" rel="noopener noreferrer"
+            class="flex items-center gap-4 bg-black/20 border border-[#2563EB]/10 rounded-xl px-5 py-4 hover:border-[#2563EB]/30 hover:bg-blue-950/40 transition-all">
+            <div class="bg-[#2563EB]/10 p-3 rounded-full">
+            <iconify-icon icon="ri:instagram-line" class="text-[#2563EB] text-xl"></iconify-icon>
             </div>
             <div>
             <p class="text-white font-semibold text-sm">Instagram</p>
-            <p class="text-[#FEFD0C] text-sm">@sfpfglobal</p>
+            <p class="text-[#2563EB] text-sm">@sfpfglobal</p>
             </div>
         </a>
 
-        <a href="https://x.com/sfpfglobal01?t=hPKIBjIZeZwD2kZLZ8zjZA&amp;s=09" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-black/20 border border-[#FEFD0C]/10 rounded-xl px-5 py-4 hover:border-[#FEFD0C]/30 hover:bg-black/60 transition-all">
-            <div class="bg-[#FEFD0C]/10 p-3 rounded-full">
-            <iconify-icon icon="ri:twitter-line" class="text-[#FEFD0C] text-xl"></iconify-icon>
+        <a href="https://x.com/sfpfglobal01?t=hPKIBjIZeZwD2kZLZ8zjZA&s=09" target="_blank" rel="noopener noreferrer"
+            class="flex items-center gap-4 bg-black/20 border border-[#2563EB]/10 rounded-xl px-5 py-4 hover:border-[#2563EB]/30 hover:bg-blue-950/40 transition-all">
+            <div class="bg-[#2563EB]/10 p-3 rounded-full">
+            <iconify-icon icon="ri:twitter-line" class="text-[#2563EB] text-xl"></iconify-icon>
             </div>
             <div>
             <p class="text-white font-semibold text-sm">Twitter/X</p>
-            <p class="text-[#FEFD0C] text-sm">@sfpfglobal01</p>
+            <p class="text-[#2563EB] text-sm">@sfpfglobal01</p>
             </div>
         </a>
         </div>
     </div>
 
     <!-- QR Code (Tabbed) -->
-    <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-8 flex flex-col sm:flex-row items-center gap-6">
+    <div class="bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#2563EB]/20 rounded-2xl p-8 flex flex-col sm:flex-row items-center gap-6">
     <div class="shrink-0">
         <div id="qr-widget" class="w-[203px]">
 
         <!-- QR box (inline SVG placeholder; swap to real QR <img> if you have platform-specific codes) -->
-        <div id="qr-box" class="w-[203px] h-[203px] rounded-[16px] bg-[#1d1d1d] p-[17px] shadow-md flex items-center justify-center">
-            <img src="assets/channel.png" alt="QR code" width="169" height="150">
+        <div id="qr-box" class="w-[203px] h-[203px] rounded-[16px] bg-[#0f172a] p-[17px] shadow-md flex items-center justify-center">
+            <img src="assets/channel.png" alt="QR code" width="169" height="150" />
 
         </div>
         </div>
     </div>
 
     <div>
-        <h3 class="text-[#FEFD0C] font-bold text-xl mb-2">Scan &amp; Get Started</h3>
+        <h3 class="text-[#2563EB] font-bold text-xl mb-2">Scan &amp; Get Started</h3>
         <p class="text-white/80 text-sm leading-relaxed">
         Scan the QR to reach our official channel and get updates, support, and announcements in real time.
         </p>
-        <a href="https://t.me/+zhBKysnocXEzMjhk" class="inline-flex items-center gap-2 mt-4 text-black bg-[#FEFD0C] px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition">
+        <a href="https://t.me/+zhBKysnocXEzMjhk"
+        class="inline-flex items-center gap-2 mt-4 bg-[#2563EB] px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition text-white">
         <span>Open Channel</span>
         <iconify-icon icon="ri:arrow-right-up-line"></iconify-icon>
         </a>
@@ -868,38 +888,38 @@
 
     <!-- Footer Nav Columns -->
     <div class="grid md:grid-cols-3 gap-8 mt-10">
-    <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-6">
-        <h4 class="text-[#FEFD0C] font-semibold mb-4">Company</h4>
+    <div class="bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#2563EB]/20 rounded-2xl p-6">
+        <h4 class="text-[#2563EB] font-semibold mb-4">Company</h4>
         <ul class="space-y-3 text-sm">
-        <li><a href="/about.html" class="text-white/80 hover:text-[#FEFD0C] transition">About</a></li>
-        <li><a href="/rates.html" class="text-white/80 hover:text-[#FEFD0C] transition">Rates</a></li>
+        <li><a href="/about" class="text-white/80 hover:text-[#2563EB] transition">About</a></li>
+        <li><a href="/rates" class="text-white/80 hover:text-[#2563EB] transition">Rates</a></li>
         </ul>
     </div>
 
-    <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-6">
-        <h4 class="text-[#FEFD0C] font-semibold mb-4">Support</h4>
+    <div class="bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#2563EB]/20 rounded-2xl p-6">
+        <h4 class="text-[#2563EB] font-semibold mb-4">Support</h4>
         <ul class="space-y-3 text-sm">
-        <li><a href="/support.html" class="text-white/80 hover:text-[#FEFD0C] transition">Help Center</a></li>
+        <li><a href="/support" class="text-white/80 hover:text-[#2563EB] transition">Help Center</a></li>
         </ul>
     </div>
 
-    <div class="bg-gradient-to-br from-black/60 to-black/40 border border-[#FEFD0C]/20 rounded-2xl p-6">
-        <h4 class="text-[#FEFD0C] font-semibold mb-4">Legal</h4>
+    <div class="bg-gradient-to-br from-[#111827] to-[#0B1220] border border-[#2563EB]/20 rounded-2xl p-6">
+        <h4 class="text-[#2563EB] font-semibold mb-4">Legal</h4>
         <ul class="space-y-3 text-sm">
-        <li><a href="/terms.html" class="text-white/80 hover:text-[#FEFD0C] transition">Terms</a></li>
-        <li><a href="/privacy.html" class="text-white/80 hover:text-[#FEFD0C] transition">Privacy</a></li>
+        <li><a href="/terms" class="text-white/80 hover:text-[#2563EB] transition">Terms</a></li>
+        <li><a href="/privacy" class="text-white/80 hover:text-[#2563EB] transition">Privacy</a></li>
         </ul>
     </div>
     </div>
 
     <!-- Bottom Bar -->
-    <div class="mt-10 pt-6 border-t border-[#FEFD0C]/20 flex flex-col md:flex-row items-center justify-center gap-4">
+    <div class="mt-10 pt-6 border-t border-[#2563EB]/20 flex flex-col md:flex-row items-center justify-center gap-4">
     <p class="text-xs text-white/70">
-        © 2025 SFPF Global. All rights reserved.
+        © 2025 MIC Trades. All rights reserved.
     </p>
 
   </div>
-  </div></footer>
+  </footer>
 
   <!-- ===== Minimal JS ===== -->
   <script>
@@ -931,8 +951,8 @@
 
         const floatingIcons = [
         { icon: 'fa6-brands:bitcoin',      colorClass: 'text-black'     },
-        { icon: 'simple-icons:tether',     colorClass: 'text-black/80'  },
-        { icon: 'mdi:ethereum',            colorClass: 'text-black/80'  },
+        { icon: 'simple-icons:tether',     colorClass: 'text-slate-600'  },
+        { icon: 'mdi:ethereum',            colorClass: 'text-slate-600'  },
         { icon: 'simple-icons:ripple',     colorClass: 'text-black/60'  },
         ];
 
@@ -978,7 +998,7 @@
         const y = Math.sin(angle * Math.PI / 180) * radius;
 
         const box = document.createElement('div');
-        box.className = 'absolute rounded-full bg-gradient-to-br from-black/70 via-gray-900/80 to-black/90 backdrop-blur-xl border-2 border-[#FEFD0C]/40 shadow-2xl shadow-[#FEFD0C]/30 flex items-center justify-center hover:border-[#FEFD0C]/70 transition-all duration-500 hover:scale-110 animate-pulse hover:shadow-[#FEFD0C]/50 w-[72px] h-[72px]';
+        box.className = 'absolute rounded-full bg-gradient-to-br from-black/70 via-gray-900/80 to-black/90 backdrop-blur-xl border-2 border-[#2563EB]/40 shadow-2xl shadow-[#2563EB]/30 flex items-center justify-center hover:border-[#2563EB]/70 transition-all duration-500 hover:scale-110 animate-pulse hover:shadow-[#2563EB]/50 w-[72px] h-[72px]';
         box.style.left = `calc(50% + ${x}px)`;
         box.style.top  = `calc(50% + ${y}px)`;
         box.style.transform = 'translate(-50%, -50%)';
@@ -1050,7 +1070,7 @@
       const y = window.scrollY || document.documentElement.scrollTop;
       if (header) {
         header.classList.toggle("backdrop-blur-md", y > 4);
-        header.classList.toggle("bg-black/80", y > 4);
+        header.classList.toggle("bg-white/85", y > 4);
       }
       if (pattern) pattern.style.opacity = y > 10 ? "1" : "0";
     };
@@ -1070,11 +1090,11 @@
       btn.addEventListener("click", () => {
         // toggle selected styles
         tabs.forEach((b) => {
-          b.classList.remove("bg-[#1d1d1d]", "font-semibold");
+          b.classList.remove("bg-[#0f172a]", "font-semibold");
           b.classList.add("bg-transparent", "font-medium");
           b.setAttribute("aria-selected", "false");
         });
-        btn.classList.add("bg-[#1d1d1d]", "font-semibold");
+        btn.classList.add("bg-[#0f172a]", "font-semibold");
         btn.classList.remove("bg-transparent", "font-medium");
         btn.setAttribute("aria-selected", "true");
 
@@ -1113,8 +1133,8 @@
       track.style.transform = `translateX(-${index * 100}%)`;
       dots.forEach((d, dIdx) => {
         const active = dIdx === index;
-        d.classList.toggle("bg-black", active);
-        d.classList.toggle("bg-black/20", !active);
+        d.classList.toggle("bg-blue-600", active);
+        d.classList.toggle("bg-blue-200", !active);
         d.setAttribute("aria-pressed", active ? "true" : "false");
       });
     }
@@ -1217,9 +1237,60 @@
     startAuto();
   });
 </script>
+<!-- WhatsApp Floating Chat Button -->
+<style>
+  #whatsapp-fab{
+    position:fixed; right:16px; bottom:16px; z-index:9999;
+    display:inline-flex; align-items:center; justify-content:center;
+    width:56px; height:56px; border-radius:9999px;
+    background: var(--brand, #25D366); color:#000; border:none; cursor:pointer;
+    box-shadow:0 8px 24px rgba(0,0,0,.25); transition:transform .15s ease, box-shadow .15s ease;
+  }
+  #whatsapp-fab:hover{ transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.3); }
+  #whatsapp-fab svg{ width:28px; height:28px; display:block; }
+  /* Optional tooltip */
+  #whatsapp-tip{
+    position:fixed; right:80px; bottom:26px; z-index:9999;
+    background:rgba(0,0,0,.8); color:#fff; padding:8px 10px; border-radius:10px; font-size:12px;
+    line-height:1; white-space:nowrap; opacity:.95;
+  }
+  @media (max-width:640px){ #whatsapp-tip{ display:none; } }
+</style>
+
+<button id="whatsapp-fab" aria-label="Chat on WhatsApp">
+  <!-- WhatsApp logo (inline SVG, no deps) -->
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+     <path fill="#fff" d="M.057 24l1.687-6.163c-1.04-1.806-1.588-3.849-1.587-5.946C.16 5.29 5.435 0 12.016 0c6.578 0 11.854 5.29 11.854 11.801-.002 6.51-5.276 11.8-11.854 11.8-1.99-.001-3.951-.501-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.885-4.429 9.887-9.867C21.93 6.48 17.494 2.05 12.046 2.05 6.596 2.05 2.16 6.48 2.16 11.919c-.002 2.225.651 3.891 1.746 5.596l-.999 3.648 3.747-1.97zm11.387-5.468c-.074-.124-.272-.198-.568-.347-.294-.149-1.742-.861-2.013-.959-.272-.099-.47-.149-.669.149-.198.297-.768.959-.941 1.156-.173.198-.347.223-.641.074-.294-.149-1.246-.459-2.374-1.461-.878-.783-1.47-1.756-1.644-2.053-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.205-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.742-.706 1.988-1.388.247-.68.247-1.262.173-1.387z"/>
+  </svg>
+</button>
+<div id="whatsapp-tip">Chat with us on WhatsApp</div>
+
+<script>
+  (function(){
+    // Your WhatsApp number (no +, no spaces)
+    var WA_NUMBER = '447498349775';
+    // Default prefilled message
+    var DEFAULT_MSG = 'Hi! I need help with an exchange.';
+
+    function isMobile(){
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      return /android|iphone|ipad|ipod|iemobile|wpdesktop|blackberry/i.test(ua.toLowerCase());
+    }
+
+    function openWhatsApp(){
+      var text = encodeURIComponent(DEFAULT_MSG);
+      var link = isMobile()
+        ? 'whatsapp://send?phone=' + WA_NUMBER + '&text=' + text
+        : 'https://wa.me/' + WA_NUMBER + '?text=' + text;
+      window.open(link, '_blank');
+    }
+
+    var btn = document.getElementById('whatsapp-fab');
+    if (btn){ btn.addEventListener('click', openWhatsApp); }
+  })();
+</script>
 
 
 
-
-
-</body></html>
+</body>
+</html>
